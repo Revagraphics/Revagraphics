@@ -1,0 +1,18 @@
+// ScrollToTop.jsx
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+
+export default function AutoScrollTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    // Scroll to top whenever the route changes
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",     // Change to "smooth" if you want animation
+    });
+  }, [pathname]);
+
+  return null;
+}
