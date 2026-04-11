@@ -12,7 +12,7 @@ import Instagram from "../components/Instagram";
 import bg from "../assets/about.webp";
 import content from "../assets/content.png";
 
-const Hero = () => {
+const ProductIdentity = () => {
   const containerRef = useRef(null);
   const timeoutRef = useRef(null);
 
@@ -267,6 +267,6 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default ProductIdentity;
 
 
