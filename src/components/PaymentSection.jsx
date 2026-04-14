@@ -9,7 +9,7 @@ import py5 from "../assets/maestro.webp";
 
 const images = [py1, py2, py3, py4, py5];
 
-const PaymentSection = () => {
+export default function PaymentSection() {
   const trackRef = useRef(null);
   const tweenRef = useRef(null);
 
@@ -105,4 +105,3 @@ const PaymentSection = () => {
   );
 };
 
-export default PaymentSection;

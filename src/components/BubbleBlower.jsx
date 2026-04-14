@@ -15,7 +15,7 @@ const messages = [
   "Brand Promotion",
 ];
 
-const BubbleBlower = () => {
+export default function BubbleBlower() {
   const containerRef = useRef(null);
   useEffect(() => {
   const container = containerRef.current;
@@ -78,4 +78,3 @@ const BubbleBlower = () => {
   );
 };
 
-export default BubbleBlower;

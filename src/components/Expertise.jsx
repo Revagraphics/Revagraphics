@@ -7,7 +7,7 @@ import css from "../assets/css.svg";
 import Invision from "../assets/illustrator.svg";
 import oracle from "../assets/oracle.svg";
 
-const Expertise = () => {
+export default function Expertise(){
   const expertiseData = [
     {
       id: 1,
@@ -138,4 +138,3 @@ const Expertise = () => {
   );
 };
 
-export default Expertise;

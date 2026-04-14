@@ -6,7 +6,7 @@ import Team from "../assets/teamwork2.svg"
 
 
 
-const TeamWork = () => {
+export default function TeamWork() {
   return (
     <section className="bg-[#fbf1ef] py-20 md:py-24">
       <div className="max-w-[80%] mx-auto px-4 sm:px-6 lg:px-8">
@@ -45,4 +45,4 @@ const TeamWork = () => {
   );
 };
 
-export default TeamWork;
+

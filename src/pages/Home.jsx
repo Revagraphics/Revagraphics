@@ -27,7 +27,7 @@ import badge1 from "../assets/badge-1.png";
 import badge2 from "../assets/badge-2.png";
 import badge3 from "../assets/badge-3.png";
 
-const Home = () => {
+export default function Home() {
   const textRef = useRef(null);
   const logosRef = useRef(null);
 
@@ -244,4 +244,3 @@ const Home = () => {
   );
 };
 
-export default Home;

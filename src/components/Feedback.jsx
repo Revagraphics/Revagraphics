@@ -1,7 +1,7 @@
 // src/components/ContactSection.tsx
 import { useState } from 'react';
 
-const ContactSection = () => {
+export default function ContactSection(){
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -263,5 +263,3 @@ const handleSubmit = (e) => {
     </div>
   );
 };
-
-export default ContactSection;

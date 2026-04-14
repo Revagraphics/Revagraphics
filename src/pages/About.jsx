@@ -6,12 +6,11 @@ import Footer from "../components/Footer";
 import bg from "../assets/about.webp";
 import AnimatedStat from "../components/AnimatedStat";
 import build from "../assets/building.jpg";
-import Animated from "../components/Animated";
 import Mission from "../components/Mission";
 import Ethics from "../components/Ethics";
 import TeamWork from "../components/TeamWork";
 
-const About = () => {
+export default function About(){
   return (
     <div className="">
       <Navbar />
@@ -173,4 +172,4 @@ const About = () => {
   );
 };
 
-export default About;
+

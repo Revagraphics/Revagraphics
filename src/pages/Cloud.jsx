@@ -1,7 +1,7 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
-const Cloud = () => {
+export default function Cloud() {
   const services = [
     {
       id: 1,
@@ -202,4 +202,4 @@ const Cloud = () => {
   );
 };
 
-export default Cloud;
+

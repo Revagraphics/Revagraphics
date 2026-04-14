@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
-const Printing = () => {
+export default function Printing(){
   return (
     <div className="bg-white min-h-screen">
       <Navbar />
@@ -161,4 +161,3 @@ const Printing = () => {
   );
 };
 
-export default Printing;

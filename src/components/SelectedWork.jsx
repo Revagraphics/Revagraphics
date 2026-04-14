@@ -22,7 +22,7 @@ const works = [
 
 gsap.registerPlugin(ScrollTrigger);
 
-const SelectedWork = () => {
+export default function SelectedWork()  {
   const trackRef = useRef(null);
   const containerRef = useRef(null);
 
@@ -117,4 +117,3 @@ const SelectedWork = () => {
   );
 };
 
-export default SelectedWork;

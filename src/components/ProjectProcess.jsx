@@ -11,7 +11,7 @@ import img7 from "../assets/workflow-icon9.webp";
 import img8 from "../assets/workflow-icon10.webp";
 
 
-const ProjectProcess = () => {
+export default function ProjectProcess() {
   const processes = [
     { id: 1, num: 1, icon: img1, title: "Project Brief" },
     { id: 2, num: 2, icon: img2, title: "50% Payment – Advance" },
@@ -77,4 +77,3 @@ const ProjectProcess = () => {
   );
 };
 
-export default ProjectProcess;

@@ -11,7 +11,7 @@ gsap.registerPlugin(Draggable);
 
 const images = [bg1, bg2, bg3, bg4];
 
-const ImageSlider = () => {
+export default function ImageSlider(){
   const trackRef = useRef(null);
   const tweenRef = useRef(null);
   const draggableRef = useRef(null);
@@ -115,4 +115,3 @@ const ImageSlider = () => {
   );
 };
 
-export default ImageSlider;

@@ -13,7 +13,7 @@ import {
   FaInstagram,
 } from "react-icons/fa";
 
-const Footer = () => {
+export default function Footer(){
   return (
     <footer className="bg-[#30303c] text-zinc-300 border-t border-zinc-800">
       {/* TOP SECTION */}
@@ -242,4 +242,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+

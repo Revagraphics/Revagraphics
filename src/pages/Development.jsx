@@ -16,7 +16,7 @@ import client2 from "../assets/drvikas.jpg";
 import client3 from "../assets/umesh.jpg";
 import client4 from "../assets/pankaj.jpg";
 
-const Development = () => {
+export default function Development() {
   const portfolioData = [
     {
       id: 1,
@@ -299,4 +299,4 @@ const Development = () => {
   );
 };
 
-export default Development;
+

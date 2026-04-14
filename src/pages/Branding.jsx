@@ -81,7 +81,7 @@ const createFloatingImage = (mouseX, mouseY, popupImages) => {
   };
 };
 
-const ProductIdentity = () => {
+export default function Branding(){
   const containerRef = useRef(null);
   const timeoutRef = useRef(null);
 
@@ -284,6 +284,6 @@ const ProductIdentity = () => {
   );
 };
 
-export default ProductIdentity;
+
 
 

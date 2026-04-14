@@ -1,7 +1,7 @@
 // src/components/MissionVisionSection.tsx
 import { useState } from 'react';
 
-const Mission = () => {
+export default function Mission() {
   const [activeTab, setActiveTab] = useState('vision');
 
   const tabs = [
@@ -68,4 +68,3 @@ const Mission = () => {
   );
 };
 
-export default Mission;

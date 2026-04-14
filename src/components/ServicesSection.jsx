@@ -64,7 +64,7 @@ const services = [
   },
 ];
 
-const ServicesSection = () => {
+export default function ServicesSection() {
   return (
     <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-6">
@@ -143,4 +143,3 @@ const ServicesSection = () => {
   );
 };
 
-export default ServicesSection;

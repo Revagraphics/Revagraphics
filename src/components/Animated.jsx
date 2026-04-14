@@ -1,58 +1,46 @@
 import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 
-const AnimatedText = ({
+export default function Animated({
   children,
-  as: Tag = "h1", // 👈 dynamic tag
+  as: Tag = "h1",
   className = "",
   stagger = 0.05,
   duration = 0.8,
   delay = 0.2,
   y = 80,
   ...props
-}) => {
+}) {
   const ref = useRef(null);
 
+  // convert text safely
+  const text = typeof children === "string" ? children : "";
+  const letters = text.split("");
+
   useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
+    const ctx = gsap.context(() => {
+      const spans = ref.current.querySelectorAll("span");
 
-    // Get only text (safe fallback)
-    const text = el.innerText;
+      gsap.from(spans, {
+        y,
+        opacity: 0,
+        duration,
+        stagger,
+        ease: "power3.out",
+        delay,
+      });
+    }, ref);
 
-    // Split into letters (preserve spaces)
-    const letters = text.split("");
-
-    el.innerHTML = letters
-      .map(
-        (letter) =>
-          `<span class="inline-block will-change-transform">${
-            letter === " " ? "&nbsp;" : letter
-          }</span>`
-      )
-      .join("");
-
-    const spans = el.querySelectorAll("span");
-
-    gsap.from(spans, {
-      y,
-      opacity: 0,
-      duration,
-      stagger,
-      ease: "power3.out",
-      delay,
-    });
-  }, [children, stagger, duration, delay, y]);
+    return () => ctx.revert(); // ✅ cleanup
+  }, []);
 
   return (
-    <Tag
-      ref={ref}
-      className={`overflow-hidden ${className}`}
-      {...props}
-    >
-      {children}
+    <Tag ref={ref} className={`overflow-hidden ${className}`} {...props}>
+      {letters.map((letter, i) => (
+        <span key={i} className="inline-block will-change-transform">
+          {letter === " " ? "\u00A0" : letter}
+        </span>
+      ))}
     </Tag>
   );
-};
-
-export default AnimatedText;
+}

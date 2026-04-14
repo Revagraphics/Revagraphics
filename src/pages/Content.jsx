@@ -14,7 +14,7 @@ import benefit6 from "../assets/benefit6.svg?url";
 import devloper from "../assets/developers.svg?url";
 import team from "../assets/team-support.svg?url";
 
-const Content = () => {
+export default function Content(){
   const Benefits = [
     {
       id: 1,
@@ -299,4 +299,4 @@ const Content = () => {
   );
 };
 
-export default Content;
+

@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Insta from "../assets/phone-frame.jpg";
 
-const Instagram = () => {
+export default function Instagram() {
   return (
     <section className="py-20 lg:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-5 md:px-8">
@@ -60,4 +60,3 @@ const Instagram = () => {
   );
 };
 
-export default Instagram;

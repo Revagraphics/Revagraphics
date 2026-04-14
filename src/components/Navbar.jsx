@@ -13,7 +13,7 @@ import {
   FaInstagram,
 } from "react-icons/fa";
 
-const Navbar = () => {
+export default function Navbar() {
   /* ================= STATE ================= */
   const [desktopDropdown, setDesktopDropdown] = useState(null);
   const [mobileDropdown, setMobileDropdown] = useState(null);
@@ -297,4 +297,3 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;

@@ -82,7 +82,7 @@ const projectsData = [
 
 
 
-const Designing = () => {
+export default function designing(){
   return (
     <div className="bg-white">
       <Navbar />
@@ -181,4 +181,3 @@ const Designing = () => {
   );
 };
 
-export default Designing;

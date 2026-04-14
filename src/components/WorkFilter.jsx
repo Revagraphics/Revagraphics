@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const WorkFilter = ({
+export default function WorkFilter ({
   title = "Our Latest Work",
   subtitle = "Showcasing our best digital experiences across industries",
   projects = [],
@@ -12,7 +12,7 @@ const WorkFilter = ({
     "Informative & Services",
     "International Site",
   ],
-}) => {
+}) {
   const [activeTab, setActiveTab] = useState("All");
 
   // Filter projects based on active tab
@@ -121,4 +121,4 @@ const WorkFilter = ({
   );
 };
 
-export default WorkFilter;
+

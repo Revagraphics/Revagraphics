@@ -5,7 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const AnimatedStat = ({ label, end, suffix = "" }) => {
+export default function AnimatedStat ({ label, end, suffix = "" }) {
   const numberRef = useRef(null);
 
   useEffect(() => {
@@ -61,4 +61,3 @@ const AnimatedStat = ({ label, end, suffix = "" }) => {
   );
 };
 
-export default AnimatedStat;

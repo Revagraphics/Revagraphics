@@ -104,7 +104,7 @@ const portfolioData = [
   },
 ];
 
-export default function App() {
+export default function Portfolio() {
   const [active, setActive] = useState(2); //
 
   useEffect(() => {

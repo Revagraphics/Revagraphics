@@ -5,7 +5,7 @@ import emp from "../assets/employee.png?url";
 import teamwork from "../assets/teamwork.png?url";
 import quality from "../assets/qc.png?url";
 
-const Ethics = () => {
+export default function Ethics() {
 
 
   const cards = [
@@ -97,4 +97,3 @@ const Ethics = () => {
   );
 };
 
-export default Ethics;

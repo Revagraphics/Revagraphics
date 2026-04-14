@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 import Animated from "../components/Animated";
 import Feedback from "../components/Feedback";
 
-const Contact = () => {
+export default function Contact() {
   return (
     <div className="bg-[white] min-h-screen">
       {/* Navbar */}
@@ -157,4 +157,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+

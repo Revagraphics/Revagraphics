@@ -1,26 +1,26 @@
 // src/App.jsx
 import { useEffect } from "react";
 import Lenis from "lenis";
+import { lazy, Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
+const Home = lazy(() => import("./pages/Home"));
+const About = lazy(() => import("./pages/About"));
+const Contact = lazy(() => import("./pages/Contact"));
+const Portfolio = lazy(() => import("./pages/Portfolio"));
+const ProductIdentity = lazy(() => import("./pages/Branding"));
+const NotFound = lazy(() => import("./pages/NotFound"));
+const Content = lazy(() => import("./pages/Content"));
+const Marketing = lazy(() => import("./pages/Marketing"));
+const Development = lazy(() => import("./pages/Development"));
+const Designing = lazy(() => import("./pages/Designing"));
+const Printing = lazy(() => import("./pages/Printing"));
+const Cloud = lazy(() => import("./pages/Cloud"));
 
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-import Portfolio from "./pages/Portfolio";
-import ProductIdentity from "./pages/ProductIdentity";
-import NotFound from "./pages/NotFound";
 import BubbleBlower from "./components/BubbleBlower";
 import AutoScrollTop from "./components/AutoScrollTop";
-import Content from "./pages/Content";
-import Marketing from "./pages/Marketing";
-import Development from "./pages/Development";
-import Designing from "./pages/Designing";
-import Printing from "./pages/Printing";
-import Cloud from "./pages/Cloud";
 
 const App = () => {
-
   useEffect(() => {
     const lenis = new Lenis({
       smooth: true,
@@ -42,29 +42,30 @@ const App = () => {
   }, []);
 
   return (
-    <Router>
-      {/* Global Components */}
-      <BubbleBlower />
-      <AutoScrollTop />
+   <Router>
+  {/* Global Components */}
+  <BubbleBlower />
+  <AutoScrollTop />
 
-      {/* Main Routes */}
-      <Routes>
+  {/* ✅ FIXED */}
+  <Suspense fallback={<div className="p-10">Loading...</div>}>
+    <Routes>
+      <Route path="*" element={<NotFound />} />
+      <Route path="/" element={<Home />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/portfolio" element={<Portfolio />} />
+      <Route path="/branding" element={<ProductIdentity />} />
+      <Route path="/content" element={<Content />} />
+      <Route path="/marketing" element={<Marketing />} />
+      <Route path="/contact" element={<Contact />} />
+      <Route path="/development" element={<Development />} />
+      <Route path="/designing" element={<Designing />} />
+      <Route path="/printing" element={<Printing />} />
+      <Route path="/cloud" element={<Cloud />} />
+    </Routes>
+  </Suspense>
+</Router>
 
-        <Route path="*" element={<NotFound />} />
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/portfolio" element={<Portfolio />} />
-        <Route path="/branding" element={<ProductIdentity />} />
-        <Route path="/content" element={<Content />} />
-        <Route path="/marketing" element={<Marketing />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/development" element={<Development />} />
-        <Route path="/designing" element={<Designing />} />
-        <Route path="/printing" element={<Printing />} />
-        <Route path="/cloud" element={<Cloud />} />
-
-      </Routes>
-    </Router>
   );
 };
 

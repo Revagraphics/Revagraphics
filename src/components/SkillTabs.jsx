@@ -86,7 +86,7 @@ const tabs = [
 
 /* ---------------- COMPONENT ---------------- */
 
-const SkillsTabs = () => {
+export default function SkillsTabs() {
   const [activeTab, setActiveTab] = useState("frontend");
   const gridRef = useRef();
 
@@ -207,4 +207,3 @@ const SkillsTabs = () => {
   );
 };
 
-export default SkillsTabs;

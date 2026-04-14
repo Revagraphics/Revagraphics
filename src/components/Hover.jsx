@@ -1,6 +1,6 @@
 
 
-const Hover = ({ children, className = "", ...props }) => {
+export default function Hover({ children, className = "", ...props }){
 
 
   return (
@@ -17,4 +17,4 @@ hover:rounded-md">
   );
 };
 
-export default Hover;
+
