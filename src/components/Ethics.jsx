@@ -1,6 +1,3 @@
-// src/components/TransparencyEthics.tsx
-import { useState } from 'react';
-
 import targets from "../assets/target.svg?url";
 import time from "../assets/fast-time.svg?url";
 import united from "../assets/united.svg?url";

@@ -6,7 +6,6 @@ import bg1 from "../assets/big-slider1.jpg";
 import bg2 from "../assets/big-slider2.jpg";
 import bg3 from "../assets/big-slider6.webp";
 import bg4 from "../assets/big-slider8.webp";
-import bgTop from "../assets/bg-top.jpeg";
 
 gsap.registerPlugin(Draggable);
 
@@ -80,29 +79,38 @@ const ImageSlider = () => {
 
       {/* Slider Container */}
       <div className="relative z-20 h-full flex items-center">
-        <div className="w-full overflow-hidden py-8">
-          <div 
-            ref={trackRef}
-            className="flex will-change-transform select-none"
-            style={{ cursor: 'grab' }}
-          >
-            {images.map((src, index) => (
-              <div
-                key={index}
-                className="branding_slide h-[40vh] w-[40vh] flex-shrink-0 rounded-3xl object-cover mr-4 overflow-hidden shadow-2xl"
-             
-              >
-                <img
-                  src={src}
-                  alt={`Slide ${index + 1}`}
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105 pointer-events-auto"
-                  draggable={true}
-                />
-              </div>
-            ))}
-          </div>
+  <div className="w-full overflow-hidden py-8">
+    <div
+      ref={trackRef}
+      className="flex will-change-transform select-none gap-8"
+      style={{ cursor: 'grab' }}
+    >
+      {images.map((src, index) => (
+        <div
+          key={index}
+          className="branding_slide 
+                     min-w-[420px] 
+                     w-[58vh] 
+                     h-[42vh] 
+                     flex-shrink-0 
+                     rounded-3xl 
+                     overflow-hidden 
+                     shadow-2xl 
+                     bg-zinc-900
+                     transition-all duration-300 
+                     hover:scale-[1.04] hover:shadow-3xl"
+        >
+          <img
+            src={src}
+            alt={`Slide ${index + 1}`}
+            className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+            draggable={false}
+          />
         </div>
-      </div>
+      ))}
+    </div>
+  </div>
+</div>
     </section>
   );
 };

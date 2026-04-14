@@ -9,6 +9,7 @@ import cloudsvg from "../assets/servers.svg?url";
 
 const services = [
   {
+    id:1,
     title: "Brand Identity",
     description:
       "Let’s talk a story with different brand elements that unanimously define your brand personality. How corporate identity designs can everything that goes out of your company!",
@@ -17,6 +18,7 @@ const services = [
     icon: brandsvg,
   },
   {
+    id:2,
     title: "Web Designing",
     description:
       "Have a customized, SEO based, user-friendly website define the standards of your brand. Let the website design follow your brand rules and craft a one-of-a-kind intuitive digital experience.",
@@ -25,6 +27,7 @@ const services = [
     icon: websvg,
   },
   {
+    id:3,
     title: "Web Development",
     description:
       "Businesses need time-tested eCommerce web design Companies who understand the changing dynamics and can customize the shopping experience brand-wise.",
@@ -33,6 +36,7 @@ const services = [
     icon: webdevsvg,
   },
   {
+    id:4,
     title: "Digital Marketing",
     description:
       "Build a web of relationships through 360-degree branding across digital channels to endorse your brand among Internet users and remarkably engage your current customers.",
@@ -41,6 +45,7 @@ const services = [
     icon: designsvg,
   },
   {
+    id:5,
     title: "Content Strategy",
     description:
       "Design your brand’s unique ideology that becomes its voice, thereby formulating a solid content strategy plan that builds better experience of your brand among your target audiences.",
@@ -49,6 +54,7 @@ const services = [
     icon: contentsvg,
   },
   {
+    id:6,
     title: "Cloud Services",
     description:
       "Reva helps organizations transform their IT environment with best Cloud Services. We deliver highly-effective & reliable cloud services that provide organizations with a competitive edge.",
@@ -71,9 +77,9 @@ const ServicesSection = () => {
 
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
+          {services.map((service, id) => (
             <div
-              key={index}
+              key={id}
               className="group bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-purple-200"
             >
               {/* Icon */}

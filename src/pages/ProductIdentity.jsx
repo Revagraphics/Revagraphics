@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
@@ -11,6 +11,75 @@ import PaymentSection from "../components/PaymentSection";
 import Instagram from "../components/Instagram";
 import bg from "../assets/about.webp";
 import content from "../assets/content.png";
+
+// Helper function to remove floating image
+const removeFloatingImage = (imageId, setFloatingImages) => {
+  setFloatingImages((prev) =>
+    prev.filter((img) => img.id !== imageId)
+  );
+};
+
+// Helper function to animate exit of floating image
+const animateImageExit = (newImage, setFloatingImages) => {
+  const el = document.getElementById(`float-${newImage.id}`);
+  if (el) {
+    gsap.to(el, {
+      scale: 0.65,
+      opacity: 0,
+      rotation: newImage.rotation * 1.4,
+      duration: 0.45,
+      ease: "power2.in",
+      onComplete: () => removeFloatingImage(newImage.id, setFloatingImages),
+    });
+  }
+};
+
+// Helper function to animate entrance of floating image
+const animateImageEntrance = (newImage, mouseX, offsetX, mouseY, offsetY) => {
+  const el = document.getElementById(`float-${newImage.id}`);
+  if (!el) return;
+
+  gsap.fromTo(
+    el,
+    {
+      scale: 0.2,
+      opacity: 0,
+      rotation: newImage.rotation * 0.4,
+      x: mouseX + offsetX * 0.6,
+      y: mouseY + offsetY * 0.6,
+    },
+    {
+      scale: 1,
+      opacity: 1,
+      rotation: newImage.rotation,
+      x: newImage.baseX,
+      y: newImage.baseY,
+      duration: 0.55,
+      ease: "back.out(1.6)",
+    }
+  );
+};
+
+// Helper function to create a new floating image
+const createFloatingImage = (mouseX, mouseY, popupImages) => {
+  const randomSrc = popupImages[Math.floor(Math.random() * popupImages.length)];
+  const deviation = 20;
+  const offsetX = (Math.random() - 0.5) * deviation;
+  const offsetY = (Math.random() - 0.5) * deviation;
+  const size = 180 + Math.random() * 70;
+  const rotation = (Math.random() - 0.5) * 18;
+
+  return {
+    id: Date.now() + Math.random(),
+    src: randomSrc,
+    baseX: mouseX + offsetX,
+    baseY: mouseY + offsetY,
+    size,
+    rotation,
+    offsetX,
+    offsetY,
+  };
+};
 
 const ProductIdentity = () => {
   const containerRef = useRef(null);
@@ -37,70 +106,18 @@ const ProductIdentity = () => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
 
     timeoutRef.current = setTimeout(() => {
-      const randomSrc = popupImages[Math.floor(Math.random() * popupImages.length)];
-
-      // Very small deviation - change multiplier if you want more spread
-      const deviation = 20; // pixels (was 90 before - now much tighter to cursor)
-      const offsetX = (Math.random() - 0.5) * deviation;
-      const offsetY = (Math.random() - 0.5) * deviation;
-
-      const size = 180 + Math.random() * 70;        // 180px - 250px
-      const rotation = (Math.random() - 0.5) * 18;  // subtle rotation
-
-      const newImage = {
-        id: Date.now() + Math.random(),
-        src: randomSrc,
-        baseX: mouseX + offsetX,   // final target position
-        baseY: mouseY + offsetY,
-        size,
-        rotation,
-      };
+      const newImage = createFloatingImage(mouseX, mouseY, popupImages);
 
       setFloatingImages((prev) => [...prev, newImage]);
 
       // GSAP entrance animation (very smooth pop)
       requestAnimationFrame(() => {
-        const el = document.getElementById(`float-${newImage.id}`);
-        if (!el) return;
-
-        gsap.fromTo(
-          el,
-          {
-            scale: 0.2,
-            opacity: 0,
-            rotation: rotation * 0.4,
-            x: mouseX + offsetX * 0.6,   // start slightly closer to cursor
-            y: mouseY + offsetY * 0.6,
-          },
-          {
-            scale: 1,
-            opacity: 1,
-            rotation: rotation,
-            x: newImage.baseX,
-            y: newImage.baseY,
-            duration: 0.55,
-            ease: "back.out(1.6)",   // bouncy but elegant
-          }
-        );
+        animateImageEntrance(newImage, mouseX, newImage.offsetX, mouseY, newImage.offsetY);
       });
 
       // Smooth exit animation + remove
       setTimeout(() => {
-        const el = document.getElementById(`float-${newImage.id}`);
-        if (el) {
-          gsap.to(el, {
-            scale: 0.65,
-            opacity: 0,
-            rotation: rotation * 1.4,
-            duration: 0.45,
-            ease: "power2.in",
-            onComplete: () => {
-              setFloatingImages((prev) =>
-                prev.filter((img) => img.id !== newImage.id)
-              );
-            },
-          });
-        }
+        animateImageExit(newImage, setFloatingImages);
       }, 1550); // how long each image stays visible
     }, 80); // spawn delay - feels very responsive
   };

@@ -6,8 +6,11 @@ export default {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        poppins: ['Poppins', 'sans-serif'],
+       fontFamily: {
+        primary: ['MyFont', 'sans-serif'],
+        secondary: ['MyFont2', 'sans-serif'],
+        tertiary: ['MyFont3', 'sans-serif'],
+        quaternary: ['MyFont4', 'sans-serif'],
       },
     },
   },

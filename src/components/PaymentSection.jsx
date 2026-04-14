@@ -60,7 +60,7 @@ const PaymentSection = () => {
 
   return (
     <section className="relative py-20 bg-zinc-100 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-[100%] mx-auto px-6">
         {/* Title */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-semibold text-[#313131] tracking-tight">

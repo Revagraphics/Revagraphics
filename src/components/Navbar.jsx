@@ -92,12 +92,12 @@ const Navbar = () => {
           <Link to="/"><img src={Logo} className="h-10" /></Link>
 
           {/* ================= DESKTOP ================= */}
-          <div className="hidden lg:flex text-[#08182b] font-bold items-center gap-10">
-            <Hover>
+          <div className="hidden lg:flex text-[#08182b] font-bold  px-8 py-4  items-center gap-8">
+            <Hover isActive>
               {" "}
               <Link to="/">Home</Link>
             </Hover>
-            <Hover>
+            <Hover is>
               <Link to="/about">About</Link>
             </Hover>
 

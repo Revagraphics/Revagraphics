@@ -10,9 +10,50 @@ o-scrollbar::-webkit-scrollbar {
   scrollbar-width: none;
 }
 
+@font-face {
+  font-family: 'MyFont';
+  src: url('/fonts/MyFont.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MyFont2';
+  src: url('/fonts/MyFont2.woff2') format('woff2');
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MyFont3';
+  src: url('/fonts/MyFont3.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+}
+
+/* Secondary font */
+@font-face {
+  font-family: 'MyFont4';
+  src: url('/fonts/MyFont4.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+
+
 
 
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'MyFont', sans-serif;
+}
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth body {
+  overflow: hidden;
 }
