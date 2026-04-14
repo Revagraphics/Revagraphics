@@ -3,6 +3,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import Seo from "../components/Seo";
 
 import bali from "../assets/bali.jpg";
 import dhruv from "../assets/dhruv.jpg";
@@ -14,7 +15,7 @@ import portfolio1 from "../assets/portfolio-1.jpg";
 import portfolio2 from "../assets/portfolio-2.jpg";
 import portfolio3 from "../assets/portfolio-3.jpg";
 import portfolio4 from "../assets/portfolio-4.jpg";
-import portfolio5 from "../assets/portfolio-5.jpg";
+
 
 import client1 from "../assets/sony.jpg";
 import client2 from "../assets/drvikas.jpg";
@@ -116,6 +117,12 @@ export default function Portfolio() {
   }, []);
 
   return (
+    <>
+    <Seo
+  title="Portfolio | Reva Graphics"
+  description="Explore our creative portfolio including branding, web design, and marketing projects."
+/>
+
     <div className="min-h-screen bg-[#fbf1ef] overflow-x-hidden">
       <Navbar />
 
@@ -289,5 +296,6 @@ export default function Portfolio() {
 
       <Footer />
     </div>
+    </>
   );
 }

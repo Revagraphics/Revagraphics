@@ -1,6 +1,8 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
+import Seo from "../components/Seo";
+
 export default function Cloud() {
   const services = [
     {
@@ -75,131 +77,133 @@ export default function Cloud() {
   ];
 
   return (
-    <div className="bg-white min-h-screen">
-      <Navbar />
+    <>
+      <Seo
+        title="Cloud Solutions | Reva Graphics"
+        description="Reliable cloud services including hosting, deployment, and scalable infrastructure solutions."
+      />
 
-      {/* HERO SECTION - Orange Theme + Fully Responsive */}
-      <section className="bg-[#f2fff5] min-h-[90vh] flex items-center justify-center text-black py-16 md:py-24 relative overflow-hidden">
-        <div className="max-w-[90%] mx-auto px-6 text-center relative z-10">
-          <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-6 py-2 rounded-3xl text-sm font-medium mb-6">
-            ⚡ POWERED BY AWS • AZURE • GCP
-          </div>
+      <div className="bg-white min-h-screen">
+        <Navbar />
 
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter leading-none mb-6">
-            Cloud Services
-          </h1>
+        {/* HERO SECTION - Orange Theme + Fully Responsive */}
+        <section className="bg-[#f2fff5] min-h-[90vh] flex items-center justify-center text-black py-16 md:py-24 relative overflow-hidden">
+          <div className="max-w-[90%] mx-auto px-6 text-center relative z-10">
+            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-6 py-2 rounded-3xl text-sm font-medium mb-6">
+              ⚡ POWERED BY AWS • AZURE • GCP
+            </div>
 
-          <p className="max-w-2xl mx-auto text-lg sm:text-xl md:text-2xl opacity-90">
-            Scalable, secure, and intelligent cloud solutions that transform
-            your business.
-          </p>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter leading-none mb-6">
+              Cloud Services
+            </h1>
 
-          <button className="mt-10 px-8 sm:px-10 py-4 bg-white text-orange-600 font-semibold text-base sm:text-lg rounded-3xl hover:bg-orange-100 active:scale-95 transition-all duration-300 shadow-xl">
-            Get a Free Cloud Assessment
-          </button>
-        </div>
-
-        {/* Decorative cloud elements */}
-        <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-white/10 to-transparent pointer-events-none" />
-      </section>
-
-      {/* THREE SERVICES SECTION - Orange Theme + Responsive Grid */}
-      <section className="bg-[#fffaf0] py-16 md:py-20">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-[#08182b] mb-3">
-              Our Three Core Cloud Solutions
-            </h2>
-            <p className="text-gray-600 max-w-md mx-auto text-base sm:text-lg">
-              Choose the perfect cloud service that fits your business needs
+            <p className="max-w-2xl mx-auto text-lg sm:text-xl md:text-2xl opacity-90">
+              Scalable, secure, and intelligent cloud solutions that transform
+              your business.
             </p>
+
+            <button className="mt-10 px-8 sm:px-10 py-4 bg-white text-orange-600 font-semibold text-base sm:text-lg rounded-3xl hover:bg-orange-100 active:scale-95 transition-all duration-300 shadow-xl">
+              Get a Free Cloud Assessment
+            </button>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
-            {services.map((service) => (
-              <div
-                key={service.id}
-                className="group bg-white rounded-3xl p-8 md:p-10 shadow-[0_10px_40px_rgba(0,0,0,0.07)] hover:shadow-[0_25px_70px_rgba(249,115,22,0.15)] hover:-translate-y-3 transition-all duration-500 flex flex-col"
-              >
-                {/* Icon */}
-                <div className="mb-8 w-20 h-20 flex items-center justify-center bg-orange-50 rounded-2xl group-hover:scale-110 transition-transform duration-300">
-                  {service.icon}
+          {/* Decorative cloud elements */}
+          <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-white/10 to-transparent pointer-events-none" />
+        </section>
+
+        {/* THREE SERVICES SECTION - Orange Theme + Responsive Grid */}
+        <section className="bg-[#fffaf0] py-16 md:py-20">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="text-center mb-12 md:mb-16">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-[#08182b] mb-3">
+                Our Three Core Cloud Solutions
+              </h2>
+              <p className="text-gray-600 max-w-md mx-auto text-base sm:text-lg">
+                Choose the perfect cloud service that fits your business needs
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+              {services.map((service) => (
+                <div
+                  key={service.id}
+                  className="group bg-white rounded-3xl p-8 md:p-10 shadow-[0_10px_40px_rgba(0,0,0,0.07)] hover:shadow-[0_25px_70px_rgba(249,115,22,0.15)] hover:-translate-y-3 transition-all duration-500 flex flex-col"
+                >
+                  {/* Icon */}
+                  <div className="mb-8 w-20 h-20 flex items-center justify-center bg-orange-50 rounded-2xl group-hover:scale-110 transition-transform duration-300">
+                    {service.icon}
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="text-2xl md:text-3xl font-semibold text-[#08182b] mb-4">
+                    {service.title}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-gray-600 leading-relaxed mb-8 flex-1">
+                    {service.description}
+                  </p>
+
+                  {/* Features */}
+                  <div className="flex flex-wrap gap-2 mb-10">
+                    {service.features.map((feature, i) => (
+                      <span
+                        key={i}
+                        className="text-xs font-medium px-4 py-2 bg-orange-100 text-orange-700 rounded-3xl"
+                      >
+                        {feature}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* CTA */}
+                  <button className="mt-auto w-full py-4 text-orange-600 font-semibold border border-orange-200 hover:border-orange-500 rounded-3xl transition-all group-hover:bg-orange-600 group-hover:text-white">
+                    Learn More →
+                  </button>
                 </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
-                {/* Title */}
-                <h3 className="text-2xl md:text-3xl font-semibold text-[#08182b] mb-4">
-                  {service.title}
-                </h3>
-
-                {/* Description */}
-                <p className="text-gray-600 leading-relaxed mb-8 flex-1">
-                  {service.description}
-                </p>
-
-                {/* Features */}
-                <div className="flex flex-wrap gap-2 mb-10">
-                  {service.features.map((feature, i) => (
-                    <span
-                      key={i}
-                      className="text-xs font-medium px-4 py-2 bg-orange-100 text-orange-700 rounded-3xl"
-                    >
-                      {feature}
-                    </span>
-                  ))}
+        {/* WHY CHOOSE US - Orange Theme + Responsive */}
+        <section className="py-16 md:py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+              <div className="flex flex-col items-center">
+                <div className="text-5xl md:text-6xl font-bold text-orange-500 mb-2">
+                  99.99%
                 </div>
-
-                {/* CTA */}
-                <button className="mt-auto w-full py-4 text-orange-600 font-semibold border border-orange-200 hover:border-orange-500 rounded-3xl transition-all group-hover:bg-orange-600 group-hover:text-white">
-                  Learn More →
-                </button>
+                <div className="font-medium text-gray-700">Uptime SLA</div>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* WHY CHOOSE US - Orange Theme + Responsive */}
-      <section className="py-16 md:py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div className="flex flex-col items-center">
-              <div className="text-5xl md:text-6xl font-bold text-orange-500 mb-2">
-                99.99%
+              <div className="flex flex-col items-center">
+                <div className="text-5xl md:text-6xl font-bold text-orange-500 mb-2">
+                  24/7
+                </div>
+                <div className="font-medium text-gray-700">Expert Support</div>
               </div>
-              <div className="font-medium text-gray-700">Uptime SLA</div>
-            </div>
-            <div className="flex flex-col items-center">
-              <div className="text-5xl md:text-6xl font-bold text-orange-500 mb-2">
-                24/7
+              <div className="flex flex-col items-center">
+                <div className="text-5xl md:text-6xl font-bold text-orange-500 mb-2">
+                  50+
+                </div>
+                <div className="font-medium text-gray-700">
+                  Cloud Projects Delivered
+                </div>
               </div>
-              <div className="font-medium text-gray-700">Expert Support</div>
-            </div>
-            <div className="flex flex-col items-center">
-              <div className="text-5xl md:text-6xl font-bold text-orange-500 mb-2">
-                50+
-              </div>
-              <div className="font-medium text-gray-700">
-                Cloud Projects Delivered
-              </div>
-            </div>
-            <div className="flex flex-col items-center">
-              <div className="text-5xl md:text-6xl font-bold text-orange-500 mb-2">
-                3
-              </div>
-              <div className="font-medium text-gray-700">
-                Major Cloud Platforms
+              <div className="flex flex-col items-center">
+                <div className="text-5xl md:text-6xl font-bold text-orange-500 mb-2">
+                  3
+                </div>
+                <div className="font-medium text-gray-700">
+                  Major Cloud Platforms
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </section>
 
-        
-      </section>
-
-    
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </>
   );
-};
-
-
+}

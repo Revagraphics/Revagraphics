@@ -15,6 +15,8 @@
     content="graphic design, web development, branding, digital marketing, UI/UX design, creative agency, Reva Graphics" />
 
   <link rel="canonical" href="https://www.revagraphics.com/" />
+  <link rel="preconnect" href="https://www.revagraphics.com" />
+
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="/logo.png" />
@@ -22,6 +24,7 @@
 
   <!-- Open Graph -->
   <meta property="og:title" content="Reva Graphics | Creative Design & Digital Solutions" />
+  <meta property="og:locale" content="en_IN" />
   <meta property="og:description"
     content="We build unique brands and exceptional digital experiences with transparency and ethics." />
   <meta property="og:type" content="website" />
@@ -36,7 +39,7 @@
     content="Creative design studio offering branding, web development, and digital marketing services." />
   <meta name="twitter:image" content="https://www.revagraphics.com/og-image.jpg" />
 
- 
+
 
   <!-- fonts -->
   <link rel="preload" href="/src/assets/fonts/MyFont.woff2" as="font" type="font/woff2" crossorigin>
@@ -54,13 +57,19 @@
   <div id="root"></div>
   <script type="module" src="/src/main.jsx"></script>
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Reva Graphics",
-    "url": "https://www.revagraphics.com"
-  }
-  </script>
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Reva Graphics",
+  "url": "https://www.revagraphics.com",
+  "logo": "https://www.revagraphics.com/logo.png",
+  "sameAs": [
+    "https://www.instagram.com/",
+    "https://www.linkedin.com/"
+  ]
+}
+</script>
+
 </body>
 
 </html>

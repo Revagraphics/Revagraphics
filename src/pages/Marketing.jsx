@@ -11,10 +11,9 @@ import benefit2 from "../assets/expert2.png?url";
 import benefit3 from "../assets/expert3.png?url";
 import benefit4 from "../assets/expert4.png?url";
 import benefit5 from "../assets/expert5.png?url";
-import benefit6 from "../assets/benefit6.svg?url";
+import Seo from "../components/Seo";
 
 import devloper from "../assets/developers.svg?url";
-import team from "../assets/team-support.svg?url";
 
 export default function Marketing() {
   const Benefits = [
@@ -56,185 +55,191 @@ export default function Marketing() {
     // },
   ];
   return (
-    <div className="min-h-screen bg-[#f2fff5]">
-      <Navbar />
-      <section className="pt-20 pb-32 overflow-hidden">
-        <div className="max-w-[90%] mx-auto px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center pt-16">
-            {/* Left Content */}
-            <div className="space-y-8">
-              <div className="inline-block">
-                <span className="py-2.5 text-indigo-600 text-xl lg:text-2xl font-semibold tracking-wide">
-                  Top SEO & SMO expert company in India
-                </span>
-              </div>
+    <>
+      <Seo
+        title="Digital Marketing Services | Reva Graphics"
+        description="Grow your business with SEO, social media marketing, and performance-driven digital strategies."
+      />
 
-              <h1 className="text-4xl lg:text-5xl font-bold leading-tight text-[#30303c]">
-                Don't Build Links Build{" "}
-                <span className="bg-orange-500 bg-clip-text text-transparent">
-                  Relationships
-                </span>{" "}
-              </h1>
-
-              <p className="text-lg lg:text-xl text-[#30303c] leading-relaxed max-w-lg">
-                Everything starts with a ‘Hello’!! With ZERO upfront investment,
-                we are committed to providing a solid foundation for your
-                business idea. You’ll be amazed by working with our experts.
-              </p>
-
-              <a
-                href="get-quote.html"
-                className="group inline-flex items-center gap-3 bg-orange-500 hover:bg-orange-600 text-white font-semibold text-lg px-10 py-5 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
-              >
-                Let’s discuss
-                <span className="group-hover:translate-x-2 transition-transform duration-300">
-                  →
-                </span>
-              </a>
-            </div>
-
-            {/* Right Image */}
-            <div className="flex justify-center lg:justify-center">
-              <div className="relative">
-                <div className="absolute -inset-6 bg-gradient-to-br from-orange-400/30 to-purple-400/30 rounded-[3rem] -rotate-6 blur-xl" />
-                <img
-                  src={cart}
-                  alt="Content Marketing"
-                  className="relative z-10 w-full max-w-md lg:max-w-lg"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Second Section */}
-      <section className="pt-20 pb-32 overflow-hidden">
-        <div className="max-w-[90%] mx-auto px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* Left Text */}
-            <div className="space-y-6">
-              <h2 className="text-4xl lg:text-5xl font-bold leading-tight text-[#30303c]">
-                We offer SEO & SMO
-                <br />
-                Promotional services
-              </h2>
-              <div className="space-y-6 text-[#30303c] text-lg leading-relaxed">
-                <p>
-                  Hire experienced SMO & SEO experts facilitating effective
-                  engagement with your existing and potential customers while
-                  delivering an effective social media presence. Reva is a top
-                  Social Media Marketing agency in India and Singapore
-                  delivering business-driven marketing strategies on social
-                  media.
-                </p>
-              </div>
-            </div>
-
-            {/* Right Image */}
-            <div className="flex justify-center lg:justify-center">
-              <div className="relative">
-                <div className="absolute -inset-6 bg-gradient-to-br from-orange-400/30 to-purple-400/30 rounded-[3rem] -rotate-6 blur-xl" />
-                <img
-                  src={seo}
-                  alt="Content Writing Services"
-                  className="relative z-10 w-full max-w-md lg:max-w-lg "
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="pt-20 pb-32 bg-white">
-        <div className="max-w-[90%] mx-auto px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold leading-tight text-[#30303c]">
-              Benefits of Working{" "}
-              <span className="bg-orange-500 bg-clip-text text-transparent">
-                With Us
-              </span>
-            </h2>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {Benefits.map((benefit) => (
-              <div
-                key={benefit.id}
-                className="group bg-white border border-gray-200 hover:border-orange-300 rounded-3xl p-8 transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
-              >
-                {/* Icon */}
-                <div className="w-16 h-16 mb-6 bg-gradient-to-br from-orange-500 to-amber-500 rounded-2xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
-                  <img
-                    src={benefit.img}
-                    alt={benefit.title}
-                    className="w-15 h-15 object-contain"
-                  />
+      <div className="min-h-screen bg-[#f2fff5]">
+        <Navbar />
+        <section className="pt-20 pb-32 overflow-hidden">
+          <div className="max-w-[90%] mx-auto px-6 lg:px-8">
+            <div className="grid lg:grid-cols-2 gap-16 items-center pt-16">
+              {/* Left Content */}
+              <div className="space-y-8">
+                <div className="inline-block">
+                  <span className="py-2.5 text-indigo-600 text-xl lg:text-2xl font-semibold tracking-wide">
+                    Top SEO & SMO expert company in India
+                  </span>
                 </div>
 
-                {/* Title */}
-                <h3 className="text-2xl font-semibold text-[#30303c] mb-4 group-hover:text-orange-600 transition-colors">
-                  {benefit.title}
-                </h3>
+                <h1 className="text-4xl lg:text-5xl font-bold leading-tight text-[#30303c]">
+                  Don't Build Links Build{" "}
+                  <span className="bg-orange-500 bg-clip-text text-transparent">
+                    Relationships
+                  </span>{" "}
+                </h1>
 
-                {/* Description */}
-                <p className="text-gray-600 leading-relaxed text-[17px]">
-                  {benefit.dis}
+                <p className="text-lg lg:text-xl text-[#30303c] leading-relaxed max-w-lg">
+                  Everything starts with a ‘Hello’!! With ZERO upfront
+                  investment, we are committed to providing a solid foundation
+                  for your business idea. You’ll be amazed by working with our
+                  experts.
                 </p>
 
-                {/* Accent Line */}
-                <div className="mt-8 h-1 w-12 bg-orange-500 rounded-full group-hover:w-20 transition-all duration-300" />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="pt-20 pb-32 bg-white">
-        <div className="max-w-[90%] mx-auto px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            {/* Left Side Content */}
-            <div className="flex flex-col justify-center space-y-8 order-2 lg:order-1">
-              <h1 className="text-[#3f3f3f] text-3xl md:text-4xl lg:text-5xl leading-tight font-semibold">
-                Hire world-class SEO experts for your project
-              </h1>
-
-              <p className="text-[#3f3f3f] text-lg md:text-xl leading-relaxed max-w-lg">
-                We have a dexterity team of SEO & SMO Experts that work on
-                clients' projects excellently and deliver the project on the
-                timeline.
-              </p>
-
-              {/* Optional CTA Button */}
-              <div>
                 <a
                   href="get-quote.html"
-                  className="inline-flex items-center gap-3 bg-orange-500 hover:bg-orange-600 text-white font-semibold text-lg px-8 py-4 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
+                  className="group inline-flex items-center gap-3 bg-orange-500 hover:bg-orange-600 text-white font-semibold text-lg px-10 py-5 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
                 >
-                  Hire Developers Now
-                  <span>→</span>
+                  Let’s discuss
+                  <span className="group-hover:translate-x-2 transition-transform duration-300">
+                    →
+                  </span>
                 </a>
               </div>
-            </div>
 
-            {/* Right Side Image */}
-            <div className="flex justify-center lg:justify-center order-1 lg:order-2">
-              <div className="relative w-full max-w-md lg:max-w-lg">
-                <div className="absolute -inset-6 bg-gradient-to-br from-orange-400/30 to-purple-400/30 rounded-[3rem] -rotate-6 blur-xl" />
-
-                <img
-                  src={devloper}
-                  alt="Hire World-Class Developers"
-                  className="relative z-10 w-full h-auto  object-cover"
-                />
+              {/* Right Image */}
+              <div className="flex justify-center lg:justify-center">
+                <div className="relative">
+                  <div className="absolute -inset-6 bg-gradient-to-br from-orange-400/30 to-purple-400/30 rounded-[3rem] -rotate-6 blur-xl" />
+                  <img
+                    src={cart}
+                    alt="Content Marketing"
+                    className="relative z-10 w-full max-w-md lg:max-w-lg"
+                  />
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-      <Footer />
-    </div>
+        </section>
+
+        {/* Second Section */}
+        <section className="pt-20 pb-32 overflow-hidden">
+          <div className="max-w-[90%] mx-auto px-6 lg:px-8">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              {/* Left Text */}
+              <div className="space-y-6">
+                <h2 className="text-4xl lg:text-5xl font-bold leading-tight text-[#30303c]">
+                  We offer SEO & SMO
+                  <br />
+                  Promotional services
+                </h2>
+                <div className="space-y-6 text-[#30303c] text-lg leading-relaxed">
+                  <p>
+                    Hire experienced SMO & SEO experts facilitating effective
+                    engagement with your existing and potential customers while
+                    delivering an effective social media presence. Reva is a top
+                    Social Media Marketing agency in India and Singapore
+                    delivering business-driven marketing strategies on social
+                    media.
+                  </p>
+                </div>
+              </div>
+
+              {/* Right Image */}
+              <div className="flex justify-center lg:justify-center">
+                <div className="relative">
+                  <div className="absolute -inset-6 bg-gradient-to-br from-orange-400/30 to-purple-400/30 rounded-[3rem] -rotate-6 blur-xl" />
+                  <img
+                    src={seo}
+                    alt="Content Writing Services"
+                    className="relative z-10 w-full max-w-md lg:max-w-lg "
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="pt-20 pb-32 bg-white">
+          <div className="max-w-[90%] mx-auto px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl lg:text-5xl font-bold leading-tight text-[#30303c]">
+                Benefits of Working{" "}
+                <span className="bg-orange-500 bg-clip-text text-transparent">
+                  With Us
+                </span>
+              </h2>
+            </div>
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              {Benefits.map((benefit) => (
+                <div
+                  key={benefit.id}
+                  className="group bg-white border border-gray-200 hover:border-orange-300 rounded-3xl p-8 transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
+                >
+                  {/* Icon */}
+                  <div className="w-16 h-16 mb-6 bg-gradient-to-br from-orange-500 to-amber-500 rounded-2xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
+                    <img
+                      src={benefit.img}
+                      alt={benefit.title}
+                      className="w-15 h-15 object-contain"
+                    />
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="text-2xl font-semibold text-[#30303c] mb-4 group-hover:text-orange-600 transition-colors">
+                    {benefit.title}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-gray-600 leading-relaxed text-[17px]">
+                    {benefit.dis}
+                  </p>
+
+                  {/* Accent Line */}
+                  <div className="mt-8 h-1 w-12 bg-orange-500 rounded-full group-hover:w-20 transition-all duration-300" />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="pt-20 pb-32 bg-white">
+          <div className="max-w-[90%] mx-auto px-6 lg:px-8">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+              {/* Left Side Content */}
+              <div className="flex flex-col justify-center space-y-8 order-2 lg:order-1">
+                <h1 className="text-[#3f3f3f] text-3xl md:text-4xl lg:text-5xl leading-tight font-semibold">
+                  Hire world-class SEO experts for your project
+                </h1>
+
+                <p className="text-[#3f3f3f] text-lg md:text-xl leading-relaxed max-w-lg">
+                  We have a dexterity team of SEO & SMO Experts that work on
+                  clients' projects excellently and deliver the project on the
+                  timeline.
+                </p>
+
+                {/* Optional CTA Button */}
+                <div>
+                  <a
+                    href="get-quote.html"
+                    className="inline-flex items-center gap-3 bg-orange-500 hover:bg-orange-600 text-white font-semibold text-lg px-8 py-4 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
+                  >
+                    Hire Developers Now
+                    <span>→</span>
+                  </a>
+                </div>
+              </div>
+
+              {/* Right Side Image */}
+              <div className="flex justify-center lg:justify-center order-1 lg:order-2">
+                <div className="relative w-full max-w-md lg:max-w-lg">
+                  <div className="absolute -inset-6 bg-gradient-to-br from-orange-400/30 to-purple-400/30 rounded-[3rem] -rotate-6 blur-xl" />
+
+                  <img
+                    src={devloper}
+                    alt="Hire World-Class Developers"
+                    className="relative z-10 w-full h-auto  object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <Footer />
+      </div>
+    </>
   );
-};
-
-
+}

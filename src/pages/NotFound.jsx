@@ -1,35 +1,20 @@
 import { Link, useLocation } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import error from "../assets/error.svg";
+import Seo from "../components/Seo";
 
 export default function NotFound() {
   const location = useLocation();
 
   return (
     <>
-      <Helmet>
-        <title>404 - Page Not Found | Reva Graphics</title>
+     <Seo
+  title="404 - Page Not Found | Reva Graphics"
+  description="The page you are looking for does not exist."
+  noIndex={true}
+/>
 
-        <meta
-          name="description"
-          content="The page you are looking for does not exist. Visit Reva Graphics to explore creative design and digital solutions."
-        />
-
-        {/* SEO */}
-        <meta name="robots" content="noindex, follow" />
-
-        {/* Open Graph */}
-        <meta property="og:title" content="404 - Page Not Found" />
-        <meta property="og:description" content="Page not found on Reva Graphics" />
-
-        {/* Dynamic Canonical */}
-        <link
-          rel="canonical"
-          href={`https://yourdomain.com${location.pathname}`}
-        />
-      </Helmet>
 
       <div className="flex flex-col min-h-screen bg-gray-100">
         <Navbar />
