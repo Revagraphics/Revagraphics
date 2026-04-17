@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import Seo from "../components/Seo";
@@ -19,10 +18,10 @@ export default function About() {
         description="Learn more about Reva Graphics, our mission, and our creative team."
       />
 
-      < className="">
+      <div className="bg-zinc-100 min-h-screen">
         <Navbar />
 
-         <main className="mt-28 px-4 flex item-center lg:h-[60vh] max-w-[90%] mx-auto">
+      <main className="mt-28 px-4 flex item-center lg:h-[60vh] max-w-[90%] mx-auto">
         <div className="flex flex-col lg:flex-row gap-12 items-center">
           {/* TEXT */}
           <section className="hero-animate flex-1 text-center lg:text-left">
@@ -175,6 +174,7 @@ export default function About() {
       <TeamWork/>
 
       <Footer />
+      </div>
     </>
     )
 };
