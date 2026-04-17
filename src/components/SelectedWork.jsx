@@ -22,25 +22,25 @@ const works = [
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function SelectedWork()  {
+export default function  SelectedWork() {
   const trackRef = useRef(null);
-  const containerRef = useRef(null);
+  const tweenRef = useRef(null);
 
   useEffect(() => {
     const track = trackRef.current;
     if (!track) return;
 
-    // Duplicate the items for seamless infinite loop
-    const originalHTML = track.innerHTML;
-    track.innerHTML += originalHTML;
+    // Get card width dynamically from the first card
+    const firstCard = track.children[0];
+    if (!firstCard) return;
 
-    const cards = track.children;
-    const cardWidth = 340; // approx width of one card + gap
-    const totalWidth = cards.length / 2 * (cardWidth + 30); // half because we duplicated
+    const gap = 24; // gap-6 = 24px
+    const cardWidth = firstCard.offsetWidth + gap;
+    const totalWidth = works.length * cardWidth;
 
-    const tween = gsap.to(track, {
-      x: () => -totalWidth,
-      duration: 40,           // Adjust speed here (higher = slower)
+    tweenRef.current = gsap.to(track, {
+      x: -totalWidth,
+      duration: 35,
       ease: "none",
       repeat: -1,
       modifiers: {
@@ -48,70 +48,88 @@ export default function SelectedWork()  {
       },
     });
 
-    // Optional: Pause on hover
-    const pause = () => tween.pause();
-    const play = () => tween.play();
+    const pause = () => tweenRef.current?.pause();
+    const play = () => tweenRef.current?.play();
 
     track.addEventListener("mouseenter", pause);
     track.addEventListener("mouseleave", play);
 
     return () => {
-      tween.kill();
+      tweenRef.current?.kill();
       track.removeEventListener("mouseenter", pause);
       track.removeEventListener("mouseleave", play);
     };
   }, []);
 
+  // Triple the works array for a smooth seamless loop
+  const loopedWorks = [...works, ...works, ...works];
+
   return (
-    <section className="bg-gray-50 py-20 lg:py-28 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-5" ref={containerRef}>
+    <section className="bg-gray-50 py-14 sm:py-20 lg:py-28 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
         {/* Heading */}
-        <div className="flex justify-center md:justify-start mb-12">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-gray-900 tracking-tight">
-            Our <span className="text-violet-600">Selected</span> Work
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10 sm:mb-14">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-gray-900 tracking-tight leading-tight">
+            Our <span className="text-orange-500">Selected</span> Work
           </h2>
+          <Link
+            to="/portfolio"
+            className="group inline-flex items-center gap-2 text-sm sm:text-base font-medium text-gray-500 hover:text-orange-500 transition-colors duration-300 self-start sm:self-auto"
+          >
+            View All Projects
+            <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
+          </Link>
         </div>
 
-        {/* GSAP Horizontal Scrolling Container */}
+        {/* Scrolling Track */}
         <div className="relative">
-          <div 
+
+          {/* Fade Edges */}
+          <div className="absolute left-0 top-0 bottom-0 w-10 sm:w-16 bg-gradient-to-r from-gray-50 to-transparent pointer-events-none z-10" />
+          <div className="absolute right-0 top-0 bottom-0 w-10 sm:w-16 bg-gradient-to-l from-gray-50 to-transparent pointer-events-none z-10" />
+
+          <div
             ref={trackRef}
-            className="flex gap-8 will-change-transform"
+            className="flex gap-5 sm:gap-6 will-change-transform"
           >
-            {works.concat(works).map((work, index) => (   // Double for seamless loop
+            {loopedWorks.map((work, i) => (
               <div
-                key={index}
-                className="flex-shrink-0 w-[280px] md:w-[340px] group cursor-pointer"
+                key={`${work.id}-${i}`}
+                className="flex-shrink-0 w-[220px] sm:w-[280px] md:w-[320px] lg:w-[340px] group cursor-pointer"
               >
-                <div className="relative rounded-3xl overflow-hidden shadow-lg aspect-[4/3] bg-gray-200">
+                {/* Image */}
+                <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-md aspect-[4/3] bg-gray-200">
                   <img
                     src={work.image}
                     alt={work.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    loading="lazy"
                   />
+                  {/* Overlay on hover */}
+                  <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl sm:rounded-3xl" />
                 </div>
-                <p className="mt-6 text-center text-xl font-medium text-gray-800">
+
+                {/* Title */}
+                <p className="mt-3 sm:mt-4 text-center text-base sm:text-lg lg:text-xl font-medium text-gray-800 group-hover:text-orange-500 transition-colors duration-300">
                   {work.title}
                 </p>
               </div>
             ))}
           </div>
-
-          {/* Fade Edges */}
-          <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-gray-50 to-transparent pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-gray-50 to-transparent pointer-events-none" />
         </div>
 
-        {/* View All Button */}
-        <div className="flex justify-center mt-16">
+        {/* View All Button — bottom, centered (mobile) */}
+        <div className="flex justify-center mt-10 sm:mt-14 sm:hidden">
           <Link
             to="/portfolio"
-            className="group inline-flex items-center gap-3 px-8 py-4 text-lg font-medium text-gray-700 hover:text-violet-600 transition-all duration-300 border border-gray-300 hover:border-violet-600 rounded-2xl"
+            className="group inline-flex items-center gap-2 px-6 py-3 text-base font-medium text-gray-700 hover:text-orange-500 transition-all duration-300 border border-gray-300 hover:border-orange-400 rounded-2xl"
           >
             View All Projects
-            <span className="group-hover:translate-x-2 transition-transform">→</span>
+            <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
           </Link>
         </div>
+
       </div>
     </section>
   );

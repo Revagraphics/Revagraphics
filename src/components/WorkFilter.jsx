@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function WorkFilter ({
+export default function WorkFilter({
   title = "Our Latest Work",
   subtitle = "Showcasing our best digital experiences across industries",
   projects = [],
@@ -120,5 +120,3 @@ export default function WorkFilter ({
     </section>
   );
 };
-
-

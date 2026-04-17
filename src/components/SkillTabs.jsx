@@ -86,7 +86,7 @@ const tabs = [
 
 /* ---------------- COMPONENT ---------------- */
 
-export default function SkillsTabs() {
+export default function SkillsTabs(){
   const [activeTab, setActiveTab] = useState("frontend");
   const gridRef = useRef();
 
@@ -182,7 +182,7 @@ export default function SkillsTabs() {
               <div className="
                 w-20 h-20
                 flex items-center justify-center
-                bg-gray-50
+                
                 rounded-2xl
                 mb-4
                 group-hover:bg-orange-50
@@ -191,7 +191,7 @@ export default function SkillsTabs() {
                 <img
                   src={item.icon}
                   alt={item.title}
-                  className="w-12 h-12 object-contain group-hover:scale-110 transition"
+                  className="w-20 h-20 object-contain group-hover:scale-110 transition"
                 />
               </div>
 

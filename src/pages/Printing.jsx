@@ -45,7 +45,7 @@ export default function Printing() {
           </div>
         </div>
 
-        {/* ================= SERVICES / PRINT TYPES SECTION ================= */}
+
         <div id="services" className="py-24 bg-white">
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-16">
@@ -82,7 +82,7 @@ export default function Printing() {
                 </div>
               </div>
 
-              {/* Card 2 */}
+
               <div className="group bg-white border border-gray-100 rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
                 <div className="h-64 bg-gray-200 overflow-hidden">
                   <img
@@ -105,7 +105,6 @@ export default function Printing() {
                 </div>
               </div>
 
-              {/* Card 3 */}
               <div className="group bg-white border border-gray-100 rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
                 <div className="h-64 bg-gray-200 overflow-hidden">
                   <img

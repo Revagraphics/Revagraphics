@@ -1,19 +1,35 @@
-import React from "react";
-
+import { useRef, useEffect } from "react";
+import gsap from "gsap";
+import { Link } from "react-router-dom";
 import badge1 from "../assets/batch1.png";
 import badge2 from "../assets/batch2.png";
 import itfirm from "../assets/itfirm.png";
 import goodfirm from "../assets/goodfirm.png";
-import bottomLogo from "../assets/footer-logo.png"
-import {
-  FaGithub,
-  FaFacebook,
-  FaLinkedin,
-  FaTwitter,
-  FaInstagram,
-} from "react-icons/fa";
+import bottomLogo from "../assets/footer-logo.png";
+import { FaFacebook, FaLinkedin, FaTwitter, FaInstagram } from "react-icons/fa";
 
-export default function Footer(){
+export default function Footer() {
+  const sliderRef = useRef(null);
+
+  useEffect(() => {
+    const el = sliderRef.current;
+    if (!el) return;
+
+    const isMobile = window.innerWidth < 768;
+    if (!isMobile) return;
+
+    const totalWidth = el.scrollWidth / 2;
+
+    const animation = gsap.to(el, {
+      x: -totalWidth,
+      duration: 6,
+      ease: "none",
+      repeat: -1,
+    });
+
+    return () => animation.kill();
+  }, []);
+
   return (
     <footer className="bg-[#30303c] text-zinc-300 border-t border-zinc-800">
       {/* TOP SECTION */}
@@ -35,7 +51,7 @@ export default function Footer(){
               >
                 <span className="opacity-70 group-hover:opacity-100 text-2xl">
                   📧
-                </span>
+                </span>{" "}
                 hello@example.com
               </a>
             </li>
@@ -49,7 +65,7 @@ export default function Footer(){
               >
                 <span className="opacity-70 group-hover:opacity-100 text-2xl">
                   📞
-                </span>
+                </span>{" "}
                 +91 98765 43210
               </a>
             </li>
@@ -65,7 +81,7 @@ export default function Footer(){
               >
                 <span className="opacity-70 group-hover:opacity-100 text-2xl">
                   📍
-                </span>
+                </span>{" "}
                 Delhi, India
               </a>
             </li>
@@ -129,7 +145,7 @@ export default function Footer(){
               <span className="font-medium">Facebook</span>
             </a>
 
-              <a
+            <a
               href="https://www.linkedin.com/company/werevagraphics"
               className="group flex items-center gap-3 text-zinc-400 hover:text-orange-400 
                        transition-all duration-300 hover:scale-105"
@@ -172,37 +188,48 @@ export default function Footer(){
               </p>
             </div>
 
-            {/* BADGES */}
-            <div className="flex flex-wrap justify-center gap-8 items-center">
-              <img
-                src={badge1}
-                alt="Top App Development"
-                className="h-28 opacity-80 hover:opacity-100 hover:scale-110 transition-all duration-300"
-              />
+            {/* MOBILE: GSAP CAROUSEL */}
+            <div className="block md:hidden w-screen relative -mx-[50vw] overflow-hidden">
+              <div
+                ref={sliderRef}
+                className="flex gap-10 w-max items-center px-6"
+              >
+                {[
+                  badge1,
+                  badge2,
+                  itfirm,
+                  goodfirm,
+                  badge1,
+                  badge2,
+                  itfirm,
+                  goodfirm,
+                ].map((img, i) => (
+                  <img
+                    key={i}
+                    src={img}
+                    alt={`badge-${i}`}
+                    className="h-20 opacity-80"
+                  />
+                ))}
+              </div>
+            </div>
 
-              <img
-                src={badge2}
-                alt="Top Web Design"
-                className="h-28 opacity-80 hover:opacity-100 hover:scale-110 transition-all duration-300"
-              />
-
-              <img
-                src={itfirm}
-                alt="Top Developer"
-                className="h-28 opacity-80 hover:opacity-100 hover:scale-110 transition-all duration-300"
-              />
-
-              <img
-                src={goodfirm}
-                alt="Best IT Company"
-                className="h-28 opacity-80 hover:opacity-100 hover:scale-110 transition-all duration-300"
-              />
+            {/* DESKTOP: NORMAL GRID */}
+            <div className="hidden md:flex flex-wrap justify-center gap-8 items-center">
+              {[badge1, badge2, itfirm, goodfirm].map((img, i) => (
+                <img
+                  key={i}
+                  src={img}
+                  alt={`badge-${i}`}
+                  className="h-28 opacity-80 hover:opacity-100 hover:scale-110 transition-all duration-300"
+                />
+              ))}
             </div>
 
             {/* CTA BUTTON */}
             <div>
-              <a
-                href="#"
+              <Link
+                to="/contact"
                 className="inline-flex items-center gap-3
                          bg-orange-500 hover:bg-orange-600
                          px-8 py-4 rounded-xl
@@ -210,7 +237,7 @@ export default function Footer(){
                          shadow-lg hover:shadow-orange-500/40 hover:scale-105"
               >
                 Our Brochure →
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -227,9 +254,8 @@ export default function Footer(){
           <p>
             © {new Date().getFullYear()}{" "}
             <span className="hover:text-orange-400 transition-colors">
-              <a href="">Reva Graphics</a>
-            </span>
-            . All rights reserved
+              <a href="https://revagraphics.com/">Reva Graphics</a>
+            </span> All rights reserved
           </p>
 
           <p className="flex items-center gap-2">
@@ -241,5 +267,4 @@ export default function Footer(){
     </footer>
   );
 };
-
 

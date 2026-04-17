@@ -1,7 +1,6 @@
-// src/components/ContactSection.tsx
 import { useState } from 'react';
 
-export default function ContactSection(){
+export default function Feedback()  {
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -17,190 +16,186 @@ export default function ContactSection(){
     const { name, value, type, checked } = e.target;
     setFormData(prev => ({
       ...prev,
-      [name]: type === 'checkbox' ? checked : value
+      [name]: type === 'checkbox' ? checked : value,
     }));
   };
 
-const handleSubmit = (e) => {
-  e.preventDefault();
-
-  const phoneNum = "918368769364";
-
-  const message = Object.entries(formData)
-    .map(([key, value]) => `${key}: ${value}`)
-    .join('\n');
-
-  const encodedMessage = encodeURIComponent(message);
-
-  const whatsappUrl = `https://wa.me/${phoneNum}?text=${encodedMessage}`;
-
-  window.open(whatsappUrl, "_blank");
-};
-
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const phoneNum = "919958503650";
+    const message = Object.entries(formData)
+      .map(([key, value]) => `${key}: ${value}`)
+      .join('\n');
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/${phoneNum}?text=${encodedMessage}`;
+    window.open(whatsappUrl, "_blank");
+  };
 
   return (
-    <div className="max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <div className="grid lg:grid-cols-2 gap-10 lg:gap-16">
-        
-        {/* ==================== LEFT SIDE - About + Team ==================== */}
-        <div className="space-y-12">
-          
-          {/* About Company */}
-          <div>
-            <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-6">
-              About Reva
-            </h2>
-            <div className="prose text-gray-600 leading-relaxed text-base md:text-lg">
-              <p>
-                We are a creative design and technology studio passionate about building 
-                unique brands and exceptional digital experiences. With expertise in branding, 
-                web development, and marketing, we help businesses stand out and connect with their customers.
-              </p>
-            </div>
-          </div>
+    <section className="w-full min-h-screen bg-gray-50 py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto">
 
-          {/* Technical Team Contact */}
-          <div>
-            <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-8">
-              Talk to Our Technical Team
-            </h2>
-
-            <div className="space-y-8">
-              {/* Sales Department */}
-              <div className="flex flex-col sm:flex-row gap-5">
-                <div className="w-12 h-12 bg-orange-100 rounded-2xl flex items-center justify-center text-3xl flex-shrink-0 mx-auto sm:mx-0">
-                  📞
-                </div>
-                <div className="text-center sm:text-left">
-                  <p className="font-medium text-gray-900 text-lg">Sales Department</p>
-                  <a 
-                    href="tel:+919958503650" 
-                    className="text-xl md:text-2xl font-semibold text-gray-800 hover:text-orange-600 transition"
-                  >
-                    +91 995 850 3650
-                  </a>
-                  <p className="text-gray-500 mt-1">For project inquiries &amp; business</p>
-                </div>
-              </div>
-
-              {/* Technical Department */}
-              <div className="flex flex-col sm:flex-row gap-5">
-                <div className="w-12 h-12 bg-orange-100 rounded-2xl flex items-center justify-center text-3xl flex-shrink-0 mx-auto sm:mx-0">
-                  📞
-                </div>
-                <div className="text-center sm:text-left">
-                  <p className="font-medium text-gray-900 text-lg">Technical Department</p>
-                  <a 
-                    href="tel:+919310711788" 
-                    className="text-xl md:text-2xl font-semibold text-gray-800 hover:text-orange-600 transition"
-                  >
-                    +91 9310 711 788
-                  </a>
-                  <p className="text-gray-500 mt-1">For technical support &amp; development</p>
-                </div>
-              </div>
-
-              {/* Emails */}
-              <div className="pt-6 border-t border-gray-200 space-y-4">
-                <div className="text-center sm:text-left">
-                  <p className="text-sm text-gray-500">Sales Email</p>
-                  <a 
-                    href="mailto:nverma@revagraphics.com" 
-                    className="text-gray-700 hover:text-orange-600 break-all"
-                  >
-                    nverma@revagraphics.com
-                  </a>
-                </div>
-                <div className="text-center sm:text-left">
-                  <p className="text-sm text-gray-500">Technical Email</p>
-                  <a 
-                    href="mailto:revagraphicss@gmail.com" 
-                    className="text-gray-700 hover:text-orange-600 break-all"
-                  >
-                    revagraphicss@gmail.com
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
+        {/* Section Header */}
+        <div className="text-center mb-10 sm:mb-14">
+          <span className="inline-block text-xs sm:text-sm font-semibold tracking-widest text-orange-500 uppercase mb-3">
+            Get In Touch
+          </span>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+            Let's Build Something <span className="text-orange-500">Great</span>
+          </h1>
         </div>
 
-        {/* ==================== RIGHT SIDE - Form ==================== */}
-        <div className="bg-white rounded-3xl p-6 sm:p-8 md:p-10 shadow-sm border border-gray-100">
-          <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-8 text-center lg:text-left">
-            Send Your Inquiry
-          </h2>
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 items-start">
 
-          <form onSubmit={handleSubmit} className="space-y-6">
-            {/* First Row */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div>
+          {/* ===== LEFT SIDE ===== */}
+          <div className="lg:col-span-2 space-y-6 sm:space-y-8">
+
+            {/* About */}
+            <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-gray-100">
+              <h2 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-3">
+                About Reva
+              </h2>
+              <p className="text-gray-500 leading-relaxed text-sm sm:text-base">
+                We are a creative design and technology studio passionate about building
+                unique brands and exceptional digital experiences. With expertise in branding,
+                web development, and marketing, we help businesses stand out and connect
+                with their customers.
+              </p>
+            </div>
+
+            {/* Contact Details */}
+            <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-gray-100">
+              <h2 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-6">
+                Talk to Our Team
+              </h2>
+
+              <div className="space-y-6">
+
+                {/* Sales */}
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-orange-50 rounded-xl flex items-center justify-center text-xl flex-shrink-0">
+                    📞
+                  </div>
+                  <div className="min-w-0">
+                    <p className="font-medium text-gray-900 text-sm sm:text-base">Sales Department</p>
+                    <a
+                      href="tel:+919958503650"
+                      className="text-base sm:text-lg font-semibold text-gray-800 hover:text-orange-600 transition-colors block truncate"
+                    >
+                      +91 995 850 3650
+                    </a>
+                    <p className="text-xs sm:text-sm text-gray-400 mt-0.5">Project inquiries &amp; business</p>
+                  </div>
+                </div>
+
+                {/* Technical */}
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-orange-50 rounded-xl flex items-center justify-center text-xl flex-shrink-0">
+                    🛠️
+                  </div>
+                  <div className="min-w-0">
+                    <p className="font-medium text-gray-900 text-sm sm:text-base">Technical Department</p>
+                    <a
+                      href="tel:+919310711788"
+                      className="text-base sm:text-lg font-semibold text-gray-800 hover:text-orange-600 transition-colors block truncate"
+                    >
+                      +91 9310 711 788
+                    </a>
+                    <p className="text-xs sm:text-sm text-gray-400 mt-0.5">Technical support &amp; development</p>
+                  </div>
+                </div>
+
+                {/* Emails */}
+                <div className="pt-5 border-t border-gray-100 space-y-3">
+                  <div>
+                    <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-0.5">Sales Email</p>
+                    <a
+                      href="mailto:nverma@revagraphics.com"
+                      className="text-sm sm:text-base text-gray-700 hover:text-orange-600 transition-colors break-all"
+                    >
+                      nverma@revagraphics.com
+                    </a>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-0.5">Technical Email</p>
+                    <a
+                      href="mailto:revagraphicss@gmail.com"
+                      className="text-sm sm:text-base text-gray-700 hover:text-orange-600 transition-colors break-all"
+                    >
+                      revagraphicss@gmail.com
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* ===== RIGHT SIDE - Form ===== */}
+          <div className="lg:col-span-3 bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 shadow-sm border border-gray-100">
+            <h2 className="text-2xl sm:text-3xl font-semibold text-gray-900 mb-6 sm:mb-8">
+              Send Your Inquiry
+            </h2>
+
+            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
+
+              {/* Row 1 */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <input
                   type="text"
                   name="fullName"
                   value={formData.fullName}
                   onChange={handleChange}
                   required
-                  className="w-full px-6 py-4 bg-gray-50 border border-gray-200 rounded-2xl focus:outline-none focus:border-orange-500 text-base placeholder-gray-400"
                   placeholder="Full Name"
+                  className="w-full px-4 sm:px-5 py-3 sm:py-4 bg-gray-50 border border-gray-200 rounded-xl sm:rounded-2xl focus:outline-none focus:border-orange-400 focus:ring-1 focus:ring-orange-200 text-sm sm:text-base placeholder-gray-400 transition"
                 />
-              </div>
-              <div>
                 <input
                   type="email"
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-6 py-4 bg-gray-50 border border-gray-200 rounded-2xl focus:outline-none focus:border-orange-500 text-base placeholder-gray-400"
                   placeholder="Email Address"
+                  className="w-full px-4 sm:px-5 py-3 sm:py-4 bg-gray-50 border border-gray-200 rounded-xl sm:rounded-2xl focus:outline-none focus:border-orange-400 focus:ring-1 focus:ring-orange-200 text-sm sm:text-base placeholder-gray-400 transition"
                 />
               </div>
-            </div>
 
-            {/* Second Row */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div>
+              {/* Row 2 */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <input
                   type="tel"
                   name="contactNumber"
                   value={formData.contactNumber}
                   onChange={handleChange}
-                  className="w-full px-6 py-4 bg-gray-50 border border-gray-200 rounded-2xl focus:outline-none focus:border-orange-500 text-base placeholder-gray-400"
                   placeholder="Contact Number"
+                  className="w-full px-4 sm:px-5 py-3 sm:py-4 bg-gray-50 border border-gray-200 rounded-xl sm:rounded-2xl focus:outline-none focus:border-orange-400 focus:ring-1 focus:ring-orange-200 text-sm sm:text-base placeholder-gray-400 transition"
                 />
-              </div>
-              <div>
                 <input
                   type="text"
                   name="skype"
                   value={formData.skype}
                   onChange={handleChange}
-                  className="w-full px-6 py-4 bg-gray-50 border border-gray-200 rounded-2xl focus:outline-none focus:border-orange-500 text-base placeholder-gray-400"
                   placeholder="Skype"
+                  className="w-full px-4 sm:px-5 py-3 sm:py-4 bg-gray-50 border border-gray-200 rounded-xl sm:rounded-2xl focus:outline-none focus:border-orange-400 focus:ring-1 focus:ring-orange-200 text-sm sm:text-base placeholder-gray-400 transition"
                 />
               </div>
-            </div>
 
-            {/* Third Row */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div>
+              {/* Row 3 */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <input
                   type="text"
                   name="subject"
                   value={formData.subject}
                   onChange={handleChange}
-                  className="w-full px-6 py-4 bg-gray-50 border border-gray-200 rounded-2xl focus:outline-none focus:border-orange-500 text-base placeholder-gray-400"
                   placeholder="Subject"
+                  className="w-full px-4 sm:px-5 py-3 sm:py-4 bg-gray-50 border border-gray-200 rounded-xl sm:rounded-2xl focus:outline-none focus:border-orange-400 focus:ring-1 focus:ring-orange-200 text-sm sm:text-base placeholder-gray-400 transition"
                 />
-              </div>
-              <div>
                 <select
                   name="interestedIn"
                   value={formData.interestedIn}
                   onChange={handleChange}
                   required
-                  className="w-full px-6 py-4 bg-gray-50 border border-gray-200 rounded-2xl focus:outline-none focus:border-orange-500 text-base text-gray-700"
+                  className="w-full px-4 sm:px-5 py-3 sm:py-4 bg-gray-50 border border-gray-200 rounded-xl sm:rounded-2xl focus:outline-none focus:border-orange-400 focus:ring-1 focus:ring-orange-200 text-sm sm:text-base text-gray-500 transition appearance-none cursor-pointer"
                 >
                   <option value="">Interested in</option>
                   <option value="branding">Branding</option>
@@ -210,56 +205,57 @@ const handleSubmit = (e) => {
                   <option value="other">Other</option>
                 </select>
               </div>
-            </div>
 
-            {/* Message */}
-            <div>
+              {/* Message */}
               <textarea
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
                 required
-                rows="6"
-                className="w-full px-6 py-4 bg-gray-50 border border-gray-200 rounded-3xl focus:outline-none focus:border-orange-500 text-base placeholder-gray-400 resize-y"
+                rows={5}
                 placeholder="Tell us more about your project..."
+                className="w-full px-4 sm:px-5 py-3 sm:py-4 bg-gray-50 border border-gray-200 rounded-xl sm:rounded-2xl focus:outline-none focus:border-orange-400 focus:ring-1 focus:ring-orange-200 text-sm sm:text-base placeholder-gray-400 resize-y transition"
               />
-            </div>
 
-            {/* Checkbox */}
-            <div className="flex items-start gap-3">
-              <input
-                type="checkbox"
-                name="agree"
-                checked={formData.agree}
-                onChange={handleChange}
-                required
-                className="mt-1.5 w-5 h-5 accent-orange-500 cursor-pointer"
-              />
-              <label className="text-sm text-gray-600 leading-relaxed">
-                I agree to the{" "}
-                <a href="#" className="text-orange-600 hover:underline">
-                  Terms & Conditions
-                </a>{" "}
-                of Reva.
-              </label>
-            </div>
+              {/* Checkbox */}
+              <div className="flex items-start gap-3">
+                <input
+                  type="checkbox"
+                  name="agree"
+                  id="agree"
+                  checked={formData.agree}
+                  onChange={handleChange}
+                  required
+                  className="mt-1 w-4 h-4 sm:w-5 sm:h-5 accent-orange-500 cursor-pointer flex-shrink-0"
+                />
+                <label htmlFor="agree" className="text-xs sm:text-sm text-gray-500 leading-relaxed cursor-pointer">
+                  I agree to the{" "}
+                  <a href="#" className="text-orange-500 hover:underline font-medium">
+                    Terms &amp; Conditions
+                  </a>{" "}
+                  of Reva.
+                </label>
+              </div>
 
-            {/* Submit Button */}
-            <button
-              type="submit"
-              className="w-full bg-orange-500 hover:bg-orange-600 active:bg-orange-700 transition-all text-white font-semibold text-lg py-4 rounded-2xl mt-2"
-            >
-              Send your inquiry →
-            </button>
+              {/* Submit */}
+              <button
+                type="submit"
+                className="w-full bg-orange-500 hover:bg-orange-600 active:scale-[0.98] transition-all text-white font-semibold text-sm sm:text-base lg:text-lg py-3.5 sm:py-4 rounded-xl sm:rounded-2xl mt-1 shadow-sm shadow-orange-200"
+              >
+                Send your inquiry →
+              </button>
 
-            {/* Privacy Note */}
-            <div className="flex items-center justify-center gap-2 text-sm text-gray-500 pt-2">
-              <span>🔒</span>
-              We hate spam, and we respect your privacy.
-            </div>
-          </form>
+              {/* Privacy */}
+              <p className="flex items-center justify-center gap-1.5 text-xs sm:text-sm text-gray-400 pt-1">
+                <span>🔒</span> We hate spam, and we respect your privacy.
+              </p>
+
+            </form>
+          </div>
+
         </div>
       </div>
-    </div>
+    </section>
   );
 };
+
