@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import Lenis from "lenis";
 import { lazy, Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 const Home = lazy(() => import("./pages/Home"));
 const About = lazy(() => import("./pages/About"));
@@ -46,6 +47,7 @@ const App = () => {
   {/* Global Components */}
   <BubbleBlower />
   <AutoScrollTop />
+  <SpeedInsights />
 
   {/* ✅ FIXED */}
   <Suspense fallback={<div className="p-10">Loading...</div>}>
