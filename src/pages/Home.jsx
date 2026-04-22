@@ -20,9 +20,8 @@ import logo4 from "../assets/customer-logo-4.png";
 // import logo5 from "../assets/customer-logo-5.png";
 import logo6 from "../assets/customer-logo-6.png";
 import logo7 from "../assets/customer-logo-7.png";
-import logo8 from "../assets/Frenzy-01.png";
+import logo8 from "../assets/FRENZY-01.png";
 import logo9 from "../assets/customer-logo-10.png";
-
 import badge1 from "../assets/badge-1.png";
 import badge2 from "../assets/badge22.png";
 import badge3 from "../assets/badge-3.png";
