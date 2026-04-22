@@ -24,7 +24,7 @@ import express from "../assets/Laravel.svg";
 import postgre from "../assets/postgresql.svg";
 import python from "../assets/python.svg";
 import aws from "../assets/aws.svg";
-import react from "../assets/React.svg";
+import react from "../assets/react-js.svg";
 import adobe1 from "../assets/after-effect.svg";
 import adobe2 from "../assets/premier.svg";
 import adobe3 from "../assets/final.png";
