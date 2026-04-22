@@ -7,73 +7,67 @@ import gsap from "gsap";
 import photoshop from "../assets/photoshop.svg";
 import Adob from "../assets/ex.svg";
 import Invision from "../assets/illustrator.svg";
+import figma from "../assets/Figma.svg";
 import Indesign from "../assets/indesign.svg";
 import Bootstrap from "../assets/bootstrap.svg";
 import htm from "../assets/html-5.svg";
 import js from "../assets/vuejs.svg";
 import css from "../assets/css.svg";
 import tailwind from "../assets/tailwindcss.svg";
-import sketch from "../assets/sketch.svg";
+
 import mongodb from "../assets/mongodb.svg";
 import mariadb from "../assets/mariadb.svg";
 import redis from "../assets/redis.svg";
 import mysql from "../assets/mysql.svg";
-import oracle from "../assets/oracle.svg";
-import express from "../assets/express.svg";
+import oracle from "../assets/php.svg";
+import express from "../assets/Laravel.svg";
 import postgre from "../assets/postgresql.svg";
 import python from "../assets/python.svg";
 import aws from "../assets/aws.svg";
-import wordpress from "../assets/wordpress.svg";
-import woocommerce from "../assets/woocommerce.svg";
-import bigcommerce from "../assets/bigcommerce.svg";
-import joomla from "../assets/joomla.svg";
-import wix from "../assets/wix.svg";
-import drupal from "../assets/drupal.svg";
-import shopify from "../assets/shopify.svg";
-import majento from "../assets/magento.svg";
-import react from "../assets/react-js.svg";
+import react from "../assets/React.svg";
+import adobe1 from "../assets/after-effect.svg";
+import adobe2 from "../assets/premier.svg";
+import adobe3 from "../assets/final.png";
+import adobe4 from "../assets/Davinci.png";
 
 /* ---------------- DATA ---------------- */
 
 const techData = {
   design: [
-    { title: "Figma", icon: Indesign },
-    { title: "Adobe XD", icon: Adob },
-    { title: "Sketch", icon: sketch },
-    { title: "InVision", icon: Invision },
     { title: "Photoshop", icon: photoshop },
+    { title: "Figma", icon: figma },
+    { title: "Indesign", icon: Indesign },
+    { title: "Adobe XD", icon: Adob },
+    { title: "Illustrator", icon: Invision },
+    
   ],
 
   frontend: [
     { title: "React", icon: react },
+    { title: "Tailwind", icon: tailwind },
     { title: "HTML", icon: htm },
     { title: "CSS", icon: css },
-    { title: "Tailwind", icon: tailwind },
     { title: "Bootstrap", icon: Bootstrap },
     { title: "JavaScript", icon: js },
   ],
 
   backend: [
     { title: "Python", icon: python },
-    { title: "Redis", icon: redis },
+    { title: "Cordinator", icon: redis },
     { title: "MariaDB", icon: mariadb },
     { title: "MongoDB", icon: mongodb },
-    { title: "Express", icon: express },
+    { title: "Laravel", icon: express },
     { title: "MySQL", icon: mysql },
     { title: "PostgreSQL", icon: postgre },
-    { title: "Oracle", icon: oracle },
+    { title: "PHP", icon: oracle },
     { title: "AWS-RDS", icon: aws },
   ],
 
-  cms: [
-    { title: "WordPress", icon: wordpress },
-    { title: "Joomla", icon: joomla },
-    { title: "Magento", icon: majento },
-    { title: "Shopify", icon: shopify },
-    { title: "Drupal", icon: drupal },
-    { title: "Wix", icon: wix },
-    { title: "WooCommerce", icon: woocommerce },
-    { title: "BigCommerce", icon: bigcommerce },
+  video: [
+    { title: "Adobe After Effect", icon: adobe1 },
+    { title: "Adobe Premire Pro", icon: adobe2 },
+    { title: "Final Cut", icon: adobe3 },
+    { title: "Davinci Resolve", icon: adobe4 },
   ],
 };
 
@@ -81,7 +75,7 @@ const tabs = [
   { key: "design", name: "Design" },
   { key: "frontend", name: "Frontend" },
   { key: "backend", name: "Backend" },
-  { key: "cms", name: "CMS" },
+  { key: "video", name: "Video" },
 ];
 
 /* ---------------- COMPONENT ---------------- */
@@ -168,8 +162,8 @@ export default function SkillsTabs(){
                 tech-card
                 group
                 bg-white
-                rounded-2xl
-                p-6
+                rounded-3xl
+                p-10
                 text-center
                 flex flex-col
                 items-center
@@ -180,22 +174,22 @@ export default function SkillsTabs(){
               "
             >
               <div className="
-                w-20 h-20
+                w-32 h-32
                 flex items-center justify-center
                 
-                rounded-2xl
-                mb-4
+                rounded-3xl
+                mb-6
                 group-hover:bg-orange-50
                 transition
               ">
                 <img
                   src={item.icon}
                   alt={item.title}
-                  className="w-20 h-20 object-contain group-hover:scale-110 transition"
+                  className="w-28 h-28 object-contain group-hover:scale-110 transition"
                 />
               </div>
 
-              <p className="font-medium text-gray-800 text-lg">
+              <p className="font-semibold text-gray-800 text-xl">
                 {item.title}
               </p>
             </div>

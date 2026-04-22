@@ -5,8 +5,6 @@ export default function Feedback()  {
     fullName: '',
     email: '',
     contactNumber: '',
-    skype: '',
-    subject: '',
     interestedIn: '',
     message: '',
     agree: false,
@@ -51,7 +49,7 @@ export default function Feedback()  {
           <div className="lg:col-span-2 space-y-6 sm:space-y-8">
 
             {/* About */}
-            <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-gray-100">
+            {/* <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-gray-100">
               <h2 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-3">
                 About Reva
               </h2>
@@ -61,7 +59,7 @@ export default function Feedback()  {
                 web development, and marketing, we help businesses stand out and connect
                 with their customers.
               </p>
-            </div>
+            </div> */}
 
             {/* Contact Details */}
             <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-gray-100">
@@ -170,41 +168,32 @@ export default function Feedback()  {
                   placeholder="Contact Number"
                   className="w-full px-4 sm:px-5 py-3 sm:py-4 bg-gray-50 border border-gray-200 rounded-xl sm:rounded-2xl focus:outline-none focus:border-orange-400 focus:ring-1 focus:ring-orange-200 text-sm sm:text-base placeholder-gray-400 transition"
                 />
-                <input
-                  type="text"
-                  name="skype"
-                  value={formData.skype}
-                  onChange={handleChange}
-                  placeholder="Skype"
-                  className="w-full px-4 sm:px-5 py-3 sm:py-4 bg-gray-50 border border-gray-200 rounded-xl sm:rounded-2xl focus:outline-none focus:border-orange-400 focus:ring-1 focus:ring-orange-200 text-sm sm:text-base placeholder-gray-400 transition"
-                />
+                <div className="relative">
+                  <select
+                    name="interestedIn"
+                    value={formData.interestedIn}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 sm:px-5 py-3 sm:py-4 bg-gray-50 border border-gray-200 rounded-xl sm:rounded-2xl focus:outline-none focus:border-orange-400 focus:ring-1 focus:ring-orange-200 text-sm sm:text-base text-gray-500 transition appearance-none cursor-pointer pr-10"
+                  >
+                    <option value="">Interested in</option>
+                    <option value="branding">Branding</option>
+                    <option value="web-development">Web Development</option>
+                    <option value="marketing">Marketing</option>
+                    <option value="consulting">Consulting</option>
+                    <option value="other">Other</option>
+                  </select>
+                  <svg
+                    className="absolute right-3 sm:right-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                  </svg>
+                </div>
               </div>
 
-              {/* Row 3 */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <input
-                  type="text"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  placeholder="Subject"
-                  className="w-full px-4 sm:px-5 py-3 sm:py-4 bg-gray-50 border border-gray-200 rounded-xl sm:rounded-2xl focus:outline-none focus:border-orange-400 focus:ring-1 focus:ring-orange-200 text-sm sm:text-base placeholder-gray-400 transition"
-                />
-                <select
-                  name="interestedIn"
-                  value={formData.interestedIn}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 sm:px-5 py-3 sm:py-4 bg-gray-50 border border-gray-200 rounded-xl sm:rounded-2xl focus:outline-none focus:border-orange-400 focus:ring-1 focus:ring-orange-200 text-sm sm:text-base text-gray-500 transition appearance-none cursor-pointer"
-                >
-                  <option value="">Interested in</option>
-                  <option value="branding">Branding</option>
-                  <option value="web-development">Web Development</option>
-                  <option value="marketing">Marketing</option>
-                  <option value="consulting">Consulting</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
 
               {/* Message */}
               <textarea

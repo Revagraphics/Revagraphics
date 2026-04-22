@@ -243,6 +243,67 @@ export default function Footer() {
         </div>
       </section>
 
+      {/* SVG Section with Animation */}
+      <section className="bg-[#30303c] text-white border-t py-2 sm:py-6 md:py-4 w-full overflow-x-auto">
+        <div className="z-[9999] flex justify-center w-full px-0 sm:px-6">
+          <svg
+            width="100%"
+            height="auto"
+            viewBox="0 0 1000 220"
+            xmlns="http://www.w3.org/2000/svg"
+            className="animated-svg w-full"
+            preserveAspectRatio="xMidYMid meet"
+            style={{
+              maxWidth: "1200px",
+              minHeight: "80px",
+              height: "auto",
+            }}
+          >
+            <defs>
+              <filter
+                id="logoShadow"
+                x="-15%"
+                y="-20%"
+                width="150%"
+                height="150%"
+              >
+                <feGaussianBlur in="SourceAlpha" stdDeviation="2.5" />
+                <feOffset dx="1" dy="2" result="offsetblur" />
+                <feComponentTransfer>
+                  <feFuncA type="linear" slope="0.55" intercept="0" />
+                </feComponentTransfer>
+                <feMerge>
+                  <feMergeNode />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+            </defs>
+
+            {/* Scaling group to ensure text is fully visible (no left/right cutoff) */}
+            {/* Scale factor 0.58 was calculated to fit "REVA GRAPHICS" (font-size 150, bold Poppins) inside the 1000-unit viewBox with safe margins */}
+            <g transform="translate(500,110) scale(0.58) translate(-500,-110)">
+              <g filter="url(#logoShadow)">
+                <text
+                  x="500"
+                  y="110"
+                  textAnchor="middle"
+                  dominantBaseline="middle"
+                  fontFamily="'Poppins', system-ui, -apple-system, sans-serif"
+                  fontSize="210"
+                  fontWeight="900"
+                  letterSpacing="-5"
+                  fill="#3d3d3d"
+                  strokeWidth="1"
+                  stroke="#fff"
+                >
+                  REVA GRAPHICS
+                </text>
+              </g>
+            </g>
+          </svg>
+        </div>
+      </section>
+
       {/* BOTTOM BAR */}
       <div className="border-t border-zinc-800">
         <div
@@ -255,7 +316,8 @@ export default function Footer() {
             © {new Date().getFullYear()}{" "}
             <span className="hover:text-orange-400 transition-colors">
               <a href="https://revagraphics.com/">Reva Graphics</a>
-            </span> All rights reserved
+            </span>{" "}
+            All rights reserved
           </p>
 
           <p className="flex items-center gap-2">
@@ -266,5 +328,4 @@ export default function Footer() {
       </div>
     </footer>
   );
-};
-
+}

@@ -19,6 +19,7 @@ const Cloud = lazy(() => import("./pages/Cloud"));
 
 import BubbleBlower from "./components/BubbleBlower";
 import AutoScrollTop from "./components/AutoScrollTop";
+import GoToTop from "./components/GoToTop";
 
 const App = () => {
   useEffect(() => {
@@ -64,6 +65,8 @@ const App = () => {
       <Route path="/cloud" element={<Cloud />} />
     </Routes>
   </Suspense>
+
+    <GoToTop />
 </Router>
 
   );

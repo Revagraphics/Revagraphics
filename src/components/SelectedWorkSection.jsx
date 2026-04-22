@@ -92,7 +92,7 @@ export default function SelectedWork() {
 
   return (
     <section className="bg-[#fddbc9] text-zinc-900 py-20 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="max-w-[90%] mx-auto px-4">
         {/* Header */}
         <div className="flex items-center justify-between flex-wrap gap-4">
           <h2 className="text-4xl font-bold leading-tight">

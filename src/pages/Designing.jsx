@@ -6,6 +6,7 @@ import Expertise from "../components/Expertise";
 import { Link } from "react-router-dom";
 import WorkFilter from "../components/WorkFilter";
 import Seo from "../components/Seo";
+import bg from "../assets/about.webp";
 
 const projectsData = [
   {
@@ -179,6 +180,49 @@ export default function designing() {
             <div className="w-px h-12 bg-gradient-to-b from-transparent via-zinc-300 to-transparent"></div>
           </div>
         </section>
+
+        <section className=" min-h-[70vh] lg:pt-24 pb-28">
+        <div className="max-w-[90%] mx-auto px-6">
+          <div className="grid lg:grid-cols-2 items-center mt-[5rem] gap-12">
+            {/* LEFT CONTENT */}
+            <div>
+              <span className="inline-block lg:text-[2rem] font-medium text-[#ff9904] mb-4">
+                Highest rated brand designing company
+              </span>
+
+              <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-6">
+                We build a unique{" "}
+                <span className="text-transparent bg-clip-text bg-orange-500">
+                  Brand
+                </span>{" "}
+                for attract the customers
+              </h1>
+
+              <p className="text-gray-500 mb-8">
+                Hire website developers from us to establish a strong online
+                presence that will concrete your path toward success.
+              </p>
+
+              <Link
+               to="/contact"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[#ff9904] text-white rounded-full font-medium hover:opacity-90 transition"
+              >
+                Let’s discuss →
+              </Link>
+
+            </div>
+
+            {/* RIGHT IMAGE */}
+            <div className="flex justify-center lg:justify-end">
+              <img
+                src={bg}
+                alt="hero"
+                className="w-full h-1/2 max-w-md object-contain"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
 
         <WorkFilter
           title="Our Creative Work"

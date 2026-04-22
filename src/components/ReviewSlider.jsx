@@ -2,8 +2,6 @@ import React, { useRef } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 
-import Hover from "./Hover";
-
 const reviews = [
   {
     id: 1,
@@ -95,7 +93,7 @@ export default function ReviewSlider() {
 
   return (
     <section className="py-20 bg-gray-50">
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="max-w-[90%] mx-auto px-4">
 
         {/* Heading */}
         <div className="text-center mb-12">
