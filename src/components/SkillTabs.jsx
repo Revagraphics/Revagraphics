@@ -19,7 +19,7 @@ import mongodb from "../assets/mongodb.svg";
 import mariadb from "../assets/mariadb.svg";
 import redis from "../assets/redis.svg";
 import mysql from "../assets/mysql.svg";
-import oracle from "../assets/php.svg";
+import oracle from "../assets/PHP.svg";
 import express from "../assets/Laravel.svg";
 import postgre from "../assets/postgresql.svg";
 import python from "../assets/python.svg";

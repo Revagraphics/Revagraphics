@@ -17,7 +17,6 @@ import logo1 from "../assets/customer-logo-1.png";
 import logo2 from "../assets/customer-logo-2.png";
 import logo3 from "../assets/customer-logo-3.png";
 import logo4 from "../assets/customer-logo-4.png";
-// import logo5 from "../assets/customer-logo-5.png";
 import logo6 from "../assets/customer-logo-6.png";
 import logo7 from "../assets/customer-logo-7.png";
 import logo8 from "../assets/FRENZY-01.png";
