@@ -1,7 +1,6 @@
 // src/App.jsx
-import { useEffect } from "react";
+import { useEffect, lazy, Suspense } from "react";
 import Lenis from "lenis";
-import { lazy, Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 const Home = lazy(() => import("./pages/Home"));
@@ -24,51 +23,57 @@ import GoToTop from "./components/GoToTop";
 const App = () => {
   useEffect(() => {
     const lenis = new Lenis({
-      smooth: true,
+      duration: 2.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      orientation: "vertical",
+      gestureOrientation: "vertical",
+      smoothWheel: true,
+      wheelMultiplier: 0.7,
+      touchMultiplier: 1.5,
     });
 
-    // make global (important)
-    window.lenis = lenis;
+    globalThis.lenis = lenis; // ✅ assign AFTER lenis is created
+
+    let rafId;
 
     function raf(time) {
       lenis.raf(time);
-      requestAnimationFrame(raf);
+      rafId = requestAnimationFrame(raf);
     }
 
-    requestAnimationFrame(raf);
+    rafId = requestAnimationFrame(raf);
 
     return () => {
+      cancelAnimationFrame(rafId);
       lenis.destroy();
+      globalThis.lenis = null; // ✅ clean up on unmount
     };
   }, []);
 
   return (
-   <Router>
-  {/* Global Components */}
-  <BubbleBlower />
-  <AutoScrollTop />
+    <Router>
+      <BubbleBlower />
+      <AutoScrollTop />
 
-  {/* ✅ FIXED */}
-  <Suspense fallback={<div className="p-10">Loading...</div>}>
-    <Routes>
-      <Route path="*" element={<NotFound />} />
-      <Route path="/" element={<Home />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/portfolio" element={<Portfolio />} />
-      <Route path="/branding" element={<ProductIdentity />} />
-      <Route path="/content" element={<Content />} />
-      <Route path="/marketing" element={<Marketing />} />
-      <Route path="/contact" element={<Contact />} />
-      <Route path="/development" element={<Development />} />
-      <Route path="/designing" element={<Designing />} />
-      <Route path="/printing" element={<Printing />} />
-      <Route path="/cloud" element={<Cloud />} />
-    </Routes>
-  </Suspense>
+      <Suspense fallback={<div className="p-10">Loading...</div>}>
+        <Routes>
+          <Route path="*" element={<NotFound />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/branding" element={<ProductIdentity />} />
+          <Route path="/content" element={<Content />} />
+          <Route path="/marketing" element={<Marketing />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/development" element={<Development />} />
+          <Route path="/designing" element={<Designing />} />
+          <Route path="/printing" element={<Printing />} />
+          <Route path="/cloud" element={<Cloud />} />
+        </Routes>
+      </Suspense>
 
-    <GoToTop />
-</Router>
-
+      <GoToTop />
+    </Router>
   );
 };
 

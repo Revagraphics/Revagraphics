@@ -44,7 +44,7 @@ export default function  SelectedWork() {
       ease: "none",
       repeat: -1,
       modifiers: {
-        x: gsap.utils.unitize((x) => parseFloat(x) % -totalWidth),
+        x: gsap.utils.unitize((x) => Number.parseFloat(x) % -totalWidth),
       },
     });
 
@@ -77,8 +77,7 @@ export default function  SelectedWork() {
             to="/portfolio"
             className="group inline-flex items-center gap-2 text-sm sm:text-base font-medium text-gray-500 hover:text-orange-500 transition-colors duration-300 self-start sm:self-auto"
           >
-            View All Projects
-            <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
+            View All Projects<span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
           </Link>
         </div>
 
@@ -125,8 +124,7 @@ export default function  SelectedWork() {
             to="/portfolio"
             className="group inline-flex items-center gap-2 px-6 py-3 text-base font-medium text-gray-700 hover:text-orange-500 transition-all duration-300 border border-gray-300 hover:border-orange-400 rounded-2xl"
           >
-            View All Projects
-            <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
+            View All Projects<span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
           </Link>
         </div>
 

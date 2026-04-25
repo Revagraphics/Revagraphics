@@ -36,7 +36,7 @@ export default function Animated({
 
   return (
     <Tag ref={ref} className={`overflow-hidden ${className}`} {...props}>
-      {letters.map((letter, i) => (
+      {letters.map((letter) => (
         <span key={i} className="inline-block will-change-transform">
           {letter === " " ? "\u00A0" : letter}
         </span>

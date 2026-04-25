@@ -5,11 +5,8 @@ export default function AutoScrollTop() {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    if (window.lenis) {
-      // 🔥 correct way
-      window.lenis.scrollTo(0, {
-        duration: 0, // instant jump (no lag)
-      });
+    if (globalThis.lenis) {
+      globalThis.lenis.scrollTo(0, { immediate: true });
     } else {
       window.scrollTo(0, 0);
     }

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 
 export default function WorkFilter({
   title = "Our Latest Work",
@@ -65,9 +66,9 @@ export default function WorkFilter({
         {/* Projects Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {filteredProjects.length > 0 ? (
-            filteredProjects.map((project, index) => (
+            filteredProjects.map((project) => (
               <div
-                key={index}
+                key={project.id}
                 className="group relative overflow-hidden rounded-3xl shadow-md hover:shadow-2xl transition-all duration-500 bg-white"
               >
                 {/* Image Container */}
@@ -119,4 +120,20 @@ export default function WorkFilter({
       </div>
     </section>
   );
+}
+
+WorkFilter.propTypes = {
+  title: PropTypes.string,
+  subtitle: PropTypes.string,
+  projects: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.any,
+      title: PropTypes.string,
+      description: PropTypes.string,
+      image: PropTypes.string,
+      categories: PropTypes.string,
+      link: PropTypes.string,
+    }),
+  ),
+  categories: PropTypes.arrayOf(PropTypes.string),
 };

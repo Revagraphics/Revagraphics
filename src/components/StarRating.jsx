@@ -48,6 +48,7 @@ const reviews = [
   },
 ];
 
+/* ⭐ STAR RATING */
 function StarRating({ count, color }) {
   return (
     <div className="flex gap-1 mb-5">
@@ -58,7 +59,6 @@ function StarRating({ count, color }) {
           height="20"
           viewBox="0 0 20 20"
           fill={color}
-          xmlns="http://www.w3.org/2000/svg"
         >
           <path d="M10 1l2.39 4.84 5.34.78-3.86 3.76.91 5.32L10 13.27l-4.78 2.51.91-5.32L2.27 6.62l5.34-.78L10 1z" />
         </svg>
@@ -70,6 +70,7 @@ function StarRating({ count, color }) {
 export default function ReviewCard() {
   const [active, setActive] = useState(0);
   const [animating, setAnimating] = useState(false);
+
   const cardRef = useRef(null);
   const quoteRef = useRef(null);
   const authorRef = useRef(null);
@@ -78,57 +79,56 @@ export default function ReviewCard() {
   const accentBarRef = useRef(null);
   const dotsRef = useRef([]);
 
-  const review = reviews[active];
+  const review = reviews[active] || reviews[0];
 
-  // Entrance animation on mount
+  /* ================= ENTRANCE ================= */
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         cardRef.current,
         { opacity: 0, y: 60, scale: 0.96 },
-        { opacity: 1, y: 0, scale: 1, duration: 0.9, ease: "expo.out" },
+        { opacity: 1, y: 0, scale: 1, duration: 0.9, ease: "expo.out" }
       );
+
       gsap.fromTo(
         starsRef.current,
         { opacity: 0, x: -20 },
-        { opacity: 1, x: 0, duration: 0.6, delay: 0.3, ease: "power3.out" },
+        { opacity: 1, x: 0, duration: 0.6, delay: 0.3 }
       );
+
       gsap.fromTo(
         quoteRef.current,
         { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 0.7, delay: 0.45, ease: "power3.out" },
+        { opacity: 1, y: 0, duration: 0.7, delay: 0.45 }
       );
+
       gsap.fromTo(
         authorRef.current,
         { opacity: 0, y: 14 },
-        { opacity: 1, y: 0, duration: 0.6, delay: 0.6, ease: "power3.out" },
+        { opacity: 1, y: 0, duration: 0.6, delay: 0.6 }
       );
+
       gsap.fromTo(
         imageRef.current,
         { opacity: 0, scale: 1.08, x: 30 },
-        {
-          opacity: 1,
-          scale: 1,
-          x: 0,
-          duration: 1,
-          delay: 0.2,
-          ease: "expo.out",
-        },
+        { opacity: 1, scale: 1, x: 0, duration: 1, delay: 0.2 }
       );
+
       gsap.fromTo(
         accentBarRef.current,
         { scaleY: 0, transformOrigin: "top" },
-        { scaleY: 1, duration: 0.8, delay: 0.4, ease: "expo.out" },
+        { scaleY: 1, duration: 0.8, delay: 0.4 }
       );
     });
+
     return () => ctx.revert();
   }, []);
 
+  /* ================= SLIDE CHANGE ================= */
   const goTo = (idx) => {
     if (animating || idx === active) return;
     setAnimating(true);
 
-    // Exit animation
     const tl = gsap.timeline({
       onComplete: () => {
         setActive(idx);
@@ -141,154 +141,122 @@ export default function ReviewCard() {
       y: -18,
       stagger: 0.06,
       duration: 0.3,
-      ease: "power2.in",
     });
+
     tl.to(
       imageRef.current,
-      { opacity: 0, scale: 1.06, x: 20, duration: 0.3, ease: "power2.in" },
-      "<",
+      { opacity: 0, scale: 1.06, x: 20, duration: 0.3 },
+      "<"
     );
   };
 
-  // Enter animation after slide change
+  /* ================= ENTER ANIMATION ================= */
   useEffect(() => {
     if (animating) return;
+
     const ctx = gsap.context(() => {
       gsap.fromTo(
         starsRef.current,
         { opacity: 0, x: -16 },
-        { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" },
+        { opacity: 1, x: 0, duration: 0.5 }
       );
+
       gsap.fromTo(
         quoteRef.current,
         { opacity: 0, y: 18 },
-        { opacity: 1, y: 0, duration: 0.55, delay: 0.08, ease: "power3.out" },
+        { opacity: 1, y: 0, duration: 0.55 }
       );
+
       gsap.fromTo(
         authorRef.current,
         { opacity: 0, y: 12 },
-        { opacity: 1, y: 0, duration: 0.5, delay: 0.15, ease: "power3.out" },
+        { opacity: 1, y: 0, duration: 0.5 }
       );
+
       gsap.fromTo(
         imageRef.current,
         { opacity: 0, scale: 1.07, x: 22 },
-        { opacity: 1, scale: 1, x: 0, duration: 0.7, ease: "expo.out" },
+        { opacity: 1, scale: 1, x: 0, duration: 0.7 }
       );
+
       gsap.to(accentBarRef.current, {
         backgroundColor: review.accent,
         duration: 0.5,
-        ease: "power2.inOut",
       });
     });
+
     return () => ctx.revert();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [active]);
 
-  // Dot hover effect
+  /* ================= DOT ANIMATION ================= */
   const handleDotHover = (idx) => {
-    gsap.to(dotsRef.current[idx], {
-      scale: 1.5,
-      duration: 0.2,
-      ease: "back.out",
-    });
+    if (!dotsRef.current[idx]) return;
+    gsap.to(dotsRef.current[idx], { scale: 1.5, duration: 0.2 });
   };
+
   const handleDotLeave = (idx) => {
-    gsap.to(dotsRef.current[idx], {
-      scale: 1,
-      duration: 0.2,
-      ease: "back.out",
-    });
+    if (!dotsRef.current[idx]) return;
+    gsap.to(dotsRef.current[idx], { scale: 1, duration: 0.2 });
   };
 
   return (
-    <div className="min-h-[80vh] bg-[#F0EDE8] flex flex-col items-center justify-center p-6 font-sans">
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@400;500&display=swap');
-        .font-display { font-family: 'Playfair Display', serif; }
-        .font-body { font-family: 'DM Sans', sans-serif; }
-      `}</style>
-
-      <h2 className="font-display text-4xl md:text-5xl font-bold text-gray-900 mb-16 text-center">
+    <div className="min-h-[80vh] bg-[#F0EDE8] flex flex-col items-center justify-center p-6">
+      <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-16 text-center">
         What Our Clients Say
       </h2>
 
       <div
         ref={cardRef}
-        className="relative w-full max-w-3xl bg-white rounded-3xl shadow-2xl overflow-hidden font-body
-             flex flex-col sm:flex-row"
-        style={{ minHeight: 320 }}
+        className="relative w-full max-w-3xl bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col sm:flex-row"
       >
-        {/* Accent bar */}
+        {/* Accent Bar */}
         <div
           ref={accentBarRef}
-          className="absolute left-0 top-0 bottom-0 w-1.5 rounded-l-3xl z-10"
-          style={{
-            backgroundColor: review.accent,
-            transition: "background-color 0.5s",
-          }}
+          className="absolute left-0 top-0 bottom-0 w-1.5"
+          style={{ backgroundColor: review.accent }}
         />
 
-        {/* Image — top on mobile, right on desktop */}
-        <div
-          ref={imageRef}
-          className="relative w-full h-56 flex-shrink-0 overflow-hidden
-               sm:w-64 sm:h-auto sm:rounded-r-3xl sm:rounded-tl-none rounded-t-3xl"
-        >
+        {/* Image */}
+        <div ref={imageRef} className="w-full h-56 sm:w-64 overflow-hidden">
           <img
             src={review.image}
             alt={review.name}
-            className="absolute inset-0 w-full h-full object-cover object-top"
-            style={{ transition: "none" }}
-          />
-          <div
-            className="absolute inset-0"
-            style={{
-              background: `linear-gradient(to right, rgba(255,255,255,0.18) 0%, transparent 30%)`,
-            }}
+            className="w-full h-full object-cover"
           />
         </div>
 
-        {/* Content — bottom on mobile, left on desktop */}
-        <div
-          className="flex-1 flex flex-col justify-between px-7 py-8 sm:px-10 sm:py-10 sm:pr-6"
-          style={{ minWidth: 0 }}
-        >
-          <div>
-            <div ref={starsRef}>
-              <StarRating count={review.rating} color={review.accent} />
-            </div>
+        {/* Content */}
+        <div className="flex-1 p-8">
+          <div ref={starsRef}>
+            <StarRating count={review.rating} color={review.accent} />
+          </div>
 
-            <blockquote
-              ref={quoteRef}
-              className="font-display text-[1.2rem] sm:text-[1.35rem] leading-snug text-gray-900 mb-7"
-              style={{ letterSpacing: "-0.01em" }}
-            >
-              "{review.quote}"
-            </blockquote>
+          <p ref={quoteRef} className="text-lg mb-6">
+            "{review.quote}"
+          </p>
 
-            <div ref={authorRef}>
-              <p className="font-semibold text-gray-900 text-sm tracking-wide">
-                {review.name}
-              </p>
-              <p className="text-gray-400 text-xs mt-0.5">{review.role}</p>
-            </div>
+          <div ref={authorRef}>
+            <p className="font-semibold">{review.name}</p>
+            <p className="text-sm text-gray-500">{review.role}</p>
           </div>
 
           {/* Dots */}
-          <div className="flex gap-2.5 mt-8">
+          <div className="flex gap-2 mt-6">
             {reviews.map((r, i) => (
               <button
                 key={r.id}
+                type="button"
                 ref={(el) => (dotsRef.current[i] = el)}
                 onClick={() => goTo(i)}
                 onMouseEnter={() => handleDotHover(i)}
                 onMouseLeave={() => handleDotLeave(i)}
-                className="w-2.5 h-2.5 rounded-full border-2 transition-colors duration-300 outline-none focus:outline-none"
+                className="w-3 h-3 rounded-full border-2"
                 style={{
-                  backgroundColor: i === active ? review.accent : "transparent",
-                  borderColor: i === active ? review.accent : "#CBD5E1",
+                  backgroundColor:
+                    i === active ? review.accent : "transparent",
+                  borderColor:
+                    i === active ? review.accent : "#ccc",
                 }}
-                aria-label={`Go to review ${i + 1}`}
               />
             ))}
           </div>

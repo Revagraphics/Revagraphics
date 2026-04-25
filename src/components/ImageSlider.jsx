@@ -9,7 +9,12 @@ import bg4 from "../assets/big-slider8.webp";
 
 gsap.registerPlugin(Draggable);
 
-const images = [bg1, bg2, bg3, bg4];
+const images = [
+  {id:1, img:bg1},
+  {id:2, img:bg2},
+  {id:3, img:bg3},
+  {id:4, img:bg4},
+]
 
 export default function ImageSlider(){
   const trackRef = useRef(null);
@@ -85,9 +90,9 @@ export default function ImageSlider(){
       className="flex will-change-transform select-none gap-8"
       style={{ cursor: 'grab' }}
     >
-      {images.map((src, index) => (
+      {images.map((img) => (
         <div
-          key={index}
+          key={img.id}
           className="branding_slide 
                      min-w-[420px] 
                      w-[58vh] 
@@ -101,8 +106,8 @@ export default function ImageSlider(){
                      hover:scale-[1.04] hover:shadow-3xl"
         >
           <img
-            src={src}
-            alt={`Slide ${index + 1}`}
+            src={img.img}
+            alt={`Slide ${img.id}`}
             className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
             draggable={false}
           />

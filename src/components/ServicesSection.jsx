@@ -77,9 +77,9 @@ export default function ServicesSection() {
 
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, id) => (
+          {services.map((service) => (
             <div
-              key={id}
+              key={service.id}
               className="group bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-purple-200"
             >
               {/* Icon */}

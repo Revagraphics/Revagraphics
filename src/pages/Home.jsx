@@ -73,7 +73,16 @@ export default function Home() {
     return () => ctx.revert();
   }, []);
 
-  const logos = [logo1, logo2, logo3, logo4, logo6, logo7, logo8, logo9];
+  const logos = [
+    { id: 1, logo: logo1 },
+    { id: 2, logo: logo2 },
+    { id: 3, logo: logo3 },
+    { id: 4, logo: logo4 },
+    { id: 6, logo: logo6 },
+    { id: 7, logo: logo7 },
+    { id: 8, logo: logo8 },
+    { id: 9, logo: logo9 },
+  ];
 
   return (
     <>
@@ -125,9 +134,13 @@ export default function Home() {
         {/* ================= CLIENT LOGOS ================= */}
         <section className="mt-16 overflow-hidden">
           <div ref={logosRef} className="flex gap-12 w-max items-center">
-            {[...logos, ...logos].map((logo, i) => (
+            {[...logos, ...logos].map((logo) => (
               <div className="border border-orange p-4">
-                <img key={i} src={logo} className="h-10 sm:h-12 opacity-70 " />
+                <img
+                  key={logo.id}
+                  src={logo.logo}
+                  className="h-10 sm:h-12 opacity-70 "
+                />
               </div>
             ))}
           </div>
@@ -174,8 +187,8 @@ export default function Home() {
             </div>
 
             {/* RIGHT STATS */}
-            <div className="grid grid-cols-2 gap-6 items-start">
-              {/* Left column — Projects + Team (taller cards) */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 items-start">
+              {/* Left column — Projects + Team */}
               <div className="flex flex-col gap-6">
                 {[
                   [
@@ -191,23 +204,23 @@ export default function Home() {
                 ].map(([title, value, desc]) => (
                   <div
                     key={title}
-                    className="bg-white p-8 rounded-3xl shadow hover:shadow-xl transition flex flex-col gap-3 min-h-[200px]"
+                    className="bg-white p-4 sm:p-8 rounded-3xl shadow hover:shadow-xl transition flex flex-col gap-3"
                   >
                     <span className="text-cyan-500 text-xs font-bold tracking-widest uppercase">
                       {title}
                     </span>
-                    <h3 className="text-5xl font-extrabold text-gray-900">
+                    <h3 className="text-3xl sm:text-5xl font-extrabold text-gray-900">
                       {value}
                     </h3>
-                    <p className="text-sm text-slate-500 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">
                       {desc}
                     </p>
                   </div>
                 ))}
               </div>
 
-              {/* Right column — Clients + Years (offset down) */}
-              <div className="flex flex-col gap-6 mt-10">
+              {/* Right column — Clients + Years (offset down on desktop) */}
+              <div className="flex flex-row sm:flex-col gap-6 sm:mt-10">
                 {[
                   [
                     "CLIENTS",
@@ -222,15 +235,15 @@ export default function Home() {
                 ].map(([title, value, desc]) => (
                   <div
                     key={title}
-                    className="bg-white p-8 rounded-3xl shadow hover:shadow-xl transition flex flex-col gap-3 min-h-[170px]"
+                    className="bg-white p-4 sm:p-8 rounded-3xl shadow hover:shadow-xl transition flex flex-col gap-3 flex-1 sm:flex-none"
                   >
                     <span className="text-cyan-500 text-xs font-bold tracking-widest uppercase">
                       {title}
                     </span>
-                    <h3 className="text-5xl font-extrabold text-gray-900">
+                    <h3 className="text-3xl sm:text-5xl font-extrabold text-gray-900">
                       {value}
                     </h3>
-                    <p className="text-sm text-slate-500 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">
                       {desc}
                     </p>
                   </div>

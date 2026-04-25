@@ -1,6 +1,4 @@
 import React, { useState, useRef } from "react";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
 
 /* ---------------- ICONS ---------------- */
 
@@ -33,41 +31,42 @@ import adobe4 from "../assets/Davinci.png";
 /* ---------------- DATA ---------------- */
 
 const techData = {
+
   design: [
-    { title: "Photoshop", icon: photoshop },
-    { title: "Figma", icon: figma },
-    { title: "Indesign", icon: Indesign },
-    { title: "Adobe XD", icon: Adob },
-    { title: "Illustrator", icon: Invision },
+    {id:1, title: "Photoshop", icon: photoshop },
+    {id:2, title: "Figma", icon: figma },
+    {id:3, title: "Indesign", icon: Indesign },
+    {id:4, title: "Adobe XD", icon: Adob },
+    {id:5, title: "Illustrator", icon: Invision },
     
   ],
 
   frontend: [
-    { title: "React", icon: react },
-    { title: "Tailwind", icon: tailwind },
-    { title: "HTML", icon: htm },
-    { title: "CSS", icon: css },
-    { title: "Bootstrap", icon: Bootstrap },
-    { title: "JavaScript", icon: js },
+    {id:1, title: "React", icon: react },
+    {id:2, title: "Tailwind", icon: tailwind },
+    {id:3, title: "HTML", icon: htm },
+    {id:4, title: "CSS", icon: css },
+    {id:5, title: "Bootstrap", icon: Bootstrap },
+    {id:6, title: "JavaScript", icon: js },
   ],
 
   backend: [
-    { title: "Python", icon: python },
-    { title: "Cordinator", icon: redis },
-    { title: "MariaDB", icon: mariadb },
-    { title: "MongoDB", icon: mongodb },
-    { title: "Laravel", icon: express },
-    { title: "MySQL", icon: mysql },
-    { title: "PostgreSQL", icon: postgre },
-    { title: "PHP", icon: oracle },
-    { title: "AWS-RDS", icon: aws },
+    {id:1, title: "Python", icon: python },
+    {id:2, title: "Cordinator", icon: redis },
+    {id:3, title: "MariaDB", icon: mariadb },
+    {id:4, title: "MongoDB", icon: mongodb },
+    {id:5, title: "Laravel", icon: express },
+    {id:6, title: "MySQL", icon: mysql },
+    {id:7, title: "PostgreSQL", icon: postgre },
+    {id:8, title: "PHP", icon: oracle },
+    {id:9, title: "AWS-RDS", icon: aws },
   ],
 
   video: [
-    { title: "Adobe After Effect", icon: adobe1 },
-    { title: "Adobe Premire Pro", icon: adobe2 },
-    { title: "Final Cut", icon: adobe3 },
-    { title: "Davinci Resolve", icon: adobe4 },
+    {id:1, title: "Adobe After Effect", icon: adobe1 },
+    {id:2, title: "Adobe Premire Pro", icon: adobe2 },
+    {id:3, title: "Final Cut", icon: adobe3 },
+    {id:4, title: "Davinci Resolve", icon: adobe4 },
   ],
 };
 
@@ -155,9 +154,9 @@ export default function SkillsTabs(){
             gap-8
           "
         >
-          {techData[activeTab].map((item, i) => (
+          {techData[activeTab].map((item) => (
             <div
-              key={i}
+              key={item.id}
               className="
                 tech-card
                 group

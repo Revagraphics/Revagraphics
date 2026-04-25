@@ -1,6 +1,3 @@
-import { useEffect, useRef } from "react";
-
-
 import img1 from "../assets/workflow-icon1.webp";
 import img2 from "../assets/workflow-icon2.webp";
 import img3 from "../assets/workflow-icon3.webp";

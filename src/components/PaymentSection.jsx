@@ -7,7 +7,13 @@ import py3 from "../assets/visa.webp";
 import py4 from "../assets/discover.webp";
 import py5 from "../assets/maestro.webp";
 
-const images = [py1, py2, py3, py4, py5];
+const images = [
+  {id:1, img:py1},
+  {id:2, img:py2},
+  {id:3, img:py3},
+  {id:4, img:py4},
+  {id:5, img:py5},
+];
 
 export default function PaymentSection() {
   const trackRef = useRef(null);
@@ -16,7 +22,6 @@ export default function PaymentSection() {
   useEffect(() => {
     if (!trackRef.current) return;
 
-    const cards = trackRef.current.children;
     const cardWidth = 220;           // Base card width for desktop
     const gap = 40;
     const singleSetWidth = (cardWidth + gap) * images.length;
@@ -78,9 +83,9 @@ export default function PaymentSection() {
               ref={trackRef}
               className="flex will-change-transform select-none"
             >
-              {images.map((src, index) => (
+              {images.map((image) => (
                 <div
-                  key={index}
+                  key={image.id}
                   className="flex-shrink-0 bg-zinc-100 rounded-3xl overflow-hidden shadow-xl border border-zinc-800 hover:border-zinc-600 transition-all duration-300"
                   style={{
                     width: '220px',
@@ -89,8 +94,8 @@ export default function PaymentSection() {
                   }}
                 >
                   <img
-                    src={src}
-                    alt={`Payment method ${index + 1}`}
+                    src={image.img}
+                    alt={`Payment method ${image.id}`}
                     className="w-full h-full object-contain transition-transform duration-500 hover:scale-110"
                     draggable={false}
                   />

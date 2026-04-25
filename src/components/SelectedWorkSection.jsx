@@ -11,26 +11,31 @@ import { Link } from "react-router-dom";
 
 const projects = [
   {
+    id:1,
     img: portfolio1,
     tag: "Website UI Design",
     title: "Creative and minimal dance studio website",
   },
   {
+    id:2,
     img: portfolio2,
     tag: "UX, UI, Web Development",
     title: "Creative and worldwide level development",
   },
   {
+    id:3,
     img: portfolio3,
     tag: "UX, UI, Graphic Design",
     title: "Furniture ios app kit design development",
   },
   {
+    id:4,
     img: portfolio4,
     tag: "UX, UI, Graphic Design",
     title: "Furniture ios app kit design development",
   },
   {
+    id:5,
     img: portfolio5,
     tag: "UX, UI, Web Development",
     title: "Innovative web application design",
@@ -114,9 +119,9 @@ export default function SelectedWork() {
             ref={trackRef}
             className="flex gap-6"
           >
-            {loopData.map((item, i) => (
+            {loopData.map((item) => (
               <div
-                key={i}
+                key={item.id}
                 className="min-w-[320px] bg-[#fff] backdrop-blur-lg rounded-2xl overflow-hidden shadow-xl border border-gray-700"
               >
                 <div className="overflow-hidden">

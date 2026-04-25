@@ -62,7 +62,7 @@ export default function ReviewSlider() {
       ease: "none",
       repeat: -1,
       modifiers: {
-        x: (x) => `${parseFloat(x) % totalWidth}px`,
+        x: (x) => `${Number.parseFloat(x) % totalWidth}px`,
       },
     });
 
@@ -117,9 +117,9 @@ export default function ReviewSlider() {
             ref={trackRef}
             className="flex gap-6 will-change-transform"
           >
-            {allReviews.map((review, index) => (
+            {allReviews.map((review) => (
               <div
-                key={index}
+                key={review}
                 className="min-w-[280px] md:min-w-[320px] bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition duration-300 border border-gray-100"
               >
                 {/* Top */}
