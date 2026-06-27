@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 
+import ShimmerText from "../components/ShimmerText"
+
 const reviews = [
   {
     id: 1,
@@ -202,7 +204,7 @@ export default function ReviewCard() {
   return (
     <div className="min-h-[80vh] bg-[#F0EDE8] flex flex-col items-center justify-center p-6">
       <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-16 text-center">
-        What Our Clients Say
+        What Our <ShimmerText>Prestigious</ShimmerText> Clients Say
       </h2>
 
       <div
@@ -217,7 +219,7 @@ export default function ReviewCard() {
         />
 
         {/* Image */}
-        <div ref={imageRef} className="w-full h-56 sm:w-64 overflow-hidden">
+        <div ref={imageRef} className="w-full h-full sm:w-64 overflow-hidden">
           <img
             src={review.image}
             alt={review.name}

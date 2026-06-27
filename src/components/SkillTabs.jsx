@@ -1,5 +1,9 @@
 import React, { useState, useRef } from "react";
 
+import ShimmerText from "../components/ShimmerText";
+
+import GridBg from "../components/GridBg";
+
 /* ---------------- ICONS ---------------- */
 
 import photoshop from "../assets/photoshop.svg";
@@ -31,42 +35,40 @@ import adobe4 from "../assets/Davinci.png";
 /* ---------------- DATA ---------------- */
 
 const techData = {
-
   design: [
-    {id:1, title: "Photoshop", icon: photoshop },
-    {id:2, title: "Figma", icon: figma },
-    {id:3, title: "Indesign", icon: Indesign },
-    {id:4, title: "Adobe XD", icon: Adob },
-    {id:5, title: "Illustrator", icon: Invision },
-    
+    { id: 1, title: "Photoshop", icon: photoshop },
+    { id: 2, title: "Figma", icon: figma },
+    { id: 3, title: "Indesign", icon: Indesign },
+    { id: 4, title: "Adobe XD", icon: Adob },
+    { id: 5, title: "Illustrator", icon: Invision },
   ],
 
   frontend: [
-    {id:1, title: "React", icon: react },
-    {id:2, title: "Tailwind", icon: tailwind },
-    {id:3, title: "HTML", icon: htm },
-    {id:4, title: "CSS", icon: css },
-    {id:5, title: "Bootstrap", icon: Bootstrap },
-    {id:6, title: "JavaScript", icon: js },
+    { id: 1, title: "React", icon: react },
+    { id: 2, title: "Tailwind", icon: tailwind },
+    { id: 3, title: "HTML", icon: htm },
+    { id: 4, title: "CSS", icon: css },
+    { id: 5, title: "Bootstrap", icon: Bootstrap },
+    { id: 6, title: "JavaScript", icon: js },
   ],
 
   backend: [
-    {id:1, title: "Python", icon: python },
-    {id:2, title: "Cordinator", icon: redis },
-    {id:3, title: "MariaDB", icon: mariadb },
-    {id:4, title: "MongoDB", icon: mongodb },
-    {id:5, title: "Laravel", icon: express },
-    {id:6, title: "MySQL", icon: mysql },
-    {id:7, title: "PostgreSQL", icon: postgre },
-    {id:8, title: "PHP", icon: oracle },
-    {id:9, title: "AWS-RDS", icon: aws },
+    { id: 1, title: "Python", icon: python },
+    { id: 2, title: "Cordinator", icon: redis },
+    { id: 3, title: "MariaDB", icon: mariadb },
+    { id: 4, title: "MongoDB", icon: mongodb },
+    { id: 5, title: "Laravel", icon: express },
+    { id: 6, title: "MySQL", icon: mysql },
+    { id: 7, title: "PostgreSQL", icon: postgre },
+    { id: 8, title: "PHP", icon: oracle },
+    { id: 9, title: "AWS-RDS", icon: aws },
   ],
 
   video: [
-    {id:1, title: "Adobe After Effect", icon: adobe1 },
-    {id:2, title: "Adobe Premire Pro", icon: adobe2 },
-    {id:3, title: "Final Cut", icon: adobe3 },
-    {id:4, title: "Davinci Resolve", icon: adobe4 },
+    { id: 1, title: "Adobe After Effect", icon: adobe1 },
+    { id: 2, title: "Adobe Premire Pro", icon: adobe2 },
+    { id: 3, title: "Final Cut", icon: adobe3 },
+    { id: 4, title: "Davinci Resolve", icon: adobe4 },
   ],
 };
 
@@ -79,35 +81,36 @@ const tabs = [
 
 /* ---------------- COMPONENT ---------------- */
 
-export default function SkillsTabs(){
+export default function SkillsTabs() {
   const [activeTab, setActiveTab] = useState("frontend");
   const gridRef = useRef();
 
   /* ---------- GSAP Animation ---------- */
 
-
   return (
     <section className="w-full bg-gradient-to-b from-gray-50 to-white py-20">
-      <div className="max-w-7xl mx-auto px-6">
+      <GridBg gridSize={50} lineColor="#f5f1ed" bgColor="#fff">
 
+      <div className="max-w-7xl mx-auto px-6">
         {/* ---------------- HEADING ---------------- */}
 
         <div className="text-center mb-14">
-          <h2 className="text-4xl font-bold text-gray-900">
-            Technologies We{" "}
-            <span className="text-[#ff6726]">Work With</span>
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900">
+            <ShimmerText>Technologies</ShimmerText> We
+            <span>Work With</span>
           </h2>
 
           <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
-            We leverage modern technologies to build scalable,
-            high-performance digital experiences.
+            We leverage modern technologies to build scalable, high-performance
+            digital experiences.
           </p>
         </div>
 
         {/* ---------------- TABS ---------------- */}
 
         <div className="flex justify-center mb-12">
-          <div className="
+          <div
+            className="
             flex gap-2
             overflow-x-auto
             scrollbar-hide
@@ -116,7 +119,8 @@ export default function SkillsTabs(){
             p-2
             border
             shadow-sm
-          ">
+          "
+          >
             {tabs.map((tab) => (
               <button
                 key={tab.key}
@@ -162,7 +166,7 @@ export default function SkillsTabs(){
                 group
                 bg-white
                 rounded-3xl
-                p-10
+                p-2
                 text-center
                 flex flex-col
                 items-center
@@ -172,15 +176,17 @@ export default function SkillsTabs(){
                 transition-all duration-300
               "
             >
-              <div className="
+              <div
+                className="
                 w-32 h-32
                 flex items-center justify-center
                 
                 rounded-3xl
-                mb-6
+                mb-3
                 group-hover:bg-orange-50
                 transition
-              ">
+              "
+              >
                 <img
                   src={item.icon}
                   alt={item.title}
@@ -194,9 +200,64 @@ export default function SkillsTabs(){
             </div>
           ))}
         </div>
-
       </div>
+
+      {/* office location */}
+      <div className="pb-24 p-10">
+        <div className="text-center mb-12">
+          <p className="text-blue-600 font-medium tracking-widest text-sm mb-2">
+            FIND US
+          </p>
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900">
+            Our Office <ShimmerText>Locations </ShimmerText>
+          </h2>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-10">
+          {/* India */}
+          <div>
+            <div className="flex items-center gap-3 mb-4">
+              <span className="text-4xl">🛕</span>
+              <h3 className="text-2xl font-bold text-gray-900">India</h3>
+            </div>
+            <p className="text-gray-600 leading-relaxed">
+              12, Jodhka House, Sant Nagar, East of Kailash, New
+              <br />
+              Delhi 110065, INDIA
+            </p>
+          </div>
+
+          {/* Singapore */}
+          <div>
+            <div className="flex items-center gap-3 mb-4">
+              <span className="text-4xl">🦁</span>
+              <h3 className="text-2xl font-bold text-gray-900">Singapore</h3>
+            </div>
+            <p className="text-gray-600 leading-relaxed">
+              Robinson Road SPACES, Crown at Robinson #13-07,
+              <br />
+              Singapore 068907.
+            </p>
+          </div>
+
+          {/* UK */}
+          <div>
+            <div className="flex items-center gap-3 mb-4">
+              <span className="text-4xl">🏛️</span>
+              <h3 className="text-2xl font-bold text-gray-900">UK</h3>
+            </div>
+            <p className="text-gray-600 leading-relaxed">
+              Bourne Court, Southend Road, Woodford Green,
+              <br />
+              Greater London - IG8 8HD
+            </p>
+          </div>
+        </div>
+      </div>
+
+      </GridBg>
+
+
     </section>
   );
-};
-
+}

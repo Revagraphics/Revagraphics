@@ -10,6 +10,7 @@ import branding from "../assets/branding.webp";
 import brochure from "../assets/brochure.jpg";
 import testimonial from "../assets/testimonial.webp";
 import packaging from "../assets/product-packaging.webp";
+import ShimmerText from "../components/ShimmerText"
 
 const works = [
   { id: 1, image: campaign, title: "Campaign" },
@@ -71,7 +72,7 @@ export default function  SelectedWork() {
         {/* Heading */}
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10 sm:mb-14">
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-gray-900 tracking-tight leading-tight">
-            Our <span className="text-orange-500">Selected</span> Work
+            Our <ShimmerText >Portfolio</ShimmerText> Showcase
           </h2>
           <Link
             to="/portfolio"

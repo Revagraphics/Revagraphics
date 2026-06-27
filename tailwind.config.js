@@ -11,6 +11,7 @@ export default {
         secondary: ['MyFont2', 'sans-serif'],
         tertiary: ['MyFont3', 'sans-serif'],
         quaternary: ['MyFont4', 'sans-serif'],
+        playfair: ['Play-fair1', 'serif'],
       },
     },
   },

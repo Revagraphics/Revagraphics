@@ -8,6 +8,7 @@ import portfolio3 from "../assets/portfolio-3.jpg";
 import portfolio4 from "../assets/portfolio-4.jpg";
 import portfolio5 from "../assets/portfolio-5.jpg";
 import { Link } from "react-router-dom";
+import ShimmerText from "./ShimmerText";
 
 const projects = [
   {
@@ -101,7 +102,7 @@ export default function SelectedWork() {
         {/* Header */}
         <div className="flex items-center justify-between flex-wrap gap-4">
           <h2 className="text-4xl font-bold leading-tight">
-            Our <span className="text-[#ff6726]">Selected</span> Work
+            Our <ShimmerText>Portfolio</ShimmerText> Showcase
           </h2>
 
           <Link

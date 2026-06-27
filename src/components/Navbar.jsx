@@ -87,7 +87,7 @@ export default function Navbar() {
         <div className="flex justify-between items-center px-6 py-3">
           {/* LOGO */}
           <Link to="/">
-            <img src={Logo} className="h-10" />
+            <img src={Logo} className="h-14" />
           </Link>
 
           {/* ================= DESKTOP ================= */}
@@ -95,11 +95,11 @@ export default function Navbar() {
             <NavLink
               to="/"
               className={({ isActive }) =>
-                `px-3 py-2 rounded-md font-bold transition-all duration-200
+                `px-3 py-2  font-bold transition-all duration-200
                   ${
                     isActive
-                      ? "text-orange-500 bg-white/60 shadow-[inset_0_0_0_2px_rgba(249,115,22,0.25)]"
-                      : "text-[#08182b] hover:bg-white/70 hover:shadow-[inset_0_0_0_2px_rgba(0,0,0,0.08)]"
+                      ? "text-orange-500 bg-white/60 "
+                      : "text-[#08182b] hover:bg-white/70 "
                   }`
               }
             >
@@ -109,11 +109,11 @@ export default function Navbar() {
             <NavLink
               to="/about"
               className={({ isActive }) =>
-                `px-3 py-2 rounded-md font-bold transition-all duration-200
+                `px-3 py-2  font-bold transition-all duration-200
                   ${
                     isActive
-                      ? "text-orange-500 bg-white/60 shadow-[inset_0_0_0_2px_rgba(249,115,22,0.25)]"
-                      : "text-[#08182b] hover:bg-white/70 hover:shadow-[inset_0_0_0_2px_rgba(0,0,0,0.08)]"
+                      ? "text-orange-500 bg-white/60 "
+                      : "text-[#08182b] hover:bg-white/70 "
                   }`
               }
             >
@@ -123,11 +123,11 @@ export default function Navbar() {
             <NavLink
               to="/printing"
               className={({ isActive }) =>
-                `px-3 py-2 rounded-md font-bold transition-all duration-200
+                `px-3 py-2  font-bold transition-all duration-200
                   ${
                     isActive
-                      ? "text-orange-500 bg-white/60 shadow-[inset_0_0_0_2px_rgba(249,115,22,0.25)]"
-                      : "text-[#08182b] hover:bg-white/70 hover:shadow-[inset_0_0_0_2px_rgba(0,0,0,0.08)]"
+                      ? "text-orange-500 bg-white/60 "
+                      : "text-[#08182b] hover:bg-white/70 "
                   }`
               }
             >
@@ -148,11 +148,11 @@ export default function Navbar() {
                 >
                   {/* BUTTON */}
                   <button
-                    className={`flex items-center gap-1 py-2 px-3 rounded-md font-bold transition-all duration-200
+                    className={`flex items-center gap-1 py-2 px-3  font-bold transition-all duration-200
         ${
           isActive
-            ? "text-orange-500 bg-white/60 shadow-[inset_0_0_0_2px_rgba(249,115,22,0.25)]"
-            : "text-[#08182b] hover:bg-white/70 hover:shadow-[inset_0_0_0_2px_rgba(0,0,0,0.08)]"
+            ? "text-orange-500 bg-white/60 "
+            : "text-[#08182b] hover:bg-white/70 "
         }`}
                   >
                     {config.label}
@@ -166,7 +166,7 @@ export default function Navbar() {
 
                   {/* DROPDOWN */}
                   <div
-                    className={`absolute left-0 mt-2 w-52 bg-white rounded-2xl shadow-xl border overflow-hidden border-gray-100 
+                    className={`absolute left-0 mt-2 w-52 bg-white  shadow-xl  overflow-hidden border-gray-100 
         transition-all duration-300 origin-top ${
           desktopDropdown === key
             ? "opacity-100 scale-100 visible"
@@ -180,7 +180,7 @@ export default function Navbar() {
                         key={i}
                         to={item.to}
                         className={({ isActive }) =>
-                          `block px-6 py-3 transition-colors first:rounded-t-2xl last:rounded-b-2xl
+                          `block px-6 py-3 transition-colors 
               ${
                 isActive
                   ? "text-orange-500 bg-orange-50"
@@ -199,11 +199,11 @@ export default function Navbar() {
             <NavLink
               to="/contact"
               className={({ isActive }) =>
-                `px-3 py-2 rounded-md font-bold transition-all duration-200
+                `px-3 py-2  font-bold transition-all duration-200
                   ${
                     isActive
-                      ? "text-orange-500 bg-white/60 shadow-[inset_0_0_0_2px_rgba(249,115,22,0.25)]"
-                      : "text-[#08182b] hover:bg-white/70 hover:shadow-[inset_0_0_0_2px_rgba(0,0,0,0.08)]"
+                      ? "text-orange-500 bg-white/60 "
+                      : "text-[#08182b] hover:bg-white/70 "
                   }`
               }
             >

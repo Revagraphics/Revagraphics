@@ -1,4 +1,8 @@
 import { useState } from 'react';
+import ShimmerText from "../components/ShimmerText";
+import logo1 from "../assets/customer-logo-1.png";
+import logo2 from "../assets/customer-logo-2.png";
+import logo3 from "../assets/customer-logo-11.png";
 
 export default function Feedback()  {
   const [formData, setFormData] = useState({
@@ -9,6 +13,8 @@ export default function Feedback()  {
     message: '',
     agree: false,
   });
+
+
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -30,36 +36,25 @@ export default function Feedback()  {
   };
 
   return (
-    <section className="w-full min-h-screen bg-gray-50 py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
+    <section className="w-full min-h-screen  bg-gradient-to-r from-[#FF9800] to-[#E91E63] py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
 
         {/* Section Header */}
         <div className="text-center mb-10 sm:mb-14">
-          <span className="inline-block text-xs sm:text-sm font-semibold tracking-widest text-orange-500 uppercase mb-3">
+          <span className="inline-block text-xs sm:text-sm font-semibold tracking-widest text-zinc-100 uppercase mb-3">
             Get In Touch
           </span>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-            Let's Build Something <span className="text-orange-500">Great</span>
+            Let's Build Something {" "}
+            <span className='bg-zinc-100 rounded-2xl'><ShimmerText>Great</ShimmerText></span>
           </h1>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 items-start">
 
+
           {/* ===== LEFT SIDE ===== */}
           <div className="lg:col-span-2 space-y-6 sm:space-y-8">
-
-            {/* About */}
-            {/* <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-gray-100">
-              <h2 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-3">
-                About Reva
-              </h2>
-              <p className="text-gray-500 leading-relaxed text-sm sm:text-base">
-                We are a creative design and technology studio passionate about building
-                unique brands and exceptional digital experiences. With expertise in branding,
-                web development, and marketing, we help businesses stand out and connect
-                with their customers.
-              </p>
-            </div> */}
 
             {/* Contact Details */}
             <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-gray-100">
@@ -105,7 +100,7 @@ export default function Feedback()  {
 
                 {/* Emails */}
                 <div className="pt-5 border-t border-gray-100 space-y-3">
-                  <div>
+                  {/* <div>
                     <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-0.5">Sales Email</p>
                     <a
                       href="mailto:nverma@revagraphics.com"
@@ -113,7 +108,7 @@ export default function Feedback()  {
                     >
                       nverma@revagraphics.com
                     </a>
-                  </div>
+                  </div> */}
                   <div>
                     <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-0.5">Technical Email</p>
                     <a
@@ -126,7 +121,27 @@ export default function Feedback()  {
                 </div>
               </div>
             </div>
+
+            <div className=" flex rounded-2xl gap-3 p-6 sm:p-8 shadow-sm ">
+              
+              <div className='bg-white rounded-2xl p-3 border-gray-100'>
+                    <img src={logo1} alt="" />
+              </div>
+ 
+              <div className='bg-white rounded-2xl p-3 border-gray-100'>
+                    <img src={logo2} alt="" />
+              </div>
+ 
+              <div className='bg-white rounded-2xl p-3 border-gray-100'>
+                    <img src={logo3} alt="" />   
+              </div>
+
+            </div>
+
+
           </div>
+
+
 
           {/* ===== RIGHT SIDE - Form ===== */}
           <div className="lg:col-span-3 bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 shadow-sm border border-gray-100">
@@ -177,10 +192,12 @@ export default function Feedback()  {
                     className="w-full px-4 sm:px-5 py-3 sm:py-4 bg-gray-50 border border-gray-200 rounded-xl sm:rounded-2xl focus:outline-none focus:border-orange-400 focus:ring-1 focus:ring-orange-200 text-sm sm:text-base text-gray-500 transition appearance-none cursor-pointer pr-10"
                   >
                     <option value="">Interested in</option>
-                    <option value="branding">Branding</option>
-                    <option value="web-development">Web Development</option>
-                    <option value="marketing">Marketing</option>
-                    <option value="consulting">Consulting</option>
+                    <option value="branding">Brand Identity</option>
+                    <option value="web-desiging">Website Desiging</option>
+                    <option value="web-development">Website Development</option>
+                    <option value="marketing">Degital Marketing</option>
+                    <option value="marketing">Application Development</option>
+                    <option value="customize software">Customise Software</option>
                     <option value="other">Other</option>
                   </select>
                   <svg

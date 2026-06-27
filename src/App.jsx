@@ -16,7 +16,7 @@ const Designing = lazy(() => import("./pages/Designing"));
 const Printing = lazy(() => import("./pages/Printing"));
 const Cloud = lazy(() => import("./pages/Cloud"));
 
-import BubbleBlower from "./components/BubbleBlower";
+// import BubbleBlower from "./components/BubbleBlower";
 import AutoScrollTop from "./components/AutoScrollTop";
 import GoToTop from "./components/GoToTop";
 
@@ -52,12 +52,12 @@ const App = () => {
 
   return (
     <Router>
-      <BubbleBlower />
+      {/* <BubbleBlower /> */}
       <AutoScrollTop />
 
       <Suspense fallback={<div className="p-10">Loading...</div>}>
         <Routes>
-          <Route path="*" element={<NotFound />} />
+          
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/portfolio" element={<Portfolio />} />
@@ -69,6 +69,9 @@ const App = () => {
           <Route path="/designing" element={<Designing />} />
           <Route path="/printing" element={<Printing />} />
           <Route path="/cloud" element={<Cloud />} />
+
+          {/* not found */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
 
