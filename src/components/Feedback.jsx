@@ -3,8 +3,10 @@ import ShimmerText from "../components/ShimmerText";
 import logo1 from "../assets/customer-logo-1.png";
 import logo2 from "../assets/customer-logo-2.png";
 import logo3 from "../assets/customer-logo-11.png";
+import toast from "react-hot-toast";
 
 export default function Feedback()  {
+  const [formSubmitted, setFormSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -24,15 +26,70 @@ export default function Feedback()  {
     }));
   };
 
-  const handleSubmit = (e) => {
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   const phoneNum = "918368769364";
+  //   const message = Object.entries(formData)
+  //     .map(([key, value]) => `${key}: ${value}`)
+  //     .join('\n');
+  //   const encodedMessage = encodeURIComponent(message);
+  //   const whatsappUrl = `https://wa.me/${phoneNum}?text=${encodedMessage}`;
+  //   window.open(whatsappUrl, "_blank");
+  // };
+
+  const handleSubmit = async (e) =>{
     e.preventDefault();
-    const phoneNum = "919958503650";
-    const message = Object.entries(formData)
-      .map(([key, value]) => `${key}: ${value}`)
-      .join('\n');
-    const encodedMessage = encodeURIComponent(message);
-    const whatsappUrl = `https://wa.me/${phoneNum}?text=${encodedMessage}`;
-    window.open(whatsappUrl, "_blank");
+
+    const toastId = toast.loading("Sending inquiry...");
+
+    try{
+
+      const response = await fetch(
+        "https://formsubmit.co/ajax/sourabhnegi557@gmail.com",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            Name: formData.fullName,
+            Phone: formData.contactNumber,
+            Email: formData.email,
+            Department: formData.interestedIn,
+            Message: formData.message,
+            Source: "Reva Graphics ",
+          }),
+        },
+      );
+
+      const result = await response.json();
+      toast.dismiss(toastId);
+
+      if (response.ok) {
+        toast.success("Inquiry submitted successfully!");
+        setFormSubmitted(true);
+
+        setFormData({
+          fullName: "",
+          contactNumber: "",
+          email: "",
+          department: "",
+          message: "",
+        });
+
+        setTimeout(() => {
+          setFormSubmitted(false);
+        }, 5000);
+      } else {
+        console.error(result);
+        toast.error("Unable to send inquiry. Please try again.");
+      }
+
+    }catch(err){
+      console.error(error);
+    }
+    setLoading(false);
   };
 
   return (

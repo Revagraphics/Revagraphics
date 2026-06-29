@@ -20,7 +20,7 @@ const GridBg = ({
       // Outer Planet
       gsap.to(planets[0], {
         rotation: 360,
-        duration: 8,
+        duration: 6,
         ease: "linear",
         repeat: -1,
       });
@@ -28,7 +28,7 @@ const GridBg = ({
       // Inner Planet
       gsap.to(planets[1], {
         rotation: 360,
-        duration: 12,
+        duration: 8,
         ease: "linear",
         repeat: -1,
       });
@@ -41,7 +41,7 @@ const GridBg = ({
       // Outer Planet
       gsap.to(planets[0], {
         rotation: -360,
-        duration: 12,
+        duration: 6,
         ease: "linear",
         repeat: -1,
       });
@@ -77,6 +77,7 @@ const GridBg = ({
       />
 
       <div
+
         className="absolute inset-0 z-0"
         style={{
           backgroundImage: `
@@ -120,7 +121,7 @@ const GridBg = ({
       </div>
 
       {/* === Bottom Left System === */}
-      <div className="absolute bottom-20 left-20 z-10" ref={bottomLeftRef}>
+      <div className="absolute bottom-28 left-20 z-10" ref={bottomLeftRef}>
         {/* Central Sun */}
         {/* <div className="absolute w-5 h-5 bg-purple-400 rounded-full shadow-[0_0_30px_#c084fc] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20" /> */}
 

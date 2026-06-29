@@ -2,6 +2,7 @@
 import { useEffect, lazy, Suspense } from "react";
 import Lenis from "lenis";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import toast, { Toaster } from "react-hot-toast";
 
 const Home = lazy(() => import("./pages/Home"));
 const About = lazy(() => import("./pages/About"));
@@ -55,7 +56,7 @@ const App = () => {
       {/* <BubbleBlower /> */}
       <AutoScrollTop />
 
-      <Suspense fallback={<div className="p-10">Loading...</div>}>
+      <Suspense fallback={<div className="p-10 flex items-center justify-center">Loading...</div>}>
         <Routes>
           
           <Route path="/" element={<Home />} />

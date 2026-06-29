@@ -29,11 +29,11 @@ import ShimmerText from "../components/ShimmerText";
 import GridBg from "../components/GridBg";
 import AllSector from "../components/AllSector";
 
-import { 
-  FaBriefcase, 
-  FaUsers, 
-  FaHandshake, 
-  FaCalendarAlt 
+import {
+  FaBriefcase,
+  FaUsers,
+  FaHandshake,
+  FaCalendarAlt,
 } from "react-icons/fa";
 
 export default function Home() {
@@ -104,34 +104,36 @@ export default function Home() {
     color = "#FF9800",
     color2 = "#E91E63",
   }) => (
-    <div
-      className="group rounded-3xl border border-orange-100 bg-white/80 backdrop-blur-xl p-8 shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl overflow-hidden"
-      style={{ position: "relative" }} // Need relative for absolute pseudo-element
-    >
-      {/* --- Absolute Vertical Gradient Line (Pseudo-element approach) --- */}
+    <div className="group relative rounded-3xl border border-orange-100 bg-white/80 backdrop-blur-xl p-5 sm:p-6 md:p-8 shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl overflow-hidden">
+      {/* --- Absolute Vertical Gradient Line --- */}
       <div
-        className="absolute top-0 left-0 w-3 h-full"
+        className="absolute top-0 left-0 w-2 md:w-3 h-full"
         style={{
-          background: `linear-gradient(to right, ${color}, ${color2})`,
+          background: `linear-gradient(to bottom, ${color}, ${color2})`,
         }}
       ></div>
 
-      {/* --- Content Grid to handle icon alignment --- */}
-      <div className="grid grid-cols-[80px_1fr] items-start gap-6">
-        {/* --- Left Side: Icon Container --- */}
-        <div className="flex aspect-square w-[70px] h-[70px] items-center justify-center rounded-2xl bg-orange-50 border border-orange-100 group-hover:scale-105 transition-transform">
-          <Icon className="w-10 h-10 text-orange-500 stroke-[1.5]" />
+    
+      <div className="flex flex-col sm:grid sm:grid-cols-[auto_1fr] items-start gap-4 sm:gap-6 pl-2 md:pl-0">
+        
+        <div className="flex shrink-0 aspect-square w-14 h-14 sm:w-16 sm:h-16 md:w-[70px] md:h-[70px] items-center justify-center rounded-2xl bg-orange-50 border border-orange-100 group-hover:scale-105 transition-transform">
+          <Icon className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 text-orange-500 stroke-[1.5]" />
         </div>
 
-        {/* --- Right Side: Text Content --- */}
-        <div className="flex flex-col">
-          <span className="text-orange-500 text-xs font-bold tracking-[0.25em] uppercase">
+     
+        <div className="flex flex-col w-full min-w-0">
+          <span className="text-orange-500 text-[10px] sm:text-xs md:text-2xl font-bold tracking-[0.20em] sm:tracking-[0.25em] uppercase break-words">
             {title}
           </span>
 
-          <h3 className="mt-4 text-5xl font-bold text-slate-900">{value}</h3>
+         
+          <h3 className="mt-2 sm:mt-3 md:mt-4 text-3xl sm:text-4xl md:text-2xl lg:text-5xl font-bold text-slate-900 tracking-tight break-words">
+            {value}
+          </h3>
 
-          <p className="mt-4 text-sm leading-7 text-slate-500">{desc}</p>
+          <p className="mt-2 sm:mt-3 md:mt-4 text-xs sm:text-sm leading-6 sm:leading-7 text-slate-500 font-normal">
+            {desc}
+          </p>
         </div>
       </div>
     </div>
@@ -201,7 +203,6 @@ export default function Home() {
             ))}
           </div>
         </section>
-
 
         {/* ================= REVA SECTION ================= */}
         <section className=" relative mt-24 overflow-hidden ">
@@ -287,7 +288,7 @@ export default function Home() {
                     title="YEARS"
                     value="04+"
                     desc="Clients across the globe witness our quality, processes, and work."
-                    icon={FaCalendarAlt }
+                    icon={FaCalendarAlt}
                   />
                 </div>
               </div>

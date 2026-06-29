@@ -91,14 +91,14 @@ export default function Navbar() {
           </Link>
 
           {/* ================= DESKTOP ================= */}
-          <div className="hidden lg:flex text-[#08182b] font-bold  px-8 py-4  items-center gap-8">
+          <div className="hidden lg:flex text-[#08182b] font-bold md:px-4 md:py-4 md:gap-2 px-8 py-4  items-center gap-8">
             <NavLink
               to="/"
               className={({ isActive }) =>
                 `px-3 py-2  font-bold transition-all duration-200
                   ${
                     isActive
-                      ? "text-orange-500 bg-white/60 "
+                      ? "text-orange-500  "
                       : "text-[#08182b] hover:bg-white/70 "
                   }`
               }
@@ -112,7 +112,7 @@ export default function Navbar() {
                 `px-3 py-2  font-bold transition-all duration-200
                   ${
                     isActive
-                      ? "text-orange-500 bg-white/60 "
+                      ? "text-orange-500 "
                       : "text-[#08182b] hover:bg-white/70 "
                   }`
               }
@@ -126,7 +126,7 @@ export default function Navbar() {
                 `px-3 py-2  font-bold transition-all duration-200
                   ${
                     isActive
-                      ? "text-orange-500 bg-white/60 "
+                      ? "text-orange-500  "
                       : "text-[#08182b] hover:bg-white/70 "
                   }`
               }
@@ -151,7 +151,7 @@ export default function Navbar() {
                     className={`flex items-center gap-1 py-2 px-3  font-bold transition-all duration-200
         ${
           isActive
-            ? "text-orange-500 bg-white/60 "
+            ? "text-orange-500 "
             : "text-[#08182b] hover:bg-white/70 "
         }`}
                   >
@@ -183,7 +183,7 @@ export default function Navbar() {
                           `block px-6 py-3 transition-colors 
               ${
                 isActive
-                  ? "text-orange-500 bg-orange-50"
+                  ? "text-orange-500 "
                   : "text-gray-700 hover:text-orange-500"
               }`
                         }
