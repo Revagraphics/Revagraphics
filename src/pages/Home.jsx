@@ -303,13 +303,13 @@ export default function Home() {
 
         {/* All sector */}
         <AllSector />
+        <ServicesSection />
         <SkillsTabs />
+        <StarRating />
         <SelectedWorkSection />
 
         {/* <ReviewSlider /> */}
-        <ServicesSection />
-        <StarRating />
-
+        
         <Feedback />
         <Footer />
       </div>
