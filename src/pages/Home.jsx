@@ -305,8 +305,9 @@ export default function Home() {
         <AllSector />
         <ServicesSection />
         <SkillsTabs />
-        <StarRating />
+       
         <SelectedWorkSection />
+         <StarRating />
 
         {/* <ReviewSlider /> */}
         
