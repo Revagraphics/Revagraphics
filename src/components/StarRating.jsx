@@ -5,6 +5,7 @@ import dhruv from "../assets/dhruv.jpg";
 import yashpal from "../assets/yashpal.jpg";
 import umesh from "../assets/umesh.jpg";
 import ShimmerText from "../components/ShimmerText";
+import DecorativeUnderline from "../components/DecorativeUnderline";
 
 const reviews = [
   {
@@ -123,6 +124,11 @@ export default function ReviewCarousel() {
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
             What Our <ShimmerText>Prestigious Clients</ShimmerText>  Say...
           </h2>
+          <DecorativeUnderline
+                            width="320px" // Adjust width as needed
+                            className="mt-4 mx-auto"
+                            centerColor="#3B82F6" // Optional: change blue color
+                          />
           {/* <p className="mt-4 text-gray-600 text-lg">
             Real stories from real clients
           </p> */}

@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 
 import ShimmerText from "../components/ShimmerText";
+import DecorativeUnderline from "../components/DecorativeUnderline";
 
 import GridBg from "../components/GridBg";
 
@@ -99,6 +100,11 @@ export default function SkillsTabs() {
             <ShimmerText>Technologies</ShimmerText> We
             <span>Work With</span>
           </h2>
+          <DecorativeUnderline
+                            width="320px" // Adjust width as needed
+                            className="mt-4 mx-auto"
+                            centerColor="#3B82F6" // Optional: change blue color
+                          />
 
           <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
             We leverage modern technologies to build scalable, high-performance

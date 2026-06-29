@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-
+import DecorativeUnderline from "../components/DecorativeUnderline";
 import {
   FaGraduationCap,
   FaHeartbeat,
@@ -15,25 +15,51 @@ import {
 import ShimmerText from "./ShimmerText";
 
 const sectors = [
-  { id: 1, img: FaHeartbeat, category: "Health", color: "#005A9C" },
+  { id: 1, img: FaHeartbeat, category: "Restaurants", color: "#005A9C" },
   { id: 2, img: FaGraduationCap, category: "Education", color: "#87CEEB" },
   { id: 3, img: FaAtom, category: "Science", color: "#FFDF00" },
-  { id: 4, img: FaGraduationCap, category: "portfolio", color: "#87CEEB" },
+  { id: 4, img: FaGraduationCap, category: "NGOs", color: "#87CEEB" },
   { id: 5, img: FaLaptopCode, category: "chemicals", color: "#2ECC71" },
-  { id: 6, img: FaShoppingCart, category: "e-commerce", color: "#10B981" },
-  { id: 7, img: FaTshirt, category: "clothing", color: "#87CEEB" },
-  { id: 8, img: FaLaptopCode, category: "tech", color: "#00F2FE" },
+  { id: 6, img: FaLaptopCode, category: "Event Management", color: "#2ECC71" },
+  { id: 7, img: FaShoppingCart, category: "Automobile", color: "#10B981" },
+  { id: 8, img: FaTshirt, category: "clothing", color: "#87CEEB" },
+  { id: 9, img: FaLaptopCode, category: "tech", color: "#00F2FE" },
+  { id: 10, img: FaLaptopCode, category: "Textiles", color: "#00F2FE" },
+  {
+    id: 11,
+    img: FaLaptopCode,
+    category: "Religious & Cultural Organizations",
+    color: "#00F2FE",
+  },
 ];
 
 const logos = [
-  { id: 1, img: FaHeartbeat, category: "Health", color: "#005A9C" },
-  { id: 2, img: FaGraduationCap, category: "Education", color: "#87CEEB" },
-  { id: 3, img: FaAtom, category: "Science", color: "#FFDF00" },
-  { id: 4, img: FaGraduationCap, category: "portfolio", color: "#87CEEB" },
-  { id: 5, img: FaLaptopCode, category: "chemicals", color: "#2ECC71" },
-  { id: 6, img: FaShoppingCart, category: "e-commerce", color: "#10B981" },
-  { id: 7, img: FaTshirt, category: "clothing", color: "#87CEEB" },
-  { id: 8, img: FaLaptopCode, category: "tech", color: "#00F2FE" },
+  { id: 1, img: FaHeartbeat, category: "Hotels & Resorts", color: "#005A9C" },
+  { id: 2, img: FaGraduationCap, category: "Healthcare", color: "#87CEEB" },
+  { id: 3, img: FaAtom, category: "Real Estate", color: "#FFDF00" },
+  { id: 4, img: FaGraduationCap, category: "Architecture", color: "#87CEEB" },
+  {
+    id: 5,
+    img: FaLaptopCode,
+    category: "Interior Design Firms",
+    color: "#2ECC71",
+  },
+  { id: 6, img: FaShoppingCart, category: "Schools", color: "#10B981" },
+  { id: 7, img: FaTshirt, category: "Coaching Institutes", color: "#87CEEB" },
+  { id: 8, img: FaLaptopCode, category: "Manufacturing", color: "#00F2FE" },
+  { id: 9, img: FaLaptopCode, category: "Salon & Wellness", color: "#00F2FE" },
+  {
+    id: 10,
+    img: FaLaptopCode,
+    category: " Jewellery & Luxury Brands",
+    color: "#00F2FE",
+  },
+  {
+    id: 11,
+    img: FaLaptopCode,
+    category: " Logistics & Transportation",
+    color: "#00F2FE",
+  },
 ];
 
 const AllSector = () => {
@@ -91,6 +117,11 @@ const AllSector = () => {
         <h2 className="text-center text-3xl lg:text-5xl font-bold text-zinc-900 mb-12">
           <ShimmerText>All Sectors</ShimmerText>
         </h2>
+        <DecorativeUnderline
+          width="320px" // Adjust width as needed
+          className="mt-4 mx-auto"
+          centerColor="#3B82F6" // Optional: change blue color
+        />
 
         {/* First Marquee - Row 1 (Displaying sectors array with mixed Icons/Images) */}
         <div className="overflow-hidden mb-10">

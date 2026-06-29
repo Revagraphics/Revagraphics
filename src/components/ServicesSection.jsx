@@ -11,6 +11,7 @@ import {
 
 import ShimmerText from "../components/ShimmerText";
 import GridBg from "../components/GridBg";
+import DecorativeUnderline from "../components/DecorativeUnderline";
 
 const services = [
   {
@@ -84,7 +85,13 @@ export default function ServicesSection() {
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl lg:text-5xl font-bold text-gray-900 leading-tight">
               See what we can do for <ShimmerText>Your Business</ShimmerText>
+
             </h2>
+            <DecorativeUnderline
+                              width="320px" // Adjust width as needed
+                              className="mt-4 mx-auto"
+                              centerColor="#3B82F6" // Optional: change blue color
+                            />
             <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
               Professional solutions that transform ideas into powerful digital
               experiences

@@ -7,12 +7,12 @@ import SelectedWorkSection from "../components/SelectedWorkSection";
 import SkillsTabs from "../components/SkillTabs";
 import Feedback from "../components/Feedback";
 import StarRating from "../components/StarRating";
+import DecorativeUnderline from "../components/DecorativeUnderline";
 
 import { Link } from "react-router-dom";
 import gsap from "gsap";
 import Seo from "../components/Seo";
 import HeroImg from "../assets/hero1.png";
-
 import logo1 from "../assets/customer-logo-1.png";
 import logo2 from "../assets/customer-logo-2.png";
 import logo3 from "../assets/customer-logo-3.png";
@@ -24,7 +24,6 @@ import logo9 from "../assets/customer-logo-10.png";
 import badge1 from "../assets/badge-1.png";
 import badge2 from "../assets/badge22.png";
 import badge3 from "../assets/badge-3.png";
-
 import ShimmerText from "../components/ShimmerText";
 import GridBg from "../components/GridBg";
 import AllSector from "../components/AllSector";
@@ -104,34 +103,35 @@ export default function Home() {
     color = "#FF9800",
     color2 = "#E91E63",
   }) => (
-    <div className="group relative rounded-3xl border border-orange-100 bg-white/80 backdrop-blur-xl p-5 sm:p-6 md:p-8 shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl overflow-hidden">
-      {/* --- Absolute Vertical Gradient Line --- */}
+    <div className="group relative rounded-3xl border border-orange-100 bg-white/80 backdrop-blur-xl p-6 sm:p-8 md:p-10 shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl overflow-hidden h-full flex flex-col">
+      {/* Vertical Gradient Accent Line */}
       <div
-        className="absolute top-0 left-0 w-2 md:w-3 h-full"
+        className="absolute top-0 left-0 w-2 md:w-3 h-full rounded-tl-3xl"
         style={{
           background: `linear-gradient(to bottom, ${color}, ${color2})`,
         }}
-      ></div>
+      />
 
-    
-      <div className="flex flex-col sm:grid sm:grid-cols-[auto_1fr] items-start gap-4 sm:gap-6 pl-2 md:pl-0">
-
-        <div className="flex shrink-0 aspect-square w-14 h-14 sm:w-16 sm:h-16 md:w-[70px] md:h-[70px] items-center justify-center rounded-2xl bg-orange-50 border border-orange-100 group-hover:scale-105 transition-transform">
-          <Icon className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 text-orange-500 stroke-[1.5]" />
+      <div className="flex flex-col h-full">
+        {/* Icon */}
+        <div className="flex shrink-0 aspect-square w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 items-center justify-center rounded-2xl bg-orange-50 border border-orange-100 group-hover:scale-105 transition-transform duration-300">
+          <Icon className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 text-orange-500 stroke-[1.5]" />
         </div>
 
-     
-        <div className="flex flex-col w-full min-w-0">
-          <span className="text-orange-500 text-[10px] sm:text-xs md:text-2xl font-bold tracking-[0.20em] sm:tracking-[0.25em] uppercase break-words">
+        {/* Title + Number */}
+        <div className="mt-6 flex flex-col">
+          <span className="text-orange-500 text-xs sm:text-sm font-bold tracking-[0.125em] uppercase">
             {title}
           </span>
 
-         
-          <h3 className="mt-2 sm:mt-3 md:mt-4 text-3xl sm:text-4xl md:text-2xl lg:text-5xl font-bold text-slate-900 tracking-tight break-words">
+          <h3 className="mt-2 text-4xl sm:text-5xl md:text-6xl font-bold text-slate-900 tracking-tighter leading-none">
             {value}
           </h3>
+        </div>
 
-          <p className="mt-2 sm:mt-3 md:mt-4 text-xs sm:text-sm leading-6 sm:leading-7 text-slate-500 font-normal">
+        {/* Description - Under the Icon (as requested) */}
+        <div className="mt-auto pt-6 sm:pt-8">
+          <p className="text-sm sm:text-base leading-relaxed text-slate-600">
             {desc}
           </p>
         </div>
@@ -155,7 +155,7 @@ export default function Home() {
             {/* TEXT */}
             <section className="hero-animate flex-1 text-center lg:text-left">
               <h1 className="text-4xl text-[#30303c] sm:text-2xl lg:text-6xl font-poppins font-bold leading-tight">
-                Expert Branding & Web {" "}
+                Expert Branding & Web{" "}
                 <span className="">Development Solutions Across</span>{" "}
                 <span
                   ref={textRef}
@@ -220,6 +220,11 @@ export default function Home() {
                     Development Company
                   </ShimmerText>
                 </h2>
+                <DecorativeUnderline
+                  width="320px" // Adjust width as needed
+                  className="mt-4 mx-auto"
+                  centerColor="#3B82F6" // Optional: change blue color
+                />
               </div>
 
               {/* LEFT CONTENT */}
@@ -304,7 +309,7 @@ export default function Home() {
         {/* <ReviewSlider /> */}
         <ServicesSection />
         <StarRating />
-        
+
         <Feedback />
         <Footer />
       </div>
