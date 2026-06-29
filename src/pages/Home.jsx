@@ -115,7 +115,7 @@ export default function Home() {
 
     
       <div className="flex flex-col sm:grid sm:grid-cols-[auto_1fr] items-start gap-4 sm:gap-6 pl-2 md:pl-0">
-        
+
         <div className="flex shrink-0 aspect-square w-14 h-14 sm:w-16 sm:h-16 md:w-[70px] md:h-[70px] items-center justify-center rounded-2xl bg-orange-50 border border-orange-100 group-hover:scale-105 transition-transform">
           <Icon className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 text-orange-500 stroke-[1.5]" />
         </div>
@@ -155,7 +155,7 @@ export default function Home() {
             {/* TEXT */}
             <section className="hero-animate flex-1 text-center lg:text-left">
               <h1 className="text-4xl text-[#30303c] sm:text-2xl lg:text-6xl font-poppins font-bold leading-tight">
-                Expert Branding & Web
+                Expert Branding & Web {" "}
                 <span className="">Development Solutions Across</span>{" "}
                 <span
                   ref={textRef}
@@ -188,7 +188,7 @@ export default function Home() {
 
         {/* ================= CLIENT LOGOS ================= */}
         <section className="mt-16 overflow-hidden">
-          <div ref={logosRef} className="flex gap-14 w-max items-center">
+          <div ref={logosRef} className="flex gap-8 w-max items-center">
             {[...logos, ...logos].map((logo, index) => (
               <div
                 key={`${logo.id}-${index}`}
@@ -206,16 +206,16 @@ export default function Home() {
 
         {/* ================= REVA SECTION ================= */}
         <section className=" relative mt-24 overflow-hidden ">
-          <GridBg gridSize={50} lineColor="#f5f1ed" bgColor="#fff">
+          <GridBg gridSize={80} lineColor="#f5f1ed" bgColor="#fff">
             <div className="relative z-10 max-w-[90%] mx-auto grid lg:grid-cols-2 gap-x-16 gap-y-14">
               {/* Heading */}
               <div className="lg:col-span-2 text-center max-w-5xl mx-auto">
-                <span className="font-playfair inline-block text-orange-500 font-semibold uppercase tracking-[0.35em] text-sm mb-5">
-                  We Are Rev
+                <span className=" inline-block text-orange-500 font-semibold uppercase tracking-[0.35em] text-sm mb-5">
+                  We Are Reva
                 </span>
 
-                <h2 className="text-[#30303c] font-playfair text-4xl sm:text-5xl lg:text-6xl xl:text-6xl font-bold leading-tight">
-                  <span>Top-rated</span> Web Designing And{" "}
+                <h2 className="text-[#30303c]  text-4xl sm:text-5xl lg:text-6xl xl:text-6xl font-bold leading-tight">
+                  <span>Top-Rated</span> Web Designing And{" "}
                   <ShimmerText className="font-bold">
                     Development Company
                   </ShimmerText>
@@ -225,7 +225,7 @@ export default function Home() {
               {/* LEFT CONTENT */}
 
               <div className="space-y-8">
-                <p className="text-slate-600 font-playfair leading-8 text-justify text-lg">
+                <p className="text-slate-600 leading-8 text-justify text-lg">
                   Reva started its operation in the year 2019. We are a
                   Worldwide, based Web Designing and Digital Marketing Company.
                   Our main Domain is Web Design, Web Development, Digital
@@ -298,12 +298,13 @@ export default function Home() {
 
         {/* All sector */}
         <AllSector />
+        <SkillsTabs />
+        <SelectedWorkSection />
 
         {/* <ReviewSlider /> */}
         <ServicesSection />
         <StarRating />
-        <SelectedWorkSection />
-        <SkillsTabs />
+        
         <Feedback />
         <Footer />
       </div>

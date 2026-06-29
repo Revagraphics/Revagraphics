@@ -21,6 +21,7 @@ const services = [
     tags: "Logo Design | Stationery Design",
     link: "/brand",
     icon: FaPalette,
+    tagColor: "#FF6B6B", // Vibrant Red
   },
   {
     id: 2,
@@ -30,6 +31,7 @@ const services = [
     tags: "UI & UX Design | Dynamic Websites",
     link: "/webdesign",
     icon: FaGlobe,
+    tagColor: "#4ECDC4", // Teal
   },
   {
     id: 3,
@@ -39,6 +41,7 @@ const services = [
     tags: "eCommerce | Custom Portals",
     link: "/webdevel",
     icon: FaCode,
+    tagColor: "#45B7D1", // Sky Blue
   },
   {
     id: 4,
@@ -48,6 +51,7 @@ const services = [
     tags: "SEO | SMO | PPC",
     link: "#",
     icon: FaChartLine,
+    tagColor: "#96CEB4", // Sage Green
   },
   {
     id: 5,
@@ -57,6 +61,7 @@ const services = [
     tags: "Mobile Apps | Web Apps",
     link: "/content",
     icon: FaMobileAlt,
+    tagColor: "#FF9F1C", // Orange
   },
   {
     id: 6,
@@ -66,6 +71,7 @@ const services = [
     tags: "Cloud Services | Hosting | SSL",
     link: "/service-details",
     icon: FaCloud,
+    tagColor: "#6C5CE7", // Purple
   },
 ];
 
@@ -77,7 +83,7 @@ export default function ServicesSection() {
           {/* Heading */}
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl lg:text-5xl font-bold text-gray-900 leading-tight">
-              See what we can do for <ShimmerText>your Business</ShimmerText>
+              See what we can do for <ShimmerText>Your Business</ShimmerText>
             </h2>
             <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
               Professional solutions that transform ideas into powerful digital
@@ -93,27 +99,25 @@ export default function ServicesSection() {
                 <div
                   key={service.id}
                   className="group relative bg-white rounded-3xl shadow-lg hover:shadow-2xl 
-                             transition-all duration-500 overflow-hidden border border-gray-100 
+                             transition-all duration-300 overflow-hidden border border-gray-100 
                              hover:border-transparent hover:-translate-y-3
                              hover:bg-gradient-to-br hover:from-[#FF9800] hover:to-[#E91E63]"
                 >
-                  {/* Left Vertical Accent Line - Updated colors */}
+                  {/* Left Vertical Accent Line */}
                   <div
                     className="absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b from-[#FF9800] to-[#E91E63] 
-                                  scale-y-0 group-hover:scale-y-100 origin-top transition-transform duration-700"
+                               scale-y-0 group-hover:scale-y-100 origin-top transition-transform duration-700"
                   />
 
                   {/* Icon */}
                   <div className="p-8 pb-4">
                     <div
                       className="w-20 h-20 bg-gradient-to-br from-slate-100 to-gray-100 rounded-2xl 
-                                    flex items-center justify-center 
-                                    group-hover:bg-white/20 group-hover:backdrop-blur-sm 
-                                    transition-all duration-500"
+                                 flex items-center justify-center 
+                                 group-hover:bg-white/20 group-hover:backdrop-blur-sm 
+                                 transition-all duration-500"
                     >
-                      <IconComponent
-                        className="w-12 h-12 text-slate-700   group-hover:text-orange transition-colors duration-500"
-                      />
+                      <IconComponent className="w-12 h-12 text-orange-600 group-hover:text-orange-600 transition-colors duration-300" />
                     </div>
                   </div>
 
@@ -121,7 +125,7 @@ export default function ServicesSection() {
                   <div className="p-8 pt-2">
                     <h3
                       className="text-2xl font-semibold text-gray-900 
-                                   group-hover:text-white transition-colors duration-500"
+                                 group-hover:text-white transition-colors duration-300"
                     >
                       <a href={service.link} className="hover:underline">
                         {service.title}
@@ -130,14 +134,15 @@ export default function ServicesSection() {
 
                     <p
                       className="text-gray-600 group-hover:text-white/90 leading-relaxed mb-6 
-                                  line-clamp-4 mt-3 transition-colors duration-500"
+                                 line-clamp-4 mt-3 transition-colors duration-300"
                     >
                       {service.description}
                     </p>
 
+                    {/* Tags with unique colors */}
                     <p
-                      className="text-teal-600 group-hover:text-white/90 font-medium text-sm 
-                                  mb-8 transition-colors duration-500"
+                      className="font-medium text-sm mb-8 transition-colors duration-200"
+                      style={{ color: service.tagColor }}
                     >
                       {service.tags}
                     </p>
@@ -146,18 +151,18 @@ export default function ServicesSection() {
                     <a
                       href={service.link}
                       className="inline-flex items-center gap-2 text-teal-600 group-hover:text-white 
-                                 font-semibold group-hover:gap-3 transition-all duration-500"
+                                 font-semibold group-hover:gap-3 transition-all duration-300"
                     >
                       Explore Service
                       <FaArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                     </a>
                   </div>
 
-                  {/* Bottom Glow Effect - Updated colors */}
+                  {/* Bottom Glow Effect */}
                   <div
                     className="absolute bottom-0 left-0 right-0 h-1.5 bg-gradient-to-r 
-                                  from-[#FF9800] via-[#E91E63] to-pink-500 
-                                  opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                               from-[#FF9800] via-[#E91E63] to-pink-500 
+                               opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                   />
                 </div>
               );

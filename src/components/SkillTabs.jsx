@@ -27,7 +27,7 @@ import postgre from "../assets/postgresql.svg";
 import python from "../assets/python.svg";
 import aws from "../assets/aws.svg";
 import react from "../assets/react-js.svg";
-import adobe1 from "../assets/after-effect.svg";
+import adobe1 from "../assets/after-effact.png";
 import adobe2 from "../assets/premier.svg";
 import adobe3 from "../assets/final.png";
 import adobe4 from "../assets/Davinci.png";
@@ -88,7 +88,7 @@ export default function SkillsTabs() {
   /* ---------- GSAP Animation ---------- */
 
   return (
-    <section className="w-full bg-gradient-to-b from-gray-50 to-white py-20">
+    <section className="w-full bg-gradient-to-b from-gray-50 to-white sm:py-2">
       <GridBg gridSize={50} lineColor="#f5f1ed" bgColor="#fff">
 
       <div className="max-w-7xl mx-auto px-6">
@@ -202,58 +202,6 @@ export default function SkillsTabs() {
         </div>
       </div>
 
-      {/* office location */}
-      <div className="pb-24 p-10">
-        <div className="text-center mb-12">
-          <p className="text-blue-600 font-medium tracking-widest text-sm mb-2">
-            FIND US
-          </p>
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900">
-            Our Office <ShimmerText>Locations </ShimmerText>
-          </h2>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-10">
-          {/* India */}
-          <div>
-            <div className="flex items-center gap-3 mb-4">
-              <span className="text-4xl">🛕</span>
-              <h3 className="text-2xl font-bold text-gray-900">India</h3>
-            </div>
-            <p className="text-gray-600 leading-relaxed">
-              12, Jodhka House, Sant Nagar, East of Kailash, New
-              <br />
-              Delhi 110065, INDIA
-            </p>
-          </div>
-
-          {/* Singapore */}
-          <div>
-            <div className="flex items-center gap-3 mb-4">
-              <span className="text-4xl">🦁</span>
-              <h3 className="text-2xl font-bold text-gray-900">Singapore</h3>
-            </div>
-            <p className="text-gray-600 leading-relaxed">
-              Robinson Road SPACES, Crown at Robinson #13-07,
-              <br />
-              Singapore 068907.
-            </p>
-          </div>
-
-          {/* UK */}
-          <div>
-            <div className="flex items-center gap-3 mb-4">
-              <span className="text-4xl">🏛️</span>
-              <h3 className="text-2xl font-bold text-gray-900">UK</h3>
-            </div>
-            <p className="text-gray-600 leading-relaxed">
-              Bourne Court, Southend Road, Woodford Green,
-              <br />
-              Greater London - IG8 8HD
-            </p>
-          </div>
-        </div>
-      </div>
 
       </GridBg>
 

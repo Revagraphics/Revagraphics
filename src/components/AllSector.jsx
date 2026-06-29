@@ -1,30 +1,39 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 
-import { FaGraduationCap, FaHeartbeat,FaAtom, FaFlask, FaLaptopCode, FaShoppingCart , FaTshirt ,FaVials   } from "react-icons/fa";
+import {
+  FaGraduationCap,
+  FaHeartbeat,
+  FaAtom,
+  FaFlask,
+  FaLaptopCode,
+  FaShoppingCart,
+  FaTshirt,
+  FaVials,
+} from "react-icons/fa";
 
 import ShimmerText from "./ShimmerText";
 
 const sectors = [
-  { id: 1, img: FaHeartbeat, category: "Health" },
-  { id: 2, img: FaGraduationCap, category: "Education" },
-  { id: 3, img: FaAtom, category: "Science" },
-  { id: 4, img: FaGraduationCap, category: "portfolio" },
-  { id: 6, img: FaLaptopCode, category: "chemicals" },
-  { id: 7, img: FaShoppingCart , category: "e-commerce" },
-  { id: 8, img: FaTshirt , category: "clothing" },
-  { id: 9, img: FaLaptopCode , category: "tech" },
+  { id: 1, img: FaHeartbeat, category: "Health", color: "#005A9C" },
+  { id: 2, img: FaGraduationCap, category: "Education", color: "#87CEEB" },
+  { id: 3, img: FaAtom, category: "Science", color: "#FFDF00" },
+  { id: 4, img: FaGraduationCap, category: "portfolio", color: "#87CEEB" },
+  { id: 5, img: FaLaptopCode, category: "chemicals", color: "#2ECC71" },
+  { id: 6, img: FaShoppingCart, category: "e-commerce", color: "#10B981" },
+  { id: 7, img: FaTshirt, category: "clothing", color: "#87CEEB" },
+  { id: 8, img: FaLaptopCode, category: "tech", color: "#00F2FE" },
 ];
 
 const logos = [
-  { id: 1, img: FaHeartbeat, category: "Health" },
-  { id: 2, img: FaGraduationCap, category: "Education" },
-  { id: 3, img: FaAtom, category: "Science" },
-  { id: 4, img: FaGraduationCap, category: "portfolio" },
-  { id: 5, img: FaLaptopCode, category: "chemicals" },
-  { id: 6, img: FaShoppingCart, category: "e-commerce" },
-  { id: 7, img: FaTshirt, category: "clothing" },
-  { id: 8, img: FaLaptopCode, category: "tech" },
+  { id: 1, img: FaHeartbeat, category: "Health", color: "#005A9C" },
+  { id: 2, img: FaGraduationCap, category: "Education", color: "#87CEEB" },
+  { id: 3, img: FaAtom, category: "Science", color: "#FFDF00" },
+  { id: 4, img: FaGraduationCap, category: "portfolio", color: "#87CEEB" },
+  { id: 5, img: FaLaptopCode, category: "chemicals", color: "#2ECC71" },
+  { id: 6, img: FaShoppingCart, category: "e-commerce", color: "#10B981" },
+  { id: 7, img: FaTshirt, category: "clothing", color: "#87CEEB" },
+  { id: 8, img: FaLaptopCode, category: "tech", color: "#00F2FE" },
 ];
 
 const AllSector = () => {
@@ -78,7 +87,7 @@ const AllSector = () => {
 
   return (
     <section className="mt-16 overflow-hidden py-6 sm:py-4 ">
-      <div className="max-w-[90vw] mx-auto px-6">
+      <div className="max-w-full mx-auto px-6">
         <h2 className="text-center text-3xl lg:text-5xl font-bold text-zinc-900 mb-12">
           <ShimmerText>All Sectors</ShimmerText>
         </h2>
@@ -89,19 +98,25 @@ const AllSector = () => {
             {[...sectors, ...sectors].map((item, index) => (
               <div
                 key={`sector1-${item.id}-${index}`}
-                className="flex items-center gap-4 min-w-[240px] h-24 px-5 rounded-2xl
+                className="flex items-center gap-4 min-w-[240px] h-16 px-5 rounded-2xl
                     border border-orange-200 bg-white/80 backdrop-blur-md
                     shadow-sm hover:shadow-lg hover:border-orange-400
                     transition-all duration-300 shrink-0"
               >
                 {/* Visual Container */}
-                <div className="w-14 h-14 rounded-xl bg-orange-50 flex items-center justify-center shrink-0">
+                <div
+                  className="w-14 h-14 rounded-xl flex items-center justify-center shrink-0"
+                  style={{ color: item.color }}
+                >
                   {renderVisualAsset(item.img)}
                 </div>
 
                 {/* Category Text */}
                 <div className="flex flex-col">
-                  <span className="text-xs uppercase tracking-widest text-orange-500 font-semibold">
+                  <span
+                    className="text-xs uppercase tracking-widest  font-semibold"
+                    style={{ color: item.color }}
+                  >
                     {item.category}
                   </span>
                 </div>
@@ -116,19 +131,25 @@ const AllSector = () => {
             {[...logos, ...logos].map((item, index) => (
               <div
                 key={`sector2-${item.id}-${index}`}
-                className="flex items-center gap-4 min-w-[240px] h-24 px-5 rounded-2xl
+                className="flex items-center gap-4 min-w-[240px] h-16 px-5 rounded-2xl
                     border border-orange-200 bg-white/80 backdrop-blur-md
                     shadow-sm hover:shadow-lg hover:border-orange-400
                     transition-all duration-300 shrink-0"
               >
                 {/* Visual Container */}
-                <div className="w-14 h-14 rounded-xl bg-orange-50 flex items-center justify-center shrink-0">
+                <div
+                  className="w-14 h-14 rounded-xl  flex items-center justify-center shrink-0"
+                  style={{ color: item.color }}
+                >
                   {renderVisualAsset(item.img)}
                 </div>
 
                 {/* Category Text */}
                 <div className="flex flex-col">
-                  <span className="text-xs uppercase tracking-widest text-orange-500 font-semibold">
+                  <span
+                    className="text-xs uppercase tracking-widest  font-semibold"
+                    style={{ color: item.color }}
+                  >
                     {item.category}
                   </span>
                 </div>
