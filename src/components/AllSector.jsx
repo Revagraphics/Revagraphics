@@ -8,57 +8,94 @@ import {
   FaFlask,
   FaLaptopCode,
   FaShoppingCart,
+  FaBeer,
   FaTshirt,
   FaVials,
+  FaUtensils,
+  FaHandsHelping,
+  FaPalette,
+  FaCar,
+  FaDraftingCompass,
+  FaSchool,
+  FaHotel,
+  FaBuilding,
+  FaCouch,
+  FaCalendarAlt,
+  FaChalkboardTeacher,
+  FaIndustry,
+  FaSpa,
+  FaGem,
+  FaTruck,
+  FaPlaceOfWorship,
 } from "react-icons/fa";
 
 import ShimmerText from "./ShimmerText";
 
 const sectors = [
-  { id: 1, img: FaHeartbeat, category: "Restaurants", color: "#005A9C" },
-  { id: 2, img: FaGraduationCap, category: "Education", color: "#87CEEB" },
-  { id: 3, img: FaAtom, category: "Science", color: "#FFDF00" },
-  { id: 4, img: FaGraduationCap, category: "NGOs", color: "#87CEEB" },
-  { id: 5, img: FaLaptopCode, category: "chemicals", color: "#2ECC71" },
-  { id: 6, img: FaLaptopCode, category: "Event Management", color: "#2ECC71" },
-  { id: 7, img: FaShoppingCart, category: "Automobile", color: "#10B981" },
-  { id: 8, img: FaTshirt, category: "clothing", color: "#87CEEB" },
-  { id: 9, img: FaLaptopCode, category: "tech", color: "#00F2FE" },
-  { id: 10, img: FaLaptopCode, category: "Textiles", color: "#00F2FE" },
+  { id: 1, img: FaUtensils, category: "Restaurants", color: "#F97316" },
+  { id: 2, img: FaGraduationCap, category: "Education", color: "#3B82F6" },
+  { id: 3, img: FaFlask, category: "Science", color: "#8B5CF6" },
+  { id: 4, img: FaHandsHelping, category: "NGOs", color: "#14B8A6" },
+  { id: 5, img: FaIndustry, category: "Chemicals", color: "#22C55E" },
+  { id: 6, img: FaSchool, category: "Schools", color: "#0EA5E9" },
+  { id: 7, img: FaCar, category: "Automobile", color: "#EF4444" },
+  { id: 8, img: FaTshirt, category: "Clothing", color: "#EC4899" },
+  { id: 9, img: FaLaptopCode, category: "Technology", color: "#06B6D4" },
+  { id: 10, img: FaPalette, category: "Textiles", color: "#A855F7" },
   {
     id: 11,
-    img: FaLaptopCode,
-    category: "Religious & Cultural Organizations",
-    color: "#00F2FE",
+    img: FaDraftingCompass,
+    category: "Architecture",
+    color: "#F59E0B",
   },
 ];
 
 const logos = [
-  { id: 1, img: FaHeartbeat, category: "Hotels & Resorts", color: "#005A9C" },
-  { id: 2, img: FaGraduationCap, category: "Healthcare", color: "#87CEEB" },
-  { id: 3, img: FaAtom, category: "Real Estate", color: "#FFDF00" },
-  { id: 4, img: FaGraduationCap, category: "Architecture", color: "#87CEEB" },
+  { id: 1, img: FaHotel, category: "Hotels & Resorts", color: "#2563EB" },
+  { id: 2, img: FaHeartbeat, category: "Healthcare", color: "#EF4444" },
+  { id: 3, img: FaBuilding, category: "Real Estate", color: "#F59E0B" },
   {
-    id: 5,
-    img: FaLaptopCode,
-    category: "Interior Design Firms",
-    color: "#2ECC71",
+    id: 4,
+    img: FaPlaceOfWorship,
+    category: "Religious & Cultural Organizations",
+    color: "#8B5CF6",
   },
-  { id: 6, img: FaShoppingCart, category: "Schools", color: "#10B981" },
-  { id: 7, img: FaTshirt, category: "Coaching Institutes", color: "#87CEEB" },
-  { id: 8, img: FaLaptopCode, category: "Manufacturing", color: "#00F2FE" },
-  { id: 9, img: FaLaptopCode, category: "Salon & Wellness", color: "#00F2FE" },
+  { id: 5, img: FaCouch, category: "Interior Design Firms", color: "#14B8A6" },
+  {
+    id: 6,
+    img: FaCalendarAlt,
+    category: "Event Management",
+    color: "#10B981",
+  },
+  {
+    id: 7,
+    img: FaChalkboardTeacher,
+    category: "Coaching Institutes",
+    color: "#3B82F6",
+  },
+  {
+    id: 8,
+    img: FaIndustry,
+    category: "Manufacturing",
+    color: "#6B7280",
+  },
+  {
+    id: 9,
+    img: FaSpa,
+    category: "Salon & Wellness",
+    color: "#EC4899",
+  },
   {
     id: 10,
-    img: FaLaptopCode,
-    category: " Jewellery & Luxury Brands",
-    color: "#00F2FE",
+    img: FaGem,
+    category: "Jewellery & Luxury Brands",
+    color: "#FACC15",
   },
   {
     id: 11,
-    img: FaLaptopCode,
-    category: " Logistics & Transportation",
-    color: "#00F2FE",
+    img: FaTruck,
+    category: "Logistics & Transportation",
+    color: "#06B6D4",
   },
 ];
 
@@ -114,12 +151,12 @@ const AllSector = () => {
   return (
     <section className="mt-16 overflow-hidden py-6 sm:py-4 ">
       <div className="max-w-full mx-auto px-6">
-        <h2 className="text-center text-3xl lg:text-5xl font-bold text-zinc-900 mb-12">
+        <h2 className="text-center text-3xl lg:text-5xl font-bold text-zinc-900">
           <ShimmerText>All Sectors</ShimmerText>
         </h2>
         <DecorativeUnderline
-          width="320px" // Adjust width as needed
-          className="mt-4 mx-auto"
+          width="280px" // Adjust width as needed
+          className="mb-4 mx-auto"
           centerColor="#3B82F6" // Optional: change blue color
         />
 

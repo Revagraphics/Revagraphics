@@ -14,7 +14,7 @@ export default function Animated({
   const ref = useRef(null);
 
   // convert text safely
-  const text = typeof children === "string" ? children : "";
+  const text = typeof children === "string" ? children : "new ";
   const letters = text.split("");
 
   useEffect(() => {

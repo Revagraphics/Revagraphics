@@ -221,7 +221,7 @@ export default function Home() {
                   </ShimmerText>
                 </h2>
                 <DecorativeUnderline
-                  width="320px" // Adjust width as needed
+                  width="450px" // Adjust width as needed
                   className="mt-4 mx-auto"
                   centerColor="#3B82F6" // Optional: change blue color
                 />

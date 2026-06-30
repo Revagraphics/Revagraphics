@@ -90,7 +90,7 @@ export default function SkillsTabs() {
 
   return (
     <section className="w-full bg-gradient-to-b from-gray-50 to-white sm:py-2">
-      <GridBg gridSize={50} lineColor="#f5f1ed" bgColor="#fff">
+      <GridBg gridSize={80} lineColor="#f5f1ed" bgColor="#fff">
 
       <div className="max-w-7xl mx-auto px-6">
         {/* ---------------- HEADING ---------------- */}
@@ -101,9 +101,9 @@ export default function SkillsTabs() {
             <span>Work With</span>
           </h2>
           <DecorativeUnderline
-                            width="320px" // Adjust width as needed
-                            className="mt-4 mx-auto"
-                            centerColor="#3B82F6" // Optional: change blue color
+            width="320px" // Adjust width as needed
+            className="mt-4 mx-auto"
+            centerColor="#3B82F6" // Optional: change blue color
                           />
 
           <p className="text-gray-600 mt-4 max-w-2xl mx-auto">

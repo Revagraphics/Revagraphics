@@ -22,7 +22,6 @@ const reviews = [
     quote:
       "Got a dynamic website designed through them and quite Satisfied with the end product. Found Mr. Neel to be responsive and helpful in all stages.",
     name: "Dhruv Bhadoriya",
-    role: "Product Lead · Nexus",
     rating: 5,
     image: dhruv,
     accent: "#3B82F6",
