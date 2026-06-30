@@ -209,7 +209,7 @@ export default function Home() {
         {/* ================= REVA SECTION ================= */}
         <section className="relative mt-24 overflow-hidden">
           <GridBg gridSize={80} lineColor="#f5f1ed" bgColor="#fff">
-            <div className="relative z-10 max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 xl:gap-20">
                 {/* Heading */}
                 <div className="lg:col-span-2 text-center max-w-4xl mx-auto">
@@ -239,10 +239,7 @@ export default function Home() {
                     Company. Our main Domain is Web Design, Web Development,
                     Digital Marketing, Product Design, and Cloud Services.
                     Customer Satisfaction and the Highest rate of Customer
-                    Repeatability make us one of the pioneers in the field. So,
-                    what are you waiting for? Let us discuss your ideas and our
-                    innovation in detail because catering to your requirement
-                    and converting it into a final product is our main goal.
+                    Repeatability make us one of the pioneers in the field.
                   </p>
 
                   <div className="flex flex-wrap gap-6 justify-center lg:justify-start">
