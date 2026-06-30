@@ -113,24 +113,26 @@ export default function Home() {
       />
 
       <div className="flex flex-col h-full">
-        {/* Icon */}
-        <div className="flex shrink-0 aspect-square w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 items-center justify-center rounded-2xl bg-orange-50 border border-orange-100 group-hover:scale-105 transition-transform duration-300">
-          <Icon className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 text-orange-500 stroke-[1.5]" />
+        {/* Icon + Title/Value in one row */}
+        <div className="flex items-start gap-5 sm:gap-6">
+          {/* Icon */}
+          <div className="flex shrink-0 aspect-square w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 items-center justify-center rounded-2xl bg-orange-50 border border-orange-100 group-hover:scale-105 transition-transform duration-300 mt-1">
+            <Icon className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 text-orange-500 stroke-[1.5]" />
+          </div>
+
+          {/* Title + Value */}
+          <div className="flex-1 min-w-0">
+            <span className="text-orange-500 text-xs sm:text-sm font-bold tracking-[0.125em] uppercase">
+              {title}
+            </span>
+            <h3 className="mt-1 text-4xl sm:text-5xl md:text-6xl font-bold text-slate-900 tracking-tighter leading-none">
+              {value}
+            </h3>
+          </div>
         </div>
 
-        {/* Title + Number */}
-        <div className="mt-6 flex flex-col">
-          <span className="text-orange-500 text-xs sm:text-sm font-bold tracking-[0.125em] uppercase">
-            {title}
-          </span>
-
-          <h3 className="mt-2 text-4xl sm:text-5xl md:text-6xl font-bold text-slate-900 tracking-tighter leading-none">
-            {value}
-          </h3>
-        </div>
-
-        {/* Description - Under the Icon (as requested) */}
-        <div className="mt-auto pt-6 sm:pt-8">
+        {/* Description - starts under the icon area */}
+        <div className="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-orange-100/60">
           <p className="text-sm sm:text-base leading-relaxed text-slate-600">
             {desc}
           </p>
@@ -205,72 +207,71 @@ export default function Home() {
         </section>
 
         {/* ================= REVA SECTION ================= */}
-        <section className=" relative mt-24 overflow-hidden ">
+        <section className="relative mt-24 overflow-hidden">
           <GridBg gridSize={80} lineColor="#f5f1ed" bgColor="#fff">
-            <div className="relative z-10 max-w-[90%] mx-auto grid lg:grid-cols-2 gap-x-16 gap-y-14">
-              {/* Heading */}
-              <div className="lg:col-span-2 text-center max-w-5xl mx-auto">
-                <span className=" inline-block text-orange-500 font-semibold uppercase tracking-[0.35em] text-sm mb-5">
-                  We Are Reva
-                </span>
+            <div className="relative z-10 max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8 py-12">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 xl:gap-20">
+                {/* Heading */}
+                <div className="lg:col-span-2 text-center max-w-4xl mx-auto">
+                  <span className="inline-block text-orange-500 font-semibold uppercase tracking-[0.35em] text-sm mb-5">
+                    We Are Reva
+                  </span>
 
-                <h2 className="text-[#30303c]  text-4xl sm:text-5xl lg:text-6xl xl:text-6xl font-bold leading-tight">
-                  <span>Top-Rated</span> Web Designing And{" "}
-                  <ShimmerText className="font-bold">
-                    Development Company
-                  </ShimmerText>
-                </h2>
-                <DecorativeUnderline
-                  width="450px" // Adjust width as needed
-                  className="mt-4 mx-auto"
-                  centerColor="#3B82F6" // Optional: change blue color
-                />
-              </div>
+                  <h2 className="text-[#30303c] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                    <span>Top-Rated</span> Web Designing And{" "}
+                    <ShimmerText className="font-bold">
+                      Development Company
+                    </ShimmerText>
+                  </h2>
 
-              {/* LEFT CONTENT */}
-
-              <div className="space-y-8">
-                <p className="text-slate-600 leading-8 text-justify text-lg">
-                  Reva started its operation in the year 2019. We are a
-                  Worldwide, based Web Designing and Digital Marketing Company.
-                  Our main Domain is Web Design, Web Development, Digital
-                  Marketing, Product Design, and Cloud Services. Customer
-                  Satisfaction and the Highest rate of Customer Repeatability
-                  make us one of the pioneers in the field. So, what are you
-                  waiting for? Let us discuss your ideas and our innovation in
-                  detail because catering to your requirement and converting it
-                  into a final product is our main goal.
-                </p>
-
-                <div className="flex flex-wrap gap-6 items-center">
-                  {[badge1, badge2, badge3].map((badge, i) => (
-                    <img
-                      key={i}
-                      src={badge}
-                      className="h-20 md:h-24 object-contain transition duration-300 hover:scale-105"
-                      alt=""
-                    />
-                  ))}
+                  <DecorativeUnderline
+                    width="320px"
+                    className="mt-5 mx-auto md:w-[380px] lg:w-[450px]"
+                    centerColor="#3B82F6"
+                  />
                 </div>
 
-                <Link
-                  to="/about"
-                  className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-orange-500 to-pink-500 px-8 py-4 text-white font-semibold shadow-xl hover:scale-105 transition-all duration-300"
-                >
-                  About Us
-                  <span>→</span>
-                </Link>
-              </div>
+                {/* LEFT CONTENT - Text + Badges + Button */}
+                <div className="space-y-8 lg:space-y-10">
+                  <p className="text-slate-600 leading-relaxed text-[17px] sm:text-lg text-justify md:text-left">
+                    Reva started its operation in the year 2019. We are a
+                    Worldwide, based Web Designing and Digital Marketing
+                    Company. Our main Domain is Web Design, Web Development,
+                    Digital Marketing, Product Design, and Cloud Services.
+                    Customer Satisfaction and the Highest rate of Customer
+                    Repeatability make us one of the pioneers in the field. So,
+                    what are you waiting for? Let us discuss your ideas and our
+                    innovation in detail because catering to your requirement
+                    and converting it into a final product is our main goal.
+                  </p>
 
-              {/* RIGHT STATS */}
+                  <div className="flex flex-wrap gap-6 justify-center lg:justify-start">
+                    {[badge1, badge2, badge3].map((badge, i) => (
+                      <img
+                        key={i}
+                        src={badge}
+                        className="h-16 sm:h-20 md:h-24 object-contain transition duration-300 hover:scale-105"
+                        alt=""
+                      />
+                    ))}
+                  </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 items-start">
-                {/* Left Column */}
-                <div className="flex flex-col gap-8">
+                  <div className="flex justify-center lg:justify-start">
+                    <Link
+                      to="/about"
+                      className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-orange-500 to-pink-500 px-8 py-4 text-white font-semibold shadow-xl hover:scale-105 transition-all duration-300 text-center"
+                    >
+                      About Us <span>→</span>
+                    </Link>
+                  </div>
+                </div>
+
+                {/* RIGHT STATS - Better Responsive Grid */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
                   <StatCard
                     title="PROJECTS"
                     value="750+"
-                    desc="Reva delivered the hundred of successful projects around the world."
+                    desc="Reva delivered hundreds of successful projects around the world."
                     icon={FaBriefcase}
                   />
                   <StatCard
@@ -279,14 +280,10 @@ export default function Home() {
                     desc="Our team consists of highly qualified, experienced and knowledgeable."
                     icon={FaUsers}
                   />
-                </div>
-
-                {/* Right Column (Offset top margin) */}
-                <div className="flex flex-col gap-8 sm:mt-12">
                   <StatCard
                     title="CLIENTS"
                     value="250+"
-                    desc="Reva Graphics achieves the hundred of great customers around the world."
+                    desc="Reva Graphics achieves hundreds of great customers around the world."
                     icon={FaHandshake}
                   />
                   <StatCard
@@ -305,12 +302,12 @@ export default function Home() {
         <AllSector />
         <ServicesSection />
         <SkillsTabs />
-       
+
         <SelectedWorkSection />
-         <StarRating />
+        <StarRating />
 
         {/* <ReviewSlider /> */}
-        
+
         <Feedback />
         <Footer />
       </div>

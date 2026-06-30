@@ -92,7 +92,7 @@ export default function SkillsTabs() {
     <section className="w-full bg-gradient-to-b from-gray-50 to-white sm:py-2">
       <GridBg gridSize={80} lineColor="#f5f1ed" bgColor="#fff">
 
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6 py-10">
         {/* ---------------- HEADING ---------------- */}
 
         <div className="text-center mb-14">

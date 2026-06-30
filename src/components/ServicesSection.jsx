@@ -78,9 +78,9 @@ const services = [
 
 export default function ServicesSection() {
   return (
-    <section className="py-20 bg-gradient-to-br from-slate-50 to-gray-100">
+    <section className=" bg-gradient-to-br from-slate-50 to-gray-100">
       <GridBg gridSize={80} lineColor="#f5f1ed" bgColor="#fff">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-6 py-10">
           {/* Heading */}
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl lg:text-5xl font-bold text-gray-900 leading-tight">

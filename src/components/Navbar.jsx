@@ -83,7 +83,7 @@ export default function Navbar() {
   return (
     <>
       {/* ================= NAVBAR ================= */}
-      <nav className="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-[90%] z-[9999] rounded-3xl   bg-white/30 backdrop-blur border shadow-xl">
+      <nav className="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-[90%] z-[9999] rounded-3xl   bg-white/30 backdrop-blur-[20px] border shadow-xl">
         <div className="flex justify-between items-center px-6 py-3">
           {/* LOGO */}
           <Link to="/">

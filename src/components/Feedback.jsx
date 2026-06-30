@@ -1,12 +1,16 @@
 import { useState, useRef, useEffect } from "react";
 import gsap from "gsap";
 import ShimmerText from "../components/ShimmerText";
+
 import logo1 from "../assets/customer-logo-1.png";
 import logo2 from "../assets/customer-logo-2.png";
 import logo3 from "../assets/customer-logo-11.png";
+import logo4 from "../assets/customer-logo-4.png";
+import logo6 from "../assets/customer-logo-6.png";
+import logo7 from "../assets/customer-logo-7.png";
 import toast from "react-hot-toast";
 
-const logos = [logo1, logo2, logo3];
+const logos = [logo1, logo2, logo3, logo4, logo6, logo7];
 
 export default function Feedback() {
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -55,7 +59,7 @@ export default function Feedback() {
 
     try {
       const response = await fetch(
-        "https://formsubmit.co/ajax/sourabhnegi557@gmail.com",
+        "https://formsubmit.co/ajax/nverma@revagraphics.com",
         {
           method: "POST",
           headers: {
@@ -112,9 +116,9 @@ export default function Feedback() {
             Let's Build Something Great
           </h1>
         </div>
-
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 items-stretch">
           {/* ===== LEFT SIDE - Equal Height ===== */}
+
           <div className="lg:col-span-2 flex flex-col h-full gap-6">
             <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-gray-100 flex-1 flex flex-col">
               <h2 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-6">
@@ -208,8 +212,7 @@ export default function Feedback() {
               </div>
             </div>
           </div>
-
-          {/* ===== RIGHT SIDE - Form (Equal Height) ===== */}
+          {/* ===== right SIDE - Equal Height ===== */}
           <div className="lg:col-span-3 bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 shadow-sm border border-gray-100 flex flex-col">
             <h2 className="text-2xl sm:text-3xl font-semibold text-gray-900 mb-6 sm:mb-8">
               Send Your Inquiry
@@ -334,59 +337,56 @@ export default function Feedback() {
             </form>
           </div>
         </div>
+        {/* address section */}
+        <div className="pb-24 p-10">
+          <div className="text-center mb-12">
+            <p className="text-zinc-100 font-medium tracking-widest text-sm mb-2">
+              FIND US
+            </p>
+            <h2 className="text-4xl lg:text-5xl font-bold text-zinc-100">
+              Our Office Locations
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-10">
+            <div>
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-4xl">🛕</span>
+                <h3 className="text-2xl font-bold text-zinc-100">India</h3>
+              </div>
+              <p className="text-zinc-100 leading-relaxed">
+                12, Jodhka House, Sant Nagar, East of Kailash, New
+                <br />
+                Delhi 110065, INDIA
+              </p>
+            </div>
+
+            <div>
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-4xl">🦁</span>
+                <h3 className="text-2xl font-bold text-zinc-100">Singapore</h3>
+              </div>
+              <p className="text-zinc-100 leading-relaxed">
+                Robinson Road SPACES, Crown at Robinson #13-07,
+                <br />
+                Singapore 068907.
+              </p>
+            </div>
+
+            <div>
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-4xl">🏛️</span>
+                <h3 className="text-2xl font-bold text-zinc-100">UK</h3>
+              </div>
+              <p className="text-zinc-100 leading-relaxed">
+                Bourne Court, Southend Road, Woodford Green,
+                <br />
+                Greater London - IG8 8HD
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
 }
-
-{/* <div className="pb-24 p-10">
-  <div className="text-center mb-12">
-    <p className="text-blue-600 font-medium tracking-widest text-sm mb-2">
-      FIND US
-    </p>
-    <h2 className="text-4xl lg:text-5xl font-bold text-zinc-100">
-      Our Office Locations
-    </h2>
-  </div>
-
-  <div className="grid md:grid-cols-3 gap-10">
-
-    <div>
-      <div className="flex items-center gap-3 mb-4">
-        <span className="text-4xl">🛕</span>
-        <h3 className="text-2xl font-bold text-zinc-100">India</h3>
-      </div>
-      <p className="text-zinc-100 leading-relaxed">
-        12, Jodhka House, Sant Nagar, East of Kailash, New
-        <br />
-        Delhi 110065, INDIA
-      </p>
-    </div>
-
-
-    <div>
-      <div className="flex items-center gap-3 mb-4">
-        <span className="text-4xl">🦁</span>
-        <h3 className="text-2xl font-bold text-zinc-100">Singapore</h3>
-      </div>
-      <p className="text-zinc-100 leading-relaxed">
-        Robinson Road SPACES, Crown at Robinson #13-07,
-        <br />
-        Singapore 068907.
-      </p>
-    </div>
-
-
-    <div>
-      <div className="flex items-center gap-3 mb-4">
-        <span className="text-4xl">🏛️</span>
-        <h3 className="text-2xl font-bold text-zinc-100">UK</h3>
-      </div>
-      <p className="text-zinc-100 leading-relaxed">
-        Bourne Court, Southend Road, Woodford Green,
-        <br />
-        Greater London - IG8 8HD
-      </p>
-    </div>
-  </div>
-</div>; */}
