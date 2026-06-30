@@ -26,7 +26,6 @@ export default function Navbar() {
       items: [
         { to: "/branding", label: "Brand Identity" },
         { to: "/marketing", label: "Digital Marketing" },
-        { to: "/branding", label: "Branding" },
         { to: "/profile", label: "Company Profile" },
       ],
     },

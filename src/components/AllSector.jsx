@@ -149,7 +149,7 @@ const AllSector = () => {
   };
 
   return (
-    <section className="mt-16 overflow-hidden py-6 sm:py-4 ">
+    <section className="mt-16 overflow-hidden py-6 sm:py-4 flex items-center  lg:py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-full mx-auto px-6">
         <h2 className="text-center text-3xl lg:text-5xl font-bold text-zinc-900">
           <ShimmerText>All Sectors</ShimmerText>
@@ -163,7 +163,7 @@ const AllSector = () => {
         {/* First Marquee - Row 1 (Displaying sectors array with mixed Icons/Images) */}
         <div className="overflow-hidden mb-10">
           <div ref={marquee1Ref} className="flex gap-6 w-max">
-            {[...sectors, ...sectors].map((item, index) => (
+            {[...sectors, ...sectors, ...sectors].map((item, index) => (
               <div
                 key={`sector1-${item.id}-${index}`}
                 className="flex items-center gap-4 min-w-[240px] h-16 px-5 rounded-2xl

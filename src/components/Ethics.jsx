@@ -4,6 +4,10 @@ import united from "../assets/united.svg?url";
 import emp from "../assets/employee.png?url";
 import teamwork from "../assets/teamwork.png?url";
 import quality from "../assets/qc.png?url";
+import GridBg from "../components/GridBg";
+import ShimmerText from "../components/ShimmerText";
+import DecorativeUnderline from "../components/DecorativeUnderline";
+
 
 export default function Ethics() {
 
@@ -48,14 +52,21 @@ export default function Ethics() {
   ];
 
   return (
-    <section className="r-bg-x py-20 md:py-24">
-      <div className="max-w-[80%] mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="r-bg-x ">
+      <GridBg gridSize={80} lineColor="#f5f1ed" bgColor="#fff">
+
+      <div className="max-w-[80%] mx-auto py-20 md:py-10 px-4 sm:px-6 lg:px-8">
         
         {/* Heading Section */}
         <div className="max-w-3xl mx-auto text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-semibold text-[#30303c] leading-tight">
-            Transparency and Ethics
+           <ShimmerText> Transparency</ShimmerText>  and Ethics
           </h2>
+          <DecorativeUnderline
+                        width="400px" // Adjust width as needed
+                        className="mt-4 mx-auto"
+                        centerColor="#3B82F6" // Optional: change blue color
+                        />
           <p className="mt-6 text-lg md:text-xl text-gray-600 leading-relaxed">
             Transparency is an attribute of corporate culture that’s revealed through the behaviors 
             of an organization’s leaders, employees, and stakeholders.
@@ -93,6 +104,9 @@ export default function Ethics() {
           ))}
         </div>
       </div>
+
+      </GridBg>
+
     </section>
   );
 };

@@ -76,6 +76,7 @@ const services = [
   },
 ];
 
+
 export default function ServicesSection() {
   return (
     <section className=" bg-gradient-to-br from-slate-50 to-gray-100">
@@ -88,10 +89,10 @@ export default function ServicesSection() {
 
             </h2>
             <DecorativeUnderline
-                              width="320px" // Adjust width as needed
-                              className="mt-4 mx-auto"
-                              centerColor="#3B82F6" // Optional: change blue color
-                            />
+              width="320px" // Adjust width as needed
+              className="mt-4 mx-auto"
+              centerColor="#3B82F6" // Optional: change blue color
+              />
             <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
               Professional solutions that transform ideas into powerful digital
               experiences
@@ -155,14 +156,17 @@ export default function ServicesSection() {
                     </p>
 
                     {/* Read More */}
-                    <a
+                
+                    <button className="inline-block mt-8  bg-gradient-to-r from-[#FF9800] to-[#E91E63] text-white px-8 py-3 rounded-full">
+                          <a
                       href={service.link}
-                      className="inline-flex items-center gap-2 text-teal-600 group-hover:text-white 
+                      className="inline-flex items-center gap-2 text-zinc-100 group-hover:text-white 
                                  font-semibold group-hover:gap-3 transition-all duration-300"
                     >
                       Explore Service
                       <FaArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                     </a>
+                    </button>
                   </div>
 
                   {/* Bottom Glow Effect */}

@@ -1,5 +1,8 @@
 import { useState, useRef, useEffect } from "react";
 
+import ShimmerText from "../components/ShimmerText";
+import DecorativeUnderline from "../components/DecorativeUnderline";
+
 const tabs = [
   {
     id: "mission",
@@ -77,8 +80,13 @@ export default function Mission() {
           <h2 className="text-3xl md:text-5xl font-bold mt-4 leading-tight">
             Driven by purpose,
             <br />
-            <span style={{ color: active.accent }}>guided by vision</span>
+            <ShimmerText>guided by vision</ShimmerText>
           </h2>
+          <DecorativeUnderline
+            width="400px" // Adjust width as needed
+            className="mt-4 mx-auto"
+            centerColor="#3B82F6" // Optional: change blue color
+            />
         </div>
 
         {/* Tabs (scrollable on mobile) */}

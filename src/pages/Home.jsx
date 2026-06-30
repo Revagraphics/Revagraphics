@@ -132,7 +132,7 @@ export default function Home() {
         </div>
 
         {/* Description - starts under the icon area */}
-        <div className="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-orange-100/60">
+        <div className="mt-2 sm:mt-6  sm:pt-4  ">
           <p className="text-sm sm:text-base leading-relaxed text-slate-600">
             {desc}
           </p>
@@ -152,7 +152,7 @@ export default function Home() {
         <Navbar />
 
         {/* ================= HERO ================= */}
-        <main className="mt-28 px-4 flex item-center lg:h-[70vh] max-w-[90%] mx-auto">
+        <main className="mt-28 px-4 flex item-center lg:h-[70vh] max-w-[90vw] justify-center mx-auto py-12 sm:py-16 lg:py-20 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-12 items-center">
             {/* TEXT */}
             <section className="hero-animate flex-1 text-center lg:text-left">
@@ -189,17 +189,17 @@ export default function Home() {
         </main>
 
         {/* ================= CLIENT LOGOS ================= */}
-        <section className="mt-16 overflow-hidden">
+        <section className="mt-16 overflow-hidden w-full flex items-center justify-center">
           <div ref={logosRef} className="flex gap-8 w-max items-center">
-            {[...logos, ...logos].map((logo, index) => (
+            {[...logos, ...logos,].map((logo, index) => (
               <div
                 key={`${logo.id}-${index}`}
-                className="w-36 h-20 sm:w-44 sm:h-24 border border-orange p-1 flex items-center justify-center shrink-0 rounded-xl"
+                className="w-[640px] h-32 sm:w-44 sm:h-24 border border-orange p-2 flex items-center justify-center shrink-0 rounded-xl"
               >
                 <img
                   src={logo.logo}
                   alt="Partner Logo"
-                  className="max-w-full max-h-full h-auto w-auto object-contain opacity-90"
+                  className="max-w-full max-h-full h-auto w-auto object-contain opacity-100"
                 />
               </div>
             ))}
@@ -207,12 +207,12 @@ export default function Home() {
         </section>
 
         {/* ================= REVA SECTION ================= */}
-        <section className="relative mt-24 overflow-hidden">
+        <section className="relative mt-24 overflow-hidden flex justify-center w-full py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
           <GridBg gridSize={80} lineColor="#f5f1ed" bgColor="#fff">
             <div className="relative z-10 max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8 py-12">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 xl:gap-20">
                 {/* Heading */}
-                <div className="lg:col-span-2 text-center max-w-4xl mx-auto">
+                <div className="lg:col-span-2 text-center max-w-4xl lg-text-left mx-auto">
                   <span className="inline-block text-orange-500 font-semibold uppercase tracking-[0.35em] text-sm mb-5">
                     We Are Reva
                   </span>

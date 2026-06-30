@@ -99,7 +99,7 @@ export default function  SelectedWork() {
                 className="flex-shrink-0 w-[220px] sm:w-[280px] md:w-[320px] lg:w-[340px] group cursor-pointer"
               >
                 {/* Image */}
-                <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-md aspect-[4/3] bg-gray-200">
+                <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-md aspect-[4/4] bg-gray-200">
                   <img
                     src={work.image}
                     alt={work.title}
