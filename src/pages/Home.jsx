@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ServicesSection from "../components/ServicesSection";
-import SelectedWorkSection from "../components/SelectedWorkSection";
+import SelectedWork from "../components/SelectedWork";
 import SkillsTabs from "../components/SkillTabs";
 import Feedback from "../components/Feedback";
 import StarRating from "../components/StarRating";
@@ -131,7 +131,7 @@ export default function Home() {
         </div>
 
         {/* Description - starts under the icon area */}
-        <div className="mt-2 sm:mt-6  sm:pt-4  ">
+        <div className="  sm:pt-4  ">
           <p className="text-sm sm:text-base leading-relaxed text-slate-600">
             {desc}
           </p>
@@ -193,12 +193,27 @@ export default function Home() {
             {[...logos, ...logos, ...logos].map((logo, index) => (
               <div
                 key={`${logo.id}-${index}`}
-                className=" w-48 h-28 sm:w-56 sm:h-32 md:w-64 md:h-36 lg:w-72 lg:h-40 shrink-0 flex items-center justify-center rounded-2xl border border-orange-300 bg-white p-4"
+                className="
+    w-48 h-28
+    sm:w-56 sm:h-32
+    md:w-64 md:h-36
+    lg:w-72 lg:h-40
+    shrink-0
+    flex items-center justify-center
+    rounded-2xl
+    bg-gray-50
+    p-5
+    shadow-sm
+    hover:shadow-lg
+    transition-all
+    duration-300
+    hover:-translate-y-1
+  "
               >
                 <img
                   src={logo.logo}
                   alt="Partner Logo"
-                  className="max-w-full max-h-full h-auto w-auto object-contain opacity-100"
+                  className="max-w-full max-h-full object-contain"
                 />
               </div>
             ))}
@@ -206,7 +221,7 @@ export default function Home() {
         </section>
 
         {/* ================= REVA SECTION ================= */}
-        <section className="relative mt-24 overflow-hidden flex justify-center w-full py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
+        <section className="relative mt-24 overflow-hidden flex justify-center w-full  sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
           <GridBg gridSize={80} lineColor="#f5f1ed" bgColor="#fff">
             <div className="relative z-10 max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8 py-12">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 xl:gap-20">
@@ -241,13 +256,13 @@ export default function Home() {
                     Repeatability make us one of the pioneers in the field.
                   </p>
 
-                  <div className="flex flex-wrap gap-6 justify-center lg:justify-start">
+                  <div className="flex items-center justify-center lg:justify-start gap-3 sm:gap-4">
                     {[badge1, badge2, badge3].map((badge, i) => (
                       <img
                         key={i}
                         src={badge}
-                        className="h-16 sm:h-20 md:h-24 object-contain transition duration-300 hover:scale-105"
                         alt=""
+                        className="h-12 sm:h-16 md:h-20 lg:h-24 w-auto object-contain transition-transform duration-300 hover:scale-105"
                       />
                     ))}
                   </div>
@@ -299,7 +314,8 @@ export default function Home() {
         <ServicesSection />
         <SkillsTabs />
 
-        <SelectedWorkSection />
+        {/* <SelectedWorkSection /> */}
+        <SelectedWork />
         <StarRating />
         <Feedback />
         <Footer />

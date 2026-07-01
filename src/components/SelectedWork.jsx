@@ -86,8 +86,8 @@ export default function  SelectedWork() {
         <div className="relative">
 
           {/* Fade Edges */}
-          <div className="absolute left-0 top-0 bottom-0 w-10 sm:w-16 bg-gradient-to-r from-gray-50 to-transparent pointer-events-none z-10" />
-          <div className="absolute right-0 top-0 bottom-0 w-10 sm:w-16 bg-gradient-to-l from-gray-50 to-transparent pointer-events-none z-10" />
+          {/* <div className="absolute left-0 top-0 bottom-0 w-10 sm:w-16 bg-gradient-to-r from-gray-50 to-transparent pointer-events-none z-10" />
+          <div className="absolute right-0 top-0 bottom-0 w-10 sm:w-16 bg-gradient-to-l from-gray-50 to-transparent pointer-events-none z-10" /> */}
 
           <div
             ref={trackRef}

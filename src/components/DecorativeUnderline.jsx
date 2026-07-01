@@ -20,7 +20,7 @@ const DecorativeUnderline = ({
         {/* Blue Glowing Circle */}
         <div className="relative flex items-center justify-center">
           <div 
-            className="w-5 h-5 rounded-full border-2 border-blue-500 relative z-10"
+            className="w-4 h-4 rounded-full border-2 border-blue-500 relative z-10"
             style={{ backgroundColor: centerColor }}
           />
           {/* Glow Effect */}

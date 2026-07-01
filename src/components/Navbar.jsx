@@ -32,8 +32,8 @@ export default function Navbar() {
     development: {
       label: "Development",
       items: [
-        { to: "/development", label: "Web Development" },
         { to: "/designing", label: "Web designing" },
+        { to: "/development", label: "Web Development" },
         { to: "/mobile", label: "Mobile Application" },
         { to: "/cloud", label: "Cloud Services" },
       ],
@@ -212,7 +212,7 @@ export default function Navbar() {
 
           {/* CTA DESKTOP */}
           <Link to="/contact">
-            <button className="hidden lg:block px-6 py-2 rounded-full border cursor-pointer font-semibold text-[#8c5300] bg-[#ffdb00] transition">
+            <button className="hidden lg:block px-6 py-2 rounded-full border cursor-pointer font-semibold text-[#fff] bg-gradient-to-r from-[#FF9800] to-[#E91E63] transition">
               Talk To Us
             </button>
           </Link>

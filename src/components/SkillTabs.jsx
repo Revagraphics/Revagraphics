@@ -89,7 +89,7 @@ export default function SkillsTabs() {
   /* ---------- GSAP Animation ---------- */
 
   return (
-    <section className="w-full bg-gradient-to-b from-gray-50 to-white sm:py-2">
+    <section className="w-full h-auto bg-gradient-to-b from-gray-50 to-white ">
       <GridBg gridSize={80} lineColor="#f5f1ed" bgColor="#fff">
 
       <div className="max-w-7xl mx-auto px-6 py-10">

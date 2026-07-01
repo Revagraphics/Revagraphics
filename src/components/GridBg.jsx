@@ -10,7 +10,7 @@ const GridBg = ({
   lineOpacity = 0.6,
 }) => {
   const topRightRef = useRef(null);
-  const bottomLeftRef = useRef(null);
+  const leftCenterRef = useRef(null);
 
   useEffect(() => {
     // Top Right System
@@ -18,7 +18,6 @@ const GridBg = ({
       const outerOrbit = topRightRef.current.querySelector(".outer-orbit");
       const innerOrbit = topRightRef.current.querySelector(".inner-orbit");
 
-      // Outer Planet Orbit
       gsap.to(outerOrbit, {
         rotation: 360,
         duration: 8,
@@ -26,7 +25,6 @@ const GridBg = ({
         repeat: -1,
       });
 
-      // Inner Planet Orbit
       gsap.to(innerOrbit, {
         rotation: 360,
         duration: 11,
@@ -35,10 +33,10 @@ const GridBg = ({
       });
     }
 
-    // Bottom Left System
-    if (bottomLeftRef.current) {
-      const outerOrbit = bottomLeftRef.current.querySelector(".outer-orbit");
-      const innerOrbit = bottomLeftRef.current.querySelector(".inner-orbit");
+    // Left Center System (Previously Bottom Left)
+    if (leftCenterRef.current) {
+      const outerOrbit = leftCenterRef.current.querySelector(".outer-orbit");
+      const innerOrbit = leftCenterRef.current.querySelector(".inner-orbit");
 
       gsap.to(outerOrbit, {
         rotation: -360,
@@ -60,7 +58,7 @@ const GridBg = ({
 
   return (
     <div
-      className={`relative w-full min-h-screen overflow-hidden ${className}`}
+      className={`relative w-full min-h-auto overflow-hidden ${className}`}
       style={{ backgroundColor: bgColor }}
     >
       {/* Grid Lines */}
@@ -87,81 +85,81 @@ const GridBg = ({
         }}
       />
 
-      {/* === Top Right System (Scaled Up) === */}
-      <div className="absolute top-[6rem] right-[6rem] z-10" ref={topRightRef}>
-        {/* Outer Orbit Ring */}
-        <div className="absolute w-[260px] h-[260px] border border-gray-400/30 rounded-full left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" />
+      {/* === Top Right System === */}
+      <div className="absolute top-24 right-8 md:right-16 lg:right-24 z-10" ref={topRightRef}>
+        <div className="relative w-[180px] h-[180px] md:w-[260px] md:h-[260px]">
+          {/* Orbit Rings */}
+          <div className="absolute w-full h-full border border-gray-400/30 rounded-full" />
+          <div className="absolute w-[55%] h-[55%] border border-gray-400/30 rounded-full left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" />
 
-        {/* Inner Orbit Ring */}
-        <div className="absolute w-[140px] h-[140px] border border-gray-400/30 rounded-full left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" />
-
-        {/* Outer Planet Orbit Wrapper */}
-        <div
-          className="outer-orbit absolute w-[260px] h-[260px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
-          style={{ transformOrigin: "center" }}
-        >
+          {/* Outer Planet */}
           <div
-            className="planet absolute w-7 h-7 bg-cyan-400 rounded-full shadow-[0_0_25px_#67e8f9,0_0_50px_#22d3ee]"
-            style={{
-              left: "50%",
-              top: "0%",
-              transform: "translate(-50%, -50%)",
-            }}
-          />
-        </div>
+            className="outer-orbit absolute w-full h-full left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+            style={{ transformOrigin: "center" }}
+          >
+            <div
+              className="planet absolute w-6 h-6 md:w-7 md:h-7 bg-orange-500 rounded-full shadow-[0_0_25px_#fb923c,0_0_50px_#f97316]"
+              style={{
+                left: "50%",
+                top: "0%",
+                transform: "translate(-50%, -50%)",
+              }}
+            />
+          </div>
 
-        {/* Inner Planet Orbit Wrapper */}
-        <div
-          className="inner-orbit absolute w-[140px] h-[140px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
-          style={{ transformOrigin: "center" }}
-        >
+          {/* Inner Planet */}
           <div
-            className="planet absolute w-6 h-6 bg-blue-400 rounded-full shadow-[0_0_22px_#60a5fa,0_0_45px_#3b82f6]"
-            style={{
-              left: "50%",
-              top: "0%",
-              transform: "translate(-50%, -50%)",
-            }}
-          />
+            className="inner-orbit absolute w-[55%] h-[55%] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+            style={{ transformOrigin: "center" }}
+          >
+            <div
+              className="planet absolute w-5 h-5 md:w-6 md:h-6 bg-pink-500 rounded-full shadow-[0_0_22px_#f472b6,0_0_45px_#ec4899]"
+              style={{
+                left: "50%",
+                top: "0%",
+                transform: "translate(-50%, -50%)",
+              }}
+            />
+          </div>
         </div>
       </div>
 
-      {/* === Bottom Left System (Scaled Up) === */}
-      <div className="absolute bottom-32 left-24 z-10" ref={bottomLeftRef}>
-        {/* Outer Orbit Ring */}
-        <div className="absolute w-[380px] h-[380px] border border-gray-400/30 rounded-full left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" />
+      {/* === Left Center System (Moved from Bottom Left) === */}
+      <div className="absolute left-6 bottom-1/3 md:left-16 lg:left-24 z-10" ref={leftCenterRef}>
+        <div className="relative w-[220px] h-[220px] md:w-[340px] md:h-[340px]">
+          {/* Orbit Rings */}
+          <div className="absolute w-full h-full border border-gray-400/30 rounded-full" />
+          <div className="absolute w-[52%] h-[52%] border border-gray-400/30 rounded-full left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" />
 
-        {/* Inner Orbit Ring */}
-        <div className="absolute w-[190px] h-[190px] border border-gray-400/30 rounded-full left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" />
-
-        {/* Outer Planet Orbit Wrapper */}
-        <div
-          className="outer-orbit absolute w-[380px] h-[380px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
-          style={{ transformOrigin: "center" }}
-        >
+          {/* Outer Planet - Orange */}
           <div
-            className="planet absolute w-7 h-7 bg-pink-400 rounded-full shadow-[0_0_25px_#f472b6,0_0_50px_#db2777]"
-            style={{
-              left: "50%",
-              top: "0%",
-              transform: "translate(-50%, -50%)",
-            }}
-          />
-        </div>
+            className="outer-orbit absolute w-full h-full left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+            style={{ transformOrigin: "center" }}
+          >
+            <div
+              className="planet absolute w-7 h-7 md:w-8 md:h-8 bg-orange-500 rounded-full shadow-[0_0_28px_#fb923c,0_0_55px_#f97316]"
+              style={{
+                left: "50%",
+                top: "0%",
+                transform: "translate(-50%, -50%)",
+              }}
+            />
+          </div>
 
-        {/* Inner Planet Orbit Wrapper */}
-        <div
-          className="inner-orbit absolute w-[190px] h-[190px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
-          style={{ transformOrigin: "center" }}
-        >
+          {/* Inner Planet - Pink */}
           <div
-            className="planet absolute w-6 h-6 bg-violet-400 rounded-full shadow-[0_0_22px_#a78bfa,0_0_45px_#7c3aed]"
-            style={{
-              left: "50%",
-              top: "0%",
-              transform: "translate(-50%, -50%)",
-            }}
-          />
+            className="inner-orbit absolute w-[52%] h-[52%] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+            style={{ transformOrigin: "center" }}
+          >
+            <div
+              className="planet absolute w-5 h-5 md:w-7 md:h-7 bg-pink-500 rounded-full shadow-[0_0_25px_#f472b6,0_0_50px_#ec4899]"
+              style={{
+                left: "50%",
+                top: "0%",
+                transform: "translate(-50%, -50%)",
+              }}
+            />
+          </div>
         </div>
       </div>
 

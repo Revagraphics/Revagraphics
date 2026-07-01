@@ -3,6 +3,10 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Seo from "../components/Seo";
 
+import ShimmerText from "../components/ShimmerText";
+import DecorativeUnderline from "../components/DecorativeUnderline";
+
+
 export default function Printing() {
   return (
     <>
@@ -20,8 +24,13 @@ export default function Printing() {
 
           <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
             <h1 className="text-6xl md:text-7xl font-bold text-white mb-6 tracking-tight">
-              Premium <span className="text-orange-500">Printing</span>
+              Premium <ShimmerText>Printing</ShimmerText>
             </h1>
+            <DecorativeUnderline
+                          width="360px"
+                          className="mt-4 mx-auto md:w-[320px]"
+                          centerColor="#3B82F6"
+                        />
             <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-2xl mx-auto">
               High-quality prints that make your brand stand out. From business
               cards to large format — we bring your ideas to life.
@@ -32,7 +41,7 @@ export default function Printing() {
                   .getElementById("services")
                   .scrollIntoView({ behavior: "smooth" })
               }
-              className="px-10 py-4 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-full text-lg transition-all duration-300 hover:scale-105 active:scale-95"
+              className="px-10 py-4 bg-gradient-to-r from-[#FF9800] to-[#E91E63] hover:bg-orange-600 text-white font-semibold rounded-full text-lg transition-all duration-300 hover:scale-105 active:scale-95"
             >
               Explore Our Prints
             </button>
@@ -52,6 +61,12 @@ export default function Printing() {
               <h2 className="text-5xl font-bold text-[#08182b] mb-4">
                 What We Print
               </h2>
+              <DecorativeUnderline
+                          width="360px"
+                          className="mt-2 mx-auto md:w-[320px]"
+                          centerColor="#3B82F6"
+                        />
+              
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
                 Beautiful, professional prints crafted with precision and
                 premium materials
@@ -135,8 +150,13 @@ export default function Printing() {
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-16">
               <h2 className="text-5xl font-bold text-[#08182b] mb-4">
-                Our Recent Prints
+                Our Recent <ShimmerText>Prints</ShimmerText>
               </h2>
+              <DecorativeUnderline
+                          width="360px"
+                          className="mt-2 mx-auto md:w-[320px]"
+                          centerColor="#3B82F6"
+                        />
               <p className="text-xl text-gray-600">
                 Real projects that turned ideas into stunning reality
               </p>
@@ -187,7 +207,7 @@ export default function Printing() {
             </p>
             <a
               href="/contact"
-              className="inline-block px-12 py-5 bg-orange-500 hover:bg-orange-600 text-white font-semibold text-lg rounded-full transition-all duration-300 hover:scale-105"
+              className="inline-block px-12 py-5 bg-gradient-to-r from-[#FF9800] to-[#E91E63] hover:bg-orange-600 text-white font-semibold text-lg rounded-full transition-all duration-300 hover:scale-105"
             >
               Get Free Quote Now
             </a>

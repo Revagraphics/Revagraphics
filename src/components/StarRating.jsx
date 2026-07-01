@@ -12,7 +12,7 @@ const reviews = [
   {
     id: 1,
     quote:
-      "The best place Reva Graphics, to have for website designing and my personal experience with them is really great. they are so cool clam and professional with there work & best in it. Just want say thanks to both Neel and Vikas for making a beautiful website for us.",
+      "The best place Reva Graphics, to have for website designing and my personal experience with them is really great. they are so cool clam and professional with there work & best in it.",
     name: "Mr. Baliyogeshwar Prajapati",
     rating: 5,
     image: bali,
@@ -57,6 +57,7 @@ function StarRating({ count, color }) {
       ))}
     </div>
   );
+
 }
 
 export default function ReviewCarousel() {
@@ -123,7 +124,7 @@ export default function ReviewCarousel() {
             </h2>
             <DecorativeUnderline
               width="360px"
-              className="mt-4 mx-auto md:w-[320px]"
+              className="mt-6 mx-auto md:w-[320px]"
               centerColor="#3B82F6"
             />
           </div>
