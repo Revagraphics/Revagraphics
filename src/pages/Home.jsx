@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import ReviewSlider from "../components/ReviewSlider";
 import ServicesSection from "../components/ServicesSection";
 import SelectedWorkSection from "../components/SelectedWorkSection";
 import SkillsTabs from "../components/SkillTabs";
@@ -70,7 +69,7 @@ export default function Home() {
         stagger: 0.2,
       });
 
-      const totalWidth = logosRef.current.scrollWidth / 2;
+      const totalWidth = logosRef.current.scrollWidth / 3;
 
       gsap.to(logosRef.current, {
         x: -totalWidth,
@@ -191,10 +190,10 @@ export default function Home() {
         {/* ================= CLIENT LOGOS ================= */}
         <section className="mt-16 overflow-hidden w-full flex items-center justify-center">
           <div ref={logosRef} className="flex gap-8 w-max items-center">
-            {[...logos, ...logos,].map((logo, index) => (
+            {[...logos, ...logos, ...logos].map((logo, index) => (
               <div
                 key={`${logo.id}-${index}`}
-                className="w-[640px] h-32 sm:w-44 sm:h-24 border border-orange p-2 flex items-center justify-center shrink-0 rounded-xl"
+                className=" w-48 h-28 sm:w-56 sm:h-32 md:w-64 md:h-36 lg:w-72 lg:h-40 shrink-0 flex items-center justify-center rounded-2xl border border-orange-300 bg-white p-4"
               >
                 <img
                   src={logo.logo}
@@ -302,9 +301,6 @@ export default function Home() {
 
         <SelectedWorkSection />
         <StarRating />
-
-        {/* <ReviewSlider /> */}
-
         <Feedback />
         <Footer />
       </div>

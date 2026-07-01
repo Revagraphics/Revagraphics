@@ -8,6 +8,7 @@ import goodfirm from "../assets/goodfirm.png";
 import bottomLogo from "../assets/footer-logo.png";
 import { FaFacebook, FaLinkedin, FaTwitter, FaInstagram, FaTimes , FaHeart, FaRegHeart } from "react-icons/fa";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { FaXTwitter } from "react-icons/fa6";
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -130,7 +131,7 @@ export default function Footer() {
               <h3 className="text-white text-xl font-semibold mb-5">Follow Us</h3>
               <div className="flex flex-col gap-3 text-lg">
                 {[
-                  { href: "https://x.com/Revagraphics", icon: <FaTwitter size={22} />, label: "Twitter" },
+                  { href: "https://x.com/Revagraphics", icon: <FaXTwitter size={22} />, label: "Twitter" },
                   { href: "https://www.instagram.com/werevagraphics/", icon: <FaInstagram size={22} />, label: "Instagram" },
                   { href: "https://www.facebook.com/werevagraphics", icon: <FaFacebook size={22} />, label: "Facebook" },
                   { href: "https://www.linkedin.com/company/werevagraphics", icon: <FaLinkedin size={22} />, label: "LinkedIn" },
@@ -181,7 +182,7 @@ export default function Footer() {
             <div>
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-3 bg-orange-500 hover:bg-orange-600 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-orange-500/40 hover:scale-105"
+                className="inline-flex items-center gap-3   bg-gradient-to-r from-[#FF9800] to-[#E91E63]  px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-orange-500/40 hover:scale-105"
               >
                 Our Brochure →
               </Link>

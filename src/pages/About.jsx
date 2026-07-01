@@ -32,7 +32,7 @@ export default function About() {
                 We Are Reva
               </span>
               <h2 className="text-4xl text-[#30303c] sm:text-2xl lg:text-6xl font-semibold leading-tight">
-                We are a creative digital <br /> agency based in India.
+                We are a <ShimmerText>creative digital</ShimmerText><br /> agency based in India.
               </h2>
 
               <p className="mt-4 text-[#30303c] text-[1.2rem]">
@@ -44,7 +44,7 @@ export default function About() {
 
               <Link
                 to="/contact"
-                className="inline-block mt-8 bg-indigo-600 text-white px-8 py-3 rounded-full"
+                className="inline-block mt-8 bg-gradient-to-r from-[#FF9800] to-[#E91E63] text-white px-8 py-3 rounded-full"
               >
                 Let's Talk
               </Link>
