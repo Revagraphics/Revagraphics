@@ -11,6 +11,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FaXTwitter } from "react-icons/fa6";
 
 
+
 gsap.registerPlugin(ScrollTrigger);
 
 const WORD = "reva graphics";
@@ -243,55 +244,76 @@ export default function Footer() {
 
       {/* ── BEAUTIFUL MODAL ──────────────────────────────────────── */}
       {selectedBadge && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center top-4  backdrop-blur-md"
+  <div
+    className="fixed inset-0 z-50 flex items-center justify-center p-4  backdrop-blur-xl"
+    onClick={closeModal}
+  >
+    <div
+      className="bg-white rounded-3xl max-w-md w-full mx-auto overflow-hidden shadow-2xl border border-gray-100"
+      onClick={(e) => e.stopPropagation()}
+    >
+      {/* Gradient Accent Header */}
+      <div className="relative h-72 bg-gradient-to-br from-orange-500 via-pink-500 to-violet-600 flex items-center justify-center overflow-hidden">
+        {/* Subtle background pattern */}
+        <div className="absolute inset-0 bg-[radial-gradient(#ffffff33_1px,transparent_1px)] [background-size:20px_20px]"></div>
+
+        <img
+          src={selectedBadge.src}
+          alt={selectedBadge.alt}
+          className="w-56 h-56 object-contain drop-shadow-2xl relative z-10"
+        />
+
+        {/* Close Button */}
+        <button
           onClick={closeModal}
+          className="absolute top-5 right-5 bg-white/90 hover:bg-white text-gray-800 p-3 rounded-2xl shadow-lg transition-all hover:scale-110 active:scale-95"
         >
-          <div
-            className="bg-[#1f1f28] rounded-3xl max-w-md w-full mx-4 overflow-hidden shadow-2xl"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Header Image */}
-            <div className="relative">
-              <img
-                src={selectedBadge.src}
-                alt={selectedBadge.alt}
-                className="w-full h-64 object-contain bg-zinc-900 p-8"
-              />
-              <button
-                onClick={closeModal}
-                className="absolute top-4 right-4 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors"
-              >
-                <FaTimes size={20} />
-              </button>
-            </div>
+          <FaTimes size={22} />
+        </button>
 
-            {/* Content */}
-            <div className="p-8">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="text-orange-400 text-3xl">🏆</div>
-                <div>
-                  <h3 className="text-2xl font-bold text-white">{selectedBadge.title}</h3>
-                  <p className="text-orange-400 text-sm">{selectedBadge.year}</p>
-                </div>
-              </div>
+        {/* Decorative shine */}
+        <div className="absolute -top-20 -right-20 w-40 h-40 bg-white/20 rounded-full blur-3xl"></div>
+      </div>
 
-              <p className="text-zinc-300 leading-relaxed text-lg">
-                {selectedBadge.description}
-              </p>
-
-              <div className="mt-8 flex justify-center">
-                <button
-                  onClick={closeModal}
-                  className="px-8 py-3 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-2xl transition-all duration-300 hover:scale-105"
-                >
-                  Close
-                </button>
-              </div>
-            </div>
+      {/* Content */}
+      <div className="p-8 pb-10">
+        <div className="flex items-center gap-4 mb-6">
+          <div className="w-14 h-14 bg-gradient-to-br from-amber-400 to-orange-500 rounded-2xl flex items-center justify-center text-4xl shadow-inner">
+            🏆
+          </div>
+          <div>
+            <h3 className="text-3xl font-bold text-gray-900 tracking-tight">
+              {selectedBadge.title}
+            </h3>
+            <p className="text-orange-600 font-semibold text-lg mt-1">
+              {selectedBadge.year}
+            </p>
           </div>
         </div>
-      )}
+
+        <div className="prose prose-gray">
+          <p className="text-gray-600 leading-relaxed text-[17px]">
+            {selectedBadge.description}
+          </p>
+        </div>
+
+        {/* Action Button */}
+        <div className="mt-10">
+          <button
+            onClick={closeModal}
+            className="w-full py-4 bg-gradient-to-r from-orange-500 to-pink-500 hover:from-orange-600 hover:to-pink-600 text-white font-semibold text-lg rounded-2xl shadow-lg shadow-orange-500/30 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2"
+          >
+            Close Preview
+            <span className="text-xl">✨</span>
+          </button>
+        </div>
+      </div>
+
+      {/* Bottom Accent Bar */}
+      <div className="h-1.5 bg-gradient-to-r from-orange-400 via-pink-500 to-violet-500"></div>
+    </div>
+  </div>
+)}
     </footer>
   );
 }

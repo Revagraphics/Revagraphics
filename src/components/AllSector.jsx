@@ -118,7 +118,7 @@ const AllSector = () => {
   return (
     <section className=" overflow-hidden py-4 lg:py-2 px-4 sm:px-6 lg:px-8 bg-white">
       <GridBg gridSize={80} lineColor="#f5f1ed" bgColor="#fff">
-      <div className="max-w-full mx-auto">
+      <div className="max-w-full mx-auto py-8 lg:py-12">
         <div className="text-center mb-12">
           <h2 className="text-3xl lg:text-5xl font-bold text-zinc-900">
             <ShimmerText>All Sectors</ShimmerText>

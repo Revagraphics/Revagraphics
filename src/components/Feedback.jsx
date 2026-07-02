@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import gsap from "gsap";
 import ShimmerText from "../components/ShimmerText";
+import DecorativeUnderline from "../components/DecorativeUnderline";
 
 import logo1 from "../assets/customer-logo-1.png";
 import logo2 from "../assets/customer-logo-2.png";
@@ -8,9 +9,17 @@ import logo3 from "../assets/customer-logo-11.png";
 import logo4 from "../assets/customer-logo-4.png";
 import logo6 from "../assets/customer-logo-6.png";
 import logo7 from "../assets/customer-logo-7.png";
+import logo8 from "../assets/FRENZY-01.png";
+import logo9 from "../assets/customer-logo-10.png";
 import toast from "react-hot-toast";
 
-const logos = [logo1, logo2, logo3, logo4, logo6, logo7];
+// location icons
+import delhiIcon from "../assets/new-delhi.svg";
+import singapore from "../assets/singapore.svg";
+import uk from "../assets/big-ben.svg";
+
+const logos = [logo1, logo2, logo3, logo4];
+const logos2 = [logo6, logo7, logo8, logo9];
 
 export default function Feedback() {
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -23,7 +32,8 @@ export default function Feedback() {
     agree: false,
   });
 
-  const marqueeRef = useRef(null);
+  const marqueeRefLeft = useRef(null);
+  const marqueeRefRight = useRef(null);
   const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
@@ -35,15 +45,36 @@ export default function Feedback() {
   };
 
   // GSAP Infinite Marquee
+  // Left Moving Marquee
   useEffect(() => {
-    const container = marqueeRef.current;
+    const container = marqueeRefLeft.current;
     if (!container) return;
 
     const totalWidth = container.scrollWidth / 2;
 
     const tween = gsap.to(container, {
       x: -totalWidth,
-      duration: 25, // Adjust speed here (higher = slower)
+      duration: 25,
+      ease: "none",
+      repeat: -1,
+    });
+
+    return () => tween.kill();
+  }, []);
+
+  // Right Moving Marquee - Fixed & Seamless
+  useEffect(() => {
+    const container = marqueeRefRight.current;
+    if (!container) return;
+
+    const totalWidth = container.scrollWidth / 2;
+
+    // Start from right side and move left (creates right-to-left visual flow)
+    gsap.set(container, { x: -totalWidth }); // Initial position
+
+    const tween = gsap.to(container, {
+      x: 0,
+      duration: 28, // Slightly slower for nice contrast
       ease: "none",
       repeat: -1,
     });
@@ -185,18 +216,42 @@ export default function Feedback() {
                 </div>
 
                 {/* === GSAP Marquee Logos === */}
+                {/* === DUAL MARQUEE LOGOS === */}
                 <div className="mt-auto pt-6">
                   <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">
                     Trusted By
                   </p>
-                  <div className="overflow-hidden rounded-xl bg-gray-50 py-4">
+
+                  {/* Left Moving Marquee */}
+                  <div className="overflow-hidden rounded-xl bg-gray-50 py-4 mb-6">
                     <div
-                      ref={marqueeRef}
+                      ref={marqueeRefLeft}
                       className="flex items-center gap-8 w-max"
                     >
                       {[...logos, ...logos, ...logos].map((logo, i) => (
                         <div
-                          key={i}
+                          key={`left-${i}`}
+                          className="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 flex-shrink-0"
+                        >
+                          <img
+                            src={logo}
+                            alt={`Client ${i}`}
+                            className="h-12 w-auto object-contain"
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Right Moving Marquee */}
+                  <div className="overflow-hidden rounded-xl bg-gray-50 py-4">
+                    <div
+                      ref={marqueeRefRight}
+                      className="flex items-center gap-8 w-max"
+                    >
+                      {[...logos, ...logos, ...logos].map((logo, i) => (
+                        <div
+                          key={`right-${i}`}
                           className="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 flex-shrink-0"
                         >
                           <img
@@ -338,49 +393,64 @@ export default function Feedback() {
           </div>
         </div>
         {/* address section */}
-        <div className="pb-24 p-10">
+        <div className="pb-24 mt-4 bg-[#fff] rounded-2xl p-10">
           <div className="text-center mb-12">
-            <p className="text-zinc-100 font-medium tracking-widest text-sm mb-2">
+            <p className="text-gray-800 font-medium tracking-widest text-sm mb-2">
               FIND US
             </p>
-            <h2 className="text-4xl lg:text-5xl font-bold text-zinc-100">
-              Our Office Locations
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-800">
+              Our Office <ShimmerText>Locations</ShimmerText>
             </h2>
+            <DecorativeUnderline
+              width="280px"
+              className="mt-4 mx-auto"
+              centerColor="#3B82F6"
+            />
           </div>
 
           <div className="grid md:grid-cols-3 gap-10">
             <div>
               <div className="flex items-center gap-3 mb-4">
-                <span className="text-4xl">🛕</span>
-                <h3 className="text-2xl font-bold text-zinc-100">India</h3>
+                <span className="text-4xl">
+                  <img src={delhiIcon} alt="Delhi Icon" className="w-12 h-12" />
+                </span>
+                <h3 className="text-2xl font-bold text-gray-800">India</h3>
               </div>
-              <p className="text-zinc-100 leading-relaxed">
+              <p className="text-gray-600 leading-relaxed">
                 12, Jodhka House, Sant Nagar, East of Kailash, New
-                <br />
+               
                 Delhi 110065, INDIA
               </p>
             </div>
 
             <div>
               <div className="flex items-center gap-3 mb-4">
-                <span className="text-4xl">🦁</span>
-                <h3 className="text-2xl font-bold text-zinc-100">Singapore</h3>
+                <span className="text-4xl">
+                  <img
+                    src={singapore}
+                    alt="Singapore Icon"
+                    className="w-12 h-12"
+                  />
+                </span>
+                <h3 className="text-2xl font-bold text-gray-800">Singapore</h3>
               </div>
-              <p className="text-zinc-100 leading-relaxed">
+              <p className="text-gray-600 leading-relaxed">
                 Robinson Road SPACES, Crown at Robinson #13-07,
-                <br />
+                
                 Singapore 068907.
               </p>
             </div>
 
             <div>
               <div className="flex items-center gap-3 mb-4">
-                <span className="text-4xl">🏛️</span>
-                <h3 className="text-2xl font-bold text-zinc-100">UK</h3>
+                <span className="text-4xl">
+                  <img src={uk} alt="UK Icon" className="w-12 h-12" />
+                </span>
+                <h3 className="text-2xl font-bold text-gray-800">UK</h3>
               </div>
-              <p className="text-zinc-100 leading-relaxed">
+              <p className="text-gray-600 leading-relaxed">
                 Bourne Court, Southend Road, Woodford Green,
-                <br />
+             
                 Greater London - IG8 8HD
               </p>
             </div>

@@ -115,16 +115,16 @@ export default function ReviewCarousel() {
   }, [active, isAnimating]);
 
   return (
-    <div className="min-h-screen py-12 md:py-20 px-4 sm:px-6">
+    <div className="min-h-screen  px-4 sm:px-6">
       <GridBg gridSize={80} lineColor="#F0EDE8" bgColor="#fff">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-10 md:mb-14">
+        <div className="max-w-5xl mx-auto py-12 md:py-20">
+          <div className="text-center mb-8 md:mb-14">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
               What Our <ShimmerText>Prestigious Clients</ShimmerText> Say...
             </h2>
             <DecorativeUnderline
               width="360px"
-              className="mt-6 mx-auto md:w-[320px]"
+              className="mt-8 lg:mt-8 mx-auto md:w-[320px]"
               centerColor="#3B82F6"
             />
           </div>

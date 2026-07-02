@@ -97,7 +97,7 @@ export default function SkillsTabs() {
 
         <div className="text-center mb-14">
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900">
-            <ShimmerText>Technologies</ShimmerText> We
+            <ShimmerText>Technologies</ShimmerText> We {" "}
             <span>Work With</span>
           </h2>
           <DecorativeUnderline
