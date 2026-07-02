@@ -28,6 +28,7 @@ export default function Navbar() {
         { to: "/marketing", label: "Digital Marketing" },
         { to: "/profile", label: "Company Profile" },
       ],
+      
     },
     development: {
       label: "Development",
