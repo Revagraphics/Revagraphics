@@ -119,8 +119,8 @@ export default function ReviewCarousel() {
       <GridBg gridSize={80} lineColor="#F0EDE8" bgColor="#fff">
         <div className="max-w-5xl mx-auto py-12 md:py-20">
           <div className="text-center mb-8 md:mb-14">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-              What Our <ShimmerText>Prestigious Clients</ShimmerText> Say...
+            <h2 className="text-3xl z-[60] sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+              What Our Prestigious <ShimmerText>Clients</ShimmerText> Say...
             </h2>
             <DecorativeUnderline
               width="360px"

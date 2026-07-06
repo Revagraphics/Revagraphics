@@ -84,8 +84,8 @@ export default function ServicesSection() {
         <div className="max-w-7xl mx-auto px-6 py-10">
           {/* Heading */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl lg:text-5xl font-bold text-gray-900 leading-tight">
-              See what we can do for <br /> <ShimmerText>Your Business</ShimmerText>
+            <h2 className="text-3xl md:text-5xl lg:text-5xl font-bold text-gray-900 leading-tight">
+              See what we can do for <ShimmerText>Your Business</ShimmerText>
 
             </h2>
             <DecorativeUnderline

@@ -221,12 +221,12 @@ export default function Home() {
         </section>
 
         {/* ================= REVA SECTION ================= */}
-        <section className="relative mt-24 overflow-hidden flex justify-center w-full  sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
+        <section className="relative mt-24 overflow-hidden flex justify-center w-full sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
           <GridBg gridSize={80} lineColor="#f5f1ed" bgColor="#fff">
-            <div className="relative z-10 max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 xl:gap-20">
-                {/* Heading */}
-                <div className="lg:col-span-2 text-center max-w-4xl lg-text-left mx-auto">
+                {/* Heading - Now Perfectly Centered */}
+                <div className="lg:col-span-2 text-center mx-auto max-w-5xl">
                   <span className="inline-block text-orange-500 font-semibold uppercase tracking-[0.35em] text-sm mb-5">
                     We Are Reva
                   </span>
@@ -240,7 +240,7 @@ export default function Home() {
 
                   <DecorativeUnderline
                     width="320px"
-                    className="mt-5 mx-auto md:w-[380px] lg:w-[450px]"
+                    className="mt-6 mx-auto md:w-[380px] lg:w-[450px]"
                     centerColor="#3B82F6"
                   />
                 </div>
@@ -277,7 +277,7 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* RIGHT STATS - Better Responsive Grid */}
+                {/* RIGHT STATS */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
                   <StatCard
                     title="PROJECTS"
