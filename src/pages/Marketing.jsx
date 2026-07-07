@@ -14,6 +14,8 @@ import benefit5 from "../assets/expert5.png?url";
 import Seo from "../components/Seo";
 
 import devloper from "../assets/developers.svg?url";
+import ShimmerText from "../components/ShimmerText"
+import GridBg from "../components/GridBg.jsx";
 
 export default function Marketing() {
   const Benefits = [
@@ -47,12 +49,12 @@ export default function Marketing() {
       title: "Performance Reporting",
       dis: "In order to monitor and breakdown the details of the performance, SEO marketing team at Reva will send monthly reports.",
     },
-    // {
-    //   id: 6,
-    //   img: benefit6,
-    //   title: "Experienced Team",
-    //   dis: "High-quality content from an experienced team.",
-    // },
+    {
+      id: 6,
+      img: benefit5,
+      title: "Experienced Team",
+      dis: "High-quality content from an experienced team.",
+    },
   ];
   return (
     <>
@@ -75,10 +77,7 @@ export default function Marketing() {
                 </div>
 
                 <h1 className="text-4xl lg:text-5xl font-bold leading-tight text-[#30303c]">
-                  Don't Build Links Build{" "}
-                  <span className="bg-orange-500 bg-clip-text text-transparent">
-                    Relationships
-                  </span>{" "}
+                  Don't Build Links Build{" "} <ShimmerText>Relationships</ShimmerText>
                 </h1>
 
                 <p className="text-lg lg:text-xl text-[#30303c] leading-relaxed max-w-lg">
@@ -90,7 +89,7 @@ export default function Marketing() {
 
                 <a
                   href="get-quote.html"
-                  className="group inline-flex items-center gap-3 bg-orange-500 hover:bg-orange-600 text-white font-semibold text-lg px-10 py-5 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
+                  className="group inline-flex items-center gap-3 bg-gradient-to-r from-[#FF9800] to-[#E91E63] hover:bg-orange-600 text-white font-semibold text-lg px-10 py-5 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
                 >
                   Let’s discuss
                   <span className="group-hover:translate-x-2 transition-transform duration-300">
@@ -118,10 +117,25 @@ export default function Marketing() {
         <section className="pt-20 pb-32 overflow-hidden">
           <div className="max-w-[90%] mx-auto px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
-              {/* Left Text */}
+
+
+              {/* Left Image */}
+              <div className="flex justify-center lg:justify-center">
+                <div className="relative">
+                  <div className="absolute -inset-6 bg-gradient-to-br from-orange-400/30 to-purple-400/30 rounded-[3rem] -rotate-6 blur-xl" />
+                  <img
+                    src={seo}
+                    alt="Content Writing Services"
+                    className="relative z-10 w-full max-w-md lg:max-w-lg "
+                  />
+                </div>
+              </div>
+
+
+              {/* Right Text */}
               <div className="space-y-6">
                 <h2 className="text-4xl lg:text-5xl font-bold leading-tight text-[#30303c]">
-                  We offer SEO & SMO
+                  We offer <ShimmerText>SEO & SMO</ShimmerText>
                   <br />
                   Promotional services
                 </h2>
@@ -137,29 +151,20 @@ export default function Marketing() {
                 </div>
               </div>
 
-              {/* Right Image */}
-              <div className="flex justify-center lg:justify-center">
-                <div className="relative">
-                  <div className="absolute -inset-6 bg-gradient-to-br from-orange-400/30 to-purple-400/30 rounded-[3rem] -rotate-6 blur-xl" />
-                  <img
-                    src={seo}
-                    alt="Content Writing Services"
-                    className="relative z-10 w-full max-w-md lg:max-w-lg "
-                  />
-                </div>
-              </div>
+              
             </div>
           </div>
         </section>
 
-        <section className="pt-20 pb-32 bg-white">
+        <GridBg gridSize={80} lineColor="#f5f1ed" bgColor="#fff">
+        <section className="pt-20 pb-32 ">
           <div className="max-w-[90%] mx-auto px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-4xl lg:text-5xl font-bold leading-tight text-[#30303c]">
                 Benefits of Working{" "}
-                <span className="bg-orange-500 bg-clip-text text-transparent">
+                <ShimmerText>
                   With Us
-                </span>
+                </ShimmerText>
               </h2>
             </div>
 
@@ -167,7 +172,7 @@ export default function Marketing() {
               {Benefits.map((benefit) => (
                 <div
                   key={benefit.id}
-                  className="group bg-white border border-gray-200 hover:border-orange-300 rounded-3xl p-8 transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
+                  className="group bg-white/10 backdrop-blur-sm border border-gray-200 hover:border-orange-300 rounded-3xl p-8 transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
                 >
                   {/* Icon */}
                   <div className="w-16 h-16 mb-6 bg-gradient-to-br from-orange-500 to-amber-500 rounded-2xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
@@ -195,6 +200,7 @@ export default function Marketing() {
             </div>
           </div>
         </section>
+        </GridBg>
 
         <section className="pt-20 pb-32 bg-white">
           <div className="max-w-[90%] mx-auto px-6 lg:px-8">
@@ -202,7 +208,7 @@ export default function Marketing() {
               {/* Left Side Content */}
               <div className="flex flex-col justify-center space-y-8 order-2 lg:order-1">
                 <h1 className="text-[#3f3f3f] text-3xl md:text-4xl lg:text-5xl leading-tight font-semibold">
-                  Hire world-class SEO experts for your project
+                  Hire world-class <ShimmerText>SEO experts </ShimmerText> for your project
                 </h1>
 
                 <p className="text-[#3f3f3f] text-lg md:text-xl leading-relaxed max-w-lg">
@@ -215,7 +221,7 @@ export default function Marketing() {
                 <div>
                   <a
                     href="get-quote.html"
-                    className="inline-flex items-center gap-3 bg-orange-500 hover:bg-orange-600 text-white font-semibold text-lg px-8 py-4 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
+                    className="inline-flex items-center gap-3 bg-gradient-to-r from-[#FF9800] to-[#E91E63] hover:bg-orange-600 text-white font-semibold text-lg px-8 py-4 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
                   >
                     Hire Developers Now
                     <span>→</span>

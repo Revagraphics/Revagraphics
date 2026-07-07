@@ -21,7 +21,7 @@ export default function About() {
         description="Learn more about Reva Graphics, our mission, and our creative team."
       />
 
-      <div className="bg-zinc-100 min-h-screen">
+      <div className=" min-h-screen">
         <Navbar />
 
         <main className="mt-28 px-4 flex item-center lg:h-[60vh] max-w-[90%] mx-auto">
@@ -64,7 +64,7 @@ export default function About() {
         </main>
 
         {/* ==================== ABOUT REVA SECTION (with Animated Stats) ==================== */}
-        <section className=" py-20 px-6">
+        <section className=" py-2 lg:py-0 ">
           <GridBg gridSize={80} lineColor="#f5f1ed" bgColor="#f8f7f4">
             <div className="max-w-[90%] mx-auto py-10">
               <div className="grid lg:grid-cols-2 gap-16 items-start">

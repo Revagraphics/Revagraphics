@@ -16,6 +16,8 @@ import client2 from "../assets/drvikas.jpg";
 import client3 from "../assets/umesh.jpg";
 import client4 from "../assets/pankaj.jpg";
 import Seo from "../components/Seo";
+import ShimmerText from "../components/ShimmerText";
+import GridBg from "../components/GridBg";
 
 export default function Development() {
   const portfolioData = [
@@ -70,7 +72,9 @@ export default function Development() {
       <div className="min-h-screen bg-[#fbf1ef]">
         <Navbar />
 
-        <section className="pt-20 pb-32 bg-[#d2edff] overflow-hidden">
+        <GridBg gridSize={80} lineColor="#f5f1ed" bgColor="#d2edff">
+          
+        <section className="pt-20 mt-6 pb-32 overflow-hidden">
           <div className="max-w-[90%] mx-auto px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-16 items-center pt-16">
               {/* Left Content */}
@@ -83,9 +87,7 @@ export default function Development() {
 
                 <h1 className="text-4xl lg:text-5xl font-bold leading-tight text-[#30303c]">
                   We build a unique Web Portals &{" "}
-                  <span className="bg-orange-500 bg-clip-text text-transparent">
-                    CRM Softwares
-                  </span>{" "}
+                  <ShimmerText> CRM Softwares </ShimmerText>
                 </h1>
 
                 <p className="text-lg lg:text-xl text-[#30303c] leading-relaxed max-w-lg">
@@ -95,7 +97,7 @@ export default function Development() {
 
                 <a
                   href="get-quote.html"
-                  className="group inline-flex items-center gap-3 bg-orange-500 hover:bg-orange-600 text-white font-semibold text-lg px-10 py-5 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
+                  className="group inline-flex items-center gap-3 bg-gradient-to-r from-orange-500 to-pink-500 hover:bg-orange-600 text-white font-semibold text-lg px-10 py-5 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
                 >
                   Let’s discuss
                   <span className="group-hover:translate-x-2 transition-transform duration-300">
@@ -122,14 +124,31 @@ export default function Development() {
         <section className="pt-16 pb-20 md:pt-24 md:pb-32 bg-white overflow-hidden">
           <div className="max-w-[90%] mx-auto px-5 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-              {/* Left Content */}
+              {/* Left Image / Visual */}
+              <div className="flex justify-start lg:justify-end pt-8 lg:pt-0">
+                <div className="relative w-full max-w-lg lg:max-w-xl">
+                  {/* Decorative Background */}
+
+                  <div className="absolute -inset-8 md:-inset-12 bg-gradient-to-br from-orange-400/20 via-amber-400/20 to-purple-400/20 rounded-[3.5rem] -rotate-6 blur-2xl" />
+
+                  {/* Main Image */}
+                  <img
+                    src={web2}
+                    alt="Web Application and CRM Development"
+                    className="relative z-10 w-full h-auto rounded-3xl  
+                       object-cover transition-transform duration-500 hover:scale-[1.02]"
+                  />
+
+                  {/* Subtle shine/overlay effect */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent rounded-3xl pointer-events-none z-20" />
+                </div>
+              </div>
+
+              {/* Right Content */}
               <div className="space-y-8 lg:pt-8">
                 <h1 className="text-4xl lg:text-5xl font-bold leading-tight text-[#30303c]">
-                  We offer{" "}
-                  <span className="bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent">
-                    Web Applications
-                  </span>{" "}
-                  and CRM Software Solutions
+                  We offer <ShimmerText>Web Applications</ShimmerText> and{" "}
+                  <ShimmerText>CRM Software</ShimmerText> Solutions
                 </h1>
 
                 <div className="space-y-6 text-[#555] text-[17px] md:text-lg leading-relaxed">
@@ -197,37 +216,14 @@ export default function Development() {
                   </ul>
                 </div>
               </div>
-
-              {/* Right Image / Visual */}
-              <div className="flex justify-center lg:justify-end pt-8 lg:pt-0">
-                <div className="relative w-full max-w-lg lg:max-w-xl">
-                  {/* Decorative Background */}
-                  <div
-                    className="absolute -inset-8 md:-inset-12 bg-gradient-to-br from-orange-400/20 via-amber-400/20 to-purple-400/20 
-                          rounded-[3.5rem] -rotate-6 blur-2xl"
-                  />
-
-                  {/* Main Image */}
-                  <img
-                    src={web2}
-                    alt="Web Application and CRM Development"
-                    className="relative z-10 w-full h-auto rounded-3xl  
-                       object-cover transition-transform duration-500 hover:scale-[1.02]"
-                  />
-
-                  {/* Subtle shine/overlay effect */}
-                  <div
-                    className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent 
-                          rounded-3xl pointer-events-none z-20"
-                  />
-                </div>
-              </div>
             </div>
           </div>
         </section>
 
+        </GridBg>
+
         <section className="py-24 bg-white">
-          <div className="max-w-7xl mx-auto px-6">
+          <div className="max-w-[90vw] mx-auto px-6">
             {/* Heading */}
             <div className="text-center max-w-2xl mx-auto mb-20">
               <h2 className="text-5xl font-bold text-zinc-900 mb-4">
@@ -301,6 +297,7 @@ export default function Development() {
             </div>
           </div>
         </section>
+
 
         <Footer />
       </div>

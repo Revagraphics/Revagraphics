@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Seo from "../components/Seo";
 import Feedback from "../components/Feedback";
+import ShimmerText from "../components/ShimmerText";
 
 export default function Contact() {
   return (
@@ -25,9 +26,11 @@ export default function Contact() {
                 <p className="text-blue-600 font-medium tracking-widest text-sm mb-3">
                   LET'S TALK
                 </p>
-                <h2 className="text-5xl md:text-6xl font-bold text-[#30303c] mb-6">
-                  Good talks make good Projects
+                <h2 className="text-5xl md:text-5xl lg:text-5xl font-bold text-[#30303c] mb-6">
+                  <ShimmerText>Good talks</ShimmerText> make <br /> good Projects
                 </h2>
+
+
                 <p className="text-lg text-gray-600 max-w-md">
                   We would be happy to hear from you. Please fill in the form
                   below or mail us your requirements.
@@ -107,60 +110,7 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Office Locations Section */}
-          <div className="pb-24">
-            <div className="text-center mb-12">
-              <p className="text-blue-600 font-medium tracking-widest text-sm mb-2">
-                FIND US
-              </p>
-              <h2 className="text-4xl font-bold text-gray-900">
-                Our Office Locations
-              </h2>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-10">
-              {/* India */}
-              <div>
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="text-4xl">🛕</span>
-                  <h3 className="text-2xl font-bold text-gray-900">India</h3>
-                </div>
-                <p className="text-gray-600 leading-relaxed">
-                  12, Jodhka House, Sant Nagar, East of Kailash, New
-                  <br />
-                  Delhi 110065, INDIA
-                </p>
-              </div>
-
-              {/* Singapore */}
-              <div>
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="text-4xl">🦁</span>
-                  <h3 className="text-2xl font-bold text-gray-900">
-                    Singapore
-                  </h3>
-                </div>
-                <p className="text-gray-600 leading-relaxed">
-                  Robinson Road SPACES, Crown at Robinson #13-07,
-                  <br />
-                  Singapore 068907.
-                </p>
-              </div>
-
-              {/* UK */}
-              <div>
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="text-4xl">🏛️</span>
-                  <h3 className="text-2xl font-bold text-gray-900">UK</h3>
-                </div>
-                <p className="text-gray-600 leading-relaxed">
-                  Bourne Court, Southend Road, Woodford Green,
-                  <br />
-                  Greater London - IG8 8HD
-                </p>
-              </div>
-            </div>
-          </div>
+          
         </div>
 
         <Feedback />

@@ -223,7 +223,7 @@ export default function Home() {
         {/* ================= REVA SECTION ================= */}
         <section className="relative mt-24 overflow-hidden flex justify-center w-full sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
           <GridBg gridSize={80} lineColor="#f5f1ed" bgColor="#fff">
-            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div className="relative z-10 max-w-[90vw] mx-auto px-4 sm:px-6 lg:px-8 py-12">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 xl:gap-20">
                 {/* Heading - Now Perfectly Centered */}
                 <div className="lg:col-span-2 text-center mx-auto max-w-5xl">

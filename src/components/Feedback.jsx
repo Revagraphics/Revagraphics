@@ -249,7 +249,7 @@ export default function Feedback() {
                       ref={marqueeRefRight}
                       className="flex items-center gap-8 w-max"
                     >
-                      {[...logos, ...logos, ...logos].map((logo, i) => (
+                      {[...logos2, ...logos2, ...logos2].map((logo, i) => (
                         <div
                           key={`right-${i}`}
                           className="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 flex-shrink-0"

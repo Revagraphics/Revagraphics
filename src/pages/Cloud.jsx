@@ -1,6 +1,5 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-
 import Seo from "../components/Seo";
 
 export default function Cloud() {

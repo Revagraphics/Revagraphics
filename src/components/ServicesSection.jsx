@@ -18,9 +18,9 @@ const services = [
     id: 1,
     title: "Brand Identity",
     description:
-      "Let’s talk a story with different brand elements that unanimously define your brand personality.",
+    "Let’s talk a story with different brand elements that unanimously define your brand personality.",
     tags: "Logo Design | Stationery Design",
-    link: "/brand",
+    link: "/branding",
     icon: FaPalette,
     tagColor: "#FF6B6B", // Vibrant Red
   },
@@ -28,9 +28,9 @@ const services = [
     id: 2,
     title: "Website Designing",
     description:
-      "Customized, SEO-friendly, and user-centric websites that reflect your brand perfectly.",
+    "Customized, SEO-friendly, and user-centric websites that reflect your brand perfectly.",
     tags: "UI & UX Design | Dynamic Websites",
-    link: "/webdesign",
+    link: "/designing",
     icon: FaGlobe,
     tagColor: "#4ECDC4", // Teal
   },
@@ -40,7 +40,7 @@ const services = [
     description:
       "Robust, scalable, and high-performance web applications tailored to your business needs.",
     tags: "eCommerce | Custom Portals",
-    link: "/webdevel",
+    link: "/development",
     icon: FaCode,
     tagColor: "#45B7D1", // Sky Blue
   },
@@ -48,9 +48,9 @@ const services = [
     id: 4,
     title: "Digital Marketing",
     description:
-      "360-degree digital strategies to boost your brand presence and engagement.",
+    "360-degree digital strategies to boost your brand presence and engagement.",
     tags: "SEO | SMO | PPC",
-    link: "#",
+    link: "/marketing",
     icon: FaChartLine,
     tagColor: "#96CEB4", // Sage Green
   },
@@ -58,7 +58,7 @@ const services = [
     id: 5,
     title: "Application Development",
     description:
-      "Powerful mobile and web applications designed for exceptional user experiences.",
+    "Powerful mobile and web applications designed for exceptional user experiences.",
     tags: "Mobile Apps | Web Apps",
     link: "/content",
     icon: FaMobileAlt,
@@ -68,9 +68,9 @@ const services = [
     id: 6,
     title: "Customize Software",
     description:
-      "Tailored cloud solutions and custom software to give your business a competitive edge.",
+    "Tailored cloud solutions and custom software to give your business a competitive edge.",
     tags: "Cloud Services | Hosting | SSL",
-    link: "/service-details",
+    link: "/cloud",
     icon: FaCloud,
     tagColor: "#6C5CE7", // Purple
   },

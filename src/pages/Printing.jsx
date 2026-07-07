@@ -7,9 +7,13 @@ import ShimmerText from "../components/ShimmerText";
 import DecorativeUnderline from "../components/DecorativeUnderline";
 
 
+
+
 export default function Printing() {
   return (
     <>
+
+
       <Seo
         title="Printing Services | Reva Graphics"
         description="High-quality printing services for business cards, brochures, banners, and marketing materials."
@@ -27,11 +31,11 @@ export default function Printing() {
               Premium <ShimmerText>Printing</ShimmerText>
             </h1>
             <DecorativeUnderline
-                          width="360px"
-                          className="mt-4 mx-auto md:w-[320px]"
-                          centerColor="#3B82F6"
-                        />
-            <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-2xl mx-auto">
+              width="520px"
+              className="mt-2 mx-auto"
+              centerColor="#3B82F6"
+              />
+            <p className="text-xl md:text-2xl text-white/90 mb-4 max-w-2xl mx-auto">
               High-quality prints that make your brand stand out. From business
               cards to large format — we bring your ideas to life.
             </p>
@@ -59,15 +63,15 @@ export default function Printing() {
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-16">
               <h2 className="text-5xl font-bold text-[#08182b] mb-4">
-                What We Print
+                What We <ShimmerText>Print</ShimmerText>
               </h2>
               <DecorativeUnderline
-                          width="360px"
-                          className="mt-2 mx-auto md:w-[320px]"
+                          width="260px"
+                          className="mb-4 mx-auto md:w-[320px]"
                           centerColor="#3B82F6"
                         />
               
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 Beautiful, professional prints crafted with precision and
                 premium materials
               </p>
@@ -188,7 +192,7 @@ export default function Printing() {
             </div>
 
             <div className="text-center mt-12">
-              <button className="px-10 py-4 border-2 border-[#08182b] hover:bg-[#08182b] hover:text-white font-semibold rounded-full transition-all duration-300">
+              <button className="px-10 py-4 bg-gradient-to-r from-[#FF9800] to-[#E91E63] hover:bg-orange-600 hover:scale-105 hover:text-white font-semibold rounded-full transition-all duration-300">
                 View Full Portfolio
               </button>
             </div>

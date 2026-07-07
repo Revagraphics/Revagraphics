@@ -16,6 +16,9 @@ const Development = lazy(() => import("./pages/Development"));
 const Designing = lazy(() => import("./pages/Designing"));
 const Printing = lazy(() => import("./pages/Printing"));
 const Cloud = lazy(() => import("./pages/Cloud"));
+const Application = lazy(() =>  import("./pages/Application"));
+
+
 
 // import BubbleBlower from "./components/BubbleBlower";
 import AutoScrollTop from "./components/AutoScrollTop";
@@ -56,9 +59,9 @@ const App = () => {
       {/* <BubbleBlower /> */}
       <AutoScrollTop />
 
-      <Suspense fallback={<div className="p-10 flex items-center justify-center">Loading...</div>}>
+      <Suspense fallback={<div className="p-10 flex items-center justify-center">Loading..</div>}>
         <Routes>
-          
+
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/portfolio" element={<Portfolio />} />
@@ -70,7 +73,10 @@ const App = () => {
           <Route path="/designing" element={<Designing />} />
           <Route path="/printing" element={<Printing />} />
           <Route path="/cloud" element={<Cloud />} />
+          <Route path="/application" element={<Application />} />
+          {/* <Route path="/profile" element={<Profile/>} /> */}
 
+          
           {/* not found */}
           <Route path="*" element={<NotFound />} />
         </Routes>

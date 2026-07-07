@@ -21,9 +21,10 @@ export default function TeamWork() {
 
             <Link
               to="/contact"
-              className="inline-block mt-8 bg-orange-600 text-zinc-900 px-8 py-3 rounded-full"
+              className="inline-block mt-8 bg-gradient-to-r from-[#FF9800] to-[#E91E63] text-zinc-100 px-8 py-3 rounded-full"
             >
               Let's Talk
+
             </Link>
           </section>
 
