@@ -231,7 +231,7 @@ export default function Home() {
                     We Are Reva
                   </span>
 
-                  <h2 className="text-[#30303c] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                  <h2 className="text-[#30303c] text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold leading-tight">
                     <span>Top-Rated</span> Web Designing And{" "}
                     <ShimmerText className="font-bold">
                       Development Company
