@@ -4,6 +4,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Seo from "../components/Seo";
+import ShimmerText from "../components/ShimmerText";
+import GridBg from "../components/GridBg";
 
 import bali from "../assets/bali.jpg";
 import dhruv from "../assets/dhruv.jpg";
@@ -136,10 +138,7 @@ export default function Portfolio() {
             </span>
 
             <h1 className="text-3xl sm:text-4xl lg:text-6xl xl:text-7xl font-bold mt-3 sm:mt-4 text-[#30303c] leading-tight">
-              What our clients{" "}
-              <span className="bg-gradient-to-r from-orange-500 to-amber-500 text-transparent bg-clip-text">
-                say
-              </span>
+              What our <ShimmerText>clients say</ShimmerText>
             </h1>
 
             <p className="mt-4 sm:mt-6 text-zinc-500 text-sm sm:text-base lg:text-lg max-w-md mx-auto lg:mx-0">

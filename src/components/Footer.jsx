@@ -3,6 +3,9 @@ import gsap from "gsap";
 import { Link } from "react-router-dom";
 import badge1 from "../assets/batch1.png";
 import badge2 from "../assets/batch2.png";
+import badge3 from "../assets/badge-1.png";
+import badge4 from "../assets/badge22.png";
+import badge5 from "../assets/badge-3.png";
 import itfirm from "../assets/itfirm.png";
 import goodfirm from "../assets/goodfirm.png";
 import bottomLogo from "../assets/footer-logo.png";
@@ -92,9 +95,9 @@ export default function Footer() {
         ease: "power4.out",
         stagger: 0.055,
         scrollTrigger: {
-          trigger: bigTextRef.current,
-          start: "top 88%",
-          toggleActions: "play none none none",
+        trigger: bigTextRef.current,
+        start: "top 88%",
+        toggleActions: "play none none none",
         },
       });
     });

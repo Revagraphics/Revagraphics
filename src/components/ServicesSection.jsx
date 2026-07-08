@@ -18,7 +18,7 @@ const services = [
     id: 1,
     title: "Brand Identity",
     description:
-    "Let’s talk a story with different brand elements that unanimously define your brand personality.",
+      "Let’s talk a story with different brand elements that unanimously define your brand personality.",
     tags: "Logo Design | Stationery Design",
     link: "/branding",
     icon: FaPalette,
@@ -28,7 +28,7 @@ const services = [
     id: 2,
     title: "Website Designing",
     description:
-    "Customized, SEO-friendly, and user-centric websites that reflect your brand perfectly.",
+      "Customized, SEO-friendly, and user-centric websites that reflect your brand perfectly.",
     tags: "UI & UX Design | Dynamic Websites",
     link: "/designing",
     icon: FaGlobe,
@@ -48,7 +48,7 @@ const services = [
     id: 4,
     title: "Digital Marketing",
     description:
-    "360-degree digital strategies to boost your brand presence and engagement.",
+      "360-degree digital strategies to boost your brand presence and engagement.",
     tags: "SEO | SMO | PPC",
     link: "/marketing",
     icon: FaChartLine,
@@ -58,7 +58,7 @@ const services = [
     id: 5,
     title: "Application Development",
     description:
-    "Powerful mobile and web applications designed for exceptional user experiences.",
+      "Powerful mobile and web applications designed for exceptional user experiences.",
     tags: "Mobile Apps | Web Apps",
     link: "/content",
     icon: FaMobileAlt,
@@ -68,14 +68,13 @@ const services = [
     id: 6,
     title: "Customize Software",
     description:
-    "Tailored cloud solutions and custom software to give your business a competitive edge.",
+      "Tailored cloud solutions and custom software to give your business a competitive edge.",
     tags: "Cloud Services | Hosting | SSL",
     link: "/cloud",
     icon: FaCloud,
     tagColor: "#6C5CE7", // Purple
   },
 ];
-
 
 export default function ServicesSection() {
   return (
@@ -86,13 +85,12 @@ export default function ServicesSection() {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl lg:text-5xl font-bold text-gray-900 leading-tight">
               See what we can do for <ShimmerText>Your Business</ShimmerText>
-
             </h2>
             <DecorativeUnderline
               width="320px" // Adjust width as needed
               className="mt-4 mx-auto"
               centerColor="#3B82F6" // Optional: change blue color
-              />
+            />
             <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
               Professional solutions that transform ideas into powerful digital
               experiences
@@ -149,23 +147,22 @@ export default function ServicesSection() {
 
                     {/* Tags with unique colors */}
                     <p
-                      className="font-medium text-sm mb-8 transition-colors duration-200"
-                      style={{ color: service.tagColor }}
+                      className="font-medium text-sm mb-8 transition-colors duration-200 text-[color:var(--tag-color)] group-hover:text-white"
+                      style={{ "--tag-color": service.tagColor }}
                     >
                       {service.tags}
                     </p>
 
                     {/* Read More */}
-                
-                    <button className="inline-block mt-8  bg-gradient-to-r from-[#FF9800] to-[#E91E63] text-white px-8 py-3 rounded-full">
-                          <a
-                      href={service.link}
-                      className="inline-flex items-center gap-2 text-zinc-100 group-hover:text-white 
-                                 font-semibold group-hover:gap-3 transition-all duration-300"
-                    >
-                      Explore Service
-                      <FaArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                    </a>
+
+                    <button className="inline-block mt-8 bg-gradient-to-r from-[#FF9800] to-[#E91E63] hover:from-white hover:to-white group-hover:from-white group-hover:to-white px-8 py-3 rounded-full transition-all duration-300">
+                      <a
+                        href={service.link}
+                        className="inline-flex items-center gap-2 text-white group-hover:text-orange-500 font-semibold group-hover:gap-3 transition-all duration-300"
+                      >
+                        Explore Service
+                        <FaArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                      </a>
                     </button>
                   </div>
 

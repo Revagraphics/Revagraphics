@@ -12,7 +12,8 @@ import PaymentSection from "../components/PaymentSection";
 import Instagram from "../components/Instagram";
 import bg from "../assets/about.webp";
 import content from "../assets/content.png";
-
+import ShimmerText from "../components/ShimmerText";
+import DecorativeUnderline from "../components/DecorativeUnderline";
 // Helper function to remove floating image
 const removeFloatingImage = (imageId, setFloatingImages) => {
   setFloatingImages((prev) => prev.filter((img) => img.id !== imageId));
@@ -47,6 +48,7 @@ const animateImageEntrance = (newImage, mouseX, offsetX, mouseY, offsetY) => {
       x: mouseX + offsetX * 0.6,
       y: mouseY + offsetY * 0.6,
     },
+
     {
       scale: 1,
       opacity: 1,
@@ -110,6 +112,7 @@ export default function Branding() {
       setFloatingImages((prev) => [...prev, newImage]);
 
       // GSAP entrance animation (very smooth pop)
+
       requestAnimationFrame(() => {
         animateImageEntrance(
           newImage,
@@ -165,10 +168,13 @@ export default function Branding() {
               <h1 className="text-3xl md:text-7xl font-bold  text-gray-900 leading-tight tracking-tight mb-6">
                 We build a unique Brand
                 <br />
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-600">
+                {/* <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-600">
                   for attract the customers
-                </span>
+                </span> */}
+                <ShimmerText>for attract the customers</ShimmerText>
               </h1>
+
+              
               <p className="text-xl md:text-2xl text-gray-700 max-w-2xl mx-auto mb-10">
                 We craft stunning digital experiences that captivate and inspire
               </p>
@@ -217,8 +223,14 @@ export default function Branding() {
             {/* Main Heading */}
             <div className="text-center mb-20">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight tracking-tighter text-black">
-                We offer Brand Identity Designing Services
+                We offer <ShimmerText>Brand Identity</ShimmerText> Designing Services
               </h1>
+
+              <DecorativeUnderline
+                width="420px"
+                className="mt-6 mx-auto md:w-[380px] lg:w-[450px]"
+                centerColor="#3B82F6"
+              />
               <p className="mt-6 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
                 Creating meaningful brands that connect, inspire, and stand the
                 test of time.
@@ -232,18 +244,18 @@ export default function Branding() {
                 <div className="flex items-center gap-4">
                   <div className="w-px h-10 bg-black"></div>
                   <h2 className="uppercase text-sm tracking-[2px] font-medium text-gray-500">
-                    Brand Strategy & Visual Identity
+                    <ShimmerText>Brand Strategy</ShimmerText> & Visual Identity
                   </h2>
                 </div>
 
-                <p className="text-[17px] leading-relaxed hover:text-[orange] hover:stroke-[#000] text-gray-700">
+                <p className="text-[17px] leading-relaxed  hover:stroke-[#000] text-gray-700">
                   The most meaningful brands are those that are rich with
                   meaning. They push us to think, feel, and behave in new ways.
                   We design amazing brands that express your mission — from
                   naming and messaging to visual identities and advertising.
                 </p>
 
-                <p className="text-[17px] leading-relaxed hover:text-[orange] hover:stroke-[#000] text-gray-700">
+                <p className="text-[17px] leading-relaxed  hover:stroke-[#000] text-gray-700">
                   We’ll work together to create a story that captivates and
                   drives your audience. A strong visual identity conveys the
                   spirit of your company. From logos and typefaces to graphic
@@ -257,11 +269,11 @@ export default function Branding() {
                 <div className="flex items-center gap-4">
                   <div className="w-px h-10 bg-black"></div>
                   <h2 className="uppercase text-sm tracking-[2px] font-medium text-gray-500">
-                    Creative Advertising & Brand Culture
+                    <ShimmerText>Creative Advertising</ShimmerText> & Brand Culture
                   </h2>
                 </div>
 
-                <p className="text-[17px] leading-relaxed hover:text-[orange] hover:stroke-[#000] text-gray-700">
+                <p className="text-[17px] leading-relaxed  hover:stroke-[#000] text-gray-700">
                   We create one-of-a-kind creative that sets you apart — whether
                   it’s for print, direct mail, or digital advertising. Our
                   strategists help you choose the optimal advertising mix and
@@ -269,7 +281,7 @@ export default function Branding() {
                   budget.
                 </p>
 
-                <p className="text-[17px] leading-relaxed hover:text-[orange] hover:stroke-[#000] text-gray-700">
+                <p className="text-[17px] leading-relaxed  hover:stroke-[#000] text-gray-700">
                   Our award-winning creative sparks an emotional reaction. It
                   brings your brand story to life, captivates attention, engages
                   the senses, and transforms perspectives. We develop
@@ -277,7 +289,7 @@ export default function Branding() {
                   medium.
                 </p>
 
-                <p className="text-[17px] leading-relaxed hover:text-[orange] hover:stroke-[#000] text-gray-700">
+                <p className="text-[17px] leading-relaxed  hover:stroke-[#000] text-gray-700">
                   When a brand is deeply ingrained in company culture, you can
                   feel it. We help you build excitement and stewardship so your
                   team becomes true brand ambassadors.

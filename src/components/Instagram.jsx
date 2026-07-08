@@ -1,33 +1,25 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Insta from "../assets/phone-frame.jpg";
+import ShimmerText from "./ShimmerText";
 
 export default function Instagram() {
   return (
     <section className="py-20 lg:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-5 md:px-8">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-
           <div className="lg:col-span-5 flex justify-center lg:justify-end">
             <div className="relative max-w-[320px] w-full">
-
-
                 <div className="bg-black rounded-[2.25rem] overflow-hidden aspect-[9/19] relative">
                   <img
                     src={Insta}
                     alt="Reva Instagram"
                     className="w-full h-full object-cover"
                   />
-                  
-
                 </div>
-
-
-        
               <div className="absolute -inset-4 bg-gradient-to-br from-white/10 to-transparent rounded-[4rem] pointer-events-none -z-10" />
             </div>
           </div>
-
 
           <div className="lg:col-span-7 text-center lg:text-left">
             <div className="max-w-lg lg:max-w-none mx-auto lg:mx-0">
@@ -49,11 +41,10 @@ export default function Instagram() {
               </div>
 
               <p className="mt-6 text-gray-600 text-lg">
-                Daily design inspiration, project reveals, and behind-the-scenes moments.
+                <ShimmerText> Daily design inspiration </ShimmerText>, project reveals, and behind-the-scenes moments.
               </p>
             </div>
           </div>
-
         </div>
       </div>
     </section>

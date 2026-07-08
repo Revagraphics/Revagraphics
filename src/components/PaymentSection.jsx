@@ -1,11 +1,15 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
+import ShimmerText from "./ShimmerText";
+import GridBg from './GridBg';
+import DecorativeUnderline from './DecorativeUnderline';
 
 import py1 from "../assets/google-pay.webp";
 import py2 from "../assets/pay-pal.webp";
 import py3 from "../assets/visa.webp";
 import py4 from "../assets/discover.webp";
 import py5 from "../assets/maestro.webp";
+
 
 const images = [
   {id:1, img:py1},
@@ -69,12 +73,19 @@ export default function PaymentSection() {
         {/* Title */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-semibold text-[#313131] tracking-tight">
-            Flexible Payment Options
+            <ShimmerText>Flexible</ShimmerText> Payment Options
           </h2>
+          <DecorativeUnderline
+            width="380px"
+            className="mt-6 mx-auto md:w-[380px] lg:w-[450px]"
+            centerColor="#3B82F6"
+          />
           <p className="text-[#313131] mt-3 text-lg">
             Choose the payment method that works best for you
           </p>
         </div>
+
+        
 
         {/* Slider Container */}
         <div className="relative">

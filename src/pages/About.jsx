@@ -25,7 +25,7 @@ export default function About() {
         <Navbar />
 
         <main className="mt-28 px-4 flex item-center lg:h-[60vh] max-w-[90%] mx-auto">
-          <div className="flex flex-col lg:flex-row gap-12 items-center">
+          <div className="flex flex-col lg:flex-row gap-2 lg:gap-12 items-center">
             {/* TEXT */}
             <section className="hero-animate flex-1 text-center lg:text-left">
               <span className="text-indigo-600 font-semibold mb-4 uppercase text-[1.3rem]">

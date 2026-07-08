@@ -6,6 +6,8 @@ import img5 from "../assets/workflow-icon6.webp";
 import img6 from "../assets/workflow-icon7.webp";
 import img7 from "../assets/workflow-icon9.webp";
 import img8 from "../assets/workflow-icon10.webp";
+import ShimmerText from "./ShimmerText";
+import GridBg from "./GridBg";
 
 
 export default function ProjectProcess() {
@@ -20,15 +22,12 @@ export default function ProjectProcess() {
     { id: 8, num: 8, icon: img8, title: "50% Remaining" },
   ];
 
-
-
-
   return (
     <section className="process_section bg-[#f2fff5] py-20 md:py-28">
       <div className="max-w-7xl mx-auto px-6">
         {/* Heading */}
         <h1 className="process_heading text-[#313131] text-4xl md:text-5xl lg:text-6xl font-semibold text-center mb-16 md:mb-20">
-          From Concept to Completion
+          From Concept to <ShimmerText> Completion </ShimmerText>
         </h1>
 
         {/* Cards Grid */}
