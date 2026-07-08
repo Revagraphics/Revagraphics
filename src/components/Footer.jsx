@@ -45,17 +45,17 @@ const badges = [
       "Awarded for outstanding creativity and design excellence across multiple projects.",
     year: "2024",
   },
+  // {
+    // id: 3,
+  //   src: itfirm,
+  //   alt: "IT Firm Award",
+  //   title: "Best IT Services Firm",
+  //   description:
+  //     "Featured among the top IT and digital transformation companies in the region.",
+  //   year: "2024",
+  // },
   {
     id: 3,
-    src: itfirm,
-    alt: "IT Firm Award",
-    title: "Best IT Services Firm",
-    description:
-      "Featured among the top IT and digital transformation companies in the region.",
-    year: "2025",
-  },
-  {
-    id: 4,
     src: goodfirm,
     alt: "GoodFirms Award",
     title: "GoodFirms Certified",
