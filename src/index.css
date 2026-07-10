@@ -1,89 +1,3 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&display=swap');
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-o-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-@font-face {
-  font-family: 'MyFont';
-  src: url('/fonts/MyFont.woff2') format('woff2');
-  font-weight: 200;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'MyFont2';
-  src: url('/fonts/MyFont2.woff2') format('woff2');
-  font-weight: 200;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'MyFont3';
-  src: url('/fonts/MyFont3.woff2') format('woff2');
-  font-weight: 700;
-  font-display: swap;
-}
-
-
-@font-face {
-  font-family: 'MyFont4';
-  src: url('/fonts/MyFont4.woff2') format('woff2');
-  font-weight: 200;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'MyFont4';
-  src: url('/fonts/play-fair1.woff2') format('woff2');
-  font-weight: 200;
-  font-display: swap;
-}
-
-
-html,
-body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  overflow-x: hidden;
-}
-
-#root {
-  width: 100%;
-  overflow-x: hidden;
-}
-
-
-
-body {
-  font-family: 'MyFont', sans-serif;
-}
-html.lenis {
-  height: auto;
-}
-
-.lenis.lenis-smooth {
-  scroll-behavior: auto;
-}
-
-.lenis.lenis-smooth body {
-  overflow: hidden;
-} */
-
-
-
-/* new configuration */
-
-
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&display=swap');
 
 @tailwind base;
@@ -109,9 +23,6 @@ html.lenis {
   background: rgba(0, 0, 0, 0.4); /* Subtle feedback on hover */
 }
 
-/* If your site uses a dark theme, change the thumb backgrounds above to:
-   background: rgba(255, 255, 255, 0.2); */
-
 /* Utility class to hide scrollbars completely on specific components if needed */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
@@ -121,6 +32,7 @@ html.lenis {
   scrollbar-width: none;
 }
 
+/* Custom Typography Engine Declarations */
 @font-face {
   font-family: 'MyFont';
   src: url('/fonts/MyFont.woff2') format('woff2');
@@ -150,7 +62,7 @@ html.lenis {
 }
 
 @font-face {
-  font-family: 'MyFont5'; /* Fixed duplicate naming conflict from MyFont4 */
+  font-family: 'MyFont5'; 
   src: url('/fonts/play-fair1.woff2') format('woff2');
   font-weight: 200;
   font-display: swap;
@@ -162,7 +74,7 @@ body {
   padding: 0;
   width: 100%;
   overflow-x: hidden;
-  background-color: #ffffff; /* Or your luxury base color */
+  background-color: #ffffff; 
 }
 
 #root {
@@ -172,8 +84,15 @@ body {
 
 body {
   font-family: 'MyFont', sans-serif;
-  -webkit-font-smoothing: antialiased; /* Keeps fine fonts incredibly sharp */
+  font-weight: 200;      /* FIX 1: Explicitly matches your font's asset weight */
+  font-synthesis: none;  /* FIX 2: Prevents the browser from auto-smearing the letters */
+  -webkit-font-smoothing: antialiased; /* Keeps fine luxury fonts razor sharp */
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* FIX 3: Strip browser-default fake bolding from structural tags */
+h1, h2, h3, h4, h5, h6, strong, b, button {
+  font-weight: 200; 
 }
 
 /* Smooth Scroll Architecture updates */

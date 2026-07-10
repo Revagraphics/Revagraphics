@@ -82,9 +82,9 @@ export default function Navbar() {
       label: "Portfolio",
       items: [
         { to: "/portfolio", label: "Portfolio" },
-        { to: "/Stationary", label: "Stationary" },
+        { to: "/stationery", label: "Stationery" },
         { to: "/trophy", label: "Trophy " },
-        { to: "/Catalogue", label: "Catalogue & Brochure" },
+        { to: "/catalogue", label: "Catalogue & Brochure" },
       ],
     },
   };

@@ -78,7 +78,7 @@ export default function Ethics() {
           {cards.map((card, index) => (
             <div 
               key={card.id}
-              className={`ree-card r-bg-c group rounded-3xl p-8 md:p-10 bg-[#f7f7f7] duration-300 hover:shadow-xl hover:-translate-y-2 ${
+              className={`ree-card r-bg-c group rounded-3xl p-8 md:p-10 bg-[#f7f7f7]/60 backdrop-blur-sm  duration-300 hover:shadow-xl hover:-translate-y-2 ${
                 index >= 3 ? 'lg:mt-10' : ''
               }`}
             >

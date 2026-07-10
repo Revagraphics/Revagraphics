@@ -17,6 +17,8 @@ const Designing = lazy(() => import("./pages/Designing"));
 const Printing = lazy(() => import("./pages/Printing"));
 const Cloud = lazy(() => import("./pages/Cloud"));
 const Application = lazy(() =>  import("./pages/Application"));
+const Stationery = lazy(() =>  import("./pages/Stationery"));
+const Catalogue = lazy(() =>  import("./pages/Catalogue"));
 
 
 
@@ -75,6 +77,8 @@ const App = () => {
           <Route path="/printing" element={<Printing />} />
           <Route path="/cloud" element={<Cloud />} />
           <Route path="/application" element={<Application />} />
+          <Route path="/stationery" element={<Stationery />} />
+          <Route path="/catalogue" element={<Catalogue />} />
           {/* <Route path="/profile" element={<Profile/>} /> */}
 
           
