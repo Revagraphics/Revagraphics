@@ -4,6 +4,41 @@ import Footer from "../components/Footer";
 import Seo from "../components/Seo";
 import Feedback from "../components/Feedback";
 import ShimmerText from "../components/ShimmerText";
+import FAQ from "../components/FAQ";
+import GridBg from "../components/GridBg";
+
+const pageData = [
+  {
+    question:
+      "What design files and formats will I receive upon project completion?",
+    answer:
+      "For graphic design, you receive fully layered source files (Adobe Illustrator, Photoshop, or Figma) alongside high-resolution production formats like print-ready PDFs, SVGs for web use, and optimized PNG/JPEG exports.",
+  },
+  {
+    question:
+      "Do your web design and development services include mobile optimization?",
+    answer:
+      "Yes, every website we build is developed with a mobile-first approach. We ensure fully responsive layouts, optimized asset loading, and smooth interactions across all modern smartphones, tablets, and desktop displays.",
+  },
+  {
+    question:
+      "What is your typical turnaround time for video editing and post-production?",
+    answer:
+      "Turnaround depends on footage volume and complexity. Standard promotional videos or social cuts typically take 3 to 5 business days for an initial draft. Complex edits involving heavy motion graphics or sound design are mapped out on custom timelines.",
+  },
+  {
+    question:
+      "How do you handle revisions during the design or editing process?",
+    answer:
+      "We structure our projects with clear review milestones. Each package includes a set number of revision rounds (typically 2 to 3) where you can consolidate feedback using interactive markup tools before we lock in the final render or code deployment.",
+  },
+  {
+    question:
+      "Can you update or redesign an existing website built by another developer?",
+    answer:
+      "Absolutely. We can perform a comprehensive UI/UX redesign or step into your existing codebase (whether it's React, WordPress, or raw HTML/CSS) to clean up performance bottlenecks, update branding, and optimize SEO structure.",
+  },
+];
 
 export default function Contact() {
   return (
@@ -27,9 +62,9 @@ export default function Contact() {
                   LET'S TALK
                 </p>
                 <h2 className="text-5xl md:text-5xl lg:text-5xl font-bold text-[#30303c] mb-6">
-                  <ShimmerText>Good talks</ShimmerText> make <br /> good Projects
+                  <ShimmerText>Good talks</ShimmerText> make <br /> good
+                  Projects
                 </h2>
-
 
                 <p className="text-lg text-gray-600 max-w-md">
                   We would be happy to hear from you. Please fill in the form
@@ -109,9 +144,13 @@ export default function Contact() {
               </div>
             </div>
           </div>
-
-          
         </div>
+
+        <FAQ
+          data={pageData}
+          title="Design & Development Insights"
+          subtitle="Everything you need to know about our creative workflow and development process."
+        />
 
         <Feedback />
         <Footer />

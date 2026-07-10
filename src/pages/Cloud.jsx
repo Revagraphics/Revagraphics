@@ -1,6 +1,9 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Seo from "../components/Seo";
+import ShimmerText from "../components/ShimmerText";
+import GridBg from "../components/GridBg";
+import DecorativeUnderline from "../components/DecorativeUnderline";
 
 export default function Cloud() {
   const services = [
@@ -86,29 +89,37 @@ export default function Cloud() {
         <Navbar />
 
         {/* HERO SECTION - Orange Theme + Fully Responsive */}
-        <section className="bg-[#f2fff5] min-h-[90vh] flex items-center justify-center text-black py-16 md:py-24 relative overflow-hidden">
-          <div className="max-w-[90%] mx-auto px-6 text-center relative z-10">
-            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-6 py-2 rounded-3xl text-sm font-medium mb-6">
-              ⚡ POWERED BY AWS • AZURE • GCP
+
+        <GridBg gridSize={80} lineColor="#f5f1ed" bgColor="#f2fff5">
+          <section className=" min-h-[90vh] flex items-center justify-center text-black py-16 md:py-24 relative overflow-hidden">
+            <div className="max-w-[90%] mx-auto px-6 text-center relative z-10">
+              <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-6 py-2 rounded-3xl text-sm font-medium mb-6">
+                ⚡ POWERED BY <ShimmerText>AWS • AZURE • GCP</ShimmerText>
+              </div>
+
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter leading-none mb-6">
+                <ShimmerText> Cloud Services </ShimmerText>
+              </h1>
+              <DecorativeUnderline
+                width="420px"
+                className="mt-6 mx-auto md:w-[380px] lg:w-[450px]"
+                centerColor="#3B82F6"
+              />
+
+              <p className="max-w-2xl mx-auto text-lg sm:text-xl md:text-2xl opacity-90">
+                Scalable, secure, and intelligent cloud solutions that transform
+                your business.
+              </p>
+
+              <button className="mt-10 px-8 sm:px-10 py-4 bg-white text-orange-600 font-semibold text-base sm:text-lg rounded-3xl hover:bg-orange-100 active:scale-95 transition-all duration-300 shadow-xl">
+                Get a Free Cloud Assessment
+              </button>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter leading-none mb-6">
-              Cloud Services
-            </h1>
-
-            <p className="max-w-2xl mx-auto text-lg sm:text-xl md:text-2xl opacity-90">
-              Scalable, secure, and intelligent cloud solutions that transform
-              your business.
-            </p>
-
-            <button className="mt-10 px-8 sm:px-10 py-4 bg-white text-orange-600 font-semibold text-base sm:text-lg rounded-3xl hover:bg-orange-100 active:scale-95 transition-all duration-300 shadow-xl">
-              Get a Free Cloud Assessment
-            </button>
-          </div>
-
-          {/* Decorative cloud elements */}
-          <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-white/10 to-transparent pointer-events-none" />
-        </section>
+            {/* Decorative cloud elements */}
+            <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-white/10 to-transparent pointer-events-none" />
+          </section>
+        </GridBg>
 
         {/* THREE SERVICES SECTION - Orange Theme + Responsive Grid */}
         <section className="bg-[#fffaf0] py-16 md:py-20">

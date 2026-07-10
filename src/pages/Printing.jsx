@@ -6,6 +6,9 @@ import Seo from "../components/Seo";
 import ShimmerText from "../components/ShimmerText";
 import DecorativeUnderline from "../components/DecorativeUnderline";
 
+// print video
+import Print from "../assets/print.mp4"
+
 
 
 
@@ -23,32 +26,58 @@ export default function Printing() {
         <Navbar />
 
         {/* ================= HERO SECTION ================= */}
-        <div className="relative h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 to-black">
-          <div className="absolute inset-0 bg-[url('https://picsum.photos/id/1015/2000/1200')] bg-cover bg-center opacity-40"></div>
+        <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-950">
+          <video
+            src={Print}
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="auto"
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-slate-950/10"></div>
+          {/* <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(255,152,0,0.22),_transparent_85%),radial-gradient(circle_at_bottom_right,_rgba(59,130,246,0.22),_transparent_85%)]"></div> */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-slate-900/10 to-transparent"></div>
 
-          <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-            <h1 className="text-6xl md:text-7xl font-bold text-white mb-6 tracking-tight">
+          <div className="relative z-10 text-center px-6 max-w-5xl mx-auto py-20">
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 backdrop-blur-md text-sm font-medium uppercase tracking-[0.3em] text-white/80 mb-6">
+              <span className="h-2.5 w-2.5 rounded-full bg-[#FF9800] animate-pulse"></span>
+              Precision Printing Studio
+            </div>
+
+            <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-white mb-6 tracking-tight leading-tight">
               Premium <ShimmerText>Printing</ShimmerText>
             </h1>
             <DecorativeUnderline
               width="520px"
               className="mt-2 mx-auto"
               centerColor="#3B82F6"
-              />
-            <p className="text-xl md:text-2xl text-white/90 mb-4 max-w-2xl mx-auto">
+            />
+            <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed">
               High-quality prints that make your brand stand out. From business
-              cards to large format — we bring your ideas to life.
+              cards to large format — we bring your ideas to life with premium
+              materials and flawless detail.
             </p>
-            <button
-              onClick={() =>
-                document
-                  .getElementById("services")
-                  .scrollIntoView({ behavior: "smooth" })
-              }
-              className="px-10 py-4 bg-gradient-to-r from-[#FF9800] to-[#E91E63] hover:bg-orange-600 text-white font-semibold rounded-full text-lg transition-all duration-300 hover:scale-105 active:scale-95"
-            >
-              Explore Our Prints
-            </button>
+
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <button
+                onClick={() =>
+                  document
+                    .getElementById("services")
+                    .scrollIntoView({ behavior: "smooth" })
+                }
+                className="px-10 py-4 bg-gradient-to-r from-[#FF9800] to-[#E91E63] hover:shadow-[0_0_35px_rgba(255,152,0,0.35)] text-white font-semibold rounded-full text-lg transition-all duration-300 hover:scale-105 active:scale-95"
+              >
+                Explore Our Prints
+              </button>
+              <a
+                href="/contact"
+                className="px-10 py-4 rounded-full border border-white/30 bg-white/10 text-white font-semibold text-lg backdrop-blur-md transition-all duration-300 hover:bg-white/20 hover:scale-105"
+              >
+                Get a Quote
+              </a>
+            </div>
           </div>
 
           <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
@@ -56,7 +85,7 @@ export default function Printing() {
               <div className="w-1 h-2 bg-white/70 rounded-full animate-scroll"></div>
             </div>
           </div>
-        </div>
+        </section>
 
 
         <div id="services" className="py-24 bg-white">
@@ -148,6 +177,8 @@ export default function Printing() {
             </div>
           </div>
         </div>
+
+
 
         {/* ================= PORTFOLIO / GALLERY SECTION ================= */}
         <div className="py-24 bg-slate-50">

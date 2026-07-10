@@ -7,6 +7,8 @@ import badge3 from "../assets/badge-1.png";
 import badge4 from "../assets/badge22.png";
 import badge5 from "../assets/badge-3.png";
 import itfirm from "../assets/itfirm.png";
+import badge6 from "../assets/web-design.png";
+import badge7 from "../assets/app-futura.png";
 import goodfirm from "../assets/goodfirm.png";
 import bottomLogo from "../assets/footer-logo.png";
 import {
@@ -45,18 +47,18 @@ const badges = [
       "Awarded for outstanding creativity and design excellence across multiple projects.",
     year: "2024",
   },
-  // {
-    // id: 3,
-  //   src: itfirm,
-  //   alt: "IT Firm Award",
-  //   title: "Best IT Services Firm",
-  //   description:
-  //     "Featured among the top IT and digital transformation companies in the region.",
-  //   year: "2024",
-  // },
   {
     id: 3,
-    src: goodfirm,
+    src: badge6,
+    alt: "IT Firm Award",
+    title: "Best IT Services Firm",
+    description:
+      "Featured among the top IT and digital transformation companies in the region.",
+    year: "2024",
+  },
+  {
+    id: 4,
+    src: badge7,
     alt: "GoodFirms Award",
     title: "GoodFirms Certified",
     description:
@@ -303,7 +305,7 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* ── BEAUTIFUL MODAL ──────────────────────────────────────── */}
+      {/*── BEAUTIFUL MODAL ────────────────────────────────────────*/}
       {selectedBadge && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-xl"

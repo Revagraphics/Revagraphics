@@ -7,6 +7,9 @@ import { Link } from "react-router-dom";
 import WorkFilter from "../components/WorkFilter";
 import Seo from "../components/Seo";
 import bg from "../assets/about.webp";
+import ShimmerText from "../components/ShimmerText";
+import GridBg from "../components/GridBg";
+import DecorativeUnderline from "../components/DecorativeUnderline";
 
 const projectsData = [
   {
@@ -119,7 +122,7 @@ export default function designing() {
                 </div>
 
                 <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-zinc-900 leading-tight tracking-tighter">
-                  We Design <span className="text-orange-600">Experiences</span>
+                  We Design <ShimmerText >Experiences</ShimmerText>
                   <br />
                   That Convert
                 </h1>
@@ -132,7 +135,7 @@ export default function designing() {
 
                 <div className="flex flex-wrap gap-4 pt-6">
                   <Link to="/portfolio">
-                    <button className="bg-orange-600 hover:bg-orange-700 text-white px-9 py-4 rounded-2xl font-semibold transition-all active:scale-95 shadow-lg shadow-orange-500/30">
+                    <button className="bg-gradient-to-r from-orange-500 to-pink-500 text-white px-9 py-4 rounded-2xl hover:scale-105 font-semibold transition-all active:scale-95 shadow-lg shadow-orange-500/30">
                       Explore Our Work
                     </button>
                   </Link>
@@ -149,20 +152,24 @@ export default function designing() {
               <div className="relative flex justify-center lg:justify-end">
                 <div className="relative">
                   {/* Main Decorative Frame */}
-                  <div className="w-[320px] md:w-[420px] lg:w-[480px] aspect-square bg-gradient-to-br from-orange-400 via-amber-400 to-yellow-400 rounded-[4rem] rotate-6 shadow-2xl overflow-hidden">
+                  <div className="w-[320px] md:w-[420px] lg:w-[480px] aspect-square bg-gradient-to-r from-orange-500 to-pink-500 rounded-[4rem] rotate-6 shadow-2xl overflow-hidden">
                     {/* Inner Card */}
                     <div className="absolute inset-4 bg-white rounded-[3rem] flex items-center justify-center shadow-inner">
                       <div className="text-center">
-                        <div className="text-6xl mb-4 text-orange-500">✦</div>
+                        <div className="text-6xl mb-4 text-orange-500"><ShimmerText>✦</ShimmerText></div>
                         <p className="text-2xl font-light text-zinc-500">
                           Premium
                         </p>
                         <p className="text-4xl font-bold tracking-wider text-zinc-900">
                           DESIGN STUDIO
                         </p>
-                        <p className="text-4xl font-bold tracking-wider text-orange-600">
+
+                         <p className="text-4xl font-bold tracking-wider">
+                          <ShimmerText>
                           REVA GRAPHICS
+                        </ShimmerText>
                         </p>
+                       
                       </div>
                     </div>
                   </div>
@@ -182,47 +189,43 @@ export default function designing() {
         </section>
 
         <section className=" min-h-[70vh] lg:pt-24 pb-28">
-        <div className="max-w-[90%] mx-auto px-6">
-          <div className="grid lg:grid-cols-2 items-center mt-[5rem] gap-12">
-            {/* LEFT CONTENT */}
-            <div>
-              <span className="inline-block lg:text-[2rem] font-medium text-[#ff9904] mb-4">
-                Highest rated brand designing company
-              </span>
+          <div className="max-w-[90%] mx-auto px-6">
+            <div className="grid lg:grid-cols-2 items-center mt-[5rem] gap-12">
+              {/* LEFT CONTENT */}
+              <div>
+                <span className="inline-block lg:text-[2rem] font-medium text-[#ff9904] mb-4">
+                  Highest rated brand designing company
+                </span>
 
-              <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-6">
-                We build a unique{" "}
-                <span className="text-transparent bg-clip-text bg-orange-500">
-                  Brand
-                </span>{" "}
-                for attract the customers
-              </h1>
+                <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-6">
+                  We build a <ShimmerText> Unique Brand </ShimmerText>
+                   {" "} for attract the customers
+                </h1>
 
-              <p className="text-gray-500 mb-8">
-                Hire website developers from us to establish a strong online
-                presence that will concrete your path toward success.
-              </p>
+                <p className="text-gray-500 mb-8">
+                  Hire website developers from us to establish a strong online
+                  presence that will concrete your path toward success.
+                </p>
 
-              <Link
-               to="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-[#ff9904] text-white rounded-full font-medium hover:opacity-90 transition"
-              >
-                Let’s discuss →
-              </Link>
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-[#ff9904] text-white rounded-full font-medium hover:opacity-90 transition"
+                >
+                  Let’s discuss →
+                </Link>
+              </div>
 
-            </div>
-
-            {/* RIGHT IMAGE */}
-            <div className="flex justify-center lg:justify-end">
-              <img
-                src={bg}
-                alt="hero"
-                className="w-full h-1/2 max-w-md object-contain"
-              />
+              {/* RIGHT IMAGE */}
+              <div className="flex justify-center lg:justify-end">
+                <img
+                  src={bg}
+                  alt="hero"
+                  className="w-full h-1/2 max-w-md object-contain"
+                />
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
         <WorkFilter
           title="Our Creative Work"

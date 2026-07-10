@@ -15,14 +15,14 @@ o-scrollbar::-webkit-scrollbar {
 @font-face {
   font-family: 'MyFont';
   src: url('/fonts/MyFont.woff2') format('woff2');
-  font-weight: 400;
+  font-weight: 200;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'MyFont2';
   src: url('/fonts/MyFont2.woff2') format('woff2');
-  font-weight: 500;
+  font-weight: 200;
   font-display: swap;
 }
 
@@ -37,14 +37,14 @@ o-scrollbar::-webkit-scrollbar {
 @font-face {
   font-family: 'MyFont4';
   src: url('/fonts/MyFont4.woff2') format('woff2');
-  font-weight: 400;
+  font-weight: 200;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'MyFont4';
   src: url('/fonts/play-fair1.woff2') format('woff2');
-  font-weight: 400;
+  font-weight: 200;
   font-display: swap;
 }
 
