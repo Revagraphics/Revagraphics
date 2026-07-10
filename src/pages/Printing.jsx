@@ -50,9 +50,9 @@ export default function Printing() {
               Premium <ShimmerText>Printing</ShimmerText>
             </h1>
             <DecorativeUnderline
-              width="520px"
-              className="mt-2 mx-auto"
-              centerColor="#3B82F6"
+            width="520px"
+            className="mt-2 mx-auto"
+            centerColor="#3B82F6"
             />
             <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed">
               High-quality prints that make your brand stand out. From business

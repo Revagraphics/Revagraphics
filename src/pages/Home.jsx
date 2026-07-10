@@ -160,7 +160,7 @@ export default function Home() {
                 <span className="">Development Solutions Across</span>{" "}
                 <span
                   ref={textRef}
-                  className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF9800] to-[#E91E63]"
+                  className="text-transparent bg-clip-text   bg-gradient-to-r from-[#FF9800] to-[#E91E63]"
                 >
                   Branding.
                 </span>
@@ -168,7 +168,7 @@ export default function Home() {
 
               <Link
                 to="/contact"
-                className="inline-block mt-8  bg-gradient-to-r from-[#FF9800] to-[#E91E63] text-white px-8 py-3 rounded-full"
+                className="inline-block mt-8   bg-gradient-to-r from-[#FF9800] to-[#E91E63]   text-white px-8 py-3 rounded-full"
               >
                 Let's Talk
               </Link>
@@ -180,7 +180,7 @@ export default function Home() {
                 <img
                   src={HeroImg}
                   alt="hero"
-                  className="w-full h-[320px] sm:h-[420px] lg:h-[520px] object-cover"
+                  className="w-full h-[320px] sm:h-[420px]  lg:h-[520px] object-cover"
                 />
               </div>
             </section>

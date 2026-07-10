@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -33,7 +33,7 @@ o-scrollbar::-webkit-scrollbar {
   font-display: swap;
 }
 
-/* Secondary font */
+
 @font-face {
   font-family: 'MyFont4';
   src: url('/fonts/MyFont4.woff2') format('woff2');
@@ -77,5 +77,119 @@ html.lenis {
 
 .lenis.lenis-smooth body {
   overflow: hidden;
+} */
+
+
+
+/* new configuration */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Premium Minimalist Scrollbar */
+::-webkit-scrollbar {
+  width: 6px; /* Ultra thin, high-end look */
 }
 
+::-webkit-scrollbar-track {
+  background: transparent; /* Seamless blend into your background */
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2); /* Soft, translucent tracker */
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.4); /* Subtle feedback on hover */
+}
+
+/* If your site uses a dark theme, change the thumb backgrounds above to:
+   background: rgba(255, 255, 255, 0.2); */
+
+/* Utility class to hide scrollbars completely on specific components if needed */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@font-face {
+  font-family: 'MyFont';
+  src: url('/fonts/MyFont.woff2') format('woff2');
+  font-weight: 200;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MyFont2';
+  src: url('/fonts/MyFont2.woff2') format('woff2');
+  font-weight: 200;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MyFont3';
+  src: url('/fonts/MyFont3.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MyFont4';
+  src: url('/fonts/MyFont4.woff2') format('woff2');
+  font-weight: 200;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MyFont5'; /* Fixed duplicate naming conflict from MyFont4 */
+  src: url('/fonts/play-fair1.woff2') format('woff2');
+  font-weight: 200;
+  font-display: swap;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #ffffff; /* Or your luxury base color */
+}
+
+#root {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'MyFont', sans-serif;
+  -webkit-font-smoothing: antialiased; /* Keeps fine fonts incredibly sharp */
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Smooth Scroll Architecture updates */
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth body {
+  overflow: hidden;
+}
+
+/* Eliminates jerky paint jumps during momentum phases */
+.lenis.lenis-scrolling {
+  pointer-events: none; 
+}

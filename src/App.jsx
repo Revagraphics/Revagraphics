@@ -27,13 +27,14 @@ import GoToTop from "./components/GoToTop";
 const App = () => {
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 2.2,
+      duration: 1.4,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: "vertical",
       gestureOrientation: "vertical",
       smoothWheel: true,
-      wheelMultiplier: 0.7,
-      touchMultiplier: 1.5,
+      wheelMultiplier: 1.1,
+      touchMultiplier: 1.2,
+      infinite:false,
     });
 
     globalThis.lenis = lenis; // ✅ assign AFTER lenis is created
