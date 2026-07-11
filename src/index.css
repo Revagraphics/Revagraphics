@@ -6,7 +6,7 @@
 
 /* Premium Minimalist Scrollbar */
 ::-webkit-scrollbar {
-  width: 6px; /* Ultra thin, high-end look */
+  width: 6px; 
 }
 
 ::-webkit-scrollbar-track {
@@ -36,35 +36,30 @@
 @font-face {
   font-family: 'MyFont';
   src: url('/fonts/MyFont.woff2') format('woff2');
-  font-weight: 200;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'MyFont2';
   src: url('/fonts/MyFont2.woff2') format('woff2');
-  font-weight: 200;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'MyFont3';
   src: url('/fonts/MyFont3.woff2') format('woff2');
-  font-weight: 700;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'MyFont4';
   src: url('/fonts/MyFont4.woff2') format('woff2');
-  font-weight: 200;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'MyFont5'; 
   src: url('/fonts/play-fair1.woff2') format('woff2');
-  font-weight: 200;
   font-display: swap;
 }
 

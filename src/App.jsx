@@ -1,8 +1,9 @@
 // src/App.jsx
-import { useEffect, lazy, Suspense } from "react";
+import { useEffect, lazy, Suspense, useState } from "react";
 import Lenis from "lenis";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
+import LogoLoader from "./components/LogoLoader";
 
 const Home = lazy(() => import("./pages/Home"));
 const About = lazy(() => import("./pages/About"));
@@ -16,10 +17,9 @@ const Development = lazy(() => import("./pages/Development"));
 const Designing = lazy(() => import("./pages/Designing"));
 const Printing = lazy(() => import("./pages/Printing"));
 const Cloud = lazy(() => import("./pages/Cloud"));
-const Application = lazy(() =>  import("./pages/Application"));
-const Stationery = lazy(() =>  import("./pages/Stationery"));
-const Catalogue = lazy(() =>  import("./pages/Catalogue"));
-
+const Application = lazy(() => import("./pages/Application"));
+const Stationery = lazy(() => import("./pages/Stationery"));
+const Catalogue = lazy(() => import("./pages/Catalogue"));
 
 
 // import BubbleBlower from "./components/BubbleBlower";
@@ -36,7 +36,7 @@ const App = () => {
       smoothWheel: true,
       wheelMultiplier: 1.1,
       touchMultiplier: 1.2,
-      infinite:false,
+      infinite: false,
     });
 
     globalThis.lenis = lenis; // ✅ assign AFTER lenis is created
@@ -57,14 +57,30 @@ const App = () => {
     };
   }, []);
 
+  const [showLoader, setShowLoader] = useState(true);
+
+  useEffect(() => {
+    const minLoadTime = setTimeout(() => setShowLoader(false), 4800);
+    return () => clearTimeout(minLoadTime);
+  }, []);
+
   return (
     <Router>
       {/* <BubbleBlower /> */}
       <AutoScrollTop />
 
-      <Suspense fallback={<div className="p-10 flex items-center justify-center">Loading..</div>}>
-        <Routes>
+      {showLoader && <LogoLoader onComplete={() => setShowLoader(false)} />}
 
+      <Suspense
+        fallback={
+          <div className="min-h-screen bg-black flex items-center justify-center text-white">
+            Loading...
+          </div>
+        }
+      >
+        {/* <Suspense fallback={<div className="p-10 flex items-center justify-center">Loading..</div>}> */}
+
+        <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/portfolio" element={<Portfolio />} />
@@ -81,7 +97,6 @@ const App = () => {
           <Route path="/catalogue" element={<Catalogue />} />
           {/* <Route path="/profile" element={<Profile/>} /> */}
 
-          
           {/* not found */}
           <Route path="*" element={<NotFound />} />
         </Routes>
