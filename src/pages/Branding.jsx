@@ -162,11 +162,14 @@ export default function Branding() {
           <div className="absolute inset-0 bg-white/70"></div>
           <div className="absolute inset-0 bg-gradient-to-b from-gray-50/80 via-white/60 to-gray-100/80"></div>
 
+
           {/* Text Content */}
           <div className="absolute inset-0 flex items-center justify-center text-center px-6 z-10 pointer-events-none">
             <div className="max-w-4xl mx-auto">
               <h1 className="text-3xl md:text-7xl font-bold  text-gray-900 leading-tight tracking-tight mb-6">
                 We build a unique Brand
+
+                [  ]
                 <br />
                 {/* <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-600">
                   for attract the customers
@@ -183,6 +186,7 @@ export default function Branding() {
                 <button className="px-8 py-4 bg-black text-white font-semibold rounded-full hover:bg-gray-800 transition">
                   Explore Our Work
                 </button>
+
                 <button className="px-8 py-4 border-2 border-gray-900 text-gray-900 font-semibold rounded-full hover:bg-gray-100 transition">
                   Talk To Us
                 </button>
@@ -190,7 +194,7 @@ export default function Branding() {
             </div>
           </div>
 
-          {/* Floating Images - GSAP controlled */}
+          {/* Floating Image Gsap Controlling */}
           {floatingImages.map((img) => (
             <div
               key={img.id}
@@ -298,10 +302,10 @@ export default function Branding() {
             </div>
           </div>
         </section>
-
         <ImageSlider />
         <ProjectProcess />
         <PaymentSection />
+        
         <Instagram />
         <Footer />
       </div>

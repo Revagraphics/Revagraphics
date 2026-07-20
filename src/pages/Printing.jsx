@@ -40,7 +40,7 @@ export default function Printing() {
           {/* <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(255,152,0,0.22),_transparent_85%),radial-gradient(circle_at_bottom_right,_rgba(59,130,246,0.22),_transparent_85%)]"></div> */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-slate-900/10 to-transparent"></div>
 
-          <div className="relative z-10 text-center px-6 max-w-5xl mx-auto py-20">
+          <div className="relative z-10 text-center px-6 sm:px-4 max-w-5xl mx-auto py-20 mt-2">
             <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 backdrop-blur-md text-sm font-medium uppercase tracking-[0.3em] text-white/80 mb-6">
               <span className="h-2.5 w-2.5 rounded-full bg-[#FF9800] animate-pulse"></span>
               Precision Printing Studio

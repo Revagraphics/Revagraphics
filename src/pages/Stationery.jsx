@@ -78,11 +78,11 @@ export default function Stationery() {
 
         <section
           ref={containerRef}
-          className="min-h-screen  text-neutral-900 lg:mt-16 mt-4 selection:bg-orange-200 pt-8 px-6 py-20 md:px-16 lg:px-24"
+          className="min-h-screen  text-neutral-900 lg:mt-16 mt-8 selection:bg-orange-200 pt-8 px-6 py-20 md:px-16 lg:px-24"
         >
           {/* Editorial Header Block */}
-          <header className="max-w-4xl mt-10 mb-20">
-            <span className="reveal-sub inline-block uppercase tracking-[0.3em] text-xl text-orange-600 font-medium mb-4">
+          <header className="max-w-4xl mt-12 mb-20">
+            <span className="reveal-sub inline-block uppercase tracking-[0.3em] text-sm text-orange-600 font-medium mb-4">
               Tactile Architecture
             </span>
             <h1 className="reveal-title font-serif text-3xl md:text-5xl lg:text-5xl font-normal leading-[1.1] tracking-tight text-neutral-900">
@@ -94,6 +94,8 @@ export default function Stationery() {
           {/* Horizontal Structural Line */}
           <div className="w-full h-[1px] bg-neutral-200 mb-16" />
           {/* Luxury Minimalist Showcase Grid */}
+
+
           <main className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-8">
             {collection.map((item) => (
               <div
@@ -119,6 +121,8 @@ export default function Stationery() {
               </div>
             ))}
           </main>
+
+
           {/* Secondary Dynamic Grid (Visual Placeholders) */}
           <section className="mt-28 grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="grid-item h-[420px] bg-neutral-100 relative overflow-hidden group rounded-3xl">
@@ -144,8 +148,6 @@ export default function Stationery() {
               </div>
             </div>
           </section>
-
-
 
         </section>
 

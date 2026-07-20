@@ -38,7 +38,7 @@ const LogoLoader = ({ onComplete }) => {
         opacity: 1,
         rotation: 0,
         y: 0,
-        duration: 2.0, // Longer duration for a premium, deliberate feel
+        duration: 2.2, // Longer duration for a premium, deliberate feel
         ease: "power3.out" // Smooth, non-bouncy deceleration
       },
       "-=0.4"
@@ -60,6 +60,7 @@ const LogoLoader = ({ onComplete }) => {
       );
     }
 
+    
     // 4. Animate graphic elements
     const graphicElements = svgRef.current?.querySelectorAll('g[id^="G"], g[id^="I"]');
     if (graphicElements?.length) {
@@ -86,12 +87,12 @@ const LogoLoader = ({ onComplete }) => {
     >
       {/* Container removed the breathing animation */}
       <div className="flex flex-col items-center">
-        <div className="mb-12 relative">
+        <div className="mb-1 lg:mb-12 relative">
           <img
             ref={svgRef}
             src={revaLogo}
             alt="Reva Logo"
-            className="w-[420px] md:w-[520px] drop-shadow-2xl"
+            className="w-[220px] md:w-[520px] lg:w-[520px]  drop-shadow-2xl"
           />
         </div>
 
@@ -100,7 +101,7 @@ const LogoLoader = ({ onComplete }) => {
           <div className="h-full w-0 bg-gradient-to-r from-cyan-500 via-pink-500 to-amber-500 animate-[loading_2.2s_ease-in-out_forwards]" />
         </div>
 
-        <p className="text-zinc-400 text-sm mt-6 tracking-[4px] uppercase font-medium">
+        <p className="text-zinc-400 text-sm mt-3 lg:mt-6 tracking-[4px] uppercase font-medium">
           Crafting Excellence
         </p>
       </div>

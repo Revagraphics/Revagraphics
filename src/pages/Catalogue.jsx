@@ -95,7 +95,7 @@ export default function Catalogue() {
             {/* Left Side: Editorial Presentation Anchor */}
             <div className="panel-fade lg:w-[40%]  px-6 py-24 md:px-12 lg:px-16 flex flex-col justify-between lg:sticky lg:top-0 lg:h-screen border-b lg:border-b-0 lg:border-r border-neutral-200">
               <div>
-                <span className="inline-block uppercase tracking-[0.3em] text-xl text-orange-600 font-semibold mb-6">
+                <span className="inline-block uppercase tracking-[0.3em] text-sm text-orange-600 font-semibold mb-3">
                   Printed System Architectures
                 </span>
                 <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-normal leading-tight tracking-tight text-neutral-900">
@@ -112,12 +112,12 @@ export default function Catalogue() {
             </div>
 
             {/* Right Side: Interactive Editorial Catalog List */}
-            <div className="lg:w-[60%] px-6 py-24 md:px-12 lg:px-20  relative">
+            <div className="lg:w-[60%] px-6 py-8 lg:py-24 md:px-12 lg:px-20  relative">
               <div className="space-y-0 relative z-10">
                 {products.map((prod, idx) => (
                   <div
                     key={idx}
-                    className="list-row group border-b border-neutral-200 py-10 flex flex-col sm:flex-row sm:items-center justify-between cursor-pointer transition-all duration-300 hover:border-orange-300"
+                    className="list-row group border-b border-neutral-200 py-10 flex flex-col sm:flex-row sm:items-center justify-between backdrop-blur-sm cursor-pointer transition-all duration-300 hover:border-orange-300"
                     onMouseEnter={() => setHoveredIndex(idx)}
                     onMouseLeave={() => setHoveredIndex(null)}
                   >
