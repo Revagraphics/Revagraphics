@@ -2,8 +2,6 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import Seo from "../components/Seo";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import stationery from "../assets/stationery.png";
 import ShimmerText from "../components/ShimmerText";
 import GridBg from "../components/GridBg";
@@ -71,9 +69,6 @@ export default function Stationery() {
         description="Premium stationery suites, business cards, letterheads and luxury branding materials."
       />
       <div className=" min-h-screen">
-        <Navbar />
-
-
       <GridBg gridSize={80} lineColor="#F0EDE8" bgColor="#fff">
 
         <section
@@ -152,8 +147,6 @@ export default function Stationery() {
         </section>
 
         </GridBg>
-
-        <Footer />
       </div>
     </>
   );

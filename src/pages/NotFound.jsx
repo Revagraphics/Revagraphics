@@ -1,24 +1,19 @@
 import { Link, useLocation } from "react-router-dom";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+
 import error from "../assets/error.svg";
 import Seo from "../components/Seo";
-
 export default function NotFound() {
   const location = useLocation();
 
   return (
     <>
      <Seo
-  title="404 - Page Not Found | Reva Graphics"
-  description="The page you are looking for does not exist."
-  noIndex={true}
-/>
-
+    title="404 - Page Not Found | Reva Graphics"
+    description="The page you are looking for does not exist."
+    noIndex={true}
+    />
 
       <div className="flex flex-col min-h-screen bg-gray-100">
-        <Navbar />
-
         {/* Main Section */}
         <div className="flex min-h-screen flex-1 flex-col items-center justify-center text-center px-4">
 
@@ -49,7 +44,6 @@ export default function NotFound() {
           </Link>
         </div>
 
-        <Footer />
       </div>
     </>
   );

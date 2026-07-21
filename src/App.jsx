@@ -21,8 +21,11 @@ const Application = lazy(() => import("./pages/Application"));
 const Stationery = lazy(() => import("./pages/Stationery"));
 const Catalogue = lazy(() => import("./pages/Catalogue"));
 
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 // import BubbleBlower from "./components/BubbleBlower";
+
 import AutoScrollTop from "./components/AutoScrollTop";
 import GoToTop from "./components/GoToTop";
 
@@ -68,6 +71,7 @@ const App = () => {
     <Router>
       {/* <BubbleBlower /> */}
       <AutoScrollTop />
+      <Navbar/>
 
       {showLoader && <LogoLoader onComplete={() => setShowLoader(false)} />}
 
@@ -96,12 +100,12 @@ const App = () => {
           <Route path="/stationery" element={<Stationery />} />
           <Route path="/catalogue" element={<Catalogue />} />
           {/* <Route path="/profile" element={<Profile/>} /> */}
-
           {/* not found */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
 
+      <Footer/>  
       <GoToTop />
     </Router>
   );

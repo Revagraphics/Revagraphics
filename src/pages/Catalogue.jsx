@@ -2,18 +2,12 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import Seo from "../components/Seo";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-
 import catalogue1 from "../assets/catalogue2.png";
 import catalogue2 from "../assets/catalogue3.png";
 import catalogue3 from "../assets/catalogue4.png";
-
 import ShimmerText from "../components/ShimmerText";
 import GridBg from "../components/GridBg";
 import DecorativeUnderline from "../components/DecorativeUnderline";
-
-
 
 export default function Catalogue() {
   const pageRef = useRef(null);
@@ -85,7 +79,6 @@ export default function Catalogue() {
       />
 
       <div className="bg-white min-h-screen">
-        <Navbar />
         <section
           ref={pageRef}
           className="min-h-screen bg-white text-neutral-900 lg:mt-12 mt-4 selection:bg-orange-200"
@@ -195,7 +188,6 @@ export default function Catalogue() {
 
           </GridBg>
         </section>
-        <Footer />
       </div>
     </>
   );

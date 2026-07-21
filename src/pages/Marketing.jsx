@@ -1,21 +1,16 @@
 import React, { useState, useEffect } from "react";
-
-import Navbar from "../components/Navbar.jsx";
-import Footer from "../components/Footer.jsx";
-
 import cart from "../assets/cart.png";
 import seo from "../assets/seo.png";
-
 import benefit1 from "../assets/expert1.png?url";
 import benefit2 from "../assets/expert2.png?url";
 import benefit3 from "../assets/expert3.png?url";
 import benefit4 from "../assets/expert4.png?url";
 import benefit5 from "../assets/expert5.png?url";
 import Seo from "../components/Seo";
-
 import devloper from "../assets/developers.svg?url";
 import ShimmerText from "../components/ShimmerText"
 import GridBg from "../components/GridBg.jsx";
+import DecorativeUnderline from "../components/DecorativeUnderline";
 
 export default function Marketing() {
   const Benefits = [
@@ -62,9 +57,7 @@ export default function Marketing() {
         title="Digital Marketing Services | Reva Graphics"
         description="Grow your business with SEO, social media marketing, and performance-driven digital strategies."
       />
-
       <div className="min-h-screen bg-[#f2fff5]">
-        <Navbar />
         <section className="pt-20 pb-32 overflow-hidden">
           <div className="max-w-[90%] mx-auto px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-16 items-center pt-16">
@@ -120,7 +113,7 @@ export default function Marketing() {
 
 
               {/* Left Image */}
-              <div className="flex justify-center lg:justify-center">
+              <div className="flex justify-center order-2 lg:order-1 lg:justify-center">
                 <div className="relative">
                   <div className="absolute -inset-6 bg-gradient-to-br from-orange-400/30 to-purple-400/30 rounded-[3rem] -rotate-6 blur-xl" />
                   <img
@@ -133,10 +126,9 @@ export default function Marketing() {
 
 
               {/* Right Text */}
-              <div className="space-y-6">
-                <h2 className="text-4xl lg:text-5xl font-bold leading-tight text-[#30303c]">
+              <div className="space-y-6 order-1 lg:order-2">
+                <h2 className="text-3xl lg:text-5xl font-bold leading-tight text-[#30303c]">
                   We offer <ShimmerText>SEO & SMO</ShimmerText>
-                  <br />
                   Promotional services
                 </h2>
                 <div className="space-y-6 text-[#30303c] text-lg leading-relaxed">
@@ -166,6 +158,11 @@ export default function Marketing() {
                   With Us
                 </ShimmerText>
               </h2>
+               <DecorativeUnderline
+                   width="320px"
+                   className="mt-6 mx-auto md:w-[380px] lg:w-[450px]"
+                    centerColor="#3B82F6"
+                  />
             </div>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -244,7 +241,6 @@ export default function Marketing() {
             </div>
           </div>
         </section>
-        <Footer />
       </div>
     </>
   );

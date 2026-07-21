@@ -1,6 +1,4 @@
 import React from "react";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import Seo from "../components/Seo";
 import Feedback from "../components/Feedback";
 import ShimmerText from "../components/ShimmerText";
@@ -50,8 +48,6 @@ export default function Contact() {
 
       <div className="bg-[white] min-h-screen">
         {/* Navbar */}
-        <Navbar />
-
         <div className="max-w-[90%] mx-auto py-5 px-6">
           {/* Let's Talk Section */}
           <div className="pt-20 mt-5 flex min-h-[70vh] items-center pb-16">
@@ -153,7 +149,6 @@ export default function Contact() {
         />
 
         <Feedback />
-        <Footer />
       </div>
     </>
   );

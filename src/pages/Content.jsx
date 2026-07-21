@@ -1,7 +1,5 @@
 import React from "react";
 
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import content from "../assets/content.png";
 import content2 from "../assets/wc.png";
 import Seo from "../components/Seo";
@@ -63,7 +61,6 @@ export default function Content() {
       />
 
       <div className="min-h-screen bg-[#f2fff5]">
-        <Navbar />
 
         {/* Hero Section */}
         <section className="pt-20 pb-32 overflow-hidden">
@@ -299,8 +296,6 @@ export default function Content() {
             </div>
           </div>
         </section>
-
-        <Footer />
       </div>
     </>
   );

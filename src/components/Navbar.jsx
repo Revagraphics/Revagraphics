@@ -121,14 +121,13 @@ export default function Navbar() {
 
   /* ================= MOBILE MENU ANIMATION ================= */
   useEffect(() => {
-    if (!mobileBackdropRef.current || !mobileMenuRef.current) return;
-
+    if (!mobileBackdropRef.current || !mobileMenuRef.current) return ;
     gsap.set(mobileBackdropRef.current, { autoAlpha: 0 });
     gsap.set(mobileMenuRef.current, { x: "100%" });
   }, []);
 
   useEffect(() => {
-    if (!mobileBackdropRef.current || !mobileMenuRef.current) return;
+    if (!mobileBackdropRef.current || !mobileMenuRef.current) ; 
 
     gsap.to(mobileBackdropRef.current, {
       autoAlpha: mobileOpen ? 1 : 0,
@@ -396,7 +395,12 @@ export default function Navbar() {
             </div>
           ))}
 
-          <Link to="/contact" className="nav-animate-item block py-3 border-b">
+
+          <Link
+            to="/contact"
+            className="nav-animate-item block py-3 border-b"
+            onClick={() => setMobileOpen(false)}
+          >
             Contact
           </Link>
 

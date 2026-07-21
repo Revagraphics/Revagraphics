@@ -1,16 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { FaRedo, FaUsers, FaTachometerAlt } from "react-icons/fa";
-
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-
 import portfolio1 from "../assets/portfolio-1.jpg";
 import portfolio2 from "../assets/portfolio-2.jpg";
 import portfolio3 from "../assets/portfolio-3.jpg";
 import portfolio4 from "../assets/portfolio-4.jpg";
 import web from "../assets/web.png";
 import web2 from "../assets/web2.png";
-
 import client1 from "../assets/sony.jpg";
 import client2 from "../assets/drvikas.jpg";
 import client3 from "../assets/umesh.jpg";
@@ -70,7 +65,6 @@ export default function Development() {
       />
 
       <div className="min-h-screen bg-[#fbf1ef]">
-        <Navbar />
 
         <GridBg gridSize={80} lineColor="#f5f1ed" bgColor="#d2edff">
           
@@ -297,9 +291,6 @@ export default function Development() {
             </div>
           </div>
         </section>
-
-
-        <Footer />
       </div>
     </>
   );

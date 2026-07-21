@@ -1,13 +1,10 @@
 import React, { useEffect, useRef } from "react";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import ServicesSection from "../components/ServicesSection";
 import SelectedWork from "../components/SelectedWork";
 import SkillsTabs from "../components/SkillTabs";
 import Feedback from "../components/Feedback";
 import StarRating from "../components/StarRating";
 import DecorativeUnderline from "../components/DecorativeUnderline";
-
 import { Link } from "react-router-dom";
 import gsap from "gsap";
 import Seo from "../components/Seo";
@@ -146,9 +143,7 @@ export default function Home() {
         title="Reva Graphics | Creative Design & Digital Solutions"
         description="We provide branding, marketing, and digital solutions to grow your business."
       />
-
       <div className="bg-white overflow-hidden">
-        <Navbar />
 
         {/* ================= HERO ================= */}
         <main className="mt-28 px-4 flex item-center lg:h-[70vh] max-w-[90vw] justify-center mx-auto py-12 sm:py-16 lg:py-20 sm:px-6 lg:px-8">
@@ -318,7 +313,6 @@ export default function Home() {
         <SelectedWork />
         <StarRating />
         <Feedback />
-        <Footer />
       </div>
     </>
   );

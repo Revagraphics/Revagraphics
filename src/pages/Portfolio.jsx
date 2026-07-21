@@ -1,24 +1,18 @@
 import { useEffect, useState, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import Seo from "../components/Seo";
 import ShimmerText from "../components/ShimmerText";
 import GridBg from "../components/GridBg";
-
 import bali from "../assets/bali.jpg";
 import dhruv from "../assets/dhruv.jpg";
 import yashpal from "../assets/yashpal.jpg";
 import vineet from "../assets/vineet.jpg";
-
 // portfolio
 import portfolio1 from "../assets/portfolio-1.jpg";
 import portfolio2 from "../assets/portfolio-2.jpg";
 import portfolio3 from "../assets/portfolio-3.jpg";
 import portfolio4 from "../assets/portfolio-4.jpg";
-
-
 import client1 from "../assets/sony.jpg";
 import client2 from "../assets/drvikas.jpg";
 import client3 from "../assets/umesh.jpg";
@@ -126,8 +120,6 @@ export default function Portfolio() {
 />
 
     <div className="min-h-screen bg-[#fbf1ef] overflow-x-hidden">
-      <Navbar />
-
       {/* ==================== CREATIVE WORK / PROJECT SHOWCASE SECTION ==================== */}
       <section className="pt-16 sm:pt-20 lg:pt-28 pb-20  lg:pb-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
@@ -293,7 +285,6 @@ export default function Portfolio() {
         </div>
       </section>
 
-      <Footer />
     </div>
     </>
   );

@@ -1,29 +1,19 @@
 import React from "react";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import Seo from "../components/Seo";
-
 import ShimmerText from "../components/ShimmerText";
 import DecorativeUnderline from "../components/DecorativeUnderline";
-
 // print video
 import Print from "../assets/print.mp4"
-
-
-
 
 export default function Printing() {
   return (
     <>
-
-
       <Seo
         title="Printing Services | Reva Graphics"
         description="High-quality printing services for business cards, brochures, banners, and marketing materials."
       />
 
       <div className="bg-white min-h-screen">
-        <Navbar />
 
         {/* ================= HERO SECTION ================= */}
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-950">
@@ -40,7 +30,9 @@ export default function Printing() {
           {/* <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(255,152,0,0.22),_transparent_85%),radial-gradient(circle_at_bottom_right,_rgba(59,130,246,0.22),_transparent_85%)]"></div> */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-slate-900/10 to-transparent"></div>
 
-          <div className="relative z-10 text-center px-6 sm:px-4 max-w-5xl mx-auto py-20 mt-2">
+          <div className="relative z-10 text-center px-6 sm:px-4 max-w-5xl mx-auto  py-20 mt-2">
+
+
             <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 backdrop-blur-md text-sm font-medium uppercase tracking-[0.3em] text-white/80 mb-6">
               <span className="h-2.5 w-2.5 rounded-full bg-[#FF9800] animate-pulse"></span>
               Precision Printing Studio
@@ -92,7 +84,9 @@ export default function Printing() {
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-16">
               <h2 className="text-5xl font-bold text-[#08182b] mb-4">
+
                 What We <ShimmerText>Print</ShimmerText>
+
               </h2>
               <DecorativeUnderline
                           width="260px"
@@ -214,7 +208,7 @@ export default function Printing() {
                         Project Title {i}
                       </p>
                       <p className="text-white/70 text-sm">
-                        Business Cards • Brochures
+                        Business Cards . Brochures
                       </p>
                     </div>
                   </div>
@@ -224,7 +218,7 @@ export default function Printing() {
 
             <div className="text-center mt-12">
               <button className="px-10 py-4 bg-gradient-to-r from-[#FF9800] to-[#E91E63] hover:bg-orange-600 hover:scale-105 hover:text-white font-semibold rounded-full transition-all duration-300">
-                View Full Portfolio
+                View Full  ovservation.
               </button>
             </div>
           </div>
@@ -232,13 +226,12 @@ export default function Printing() {
 
         {/* Optional CTA Section */}
         <div className="py-20 bg-[#08182b] text-white">
-          <div className="max-w-4xl mx-auto text-center px-6">
+          <div className="max-w-4xl mx-auto text-center px-3 lg:px-5 md:px-5">
             <h2 className="text-4xl font-bold mb-6">
-              Ready to Print Something Amazing?
+              Ready to Print Something Amazing ?
             </h2>
             <p className="text-xl text-white/80 mb-10">
-              Get a free quote today. Fast turnaround • Premium quality •
-              Competitive prices
+              Get a free quote today. Fast turnaround • Premium quality • Competitive prices
             </p>
             <a
               href="/contact"
@@ -249,7 +242,6 @@ export default function Printing() {
           </div>
         </div>
 
-        <Footer />
       </div>
     </>
   );

@@ -2,10 +2,7 @@ import React, { useState, useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import Seo from "../components/Seo";
-
-import Navbar from "../components/Navbar";
 import Video from "../assets/video-slider.mp4";
-import Footer from "../components/Footer";
 import ProjectProcess from "../components/ProjectProcess";
 import ImageSlider from "../components/ImageSlider";
 import PaymentSection from "../components/PaymentSection";
@@ -14,6 +11,7 @@ import bg from "../assets/about.webp";
 import content from "../assets/content.png";
 import ShimmerText from "../components/ShimmerText";
 import DecorativeUnderline from "../components/DecorativeUnderline";
+
 // Helper function to remove floating image
 const removeFloatingImage = (imageId, setFloatingImages) => {
   setFloatingImages((prev) => prev.filter((img) => img.id !== imageId));
@@ -142,7 +140,6 @@ export default function Branding() {
       />
 
       <div className="overflow-x-hidden">
-        <Navbar />
 
         <div
           ref={containerRef}
@@ -168,8 +165,6 @@ export default function Branding() {
             <div className="max-w-4xl mx-auto">
               <h1 className="text-3xl md:text-7xl font-bold  text-gray-900 leading-tight tracking-tight mb-6">
                 We build a unique Brand
-
-                [  ]
                 <br />
                 {/* <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-600">
                   for attract the customers
@@ -226,7 +221,7 @@ export default function Branding() {
           <div className="max-w-7xl mx-auto px-6">
             {/* Main Heading */}
             <div className="text-center mb-20">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight tracking-tighter text-black">
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold leading-tight tracking-tighter text-black">
                 We offer <ShimmerText>Brand Identity</ShimmerText> Designing Services
               </h1>
 
@@ -289,8 +284,7 @@ export default function Branding() {
                   Our award-winning creative sparks an emotional reaction. It
                   brings your brand story to life, captivates attention, engages
                   the senses, and transforms perspectives. We develop
-                  commercials that create memorable experiences across any
-                  medium.
+                  commercials that create memorable experiences across any medium.
                 </p>
 
                 <p className="text-[17px] leading-relaxed  hover:stroke-[#000] text-gray-700">
@@ -307,7 +301,6 @@ export default function Branding() {
         <PaymentSection />
         
         <Instagram />
-        <Footer />
       </div>
     </>
   );

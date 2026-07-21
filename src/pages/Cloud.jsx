@@ -1,5 +1,3 @@
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import Seo from "../components/Seo";
 import ShimmerText from "../components/ShimmerText";
 import GridBg from "../components/GridBg";
@@ -86,7 +84,6 @@ export default function Cloud() {
       />
 
       <div className="bg-white min-h-screen">
-        <Navbar />
 
         {/* HERO SECTION - Orange Theme + Fully Responsive */}
 
@@ -212,7 +209,7 @@ export default function Cloud() {
           </div>
         </section>
 
-        <Footer />
+
       </div>
     </>
   );

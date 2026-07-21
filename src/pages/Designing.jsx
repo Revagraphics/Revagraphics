@@ -1,6 +1,4 @@
 import React from "react";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import SelectedWork from "../components/SelectedWork";
 import Expertise from "../components/Expertise";
 import { Link } from "react-router-dom";
@@ -105,17 +103,15 @@ export default function designing() {
       />
 
       <div className="bg-white">
-        <Navbar />
-
         <section className="relative min-h-[90vh] flex items-center bg-gradient-to-br from-zinc-50 via-white to-slate-50 overflow-hidden">
           {/* Subtle Light Background Pattern */}
           <div className="absolute inset-0 bg-[radial-gradient(at_center,#e0e7ff30_0%,transparent_70%)]"></div>
 
-          <div className="max-w-[80%] mx-auto px-6 lg:px-12 relative z-10">
+          <div className="max-w-[80%] mx-auto px-6  lg:px-12 relative z-10">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               {/* Left Content */}
-              <div className="space-y-8 pt-12 lg:pt-0">
-                <div className="inline-flex items-center gap-2 bg-white px-5 py-2.5 rounded-full border border-orange-200 shadow-sm">
+              <div className="space-y-8 pt-12  lg:pt-0">
+                <div className="inline-flex items-center mt-14 lg:mt-4 gap-1 bg-white px-5 py-2.5 rounded-full border border-orange-200 shadow-sm">
                   <span className="text-orange-600 text-sm font-semibold tracking-widest">
                     PREMIUM DESIGNING
                   </span>
@@ -133,7 +129,7 @@ export default function designing() {
                   perform.
                 </p>
 
-                <div className="flex flex-wrap gap-4 pt-6">
+                <div className="flex flex-wrap gap-4 pt-4 lg:pt-6">
                   <Link to="/portfolio">
                     <button className="bg-gradient-to-r from-orange-500 to-pink-500 text-white px-9 py-4 rounded-2xl hover:scale-105 font-semibold transition-all active:scale-95 shadow-lg shadow-orange-500/30">
                       Explore Our Work
@@ -188,7 +184,7 @@ export default function designing() {
           </div>
         </section>
 
-        <section className=" min-h-[70vh] lg:pt-24 pb-28">
+        <section className=" min-h-[70vh] lg:pt-24 pb-6 lg:pb-12">
           <div className="max-w-[90%] mx-auto px-6">
             <div className="grid lg:grid-cols-2 items-center mt-[5rem] gap-12">
               {/* LEFT CONTENT */}
@@ -233,19 +229,16 @@ export default function designing() {
           projects={projectsData}
           categories={[
             "All",
-            "Logistics",
-            "E-Commerce",
+            "logistics",
+            "E-commerce",
             "Education",
-            "Informative & Services",
+            "Informative & Service",
             "International Site",
           ]}
         />
 
         <SelectedWork />
-
         <Expertise />
-
-        <Footer />
       </div>
     </>
   );

@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom";
 
 import Seo from "../components/Seo";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import AnimatedStat from "../components/AnimatedStat";
 import build from "../assets/building.jpg";
 import Mission from "../components/Mission";
@@ -22,8 +20,6 @@ export default function About() {
       />
 
       <div className=" min-h-screen">
-        <Navbar />
-
         <main className="mt-28 px-4 flex item-center lg:h-[60vh] max-w-[90%] mx-auto">
           <div className="flex flex-col lg:flex-row gap-2 lg:gap-12 items-center">
             {/* TEXT */}
@@ -138,7 +134,6 @@ export default function About() {
         <Ethics />
         <TeamWork />
 
-        <Footer />
       </div>
     </>
   );

@@ -1,9 +1,7 @@
 import React from "react";
-import ShimmerText from "../components/ShimmerText";
 import Seo from "../components/Seo";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import GridBg from "../components/GridBg";
+import ShimmerText from "../components/ShimmerText";
 import {
   FaMobileAlt,
   FaRocket,
@@ -22,7 +20,6 @@ export default function Application() {
       />
 
       <div className="min-h-screen bg-[#f8fafc]">
-        <Navbar />
 
         {/* ==================== HERO SECTION ==================== */}
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#0f766e] via-[#14b8a6] to-[#22d3ee]">
@@ -34,7 +31,7 @@ export default function Application() {
             bgColor="transparent"
           >
             <div className="relative z-10 max-w-5xl mx-auto px-6 text-center text-white py-20">
-              <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-5 py-2 rounded-full mb-6">
+              <div className="inline-flex items-center mt-8 gap-2 bg-white/10 backdrop-blur-md px-5 py-2 rounded-full mb-6">
                 <FaMobileAlt className="text-2xl" />
                 <span className="uppercase tracking-widest text-sm font-semibold">
                   Mobile Excellence
@@ -82,16 +79,16 @@ export default function Application() {
         {/* ==================== SERVICES SECTION ==================== */}
         <section className="py-20 bg-white">
           <div className="max-w-6xl mx-auto px-6">
-            <div className="text-center mb-16">
+            <div className="text-center mb-6 lg:mb-16 md:mb-16">
               <span className="text-teal-600 font-semibold uppercase tracking-widest">
-                What We Build
+               <ShimmerText>What We Build</ShimmerText>
               </span>
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mt-3">
                 Tailored Mobile Solutions
               </h2>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 first-letter:">
               {[
                 {
                   icon: <FaMobileAlt className="text-5xl text-teal-500" />,
@@ -153,7 +150,7 @@ export default function Application() {
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div>
                 <span className="text-teal-600 font-semibold uppercase tracking-widest">
-                  Why Reva?
+                  <ShimmerText>Why Reva?</ShimmerText>
                 </span>
                 <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mt-4 leading-tight">
                   Your Success is Our <ShimmerText>Priority</ShimmerText>
@@ -165,19 +162,19 @@ export default function Application() {
 
                 <div className="mt-10 space-y-8">
                   {[
-                    "End-to-end development from concept to launch",
-                    "Transparent communication & agile methodology",
-                    "Post-launch support & maintenance",
-                    "Scalable architecture for future growth",
-                    "Modern tech stack with latest trends",
+                    "End-to-end development from concept to launch.",
+                    "Transparent communication & agile methodology.",
+                    "Post-launch support & maintenance.",
+                    "Scalable architecture for future growth.",
+                    "Modern tech stack with latest trends.",
                   ].map((item, i) => (
                     <div key={i} className="flex gap-4">
                       <div className="w-6 h-6 rounded-full bg-teal-100 text-teal-600 flex items-center justify-center flex-shrink-0 mt-0.5">
                         {" "}
                         <FaCircle
-                          fill="transparent" // Hides the inside color (makes it hollow)
+                          fill="orange" // Hides the inside color (makes it hollow)
                           stroke="black" // Sets your outline color
-                          strokeWidth="40" // Sets the thickness of the outline
+                          strokeWidth="50" // Sets the thickness of the outline
                           style={{ overflow: "visible", fontSize: "0.8rem" }} // Prevents the stroke from clipping
                         />
                       </div>
@@ -196,31 +193,31 @@ export default function Application() {
                     {
                       step: "01",
                       title: "Discovery & Planning",
-                      desc: "Understanding your vision and market",
+                      desc: "Understanding your vision and market.",
                     },
                     {
                       step: "02",
                       title: "UI/UX Design",
-                      desc: "Pixel-perfect, user-centric designs",
+                      desc: "Pixel-perfect, user-centric designs.",
                     },
                     {
                       step: "03",
                       title: "Development",
-                      desc: "Agile development with regular updates",
+                      desc: "Agile development with regular updates.",
                     },
                     {
                       step: "04",
                       title: "Testing & Launch",
-                      desc: "Rigorous testing before going live",
+                      desc: "Rigorous testing before going live.",
                     },
                     {
                       step: "05",
                       title: "Support & Growth",
-                      desc: "Continuous improvement & scaling",
+                      desc: "Continuous improvement & scaling.",
                     },
                   ].map((phase) => (
                     <div key={phase.step} className="flex gap-6">
-                      <div className="w-12 h-12 bg-teal-600 text-white rounded-2xl flex items-center justify-center font-bold text-xl flex-shrink-0">
+                      <div className="w-12 h-12 bg-orange-600 text-white rounded-2xl flex items-center justify-center font-bold text-xl flex-shrink-0">
                         {phase.step}
                       </div>
                       <div>
@@ -235,7 +232,6 @@ export default function Application() {
           </div>
         </section>
 
-        <Footer />
       </div>
     </>
   );
