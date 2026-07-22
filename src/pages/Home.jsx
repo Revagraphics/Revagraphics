@@ -189,21 +189,21 @@ export default function Home() {
               <div
                 key={`${logo.id}-${index}`}
                 className="
-    w-48 h-28
-    sm:w-56 sm:h-32
-    md:w-64 md:h-36
-    lg:w-72 lg:h-40
-    shrink-0
-    flex items-center justify-center
-    rounded-2xl
-    bg-gray-50
-    p-5
-    shadow-sm
-    hover:shadow-lg
-    transition-all
-    duration-300
-    hover:-translate-y-1
-  "
+                  w-48 h-28
+                  sm:w-56 sm:h-32
+                  md:w-64 md:h-36
+                  lg:w-72 lg:h-40
+                  shrink-0
+                  flex items-center justify-center
+                  rounded-2xl
+                  bg-gray-50
+                  p-5
+                  shadow-sm
+                  hover:shadow-lg
+                  transition-all
+                  duration-300
+                  hover:-translate-y-1
+                "
               >
                 <img
                   src={logo.logo}
@@ -294,7 +294,7 @@ export default function Home() {
                   />
                   <StatCard
                     title="YEARS"
-                    value="04+"
+                    value="05+"
                     desc="Clients across the globe witness our quality, processes, and work."
                     icon={FaCalendarAlt}
                   />
