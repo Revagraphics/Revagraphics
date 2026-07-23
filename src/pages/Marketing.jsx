@@ -129,7 +129,7 @@ export default function Marketing() {
               <div className="space-y-6 order-1 lg:order-2">
                 <h2 className="text-3xl lg:text-5xl font-bold leading-tight text-[#30303c]">
                   We offer <ShimmerText>SEO & SMO</ShimmerText>
-                  Promotional services
+                  {" "}Promotional services
                 </h2>
                 <div className="space-y-6 text-[#30303c] text-lg leading-relaxed">
                   <p>

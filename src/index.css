@@ -79,18 +79,18 @@ body {
 
 body {
   font-family: 'MyFont', sans-serif;
-  font-weight: 200;      /* FIX 1: Explicitly matches your font's asset weight */
+  /* font-weight: 200; */
   font-synthesis: none;  /* FIX 2: Prevents the browser from auto-smearing the letters */
   -webkit-font-smoothing: antialiased; /* Keeps fine luxury fonts razor sharp */
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* FIX 3: Strip browser-default fake bolding from structural tags */
+
 h1, h2, h3, h4, h5, h6, strong, b, button {
   font-weight: 200; 
 }
 
-/* Smooth Scroll Architecture updates */
+
 html.lenis {
   height: auto;
 }

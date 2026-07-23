@@ -17,6 +17,7 @@ export default function NotFound() {
         {/* Main Section */}
         <div className="flex min-h-screen flex-1 flex-col items-center justify-center text-center px-4">
 
+
           {/* SVG Image */}
           <img
             src={error}

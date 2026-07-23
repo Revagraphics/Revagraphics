@@ -217,7 +217,7 @@ export default function Printing() {
             </div>
 
             <div className="text-center mt-12">
-              <button className="px-10 py-4 bg-gradient-to-r from-[#FF9800] to-[#E91E63] hover:bg-orange-600 hover:scale-105 hover:text-white font-semibold rounded-full transition-all duration-300">
+              <button className="px-10 py-4 bg-gradient-to-r from-[#FF9800] to-[#E91E63] hover:bg-orange-600 hover:scale-105 text-white hover:text-white font-semibold rounded-full transition-all duration-300">
                 View Full  ovservation.
               </button>
             </div>
@@ -239,6 +239,7 @@ export default function Printing() {
             >
               Get Free Quote Now
             </a>
+
           </div>
         </div>
 

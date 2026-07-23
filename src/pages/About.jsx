@@ -10,6 +10,7 @@ import SelectedWork from "../components/SelectedWork";
 import ShimmerText from "../components/ShimmerText";
 import GridBg from "../components/GridBg";
 import DecorativeUnderline from "../components/DecorativeUnderline";
+import xv from "../assets/xv.png";
 
 export default function About() {
   return (
@@ -28,7 +29,8 @@ export default function About() {
                 We Are Reva
               </span>
               <h2 className="text-4xl text-[#30303c] sm:text-2xl lg:text-6xl font-semibold leading-tight">
-                We are a <ShimmerText>creative digital</ShimmerText><br /> agency based in India.
+                We are a <ShimmerText>creative digital</ShimmerText>
+                <br /> agency based in India.
               </h2>
 
               <p className="mt-4 text-[#30303c] text-[1.2rem]">
@@ -66,16 +68,33 @@ export default function About() {
               <div className="grid lg:grid-cols-2 gap-16 items-start">
                 {/* Left Side */}
                 <div>
-                  <p className="text-blue-600 font-medium tracking-widest text-sm mb-3">
-                    ABOUT THE REVA
-                  </p>
-                  <h2 className="text-5xl font-bold text-gray-900 leading-tight">
-                    <ShimmerText>Reva Graphics</ShimmerText>
-                  </h2>
+                  <section className="hero-animate flex-1 w-full">
+                    <div className="relative rounded-3xl overflow-hidden">
+                      <img
+                        src={xv}
+                        alt="hero"
+                        className="w-full h-[320px] sm:h-[420px] lg:h-[520px] object-cover"
+                      />
+                    </div>
+                  </section>
+                  {/* <svg
+                    id="Layer_1"
+                    data-name="Layer 1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 475.83 475.83"
+                  >
+                    <circle cx="237.91" cy="237.91" r="237.91" fill="#231f20" />
+                  </svg> */}
                 </div>
 
                 {/* Right Side */}
                 <div className="space-y-8">
+                  {/* <p className="text-indigo-600 font-semibold mb-4 uppercase text-[1.3rem]">
+                    ABOUT THE REVA
+                  </p> */}
+                  <h2 className="text-5xl font-bold text-gray-900 leading-tight">
+                    <ShimmerText>Reva Graphics</ShimmerText>
+                  </h2>
                   <h3 className="text-3xl font-semibold text-gray-900">
                     Reva is a full-service web and digital marketing company
                     based in India.
@@ -130,10 +149,9 @@ export default function About() {
         </section>
 
         <Mission />
-        <SelectedWork/>
+        <SelectedWork />
         <Ethics />
         <TeamWork />
-
       </div>
     </>
   );

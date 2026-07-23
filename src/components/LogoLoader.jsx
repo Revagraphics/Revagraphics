@@ -34,11 +34,11 @@ const LogoLoader = ({ onComplete }) => {
         y: 40
       },
       {
-        scale: 1.3,      // Scale up to 1 (natural size)
+        scale: 3.3,      // Scale up to 2 (natural size)
         opacity: 1,
         rotation: 0,
         y: 0,
-        duration: 2.2, // Longer duration for a premium, deliberate feel
+        duration: 1.0, // Longer duration for a premium, deliberate feel
         ease: "power3.out" // Smooth, non-bouncy deceleration
       },
       "-=0.4"
@@ -92,18 +92,18 @@ const LogoLoader = ({ onComplete }) => {
             ref={svgRef}
             src={revaLogo}
             alt="Reva Logo"
-            className="w-[220px] md:w-[520px] lg:w-[520px]  drop-shadow-2xl"
+            className="w-[120px] md:w-[520px] lg:w-[520px]  drop-shadow-2xl"
           />
         </div>
 
         {/* Loading Bar */}
-        <div className="h-1 w-64 bg-zinc-200 rounded overflow-hidden">
+        {/* <div className="h-1 w-64 bg-zinc-200 rounded overflow-hidden">
           <div className="h-full w-0 bg-gradient-to-r from-cyan-500 via-pink-500 to-amber-500 animate-[loading_2.2s_ease-in-out_forwards]" />
-        </div>
+        </div> */}
 
-        <p className="text-zinc-400 text-sm mt-3 lg:mt-6 tracking-[4px] uppercase font-medium">
+        {/* <p className="text-zinc-400 text-sm mt-3 lg:mt-6 tracking-[4px] uppercase font-medium">
           Crafting Excellence
-        </p>
+        </p> */}
       </div>
     </div>
   );

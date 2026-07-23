@@ -97,9 +97,9 @@ export default function Footer() {
         ease: "power4.out",
         stagger: 0.055,
         scrollTrigger: {
-        trigger: bigTextRef.current,
-        start: "top 88%",
-        toggleActions: "play none none none",
+          trigger: bigTextRef.current,
+          start: "top 88%",
+          toggleActions: "play none none none",
         },
       });
     });
@@ -232,7 +232,7 @@ export default function Footer() {
       {/* ── BIG TEXT ─────────────────────────────────────────────── */}
       <section
         ref={bigTextRef}
-        className="bg-[#30303c] border-t border-zinc-800 overflow-hidden py-6 sm:py-8 md:py-10"
+        className="bg-[#30303c] border-t border-zinc-800 overflow-hidden py-6 sm:py-8 md:py-10 group"
       >
         <div className="w-full flex items-end overflow-hidden px-4 sm:px-8">
           {WORD.split("").map((ch, i) => {
@@ -258,6 +258,7 @@ export default function Footer() {
               >
                 <span
                   ref={(el) => (lettersRef.current[i] = el)}
+                  className="transition-all duration-300 ease-out group-hover:opacity-40 hover:!shadow-blue hover:!opacity-100 hover:!text-[#FF9800] hover:-translate-y-2 cursor-pointer inline-block"
                   style={{
                     display: "inline-block",
                     fontFamily:
@@ -268,7 +269,7 @@ export default function Footer() {
                     letterSpacing: "-0.035em",
                     lineHeight: 0.9,
                     textTransform: "lowercase",
-                    opacity: 0,
+                    opacity: 0, 
                   }}
                 >
                   {ch}
@@ -279,7 +280,7 @@ export default function Footer() {
         </div>
       </section>
 
-      {/* ── BOTTOM BAR ──────────────────────────────────────────── */}
+      {/* -------------- BOTTOM BAR ----------- */}
       <div className="bg-[#30303c] border-t border-zinc-800">
         <div className="max-w-[90%] mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-zinc-500">
           <p>
