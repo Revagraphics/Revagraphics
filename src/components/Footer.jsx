@@ -130,7 +130,7 @@ export default function Footer() {
       {/* ── MIDDLE SECTION ──────────────────────────────────────── */}
       <section className="bg-[#30303c] text-white border-t border-zinc-800">
         <div className="max-w-[90%] mx-auto px-6 py-12">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+          <div className="flex flex-col md:flex-row lg:flex-row items-center justify-between gap-12">
             {/* Logo + rating */}
             <div className="text-center lg:text-left space-y-4">
               <img src={bottomLogo} alt="Reva Graphics" />
@@ -193,7 +193,7 @@ export default function Footer() {
                   src={badge.src}
                   alt={badge.alt}
                   onClick={() => openModal(badge)}
-                  className="h-28 opacity-80 hover:opacity-100 hover:scale-110 transition-all duration-300 cursor-pointer"
+                  className="h-20 md:h-20 lg:h-28 opacity-80 hover:opacity-100 hover:scale-110 transition-all duration-300 cursor-pointer"
                 />
               ))}
             </div>
@@ -232,9 +232,9 @@ export default function Footer() {
       {/* ── BIG TEXT ─────────────────────────────────────────────── */}
       <section
         ref={bigTextRef}
-        className="bg-[#30303c] border-t border-zinc-800 overflow-hidden py-6 sm:py-8 md:py-10 group"
+        className="bg-[#30303c] border-t border-zinc-800 overflow-hidden py-2 sm:py-8 md:py-10 group"
       >
-        <div className="w-full flex items-end overflow-hidden px-4 sm:px-8">
+        <div className="w-full flex items-end overflow-hidden px-4 sm:px-4">
           {WORD.split("").map((ch, i) => {
             if (ch === " ") {
               return (
@@ -242,7 +242,7 @@ export default function Footer() {
                   key={`space-${i}`}
                   style={{
                     display: "inline-block",
-                    width: "clamp(12px, 2.5vw, 40px)",
+                    width: "clamp(24px, 3.5vw, 50px)",
                   }}
                 />
               );

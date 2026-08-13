@@ -99,7 +99,7 @@ export default function PaymentSection() {
                   key={image.id}
                   className="flex-shrink-0 bg-zinc-100 rounded-3xl overflow-hidden shadow-xl border border-zinc-800 hover:border-zinc-600 transition-all duration-300"
                   style={{
-                    width: '220px',
+                    width: '200px',
                     height: '130px',
                     marginRight: '40px',
                   }}

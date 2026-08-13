@@ -104,7 +104,7 @@ export default function ServicesSection() {
               return (
                 <div
                   key={service.id}
-                  className="group relative bg-white rounded-3xl shadow-lg hover:shadow-2xl 
+                  className="group relative bg-[#f7f7f7]/60 backdrop-blur-sm rounded-3xl shadow-lg hover:shadow-2xl 
                              transition-all duration-300 overflow-hidden border border-gray-100 
                              hover:border-transparent hover:-translate-y-3
                              hover:bg-gradient-to-br hover:from-[#FF9800] hover:to-[#E91E63]"

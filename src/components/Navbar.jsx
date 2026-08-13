@@ -60,6 +60,16 @@ export default function Navbar() {
 
   /* ================= MENU CONFIG ================= */
   const dropdownConfigs = {
+
+    printing: {
+      label: "Printing",
+      items: [
+        { to: "/corporate", label: " Corporate Printing" },
+        { to: "/gifting", label: "Corporate Gifting" },
+        { to: "/events", label: "Events Printing" },
+      ],
+      
+    },
     services: {
       label: "Designing",
       items: [
@@ -173,7 +183,7 @@ export default function Navbar() {
           </Link>
 
           {/* ================= DESKTOP ================= */}
-          <div className="hidden lg:flex text-[#08182b] font-bold md:px-4 md:py-4 md:gap-2 px-8 py-4 items-center gap-8">
+          <div className="hidden desktop lg:flex text-[#08182b] font-bold md:px-4 md:py-4 md:gap-2 px-8 py-4 items-center gap-8">
             <NavLink
               to="/"
               className={({ isActive }) =>
@@ -202,7 +212,7 @@ export default function Navbar() {
               About
             </NavLink>
 
-            <NavLink
+            {/* <NavLink
               to="/printing"
               className={({ isActive }) =>
                 `nav-animate-item px-3 py-2 font-bold transition-all duration-200
@@ -214,7 +224,7 @@ export default function Navbar() {
               }
             >
               Printing
-            </NavLink>
+            </NavLink> */}
 
             {Object.entries(dropdownConfigs).map(([key, config]) => {
               const isActive = config.items.some(
@@ -296,14 +306,14 @@ export default function Navbar() {
 
           {/* CTA DESKTOP */}
           <Link to="/contact">
-            <button className="nav-animate-item hidden lg:block px-6 py-2 rounded-full border cursor-pointer font-semibold text-[#fff] bg-gradient-to-r from-[#FF9800] to-[#E91E63] hover:scale-105 transition">
+            <button className="nav-animate-item desktop hidden lg:block px-6 py-2 rounded-full border cursor-pointer font-semibold text-[#fff] bg-gradient-to-r from-[#FF9800] to-[#E91E63] hover:scale-105 transition">
               Talk To Us
             </button>
           </Link>
 
           {/* HAMBURGER */}
           <button
-            className="nav-animate-item lg:hidden text-3xl"
+            className="nav-animate-item hamburger lg:hidden text-3xl"
             onClick={() => setMobileOpen(true)}
           >
             <HiOutlineMenuAlt3 />
@@ -323,7 +333,7 @@ export default function Navbar() {
       {/* ================= MOBILE SIDEBAR ================= */}
       <aside
         ref={mobileMenuRef}
-        className={`fixed right-0 top-0 h-full w-[85%] max-w-sm z-[99999] bg-white shadow-2xl 
+        className={`fixed hamburger right-0 top-0 h-full w-[85%] max-w-sm z-[99999] bg-white shadow-2xl 
               transition-transform duration-500 flex flex-col
               ${mobileOpen ? "translate-x-0" : "translate-x-full"}`}
       >

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import DecorativeUnderline from "../components/DecorativeUnderline";
-import GridBg from "../components/GridBg";  
+import GridBg from "../components/GridBg";
 import {
   FaGraduationCap,
   FaHeartbeat,
@@ -39,21 +39,46 @@ const sectors = [
   { id: 8, img: FaTshirt, category: "Clothing", color: "#EC4899" },
   { id: 9, img: FaLaptopCode, category: "Technology", color: "#06B6D4" },
   { id: 10, img: FaPalette, category: "Textiles", color: "#A855F7" },
-  { id: 11, img: FaDraftingCompass, category: "Architecture", color: "#F59E0B" },
+  {
+    id: 11,
+    img: FaDraftingCompass,
+    category: "Architecture",
+    color: "#F59E0B",
+  },
 ];
 
 const logos = [
   { id: 1, img: FaHotel, category: "Hotels & Resorts", color: "#2563EB" },
   { id: 2, img: FaHeartbeat, category: "Healthcare", color: "#EF4444" },
   { id: 3, img: FaBuilding, category: "Real Estate", color: "#F59E0B" },
-  { id: 4, img: FaPlaceOfWorship, category: "Religious & Cultural Organizations", color: "#8B5CF6" },
+  {
+    id: 4,
+    img: FaPlaceOfWorship,
+    category: "Religious & Cultural Organizations",
+    color: "#8B5CF6",
+  },
   { id: 5, img: FaCouch, category: "Interior Design Firms", color: "#14B8A6" },
   { id: 6, img: FaCalendarAlt, category: "Event Management", color: "#10B981" },
-  { id: 7, img: FaChalkboardTeacher, category: "Coaching Institutes", color: "#3B82F6" },
+  {
+    id: 7,
+    img: FaChalkboardTeacher,
+    category: "Coaching Institutes",
+    color: "#3B82F6",
+  },
   { id: 8, img: FaIndustry, category: "Manufacturing", color: "#6B7280" },
   { id: 9, img: FaSpa, category: "Salon & Wellness", color: "#EC4899" },
-  { id: 10, img: FaGem, category: "Jewellery & Luxury Brands", color: "#FACC15" },
-  { id: 11, img: FaTruck, category: "Logistics & Transportation", color: "#06B6D4" },
+  {
+    id: 10,
+    img: FaGem,
+    category: "Jewellery & Luxury Brands",
+    color: "#FACC15",
+  },
+  {
+    id: 11,
+    img: FaTruck,
+    category: "Logistics & Transportation",
+    color: "#06B6D4",
+  },
 ];
 
 const AllSector = () => {
@@ -89,9 +114,11 @@ const AllSector = () => {
   }, []);
 
   const renderCard = (item) => (
-    <div className="flex items-center gap-4 bg-white border border-zinc-100 hover:border-zinc-200 
+    <div
+      className="flex items-center gap-4 bg-white border border-zinc-100 hover:border-zinc-200 
                     rounded-2xl px-5 py-4 shadow-sm hover:shadow transition-all duration-300 
-                    min-w-[280px] shrink-0">
+                    min-w-[280px] shrink-0"
+    >
       {/* Icon Container - Light colored background */}
       <div
         className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0"
@@ -117,7 +144,6 @@ const AllSector = () => {
 
   return (
     <section className=" overflow-hidden py-4 lg:py-2 px-4 sm:px-6 lg:px-8 bg-white">
-      <GridBg gridSize={80} lineColor="#f5f1ed" bgColor="#fff">
       <div className="max-w-full mx-auto py-8 lg:py-12">
         <div className="text-center mb-12">
           <h2 className="text-3xl lg:text-5xl font-bold text-zinc-900">
@@ -152,7 +178,6 @@ const AllSector = () => {
           </div>
         </div>
       </div>
-        </GridBg>
     </section>
   );
 };

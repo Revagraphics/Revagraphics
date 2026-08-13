@@ -86,7 +86,7 @@ const GridBg = ({
       />
 
       {/* === Top Right System === */}
-      <div className="absolute top-24 right-8 md:right-16 lg:right-24 z-10" ref={topRightRef}>
+      <div className="absolute top-14 right-8 md:right-16 lg:right-16 z-10" ref={topRightRef}>
         <div className="relative w-[180px] h-[180px] md:w-[260px] md:h-[260px]">
           {/* Orbit Rings */}
           <div className="absolute w-full h-full border border-gray-400/30 rounded-full" />
@@ -125,7 +125,7 @@ const GridBg = ({
       </div>
 
       {/* === Left Center System (Moved from Bottom Left) === */}
-      <div className="absolute left-6 bottom-1/3 md:left-16 lg:left-24 z-10" ref={leftCenterRef}>
+      <div className="absolute left-6 bottom-1 md:left-16 lg:left-24 z-10" ref={leftCenterRef}>
         <div className="relative w-[220px] h-[220px] md:w-[340px] md:h-[340px]">
           {/* Orbit Rings */}
           <div className="absolute w-full h-full border border-gray-400/30 rounded-full" />

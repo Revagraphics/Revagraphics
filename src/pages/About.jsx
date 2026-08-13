@@ -12,6 +12,22 @@ import GridBg from "../components/GridBg";
 import DecorativeUnderline from "../components/DecorativeUnderline";
 import xv from "../assets/xv.png";
 
+import campaign from "../assets/campaign.webp";
+import website from "../assets/banglore.jpg";
+import branding from "../assets/branding.webp";
+import brochure from "../assets/brochure.jpg";
+import testimonial from "../assets/testimonial.webp";
+import packaging from "../assets/product-packaging.webp";
+
+const works = [
+  { id: 1, image: campaign, title: "Campaign" },
+  { id: 2, image: website, title: "Web Design" },
+  { id: 3, image: branding, title: "Branding" },
+  { id: 4, image: brochure, title: "Brochure" },
+  { id: 5, image: testimonial, title: "Testimonials" },
+  { id: 6, image: packaging, title: "Product Packaging" },
+];
+
 export default function About() {
   return (
     <>
@@ -149,7 +165,15 @@ export default function About() {
         </section>
 
         <Mission />
-        <SelectedWork />
+        <SelectedWork
+          works={works}
+          title="Our Portfolio"
+          highlight="Work"
+          subtitle=""
+          viewAllLink="/clients"
+          viewAllText="See All Clients"
+          duration={25} 
+        />
         <Ethics />
         <TeamWork />
       </div>

@@ -20,6 +20,9 @@ const Cloud = lazy(() => import("./pages/Cloud"));
 const Application = lazy(() => import("./pages/Application"));
 const Stationery = lazy(() => import("./pages/Stationery"));
 const Catalogue = lazy(() => import("./pages/Catalogue"));
+const Corporate = lazy(() => import("./pages/Corporate"));
+const Events = lazy(() => import("./pages/Events"));
+const Gifting = lazy(() => import("./pages/Gifting"));
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -99,6 +102,9 @@ const App = () => {
           <Route path="/application" element={<Application />} />
           <Route path="/stationery" element={<Stationery />} />
           <Route path="/catalogue" element={<Catalogue />} />
+          <Route path="/corporate" element={<Corporate />} />
+          <Route path="/gifting" element={<Gifting />} />
+          <Route path="/events" element={<Events />} />
           {/* <Route path="/profile" element={<Profile/>} /> */}
           {/* not found */}
           <Route path="*" element={<NotFound />} />

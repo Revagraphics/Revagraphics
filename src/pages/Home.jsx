@@ -66,11 +66,11 @@ export default function Home() {
         stagger: 0.2,
       });
 
-      const totalWidth = logosRef.current.scrollWidth / 3;
+      const totalWidth = logosRef.current.scrollWidth / 4; // Divide by 4 because we duplicated the logos 4 times
 
       gsap.to(logosRef.current, {
         x: -totalWidth,
-        duration: 20,
+        duration: 25,
         ease: "none",
         repeat: -1,
       });
@@ -185,30 +185,17 @@ export default function Home() {
         {/* ================= CLIENT LOGOS ================= */}
         <section className="mt-16 overflow-hidden w-full flex items-center justify-center">
           <div ref={logosRef} className="flex gap-8 w-max items-center">
-            {[...logos, ...logos, ...logos].map((logo, index) => (
+            {[...logos, ...logos ,...logos ,...logos].map((logo, index) => (
               <div
                 key={`${logo.id}-${index}`}
                 className="
-    w-48 h-28
-    sm:w-56 sm:h-32
-    md:w-64 md:h-36
-    lg:w-72 lg:h-40
-    shrink-0
-    flex items-center justify-center
-    rounded-2xl
-    bg-gray-50
-    p-5
-    shadow-sm
-    hover:shadow-lg
-    transition-all
-    duration-300
-    hover:-translate-y-1
-  "
+              flex-shrink-0 bg-zinc-100 rounded-3xl p-4 overflow-hidden shadow-xl border border-zinc-800 hover:border-zinc-600 transition-all duration-400
+              "
               >
                 <img
                   src={logo.logo}
                   alt="Partner Logo"
-                  className="max-w-full max-h-full object-contain"
+                  className="w-full h-full object-contain transition-transform duration-500 hover:scale-110"
                 />
               </div>
             ))}

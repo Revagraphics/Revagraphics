@@ -144,8 +144,8 @@ export default function Branding() {
         <div
           ref={containerRef}
           className="relative h-screen w-full bg-gray-50 overflow-hidden"
-          onMouseMove={handleMouseMove}
-          onMouseLeave={handleMouseLeave}
+          // onMouseMove={handleMouseMove}
+          // onMouseLeave={handleMouseLeave}
         >
           {/* Video + Overlays (unchanged) */}
           <video

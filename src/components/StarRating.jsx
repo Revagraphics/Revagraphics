@@ -202,7 +202,7 @@ export default function ReviewCarousel() {
           </div>
 
           {/* Arrow Buttons */}
-          <div className="flex justify-center gap-6 mt-8 md:mt-10">
+          {/* <div className="flex justify-center gap-6 mt-8 md:mt-10">
             <button
               onClick={() =>
                 goTo((active - 1 + reviews.length) % reviews.length)
@@ -217,7 +217,7 @@ export default function ReviewCarousel() {
             >
               →
             </button>
-          </div>
+          </div> */}
         </div>
       </GridBg>
     </div>

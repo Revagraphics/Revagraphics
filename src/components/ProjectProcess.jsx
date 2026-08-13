@@ -39,7 +39,7 @@ export default function ProjectProcess() {
                 bg-white/80 backdrop-blur-md 
                 border border-orange-400/60 
                 rounded-3xl 
-                p-10 
+                p-6 md:p-8 lg:p-8 
                 shadow-[0_10px_40px_rgba(0,0,0,0.07)]
                 hover:shadow-[0_25px_70px_rgba(249,115,22,0.15)]
                 hover:-translate-y-3 

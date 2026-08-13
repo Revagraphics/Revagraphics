@@ -6,27 +6,30 @@
 
 /* Premium Minimalist Scrollbar */
 ::-webkit-scrollbar {
-  width: 6px; 
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent; /* Seamless blend into your background */
+  background: transparent;
+  /* Seamless blend into your background */
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.2); /* Soft, translucent tracker */
+  background: rgba(0, 0, 0, 0.2);
+  /* Soft, translucent tracker */
   border-radius: 10px;
   transition: background 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 0, 0, 0.4); /* Subtle feedback on hover */
+  background: rgba(0, 0, 0, 0.4);
 }
 
 /* Utility class to hide scrollbars completely on specific components if needed */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -58,7 +61,7 @@
 }
 
 @font-face {
-  font-family: 'MyFont5'; 
+  font-family: 'MyFont5';
   src: url('/fonts/play-fair1.woff2') format('woff2');
   font-display: swap;
 }
@@ -69,7 +72,7 @@ body {
   padding: 0;
   width: 100%;
   overflow-x: hidden;
-  background-color: #ffffff; 
+  background-color: #ffffff;
 }
 
 #root {
@@ -77,19 +80,26 @@ body {
   overflow-x: hidden;
 }
 
+
 body {
   font-family: 'MyFont', sans-serif;
-  /* font-weight: 200; */
-  font-synthesis: none;  /* FIX 2: Prevents the browser from auto-smearing the letters */
-  -webkit-font-smoothing: antialiased; /* Keeps fine luxury fonts razor sharp */
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 
-h1, h2, h3, h4, h5, h6, strong, b, button {
-  font-weight: 200; 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+b,
+button {
+  font-weight: 200;
 }
-
 
 html.lenis {
   height: auto;
@@ -105,5 +115,20 @@ html.lenis {
 
 /* Eliminates jerky paint jumps during momentum phases */
 .lenis.lenis-scrolling {
-  pointer-events: none; 
+  pointer-events: none;
 }
+
+@media (max-width: 1024px) {
+  .desktop {
+    display: none !important;
+  }
+
+  .hamburger {
+    display: block !important;
+  }
+
+}
+
+/* about section custom css */
+
+
