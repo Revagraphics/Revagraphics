@@ -220,7 +220,7 @@ export default function Footer() {
             <div>
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-3   bg-gradient-to-r from-[#FF9800] to-[#E91E63]  px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-orange-500/40 hover:scale-105"
+                className="inline-block bg-gradient-to-r from-[#FF9800] to-[#E91E63] px-8 py-4 rounded-xl font-semibold text-sm transition-all duration-300 shadow-lg hover:shadow-orange-500/40 hover:scale-105"
               >
                 Our Brochure →
               </Link>
@@ -229,12 +229,12 @@ export default function Footer() {
         </div>
       </section>
 
-      {/* ── BIG TEXT ─────────────────────────────────────────────── */}
+      {/* ── BIG TEXT ───────────────────────────────────────────── */}
       <section
         ref={bigTextRef}
-        className="bg-[#30303c] border-t border-zinc-800 overflow-hidden py-2 sm:py-8 md:py-10 group"
+        className="bg-[#30303c] border-t border-zinc-800  py-2 sm:py-8 md:py-10 group"
       >
-        <div className="w-full flex items-end overflow-hidden px-4 sm:px-4">
+        <div className="w-full flex items-end  px-4 sm:px-4">
           {WORD.split("").map((ch, i) => {
             if (ch === " ") {
               return (
@@ -253,7 +253,7 @@ export default function Footer() {
                 style={{
                   overflow: "hidden",
                   display: "inline-block",
-                  lineHeight: 1,
+                  lineHeight: 1.1,
                 }}
               >
                 <span
@@ -264,12 +264,12 @@ export default function Footer() {
                     fontFamily:
                       "'Helvetica Neue', Helvetica, Arial, sans-serif",
                     fontWeight: 900,
-                    fontSize: "clamp(64px, 13.5vw, 160px)",
+                    fontSize: "clamp(64px, 13.5vw, 165px)",
                     color: "#ffffff",
                     letterSpacing: "-0.035em",
-                    lineHeight: 0.9,
+                    lineHeight: 1.3,
                     textTransform: "lowercase",
-                    opacity: 0, 
+                    opacity: 0,
                   }}
                 >
                   {ch}
@@ -279,6 +279,8 @@ export default function Footer() {
           })}
         </div>
       </section>
+
+
 
       {/* -------------- BOTTOM BAR ----------- */}
       <div className="bg-[#30303c] border-t border-zinc-800">

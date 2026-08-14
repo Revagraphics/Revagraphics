@@ -4,14 +4,12 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Premium Minimalist Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
 }
 
 ::-webkit-scrollbar-track {
   background: transparent;
-  /* Seamless blend into your background */
 }
 
 ::-webkit-scrollbar-thumb {
@@ -25,7 +23,7 @@
   background: rgba(0, 0, 0, 0.4);
 }
 
-/* Utility class to hide scrollbars completely on specific components if needed */
+/* new scroller css for smooth scrolling */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
@@ -35,36 +33,43 @@
   scrollbar-width: none;
 }
 
-/* Custom Typography Engine Declarations */
+/* my-font-face */
 @font-face {
   font-family: 'MyFont';
   src: url('/fonts/MyFont.woff2') format('woff2');
   font-display: swap;
 }
 
+/* font face */
 @font-face {
   font-family: 'MyFont2';
   src: url('/fonts/MyFont2.woff2') format('woff2');
   font-display: swap;
 }
 
+/* font-face 3 */
 @font-face {
   font-family: 'MyFont3';
   src: url('/fonts/MyFont3.woff2') format('woff2');
   font-display: swap;
 }
 
+/* font-face-4 */
 @font-face {
   font-family: 'MyFont4';
   src: url('/fonts/MyFont4.woff2') format('woff2');
   font-display: swap;
 }
 
+/* font--face-5 */
 @font-face {
   font-family: 'MyFont5';
   src: url('/fonts/play-fair1.woff2') format('woff2');
   font-display: swap;
 }
+
+
+/* basic css boilerplate code.. */
 
 html,
 body {
@@ -89,6 +94,7 @@ body {
 }
 
 
+/* symantic styling */
 h1,
 h2,
 h3,
@@ -113,10 +119,13 @@ html.lenis {
   overflow: hidden;
 }
 
-/* Eliminates jerky paint jumps during momentum phases */
+/* lenis smooth scroller */
+
 .lenis.lenis-scrolling {
   pointer-events: none;
 }
+
+/* making things responsive... */
 
 @media (max-width: 1024px) {
   .desktop {
@@ -129,13 +138,9 @@ html.lenis {
 
 }
 
-/* about section custom css */
-
 @media (max-width: 1180px) {
   .about-container {
     display: flex !important;
     flex-direction: column !important;
   }
 }
-
-
