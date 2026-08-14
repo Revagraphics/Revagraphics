@@ -23,6 +23,23 @@ import badge3 from "../assets/badge-3.png";
 import ShimmerText from "../components/ShimmerText";
 import GridBg from "../components/GridBg";
 import AllSector from "../components/AllSector";
+// selected images
+import campaign from "../assets/campaign.webp";
+import website from "../assets/banglore.jpg";
+import branding from "../assets/branding.webp";
+import brochure from "../assets/brochure.jpg";
+import testimonial from "../assets/testimonial.webp";
+import packaging from "../assets/product-packaging.webp";
+// work
+const works = [
+  { id: 1, image: campaign, title: "Development" },
+  { id: 2, image: website, title: "Designing" },
+  { id: 3, image: branding, title: "Marketing" },
+  { id: 4, image: brochure, title: "Editing" },
+  { id: 5, image: testimonial, title: "Seo" },
+  { id: 6, image: packaging, title: "Printing" },
+  { id: 7, image: packaging, title: "Packaging" },
+];
 
 import {
   FaBriefcase,
@@ -144,7 +161,6 @@ export default function Home() {
         description="We provide branding, marketing, and digital solutions to grow your business."
       />
       <div className="bg-white overflow-hidden">
-
         {/* ================= HERO ================= */}
         <main className="mt-28 px-4 flex item-center lg:h-[70vh] max-w-[90vw] justify-center mx-auto py-12 sm:py-16 lg:py-20 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-12 items-center">
@@ -185,7 +201,7 @@ export default function Home() {
         {/* ================= CLIENT LOGOS ================= */}
         <section className="mt-16 overflow-hidden w-full flex items-center justify-center">
           <div ref={logosRef} className="flex gap-8 w-max items-center">
-            {[...logos, ...logos ,...logos ,...logos].map((logo, index) => (
+            {[...logos, ...logos, ...logos, ...logos].map((logo, index) => (
               <div
                 key={`${logo.id}-${index}`}
                 className="
@@ -206,85 +222,90 @@ export default function Home() {
         <section className="relative mt-24 overflow-hidden flex justify-center w-full sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
           <GridBg gridSize={80} lineColor="#f5f1ed" bgColor="#fff">
             <div className="relative z-10 max-w-[90vw] mx-auto px-4 sm:px-6 lg:px-8 py-12">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 xl:gap-20">
-                {/* Heading - Now Perfectly Centered */}
-                <div className="lg:col-span-2 text-center mx-auto max-w-5xl">
-                  <span className="inline-block text-orange-500 font-semibold uppercase tracking-[0.35em] text-sm mb-5">
-                    We Are Reva
-                  </span>
+              <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="flex flex-col max-w-[1180px] lg:max-w-none mx-auto gap-12 lg:gap-16 xl:gap-20">
+                  {/* Heading - Centered */}
+                  <div className="text-center mx-auto max-w-5xl w-full">
+                    <span className="inline-block text-orange-500 font-semibold uppercase tracking-[0.35em] text-sm mb-5">
+                      We Are Reva
+                    </span>
 
-                  <h2 className="text-[#30303c] text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold leading-tight">
-                    <span>Top-Rated</span> Web Designing And{" "}
-                    <ShimmerText className="font-bold">
-                      Development Company
-                    </ShimmerText>
-                  </h2>
+                    <h2 className="text-[#30303c] text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold leading-tight">
+                      <span>Top-Rated</span> Web Designing And{" "}
+                      <ShimmerText className="font-bold">
+                        Development Company
+                      </ShimmerText>
+                    </h2>
 
-                  <DecorativeUnderline
-                    width="320px"
-                    className="mt-6 mx-auto md:w-[380px] lg:w-[450px]"
-                    centerColor="#3B82F6"
-                  />
-                </div>
+                    <DecorativeUnderline
+                      width="320px"
+                      className="mt-6 mx-auto md:w-[380px] lg:w-[450px]"
+                      centerColor="#3B82F6"
+                    />
+                  </div>
 
-                {/* LEFT CONTENT - Text + Badges + Button */}
-                <div className="space-y-8 lg:space-y-10">
-                  <p className="text-slate-600 leading-relaxed text-[17px] sm:text-lg text-justify md:text-left">
-                    Reva started its operation in the year 2019. We are a
-                    Worldwide, based Web Designing and Digital Marketing
-                    Company. Our main Domain is Web Design, Web Development,
-                    Digital Marketing, Product Design, and Cloud Services.
-                    Customer Satisfaction and the Highest rate of Customer
-                    Repeatability make us one of the pioneers in the field.
-                  </p>
+                  {/* Bottom Section: Flex Column at 1080px and below, Row only above 1081px */}
+                  <div className="about-container flex flex-col lg:flex-row items-center lg:items-start gap-12 lg:gap-16 xl:gap-20 w-full">
+                    {/* LEFT CONTENT - Text + Badges + Button */}
+                    <div className="space-y-8 lg:space-y-10 w-full min-[1181px]:w-1/2">
+                      <p className="text-slate-600 leading-relaxed text-[17px] sm:text-lg text-justify md:text-left">
+                        Reva started its operation in the year 2019. We are a
+                        Worldwide, based Web Designing and Digital Marketing
+                        Company. Our main Domain is Web Design, Web Development,
+                        Digital Marketing, Product Design, and Cloud Services.
+                        Customer Satisfaction and the Highest rate of Customer
+                        Repeatability make us one of the pioneers in the field.
+                      </p>
 
-                  <div className="flex items-center justify-center lg:justify-start gap-3 sm:gap-4">
-                    {[badge1, badge2, badge3].map((badge, i) => (
-                      <img
-                        key={i}
-                        src={badge}
-                        alt=""
-                        className="h-12 sm:h-16 md:h-20 lg:h-24 w-auto object-contain transition-transform duration-300 hover:scale-105"
+                      <div className="flex items-center justify-center min-[1181px]:justify-start gap-3 sm:gap-4">
+                        {[badge1, badge2, badge3].map((badge, i) => (
+                          <img
+                            key={i}
+                            src={badge}
+                            alt=""
+                            className="h-12 sm:h-16 md:h-20 lg:h-24 w-auto object-contain transition-transform duration-300 hover:scale-105"
+                          />
+                        ))}
+                      </div>
+
+                      <div className="flex justify-center min-[1181px]:justify-start">
+                        <Link
+                          to="/about"
+                          className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-orange-500 to-pink-500 px-8 py-4 text-white font-semibold shadow-xl hover:scale-105 transition-all duration-300 text-center"
+                        >
+                          About Us <span>→</span>
+                        </Link>
+                      </div>
+                    </div>
+
+                    {/* RIGHT STATS */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8 w-full min-[1181px]:w-1/2">
+                      <StatCard
+                        title="PROJECTS"
+                        value="750+"
+                        desc="Reva delivered hundreds of successful projects around the world."
+                        icon={FaBriefcase}
                       />
-                    ))}
+                      <StatCard
+                        title="TEAM"
+                        value="25+"
+                        desc="Our team consists of highly qualified, experienced and knowledgeable."
+                        icon={FaUsers}
+                      />
+                      <StatCard
+                        title="CLIENTS"
+                        value="250+"
+                        desc="Reva Graphics achieves hundreds of great customers around the world."
+                        icon={FaHandshake}
+                      />
+                      <StatCard
+                        title="YEARS"
+                        value="04+"
+                        desc="Clients across the globe witness our quality, processes, and work."
+                        icon={FaCalendarAlt}
+                      />
+                    </div>
                   </div>
-
-                  <div className="flex justify-center lg:justify-start">
-                    <Link
-                      to="/about"
-                      className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-orange-500 to-pink-500 px-8 py-4 text-white font-semibold shadow-xl hover:scale-105 transition-all duration-300 text-center"
-                    >
-                      About Us <span>→</span>
-                    </Link>
-                  </div>
-                </div>
-
-                {/* RIGHT STATS */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
-                  <StatCard
-                    title="PROJECTS"
-                    value="750+"
-                    desc="Reva delivered hundreds of successful projects around the world."
-                    icon={FaBriefcase}
-                  />
-                  <StatCard
-                    title="TEAM"
-                    value="25+"
-                    desc="Our team consists of highly qualified, experienced and knowledgeable."
-                    icon={FaUsers}
-                  />
-                  <StatCard
-                    title="CLIENTS"
-                    value="250+"
-                    desc="Reva Graphics achieves hundreds of great customers around the world."
-                    icon={FaHandshake}
-                  />
-                  <StatCard
-                    title="YEARS"
-                    value="04+"
-                    desc="Clients across the globe witness our quality, processes, and work."
-                    icon={FaCalendarAlt}
-                  />
                 </div>
               </div>
             </div>
@@ -297,7 +318,15 @@ export default function Home() {
         <SkillsTabs />
 
         {/* <SelectedWorkSection /> */}
-        <SelectedWork />
+        <SelectedWork
+          works={works}
+          title="Selected"
+          highlight="Work"
+          subtitle=""
+          viewAllLink="/clients"
+          viewAllText="See our work"
+          duration={25}
+        />
         <StarRating />
         <Feedback />
       </div>

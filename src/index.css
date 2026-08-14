@@ -131,4 +131,11 @@ html.lenis {
 
 /* about section custom css */
 
+@media (max-width: 1180px) {
+  .about-container {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+}
+
 
