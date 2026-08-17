@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 
+
 import Seo from "../components/Seo";
 import AnimatedStat from "../components/AnimatedStat";
 import build from "../assets/building.jpg";
@@ -11,6 +12,7 @@ import ShimmerText from "../components/ShimmerText";
 import GridBg from "../components/GridBg";
 import DecorativeUnderline from "../components/DecorativeUnderline";
 import xv from "../assets/xv.png";
+
 
 import campaign from "../assets/campaign.webp";
 import website from "../assets/banglore.jpg";

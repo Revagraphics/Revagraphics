@@ -135,7 +135,14 @@ html.lenis {
   .hamburger {
     display: block !important;
   }
+  
+  
+}
 
+@media (min-width: 920px) and (max-width: 1180px) {
+ .first-head{
+    font-size: 2.8rem !important;
+  }
 }
 
 @media (max-width: 1180px) {
@@ -143,4 +150,6 @@ html.lenis {
     display: flex !important;
     flex-direction: column !important;
   }
+
+  
 }

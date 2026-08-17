@@ -162,11 +162,11 @@ export default function Home() {
       />
       <div className="bg-white overflow-hidden">
         {/* ================= HERO ================= */}
-        <main className="mt-28 px-4 flex item-center lg:h-[70vh] max-w-[90vw] justify-center mx-auto py-12 sm:py-16 lg:py-20 sm:px-6 lg:px-8">
+        <main className="mt-28 md:mt-[5rem] md px-4 flex item-center lg:h-[70vh] max-w-[90vw] justify-center mx-auto py-12 sm:py-16 lg:py-20 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-12 items-center">
             {/* TEXT */}
-            <section className="hero-animate flex-1 text-center lg:text-left">
-              <h1 className="text-4xl text-[#30303c] sm:text-2xl lg:text-6xl font-poppins font-bold leading-tight">
+            <section className="hero-animate flex-1 order-2 md:order-2 lg:order-1 text-center lg:text-left">
+              <h1 className="text-3xl first-head text-[#30303c] sm:text-2xl md:text-4xl lg:text-6xl font-poppins font-bold leading-tight">
                 Expert Branding & Web{" "}
                 <span className="">Development Solutions Across</span>{" "}
                 <span
@@ -186,7 +186,7 @@ export default function Home() {
             </section>
 
             {/* IMAGE */}
-            <section className="hero-animate flex-1 w-full">
+            <section className="hero-animate order-1 md:order-1 lg:order-2 flex-1 w-full">
               <div className="relative rounded-3xl overflow-hidden">
                 <img
                   src={HeroImg}
@@ -197,6 +197,7 @@ export default function Home() {
             </section>
           </div>
         </main>
+
 
         {/* ================= CLIENT LOGOS ================= */}
         <section className="mt-16 overflow-hidden w-full flex items-center justify-center">

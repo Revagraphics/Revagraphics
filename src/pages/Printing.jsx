@@ -5,6 +5,8 @@ import DecorativeUnderline from "../components/DecorativeUnderline";
 // print video
 import Print from "../assets/print.mp4"
 
+import {Link} from "react-router-dom";
+
 export default function Printing() {
   return (
     <>
@@ -105,21 +107,21 @@ export default function Printing() {
               <div className="group bg-white border border-gray-100 rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
                 <div className="h-64 bg-gray-200 overflow-hidden">
                   <img
-                    src="https://picsum.photos/id/201/800/600"
+                    src="https://images.pexels.com/photos/4107145/pexels-photo-4107145.jpeg"
                     alt="Business Cards & Stationery"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                 </div>
                 <div className="p-8">
                   <h3 className="text-2xl font-bold mb-3 text-[#08182b]">
-                    Business Cards & Stationery
+                    Corporate Printing
                   </h3>
                   <p className="text-gray-600 mb-6">
                     Premium matte, gloss, and spot UV business cards,
                     letterheads, envelopes, and corporate stationery.
                   </p>
                   <div className="text-orange-500 font-medium flex items-center gap-2 group-hover:gap-3 transition-all">
-                    Learn more <span>→</span>
+                    <Link to="/corporate">view more <span>→</span></Link>
                   </div>
                 </div>
               </div>
@@ -128,21 +130,21 @@ export default function Printing() {
               <div className="group bg-white border border-gray-100 rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
                 <div className="h-64 bg-gray-200 overflow-hidden">
                   <img
-                    src="https://picsum.photos/id/237/800/600"
+                    src="https://images.pexels.com/photos/346553/pexels-photo-346553.jpeg"
                     alt="Flyers & Brochures"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                 </div>
                 <div className="p-8">
                   <h3 className="text-2xl font-bold mb-3 text-[#08182b]">
-                    Flyers, Brochures & Posters
+                    Corporate Gifting
                   </h3>
                   <p className="text-gray-600 mb-6">
                     Eye-catching flyers, tri-fold brochures, catalogs, and large
                     format posters for promotions and events.
                   </p>
                   <div className="text-orange-500 font-medium flex items-center gap-2 group-hover:gap-3 transition-all">
-                    Learn more <span>→</span>
+                    <Link to='/gifting'>view more <span>→</span></Link>
                   </div>
                 </div>
               </div>
@@ -150,21 +152,21 @@ export default function Printing() {
               <div className="group bg-white border border-gray-100 rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
                 <div className="h-64 bg-gray-200 overflow-hidden">
                   <img
-                    src="https://picsum.photos/id/1015/800/600"
+                    src="https://images.pexels.com/photos/18138580/pexels-photo-18138580.jpeg"
                     alt="Packaging & More"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                 </div>
                 <div className="p-8">
                   <h3 className="text-2xl font-bold mb-3 text-[#08182b]">
-                    Packaging & Specialty Prints
+                    Event Printing
                   </h3>
                   <p className="text-gray-600 mb-6">
                     Custom packaging, banners, roll-up stands, stickers, labels,
                     and creative specialty printing.
                   </p>
                   <div className="text-orange-500 font-medium flex items-center gap-2 group-hover:gap-3 transition-all">
-                    Learn more <span>→</span>
+                    <Link to="/events">view more <span>→</span></Link>
                   </div>
                 </div>
               </div>

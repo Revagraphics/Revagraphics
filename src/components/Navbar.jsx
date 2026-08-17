@@ -1,39 +1,84 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import Logo from "../assets/logo.png";
 import { FaAngleDown } from "react-icons/fa";
 import { HiOutlineMenuAlt3, HiX } from "react-icons/hi";
+import { FaFacebook, FaLinkedin, FaTwitter, FaInstagram } from "react-icons/fa";
 
+/* ================= MENU CONFIG =================
+   Hoisted out of the component so it isn't recreated on every render.
+   Each group now has a `to` so the label itself is a real link, not
+   just a hover trigger. */
+const dropdownConfigs = {
+  printing: {
+    label: "Printing",
+    to: "/printing",
+    items: [
+      { to: "/corporate", label: "Corporate Printing" },
+      { to: "/gifting", label: "Corporate Gifting" },
+      { to: "/events", label: "Events Printing" },
+    ],
+  },
+  services: {
+    label: "Designing",
+    to: "/services",
+    items: [
+      { to: "/branding", label: "Brand Identity" },
+      { to: "/marketing", label: "Digital Marketing" },
+      { to: "/profile", label: "Company Profile" },
+    ],
+  },
+  development: {
+    label: "Development",
+    to: "/development",
+    items: [
+      { to: "/designing", label: "Web designing" },
+      { to: "/development", label: "Web Development" },
+      { to: "/application", label: "Mobile Application" },
+      { to: "/cloud", label: "Cloud Services" },
+    ],
+  },
+  Portfolio: {
+    label: "Portfolio",
+    to: "/portfolio",
+    items: [
+      { to: "/portfolio", label: "Portfolio" },
+      { to: "/stationery", label: "Stationery" },
+      { to: "/trophy", label: "Trophy" },
+      { to: "/catalogue", label: "Catalogue & Brochure" },
+    ],
+  },
+};
 
-
-import { FaFacebook, FaLinkedin, FaTwitter, FaInstagram ,  FaCircle } from "react-icons/fa";
+const navLinkClass = ({ isActive }) =>
+  `nav-animate-item px-3 py-2 font-bold transition-all duration-200 ${
+    isActive ? "text-orange-500" : "text-[#08182b] hover:bg-white/70"
+  }`;
 
 export default function Navbar() {
   /* ================= STATE ================= */
   const [desktopDropdown, setDesktopDropdown] = useState(null);
   const [mobileDropdown, setMobileDropdown] = useState(null);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [active, isActive] = useState(false);
 
-  const dropdownRefs = useRef({});
   const scope = useRef(null);
   const mobileMenuRef = useRef(null);
   const mobileBackdropRef = useRef(null);
-  const mobileLinkRefs = useRef([]);
+  // One ref per dropdown panel (keyed by dropdown name) instead of a
+  // single ever-growing array — fixes the repeated re-animation bug.
+  const dropdownPanelRefs = useRef({});
 
+  const location = useLocation();
+
+  /* ================= ENTRANCE ANIMATION ================= */
   useGSAP(
     () => {
       gsap.fromTo(
         scope.current,
         { opacity: 0, y: -24 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          ease: "power3.out",
-        },
+        { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" },
       );
 
       gsap.fromTo(
@@ -52,92 +97,43 @@ export default function Navbar() {
     { scope },
   );
 
-
-
-  const setDropdownRef = (name) => (el) => {
-    dropdownRefs.current[name] = el;
-  };
-
-  /* ================= MENU CONFIG ================= */
-  const dropdownConfigs = {
-
-    printing: {
-      label: "Printing",
-      items: [
-        { to: "/corporate", label: " Corporate Printing" },
-        { to: "/gifting", label: "Corporate Gifting" },
-        { to: "/events", label: "Events Printing" },
-      ],
-      
-    },
-    services: {
-      label: "Designing",
-      items: [
-        { to: "/branding", label: "Brand Identity" },
-        { to: "/marketing", label: "Digital Marketing" },
-        { to: "/profile", label: "Company Profile" },
-      ],
-      
-    },
-    development: {
-      label: "Development",
-      items: [
-        { to: "/designing", label: "Web designing" },
-        { to: "/development", label: "Web Development" },
-        { to: "/application", label: "Mobile Application" },
-        { to: "/cloud", label: "Cloud Services" },
-      ],
-    },
-    Portfolio: {
-      label: "Portfolio",
-      items: [
-        { to: "/portfolio", label: "Portfolio" },
-        { to: "/stationery", label: "Stationery" },
-        { to: "/trophy", label: "Trophy " },
-        { to: "/catalogue", label: "Catalogue & Brochure" },
-      ],
-    },
-  };
-
-  /* ================= DESKTOP DROPDOWN ================= */
-  const toggleDesktop = (name) => {
-    setDesktopDropdown((prev) => (prev === name ? null : name));
-  };
-
   /* ================= MOBILE DROPDOWN ================= */
   const toggleMobile = (name) => {
     setMobileDropdown((prev) => (prev === name ? null : name));
   };
 
-  /* ================= OUTSIDE CLICK ================= */
+  // Animate only the items inside the panel that just opened —
+  // scoped per-panel, so nothing else gets re-triggered.
   useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (!desktopDropdown) return;
+    if (!mobileDropdown) return;
+    const panel = dropdownPanelRefs.current[mobileDropdown];
+    if (!panel) return;
 
-      const ref = dropdownRefs.current[desktopDropdown];
-      if (ref && !ref.contains(e.target)) {
-        setDesktopDropdown(null);
-      }
-    };
+    const items = panel.querySelectorAll(".nav-animate-item");
+    gsap.fromTo(
+      items,
+      { opacity: 0, x: 24 },
+      { opacity: 1, x: 0, duration: 0.35, stagger: 0.06, ease: "power2.out" },
+    );
+  }, [mobileDropdown]);
 
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [desktopDropdown]);
-
-  /* ================= LOCK BODY ================= */
+  /* ================= LOCK BODY SCROLL ================= */
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "auto";
+    return () => {
+      document.body.style.overflow = "auto";
+    };
   }, [mobileOpen]);
 
-  /* ================= MOBILE MENU ANIMATION ================= */
+  /* ================= MOBILE MENU SLIDE / FADE ================= */
   useEffect(() => {
-    if (!mobileBackdropRef.current || !mobileMenuRef.current) return ;
+    if (!mobileBackdropRef.current || !mobileMenuRef.current) return;
     gsap.set(mobileBackdropRef.current, { autoAlpha: 0 });
     gsap.set(mobileMenuRef.current, { x: "100%" });
   }, []);
 
   useEffect(() => {
-    if (!mobileBackdropRef.current || !mobileMenuRef.current) ; 
+    if (!mobileBackdropRef.current || !mobileMenuRef.current) return;
 
     gsap.to(mobileBackdropRef.current, {
       autoAlpha: mobileOpen ? 1 : 0,
@@ -154,8 +150,14 @@ export default function Navbar() {
     });
 
     if (mobileOpen) {
+      // Reset dropdown state each time the sidebar (re)opens so a
+      // stale open panel from last time doesn't linger.
+      setMobileDropdown(null);
+      const items = mobileMenuRef.current.querySelectorAll(
+        ".nav-animate-item",
+      );
       gsap.fromTo(
-        mobileLinkRefs.current.filter(Boolean),
+        items,
         { opacity: 0, x: 24 },
         {
           opacity: 1,
@@ -168,6 +170,8 @@ export default function Navbar() {
       );
     }
   }, [mobileOpen]);
+
+  const closeMobile = () => setMobileOpen(false);
 
   return (
     <>
@@ -184,50 +188,16 @@ export default function Navbar() {
 
           {/* ================= DESKTOP ================= */}
           <div className="hidden desktop lg:flex text-[#08182b] font-bold md:px-4 md:py-4 md:gap-2 px-8 py-4 items-center gap-8">
-            <NavLink
-              to="/"
-              className={({ isActive }) =>
-                `nav-animate-item px-3 py-2 font-bold transition-all duration-200
-                  ${
-                    isActive
-                      ? "text-orange-500  "
-                      : "text-[#08182b] hover:bg-white/70 "
-                  }`
-              }
-            >
+            <NavLink to="/" className={navLinkClass}>
               Home
             </NavLink>
 
-            <NavLink
-              to="/about"
-              className={({ isActive }) =>
-                `nav-animate-item px-3 py-2 font-bold transition-all duration-200
-                  ${
-                    isActive
-                      ? "text-orange-500 "
-                      : "text-[#08182b] hover:bg-white/70 "
-                  }`
-              }
-            >
+            <NavLink to="/about" className={navLinkClass}>
               About
             </NavLink>
 
-            {/* <NavLink
-              to="/printing"
-              className={({ isActive }) =>
-                `nav-animate-item px-3 py-2 font-bold transition-all duration-200
-                  ${
-                    isActive
-                      ? "text-orange-500  "
-                      : "text-[#08182b] hover:bg-white/70 "
-                  }`
-              }
-            >
-              Printing
-            </NavLink> */}
-
             {Object.entries(dropdownConfigs).map(([key, config]) => {
-              const isActive = config.items.some(
+              const isGroupActive = config.items.some(
                 (item) => location.pathname === item.to,
               );
 
@@ -238,46 +208,47 @@ export default function Navbar() {
                   onMouseEnter={() => setDesktopDropdown(key)}
                   onMouseLeave={() => setDesktopDropdown(null)}
                 >
-                  {/* BUTTON */}
-                  <button
-                    className={`nav-animate-item flex items-center gap-1 py-2 px-3 font-bold transition-all duration-200
-        ${
-          isActive
-            ? "text-orange-500 "
-            : "text-[#08182b] hover:bg-white/70 "
-        }`}
+                  {/* LABEL — now a real link, click navigates,
+                      hover still opens the dropdown */}
+                  <NavLink
+                    to={config.to}
+                    className={({ isActive }) =>
+                      `nav-animate-item flex items-center gap-1 py-2 px-3 font-bold transition-all duration-200 ${
+                        isActive || isGroupActive
+                          ? "text-orange-500"
+                          : "text-[#08182b] hover:bg-white/70"
+                      }`
+                    }
+                    aria-haspopup="true"
+                    aria-expanded={desktopDropdown === key}
                   >
                     {config.label}
-
                     <FaAngleDown
                       className={`transition-transform duration-300 ${
                         desktopDropdown === key ? "rotate-180" : ""
                       }`}
                     />
-                  </button>
+                  </NavLink>
 
-                  {/* DROPDOWN */}
+                  {/* DROPDOWN PANEL */}
                   <div
-                    className={`absolute left-0 mt-2 w-52 bg-white  shadow-xl  overflow-hidden border-gray-100 
-        transition-all duration-300 origin-top ${
-          desktopDropdown === key
-            ? "opacity-100 scale-100 visible"
-            : "opacity-0 scale-95 invisible"
-        }`}
+                    className={`absolute left-0 mt-2 w-52 bg-white shadow-xl overflow-hidden border-gray-100 transition-all duration-300 origin-top ${
+                      desktopDropdown === key
+                        ? "opacity-100 scale-100 visible"
+                        : "opacity-0 scale-95 invisible"
+                    }`}
                   >
                     <div className="h-1 w-full bg-orange-500" />
-
-                    {config.items.map((item, i) => (
+                    {config.items.map((item) => (
                       <NavLink
-                        key={i}
+                        key={item.to}
                         to={item.to}
                         className={({ isActive }) =>
-                          `nav-animate-item block px-6 py-3 transition-colors 
-              ${
-                isActive
-                  ? "text-orange-500 "
-                  : "text-gray-700 hover:text-orange-500"
-              }`
+                          `nav-animate-item block px-6 py-3 transition-colors ${
+                            isActive
+                              ? "text-orange-500"
+                              : "text-gray-700 hover:text-orange-500"
+                          }`
                         }
                       >
                         {item.label}
@@ -288,16 +259,14 @@ export default function Navbar() {
               );
             })}
 
-
             <NavLink
               to="/contact"
               className={({ isActive }) =>
-                `nav-animate-item px-3 py-2 font-bold transition-all duration-200
-                  ${
-                    isActive
-                      ? "text-orange-500 bg-white/60 "
-                      : "text-[#08182b] hover:bg-white/70 "
-                  }`
+                `nav-animate-item px-3 py-2 font-bold transition-all duration-200 ${
+                  isActive
+                    ? "text-orange-500 bg-white/60"
+                    : "text-[#08182b] hover:bg-white/70"
+                }`
               }
             >
               Contact
@@ -315,6 +284,7 @@ export default function Navbar() {
           <button
             className="nav-animate-item hamburger lg:hidden text-3xl"
             onClick={() => setMobileOpen(true)}
+            aria-label="Open menu"
           >
             <HiOutlineMenuAlt3 />
           </button>
@@ -324,7 +294,8 @@ export default function Navbar() {
       {/* ================= BACKDROP ================= */}
       <button
         ref={mobileBackdropRef}
-        onClick={() => setMobileOpen(false)}
+        onClick={closeMobile}
+        aria-label="Close menu"
         className={`fixed inset-0 bg-black/40 backdrop-blur-sm z-40 transition ${
           mobileOpen ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
@@ -333,70 +304,62 @@ export default function Navbar() {
       {/* ================= MOBILE SIDEBAR ================= */}
       <aside
         ref={mobileMenuRef}
-        className={`fixed hamburger right-0 top-0 h-full w-[85%] max-w-sm z-[99999] bg-white shadow-2xl 
-              transition-transform duration-500 flex flex-col
-              ${mobileOpen ? "translate-x-0" : "translate-x-full"}`}
+        className={`fixed hamburger right-0 top-0 h-full w-[85%] max-w-sm z-[99999] bg-white shadow-2xl transition-transform duration-500 flex flex-col ${
+          mobileOpen ? "translate-x-0" : "translate-x-full"
+        }`}
       >
         <div className="flex justify-between items-center p-6 border-b">
           <img src={Logo} className="h-9" alt="Reva Graphics" />
           <HiX
             className="text-3xl cursor-pointer"
-            onClick={() => setMobileOpen(false)}
+            onClick={closeMobile}
+            aria-label="Close menu"
           />
         </div>
 
         <div className="flex-1 overflow-y-auto p-6 space-y-2">
-          <Link
-            to="/"
-            className="nav-animate-item block py-3 border-b"
-            onClick={() => setMobileOpen(false)}
-          >
+          <Link to="/" className="nav-animate-item block py-3 border-b" onClick={closeMobile}>
             Home
           </Link>
 
-          <Link
-            to="/about"
-            className="nav-animate-item block py-3 border-b"
-            onClick={() => setMobileOpen(false)}
-          >
+          <Link to="/about" className="nav-animate-item block py-3 border-b" onClick={closeMobile}>
             About
           </Link>
 
-          <Link
-            to="/printing"
-            className="nav-animate-item block py-3 border-b"
-            onClick={() => setMobileOpen(false)}
-          >
-            Printing
-          </Link>
-
-          {/* Mobile Dropdowns */}
+          {/* Mobile Dropdowns — label navigates, chevron toggles the
+              accordion. No more duplicate hardcoded "Printing" link. */}
           {Object.entries(dropdownConfigs).map(([key, config]) => (
             <div key={key} className="border-b">
-              <button
-                onClick={() => toggleMobile(key)}
-                className="nav-animate-item w-full flex justify-between py-3"
-              >
-                {config.label}
-                <FaAngleDown
-                  className={`transition ${mobileDropdown === key ? "rotate-180" : ""}`}
-                />
-              </button>
+              <div className="nav-animate-item flex items-center justify-between py-3">
+                <Link to={config.to} className="flex-1" onClick={closeMobile}>
+                  {config.label}
+                </Link>
+                <button
+                  onClick={() => toggleMobile(key)}
+                  aria-label={`Toggle ${config.label} submenu`}
+                  aria-expanded={mobileDropdown === key}
+                  className="p-1"
+                >
+                  <FaAngleDown
+                    className={`transition ${mobileDropdown === key ? "rotate-180" : ""}`}
+                  />
+                </button>
+              </div>
 
               <div
+                ref={(el) => {
+                  dropdownPanelRefs.current[key] = el;
+                }}
                 className={`overflow-hidden transition-all duration-300 ${
                   mobileDropdown === key ? "max-h-60 pb-2" : "max-h-0"
                 }`}
               >
-                {config.items.map((item, i) => (
+                {config.items.map((item) => (
                   <Link
-                    key={i}
-                    ref={(el) => {
-                      mobileLinkRefs.current.push(el);
-                    }}
+                    key={item.to}
                     to={item.to}
                     className="nav-animate-item block pl-4 py-2 text-slate-600"
-                    onClick={() => setMobileOpen(false)}
+                    onClick={closeMobile}
                   >
                     {item.label}
                   </Link>
@@ -405,12 +368,7 @@ export default function Navbar() {
             </div>
           ))}
 
-
-          <Link
-            to="/contact"
-            className="nav-animate-item block py-3 border-b"
-            onClick={() => setMobileOpen(false)}
-          >
+          <Link to="/contact" className="nav-animate-item block py-3 border-b" onClick={closeMobile}>
             Contact
           </Link>
 
@@ -430,7 +388,6 @@ export default function Navbar() {
             >
               <FaTwitter />
             </a>
-
             <a
               href="https://www.instagram.com/werevagraphics/"
               className="text-zinc-400 hover:text-orange-500 transition-all duration-300 hover:scale-110"
@@ -440,7 +397,6 @@ export default function Navbar() {
             >
               <FaInstagram />
             </a>
-
             <a
               href="https://www.facebook.com/werevagraphics"
               className="text-zinc-400 hover:text-orange-500 transition-all duration-300 hover:scale-110"
@@ -450,7 +406,6 @@ export default function Navbar() {
             >
               <FaFacebook />
             </a>
-
             <a
               href="https://www.linkedin.com/company/werevagraphics"
               className="text-zinc-400 hover:text-orange-500 transition-all duration-300 hover:scale-110"

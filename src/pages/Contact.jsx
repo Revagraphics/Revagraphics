@@ -70,7 +70,7 @@ export default function Contact() {
 
               {/* Contact Cards */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div className="bg-white border border-gray-100 rounded-3xl p-6">
+                <div className="bg-white border border-gray-100 rounded-3xl p-4">
                   <div className="flex items-center gap-3 mb-4">
                     <div className="w-10 h-10 bg-gray-100 rounded-2xl flex items-center justify-center text-2xl">
                       📞
@@ -87,7 +87,7 @@ export default function Contact() {
                   </a>
                 </div>
 
-                <div className="bg-white border border-gray-100 rounded-3xl p-6">
+                <div className="bg-white border border-gray-100 rounded-3xl p-4">
                   <div className="flex items-center gap-3 mb-4">
                     <div className="w-10 h-10 bg-gray-100 rounded-2xl flex items-center justify-center text-2xl">
                       📞
@@ -104,7 +104,7 @@ export default function Contact() {
                   </a>
                 </div>
 
-                <div className="bg-white border border-gray-100 rounded-3xl p-6">
+                <div className="bg-white border border-gray-100 rounded-3xl p-4">
                   <div className="flex items-center gap-3 mb-4">
                     <div className="w-10 h-10 bg-gray-100 rounded-2xl flex items-center justify-center text-2xl">
                       ✉️
@@ -121,7 +121,7 @@ export default function Contact() {
                   </a>
                 </div>
 
-                <div className="bg-white border border-gray-100 rounded-3xl p-6">
+                <div className="bg-white border border-gray-100 rounded-3xl p-4">
                   <div className="flex items-center gap-3 mb-4">
                     <div className="w-10 h-10 bg-gray-100 rounded-2xl flex items-center justify-center text-2xl">
                       ✉️
