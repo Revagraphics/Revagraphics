@@ -9,6 +9,8 @@ import {
   FaCloud,
 } from "react-icons/fa";
 
+import {Link} from "react-router-dom";
+
 import ShimmerText from "../components/ShimmerText";
 import GridBg from "../components/GridBg";
 import DecorativeUnderline from "../components/DecorativeUnderline";
@@ -133,9 +135,9 @@ export default function ServicesSection() {
                       className="text-2xl font-semibold text-gray-900 
                                  group-hover:text-white transition-colors duration-300"
                     >
-                      <a href={service.link} className="hover:underline">
+                      <Link to={service.link} className="hover:underline">
                         {service.title}
-                      </a>
+                      </Link>
                     </h3>
 
                     <p
@@ -156,13 +158,13 @@ export default function ServicesSection() {
                     {/* Read More */}
 
                     <button className="inline-block mt-8 bg-gradient-to-r from-[#FF9800] to-[#E91E63] hover:from-white hover:to-white group-hover:from-white group-hover:to-white px-8 py-3 rounded-full transition-all duration-300">
-                      <a
-                        href={service.link}
+                      <Link
+                        to={service.link}
                         className="inline-flex items-center gap-2 text-white group-hover:text-orange-500 font-semibold group-hover:gap-3 transition-all duration-300"
                       >
                         Explore Service
                         <FaArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                      </a>
+                      </Link>
                     </button>
                   </div>
 

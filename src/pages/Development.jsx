@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import {Link} from "react-router-dom";
 import { FaRedo, FaUsers, FaTachometerAlt } from "react-icons/fa";
 import portfolio1 from "../assets/portfolio-1.jpg";
 import portfolio2 from "../assets/portfolio-2.jpg";
@@ -89,15 +90,15 @@ export default function Development() {
                   presence that will concrete your path toward success.
                 </p>
 
-                <a
-                  href="get-quote.html"
+                <Link
+                  href="/contact"
                   className="group inline-flex items-center gap-3 bg-gradient-to-r from-orange-500 to-pink-500 hover:bg-orange-600 text-white font-semibold text-lg px-10 py-5 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
                 >
                   Let’s discuss
                   <span className="group-hover:translate-x-2 transition-transform duration-300">
                     →
                   </span>
-                </a>
+                </Link>
               </div>
 
               {/* Right Image */}

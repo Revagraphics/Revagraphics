@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import {Link} from "react-router-dom";
 import cart from "../assets/cart.png";
 import seo from "../assets/seo.png";
 import benefit1 from "../assets/expert1.png?url";
@@ -80,15 +81,15 @@ export default function Marketing() {
                   experts.
                 </p>
 
-                <a
-                  href="get-quote.html"
+                <Link
+                  to="/contact"
                   className="group inline-flex items-center gap-3 bg-gradient-to-r from-[#FF9800] to-[#E91E63] hover:bg-orange-600 text-white font-semibold text-lg px-10 py-5 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
                 >
                   Let’s discuss
                   <span className="group-hover:translate-x-2 transition-transform duration-300">
                     →
                   </span>
-                </a>
+                </Link>
               </div>
 
               {/* Right Image */}
@@ -216,13 +217,13 @@ export default function Marketing() {
 
                 {/* Optional CTA Button */}
                 <div>
-                  <a
-                    href="get-quote.html"
+                  <Link
+                    to="/contact"
                     className="inline-flex items-center gap-3 bg-gradient-to-r from-[#FF9800] to-[#E91E63] hover:bg-orange-600 text-white font-semibold text-lg px-8 py-4 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
                   >
                     Hire Developers Now
                     <span>→</span>
-                  </a>
+                  </Link>
                 </div>
               </div>
 

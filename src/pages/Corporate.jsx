@@ -9,18 +9,23 @@ import branding from "../assets/branding.webp";
 import brochure from "../assets/brochure.jpg";
 import testimonial from "../assets/testimonial.webp";
 import packaging from "../assets/product-packaging.webp";
+import idCards from "../assets/event/id-cards.jpg";
+import letterhead from "../assets/event/letterheads.jpg";
+import envelopes from "../assets/gifting/envelop.jpg";
+
 
 const works = [
   { id: 1, image: campaign, title: "Brochures" },
   { id: 2, image: website, title: "Catalogues" },
   { id: 3, image: branding, title: "Booklets" },
   { id: 4, image: brochure, title: "Magazines" },
-  { id: 5, image: testimonial, title: "UV Stickers" },
-  { id: 6, image: packaging, title: "Business Cards" },
-  { id: 7, image: packaging, title: "Letterheads" },
-  { id: 8, image: packaging, title: "Envelopes" },
-  { id: 9, image: packaging, title: "ID Cards" },
-  { id: 10, image: packaging, title: "Lanyards" },
+  { id: 5, image: testimonial, title: "UV Cards" },
+  { id: 6, image: packaging, title: "Stickers" },
+  { id: 7, image: letterhead, title: "Letterheads" },
+  { id: 8, image: envelopes, title: "Envelopes" },
+  { id: 9, image: letterhead, title: "Magazines" },
+  { id: 10, image: idCards, title: "ID Cards" },
+  { id: 11, image: packaging, title: "Lanyards" },
 ];
 
 export default function Cloud() {
@@ -193,15 +198,11 @@ export default function Cloud() {
 
                 <SelectedWork
                   works={works}
-                  title="Our Corporate"
-                  highlight="Prints"
-                  subtitle=""
+                  name="Corporate"
                   viewAllLink="/clients"
                   viewAllText="See All Prints"
                   duration={25} 
                 />
-
-        
       </div>
     </>
   );

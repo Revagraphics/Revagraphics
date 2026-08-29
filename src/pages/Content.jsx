@@ -1,5 +1,5 @@
 import React from "react";
-
+import {Link} from "react-router-dom";
 import content from "../assets/content.png";
 import content2 from "../assets/wc.png";
 import Seo from "../components/Seo";
@@ -87,15 +87,15 @@ export default function Content() {
                   presence that will concrete your path toward success.
                 </p>
 
-                <a
-                  href="get-quote.html"
+                <Link
+                  to="/contact"
                   className="group inline-flex items-center gap-3 bg-orange-500 hover:bg-orange-600 text-white font-semibold text-lg px-10 py-5 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
                 >
                   Let’s discuss
                   <span className="group-hover:translate-x-2 transition-transform duration-300">
                     →
                   </span>
-                </a>
+                </Link>
               </div>
 
               {/* Right Image */}
@@ -228,7 +228,7 @@ export default function Content() {
                 {/* Optional CTA Button */}
                 <div>
                   <a
-                    href="get-quote.html"
+                    href="/contact"
                     className="inline-flex items-center gap-3 bg-orange-500 hover:bg-orange-600 text-white font-semibold text-lg px-8 py-4 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
                   >
                     Hire Developers Now
@@ -265,12 +265,12 @@ export default function Content() {
 
                 {/* Optional CTA Button */}
                 <div className="gap-5 flex ">
-                  <a
-                    href="get-quote.html"
+                  <Link
+                    to="/contact"
                     className="inline-flex items-center gap-3 bg-orange-500 hover:bg-orange-600 text-white font-semibold text-lg px-8 py-4 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
                   >
                     Contact Us
-                  </a>
+                  </Link>
 
                   <a
                     href=""

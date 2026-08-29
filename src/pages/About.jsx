@@ -140,12 +140,12 @@ export default function About() {
                     <p className="text-gray-700">
                       To learn more about our approach to business and work,
                       feel free to hop on over to our{" "}
-                      <a
-                        href="/contact"
+                      <Link
+                        to="/contact"
                         className="text-orange-500 hover:underline font-medium"
                       >
                         Open Contact Page.
-                      </a>
+                      </Link>
                     </p>
                   </div>
 

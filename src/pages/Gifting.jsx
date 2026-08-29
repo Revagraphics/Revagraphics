@@ -11,16 +11,16 @@ import testimonial from "../assets/testimonial.webp";
 import packaging from "../assets/product-packaging.webp";
 
 const works = [
-  { id: 1, image: campaign, title: "Brochures" },
-  { id: 2, image: website, title: "Catalogues" },
-  { id: 3, image: branding, title: "Booklets" },
-  { id: 4, image: brochure, title: "Magazines" },
-  { id: 5, image: testimonial, title: "UV Stickers" },
-  { id: 6, image: packaging, title: "Business Cards" },
-  { id: 7, image: packaging, title: "Letterheads" },
-  { id: 8, image: packaging, title: "Envelopes" },
-  { id: 9, image: packaging, title: "ID Cards" },
-  { id: 10, image: packaging, title: "Lanyards" },
+  { id: 1, image: campaign, title: "Gift Boxes" },
+  { id: 2, image: website, title: "Paper Bags" },
+  { id: 3, image: branding, title: "Gift Hampers" },
+  { id: 4, image: brochure, title: "Corporate Diaries" },
+  { id: 5, image: testimonial, title: "Branded Mugs" },
+  { id: 6, image: packaging, title: "Custom T-Shirts" },
+  { id: 7, image: packaging, title: "Promotional Pens" },
+  { id: 8, image: packaging, title: "Keychains" },
+  { id: 9, image: packaging, title: "Tote Bags" },
+  { id: 10, image: packaging, title: "Gift Cards" },
 ];
 
 export default function Cloud() {
@@ -193,9 +193,7 @@ export default function Cloud() {
 
                 <SelectedWork
                   works={works}
-                  title="Our Corporate"
-                  highlight="Prints"
-                  subtitle=""
+                  name="Gifting"
                   viewAllLink="/clients"
                   viewAllText="See All Prints"
                   duration={25} 

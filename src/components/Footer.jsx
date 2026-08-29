@@ -186,14 +186,14 @@ export default function Footer() {
             </div>
 
             {/* Desktop badge grid - NOW CLICKABLE */}
-            <div className="hidden md:flex flex-wrap justify-center gap-8 items-center">
+            <div className="badge-grid-responsive hidden md:flex flex-wrap justify-center gap-8 items-center">
               {badges.map((badge) => (
                 <img
                   key={badge.id}
                   src={badge.src}
                   alt={badge.alt}
                   onClick={() => openModal(badge)}
-                  className="h-20 md:h-20 lg:h-28 opacity-80 hover:opacity-100 hover:scale-110 transition-all duration-300 cursor-pointer"
+                  className="badge-item h-20 md:h-20 lg:h-28 opacity-80 hover:opacity-100 hover:scale-110 transition-all duration-300 cursor-pointer"
                 />
               ))}
             </div>
@@ -279,8 +279,6 @@ export default function Footer() {
           })}
         </div>
       </section>
-
-
 
       {/* -------------- BOTTOM BAR ----------- */}
       <div className="bg-[#30303c] border-t border-zinc-800">

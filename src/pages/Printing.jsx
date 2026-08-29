@@ -18,7 +18,7 @@ export default function Printing() {
       <div className="bg-white min-h-screen">
 
         {/* ================= HERO SECTION ================= */}
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-950">
+        <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-slate-950">
           <video
             src={Print}
             autoPlay
@@ -48,7 +48,7 @@ export default function Printing() {
             className="mt-2 mx-auto"
             centerColor="#3B82F6"
             />
-            <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-md sm:text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed">
               High-quality prints that make your brand stand out. From business
               cards to large format — we bring your ideas to life with premium
               materials and flawless detail.
@@ -65,12 +65,12 @@ export default function Printing() {
               >
                 Explore Our Prints
               </button>
-              <a
+              {/* <a
                 href="/contact"
                 className="px-10 py-4 rounded-full border border-white/30 bg-white/10 text-white font-semibold text-lg backdrop-blur-md transition-all duration-300 hover:bg-white/20 hover:scale-105"
               >
                 Get a Quote
-              </a>
+              </a> */}
             </div>
           </div>
 
@@ -218,11 +218,11 @@ export default function Printing() {
               ))}
             </div>
 
-            <div className="text-center mt-12">
+            {/* <div className="text-center mt-12">
               <button className="px-10 py-4 bg-gradient-to-r from-[#FF9800] to-[#E91E63] hover:bg-orange-600 hover:scale-105 text-white hover:text-white font-semibold rounded-full transition-all duration-300">
                 View Full  ovservation.
               </button>
-            </div>
+            </div> */}
           </div>
         </div>
 
@@ -235,12 +235,12 @@ export default function Printing() {
             <p className="text-xl text-white/80 mb-10">
               Get a free quote today. Fast turnaround • Premium quality • Competitive prices
             </p>
-            <a
-              href="/contact"
+            <Link
+              to="/contact"
               className="inline-block px-12 py-5 bg-gradient-to-r from-[#FF9800] to-[#E91E63] hover:bg-orange-600 text-white font-semibold text-lg rounded-full transition-all duration-300 hover:scale-105"
             >
               Get Free Quote Now
-            </a>
+            </Link>
 
           </div>
         </div>

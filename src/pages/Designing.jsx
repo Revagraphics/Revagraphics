@@ -103,84 +103,84 @@ export default function designing() {
       />
 
       <div className="bg-white">
-        <section className="relative min-h-[90vh] flex items-center bg-gradient-to-br from-zinc-50 via-white to-slate-50 overflow-hidden">
+        <section className="relative min-h-[70vh] flex items-center bg-gradient-to-br from-zinc-50 via-white to-slate-50 overflow-hidden">
           {/* Subtle Light Background Pattern */}
           <div className="absolute inset-0 bg-[radial-gradient(at_center,#e0e7ff30_0%,transparent_70%)]"></div>
 
-          <div className="max-w-[80%] mx-auto px-6  lg:px-12 relative z-10">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
-              {/* Left Content */}
-              <div className="space-y-8 pt-12  lg:pt-0">
-                <div className="inline-flex items-center mt-14 lg:mt-4 gap-1 bg-white px-5 py-2.5 rounded-full border border-orange-200 shadow-sm">
-                  <span className="text-orange-600 text-sm font-semibold tracking-widest">
-                    PREMIUM DESIGNING
-                  </span>
-                </div>
-
-                <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-zinc-900 leading-tight tracking-tighter">
-                  We Design <ShimmerText >Experiences</ShimmerText>
-                  <br />
-                  That Convert
-                </h1>
-
-                <p className="text-xl text-zinc-600 max-w-lg">
-                  From stunning branding to high-converting websites and
-                  packaging — we craft designs that don't just look good, they
-                  perform.
-                </p>
-
-                <div className="flex flex-wrap gap-4 pt-4 lg:pt-6">
-                  <Link to="/portfolio">
-                    <button className="bg-gradient-to-r from-orange-500 to-pink-500 text-white px-9 py-4 rounded-2xl hover:scale-105 font-semibold transition-all active:scale-95 shadow-lg shadow-orange-500/30">
-                      Explore Our Work
-                    </button>
-                  </Link>
-                  <Link to="/development">
-                    {" "}
-                    <button className="border border-zinc-300 hover:border-zinc-400 text-zinc-700 px-9 py-4 rounded-2xl font-medium transition-all">
-                      View Services
-                    </button>
-                  </Link>
-                </div>
-              </div>
-
-              {/* Right Visual - Light Version */}
-              <div className="relative flex justify-center lg:justify-end">
-                <div className="relative">
-                  {/* Main Decorative Frame */}
-                  <div className="w-[320px] md:w-[420px] lg:w-[480px] aspect-square bg-gradient-to-r from-orange-500 to-pink-500 rounded-[4rem] rotate-6 shadow-2xl overflow-hidden">
-                    {/* Inner Card */}
-                    <div className="absolute inset-4 bg-white rounded-[3rem] flex items-center justify-center shadow-inner">
-                      <div className="text-center">
-                        <div className="text-6xl mb-4 text-orange-500"><ShimmerText>✦</ShimmerText></div>
-                        <p className="text-2xl font-light text-zinc-500">
-                          Premium
-                        </p>
-                        <p className="text-4xl font-bold tracking-wider text-zinc-900">
-                          DESIGN STUDIO
-                        </p>
-
-                         <p className="text-4xl font-bold tracking-wider">
-                          <ShimmerText>
-                          REVA GRAPHICS
-                        </ShimmerText>
-                        </p>
-                       
-                      </div>
-                    </div>
+          <div className="mt-10">
+            <div className="max-w-[80%] mx-auto px-6  lg:px-12 relative z-10">
+              <div className="grid lg:grid-cols-2 gap-16 items-center">
+                {/* Left Content */}
+                <div className="space-y-8 pt-12  lg:pt-0">
+                  <div className="inline-flex items-center mt-14 lg:mt-4 gap-1 bg-white px-5 py-2.5 rounded-full border border-orange-200 shadow-sm">
+                    <span className="text-orange-600 text-sm font-semibold tracking-widest">
+                      PREMIUM DESIGNING
+                    </span>
                   </div>
 
-                  {/* Subtle Glow / Highlight */}
-                  <div className="absolute -inset-6 bg-gradient-to-br from-orange-200/30 to-transparent rounded-[5rem] -z-10 blur-3xl"></div>
+                  <h1 className="text-3xl md:text-6xl lg:text-7xl font-bold text-zinc-900 leading-tight tracking-tighter">
+                    We Design <ShimmerText>Experiences</ShimmerText>
+                    <br />
+                    That Convert
+                  </h1>
+
+                  <p className="text-xl text-zinc-600 max-w-lg">
+                    From stunning branding to high-converting websites and
+                    packaging — we craft designs that don't just look good, they
+                    perform.
+                  </p>
+
+                  <div className="flex flex-wrap gap-4 pt-4 lg:pt-6">
+                    <Link to="/portfolio">
+                      <button className="bg-gradient-to-r from-orange-500 to-pink-500 text-white px-9 py-4 rounded-2xl hover:scale-105 font-semibold transition-all active:scale-95 shadow-lg shadow-orange-500/30">
+                        Explore Our Work
+                      </button>
+                    </Link>
+                    <Link to="/development">
+                      {" "}
+                      <button className="border border-zinc-300 hover:border-zinc-400 text-zinc-700 px-9 py-4 rounded-2xl font-medium transition-all">
+                        View Services
+                      </button>
+                    </Link>
+                  </div>
+                </div>
+
+                {/* Right Visual - Light Version */}
+                <div className="relative flex justify-center lg:justify-end">
+                  <div className="relative">
+                    {/* Main Decorative Frame */}
+                    <div className="w-[280px] md:w-[330px] lg:w-[350px] aspect-square bg-gradient-to-r from-orange-500 to-pink-500 rounded-[4rem] rotate-6 shadow-2xl overflow-hidden">
+                      {/* Inner Card */}
+                      <div className="absolute inset-4 bg-white rounded-[3rem] flex items-center justify-center shadow-inner">
+                        <div className="text-center">
+                          <div className="text-4xl mb-4 text-orange-500">
+                            <ShimmerText>✦</ShimmerText>
+                          </div>
+                          <p className="text-2xl font-light text-zinc-500">
+                            Premium
+                          </p>
+                          <p className="text-2xl font-bold tracking-wider text-zinc-900">
+                            DESIGN STUDIO
+                          </p>
+                          <p className="text-2xl font-bold tracking-wider">
+                            <ShimmerText>REVA GRAPHICS</ShimmerText>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Subtle Glow / Highlight */}
+                    <div className="absolute -inset-6 bg-gradient-to-br from-orange-200/30 to-transparent rounded-[5rem] -z-10 blur-3xl"></div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          {/* Scroll Indicator - Light Theme */}
-          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-zinc-400 text-sm flex flex-col items-center gap-2">
-            <span>Scroll to explore</span>
-            <div className="w-px h-12 bg-gradient-to-b from-transparent via-zinc-300 to-transparent"></div>
+            {/* Scroll Indicator - Light Theme */}
+            <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-zinc-400 text-sm flex flex-col items-center gap-2">
+              <span>Scroll to explore</span>
+              <div className="w-px h-12 bg-gradient-to-b from-transparent via-zinc-300 to-transparent"></div>
+            </div>
           </div>
         </section>
 
@@ -194,8 +194,8 @@ export default function designing() {
                 </span>
 
                 <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-6">
-                  We build a <ShimmerText> Unique Brand </ShimmerText>
-                   {" "} for attract the customers
+                  We build a <ShimmerText> Unique Brand </ShimmerText> for
+                  attract the customers
                 </h1>
 
                 <p className="text-gray-500 mb-8">

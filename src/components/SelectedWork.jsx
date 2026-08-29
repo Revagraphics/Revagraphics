@@ -8,9 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function SelectedWork({
   works = [],
-  title = "Our",
-  highlight = "Portfolio",
-  subtitle = "Showcase",
+  name = "Portfolio",
   viewAllLink = "/portfolio",
   viewAllText = "View All Projects",
   duration = 35,
@@ -61,7 +59,7 @@ export default function SelectedWork({
         {/* Heading */}
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10 sm:mb-14">
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-gray-900 tracking-tight leading-tight">
-            {title} <ShimmerText>{highlight}</ShimmerText> {subtitle}
+            Our <ShimmerText>{name}</ShimmerText> Prints
           </h2>
           <Link
             to={viewAllLink}
