@@ -243,9 +243,6 @@ export default function Feedback() {
                     </div>
                   </div>
 
-
-
-
                   {/* Right Moving Marquee */}
                   <div className="overflow-hidden rounded-xl bg-gray-50 py-4">
                     <div
@@ -381,9 +378,6 @@ export default function Feedback() {
                 </label>
               </div>
 
-
-
-
               <button
                 type="submit"
                 disabled={loading}
@@ -445,8 +439,6 @@ export default function Feedback() {
                 Singapore 068907.
               </p>
             </div>
-
-
 
             <div>
               <div className="flex items-center gap-3 mb-4">

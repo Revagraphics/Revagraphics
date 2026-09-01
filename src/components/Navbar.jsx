@@ -212,6 +212,7 @@ export default function Navbar() {
                       hover still opens the dropdown */}
                   <NavLink
                     to={config.to}
+                    onClick={() => setDesktopDropdown(null)}
                     className={({ isActive }) =>
                       `nav-animate-item flex items-center gap-1 py-2 px-3 font-bold transition-all duration-200 ${
                         isActive || isGroupActive
@@ -243,6 +244,7 @@ export default function Navbar() {
                       <NavLink
                         key={item.to}
                         to={item.to}
+                        onClick={() => setDesktopDropdown(null)}
                         className={({ isActive }) =>
                           `nav-animate-item block px-6 py-3 transition-colors ${
                             isActive
