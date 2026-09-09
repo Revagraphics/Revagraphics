@@ -13,7 +13,7 @@ import GridBg from "../components/GridBg";
 import DecorativeUnderline from "../components/DecorativeUnderline";
 import xv from "../assets/xv.png";
 
-
+import ComparisonSection from "../components/ComparisonSection";
 import campaign from "../assets/campaign.webp";
 import website from "../assets/banglore.jpg";
 import branding from "../assets/branding.webp";
@@ -46,12 +46,12 @@ export default function About() {
               <span className="text-indigo-600 font-semibold mb-4 uppercase text-[1.3rem]">
                 We Are Reva
               </span>
-              <h2 className="text-4xl text-[#30303c] sm:text-2xl lg:text-6xl font-semibold leading-tight">
+              <h2 className="text-3xl text-[#30303c] sm:text-2xl lg:text-6xl font-semibold leading-tight">
                 We are a <ShimmerText>creative digital</ShimmerText>
                 <br /> agency based in India.
               </h2>
 
-              <p className="mt-4 text-[#30303c] text-[1.2rem]">
+              <p className="mt-4 text-[#30303c] ">
                 Reva started its operation in the year 2019. We are a Worldwide,
                 based Web Designing and Digital Marketing Company. Our main
                 Domain is Web Design, Web Development, Web Application, Digital
@@ -166,7 +166,7 @@ export default function About() {
           </GridBg>
         </section>
 
-        <Mission />
+        
         <SelectedWork
           works={works}
           title="Our Portfolio"
@@ -176,7 +176,9 @@ export default function About() {
           viewAllText="See All Clients"
           duration={25} 
         />
+        <Mission />
         <Ethics />
+        {/* <ComparisonSection /> */}
         <TeamWork />
       </div>
     </>

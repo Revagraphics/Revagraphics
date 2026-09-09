@@ -3,14 +3,10 @@ import gsap from "gsap";
 import { Link } from "react-router-dom";
 import badge1 from "../assets/batch1.png";
 import badge2 from "../assets/batch2.png";
-import badge3 from "../assets/badge-1.png";
-import badge4 from "../assets/badge22.png";
-import badge5 from "../assets/badge-3.png";
-import itfirm from "../assets/itfirm.png";
 import badge6 from "../assets/web-design.png";
 import badge7 from "../assets/app-futura.png";
-import goodfirm from "../assets/goodfirm.png";
 import bottomLogo from "../assets/footer-logo.png";
+
 import {
   FaFacebook,
   FaLinkedin,
@@ -128,12 +124,18 @@ export default function Footer() {
   return (
     <footer className="bg-[#30303c] text-zinc-300 border-t border-zinc-800">
       {/* ── MIDDLE SECTION ──────────────────────────────────────── */}
+
       <section className="bg-[#30303c] text-white border-t border-zinc-800">
         <div className="max-w-[90%] mx-auto px-6 py-12">
           <div className="flex flex-col md:flex-row lg:flex-row items-center justify-between gap-12">
             {/* Logo + rating */}
-            <div className="text-center lg:text-left space-y-4">
-              <img src={bottomLogo} alt="Reva Graphics" />
+            <div className=" flex flex-col text-center lg:text-left space-y-4">
+              <img
+                className="h-auto w-20 lg:w-28"
+                src={bottomLogo}
+                alt="Reva Graphics"
+              />
+              
               <div className="flex justify-center lg:justify-start gap-1 text-yellow-400 text-2xl">
                 ★ ★ ★ ★ ★
               </div>
@@ -145,7 +147,7 @@ export default function Footer() {
 
             {/* Follow Us */}
             <div>
-              <h3 className="text-white text-xl font-semibold mb-5">
+              <h3 className="text-white text-xl font-semibold  mb-5">
                 Follow Us
               </h3>
               <div className="flex flex-col gap-3 text-lg">
@@ -317,36 +319,36 @@ export default function Footer() {
             onClick={(e) => e.stopPropagation()}
           >
             {/* Gradient Accent Header */}
-            <div className="relative h-72 bg-gradient-to-br from-orange-500 via-pink-500 to-violet-600 flex items-center justify-center overflow-hidden">
+            <div className="relative h-42 bg-gradient-to-br from-orange-500 via-pink-500 to-violet-600 flex items-center justify-center overflow-hidden">
               {/* Subtle background pattern */}
               <div className="absolute inset-0 bg-[radial-gradient(#ffffff33_1px,transparent_1px)] [background-size:20px_20px]"></div>
 
               <img
                 src={selectedBadge.src}
                 alt={selectedBadge.alt}
-                className="w-56 h-56 object-contain drop-shadow-2xl relative z-10"
+                className="w-30 h-30 object-contain drop-shadow-2xl relative z-10"
               />
 
               {/* Close Button */}
-              <button
+              {/* <button
                 onClick={closeModal}
                 className="absolute top-5 right-5 bg-white/90 hover:bg-white text-gray-800 p-3 rounded-2xl shadow-lg transition-all hover:scale-110 active:scale-95"
               >
                 <FaTimes size={22} />
-              </button>
+              </button> */}
 
               {/* Decorative shine */}
               <div className="absolute -top-20 -right-20 w-40 h-40 bg-white/20 rounded-full blur-3xl"></div>
             </div>
 
             {/* Content */}
-            <div className="p-8 pb-10">
+            <div className="p-6 lg:p-8 lg:pb-10">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-14 h-14 bg-gradient-to-br from-amber-400 to-orange-500 rounded-2xl flex items-center justify-center text-4xl shadow-inner">
                   🏆
                 </div>
                 <div>
-                  <h3 className="text-3xl font-bold text-gray-900 tracking-tight">
+                  <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 tracking-tight">
                     {selectedBadge.title}
                   </h3>
                   <p className="text-orange-600 font-semibold text-lg mt-1">

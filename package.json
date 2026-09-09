@@ -11,8 +11,10 @@
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
+    "@jaymanyoo/pdf-book-viewer": "^1.4.7",
     "gsap": "^3.14.2",
     "lenis": "^1.3.23",
+    "pdfjs-dist": "^6.3.289",
     "prop-types": "^15.8.1",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",

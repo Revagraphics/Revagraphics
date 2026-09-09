@@ -5,7 +5,8 @@ import { useGSAP } from "@gsap/react";
 import Logo from "../assets/logo.png";
 import { FaAngleDown } from "react-icons/fa";
 import { HiOutlineMenuAlt3, HiX } from "react-icons/hi";
-import { FaFacebook, FaLinkedin, FaTwitter, FaInstagram } from "react-icons/fa";
+import { FaFacebook, FaLinkedin, FaInstagram } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 /* ================= MENU CONFIG =================
    Hoisted out of the component so it isn't recreated on every render.
@@ -27,7 +28,7 @@ const dropdownConfigs = {
     items: [
       { to: "/branding", label: "Brand Identity" },
       { to: "/marketing", label: "Digital Marketing" },
-      { to: "/profile", label: "Company Profile" },
+      { to: "/video", label: "Video Editing" },
     ],
   },
   development: {
@@ -277,7 +278,7 @@ export default function Navbar() {
 
           {/* CTA DESKTOP */}
           <Link to="/contact">
-            <button className="nav-animate-item desktop hidden lg:block px-6 py-2 rounded-full border cursor-pointer font-semibold text-[#fff] bg-gradient-to-r from-[#FF9800] to-[#E91E63] hover:scale-105 transition">
+            <button className=" talk nav-animate-item desktop hidden lg:block px-6 py-2 rounded-full border cursor-pointer font-semibold text-[#fff] bg-gradient-to-r from-[#FF9800] to-[#E91E63] hover:scale-105 transition">
               Talk To Us
             </button>
           </Link>
@@ -388,7 +389,7 @@ export default function Navbar() {
               rel="noopener noreferrer"
               title="Twitter"
             >
-              <FaTwitter />
+              <FaXTwitter  />
             </a>
             <a
               href="https://www.instagram.com/werevagraphics/"

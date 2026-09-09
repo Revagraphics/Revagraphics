@@ -63,10 +63,10 @@ export default function Ethics() {
            <ShimmerText> Transparency</ShimmerText>  and Ethics
           </h2>
           <DecorativeUnderline
-                        width="400px" // Adjust width as needed
-                        className="mt-4 mx-auto"
-                        centerColor="#3B82F6" // Optional: change blue color
-                        />
+                width="400px" // Adjust width as needed
+                className="mt-4 mx-auto"
+                centerColor="#3B82F6" // Optional: change blue color
+                />
           <p className="mt-6 text-lg md:text-xl text-gray-600 leading-relaxed">
             Transparency is an attribute of corporate culture that’s revealed through the behaviors 
             of an organization’s leaders, employees, and stakeholders.
@@ -74,29 +74,29 @@ export default function Ethics() {
         </div>
 
         {/* Cards Grid - Highly Responsive */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
           {cards.map((card, index) => (
             <div 
               key={card.id}
-              className={`ree-card r-bg-c group rounded-3xl p-8 md:p-10 bg-[#f7f7f7]/60 backdrop-blur-sm  duration-300 hover:shadow-xl hover:-translate-y-2 ${
+              className={`ree-card r-bg-c group rounded-3xl p-3 sm:p-5 md:p-10 bg-[#f7f7f7]/60 backdrop-blur-sm  duration-300 hover:shadow-xl hover:-translate-y-2 ${
                 index >= 3 ? 'lg:mt-10' : ''
               }`}
             >
               {/* Icon */}
-              <div className="ree-card-img mb-10">
+              <div className="ree-card-img mb-5 sm:mb-8 md:mb-10">
                 <img 
                   src={card.icon} 
                   alt={card.title}
-                  className="w-20 h-20 md:w-24 md:h-24 object-contain transition-transform duration-300 group-hover:scale-110"
+                  className="w-14 h-14 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain transition-transform duration-300 group-hover:scale-110"
                 />
               </div>
 
               {/* Content */}
               <div className="ree-card-content">
-                <h3 className="text-2xl font-semibold text-[#30303c] mb-5 leading-tight">
+                <h3 className="text-base sm:text-lg md:text-2xl font-semibold text-[#30303c] mb-3 sm:mb-4 md:mb-5 leading-tight">
                   {card.title}
                 </h3>
-                <p className="text-[#30303c] leading-relaxed text-[17px]">
+                <p className="text-[#30303c] leading-relaxed text-xs sm:text-sm md:text-[17px]">
                   {card.description}
                 </p>
               </div>

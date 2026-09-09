@@ -175,7 +175,7 @@ export default function Portfolio() {
                     }}
                   >
                     {/* CARD */}
-                    <div className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-7 shadow-lg border border-zinc-100 h-[90%] w-full flex flex-col justify-between hover:shadow-2xl transition">
+                    <div className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-7 shadow-lg border border-zinc-100 h-full w-full flex flex-col justify-between hover:shadow-2xl transition">
                       <div>
                         <div className="text-4xl sm:text-5xl text-orange-200 mb-3">
                           “
@@ -208,6 +208,8 @@ export default function Portfolio() {
               })}
             </div>
           </div>
+
+          
         </div>
       </section>
 

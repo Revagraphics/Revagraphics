@@ -22,7 +22,7 @@ export default function Application() {
       <div className="min-h-screen bg-[#f8fafc]">
 
         {/* ==================== HERO SECTION ==================== */}
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#0f766e] via-[#14b8a6] to-[#22d3ee]">
+        <section className="relative h-[80vh] lg:h-screen  flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#0f766e] via-[#14b8a6] to-[#22d3ee]">
           <div className="absolute inset-0 bg-black/30" />
 
           <GridBg
@@ -38,7 +38,7 @@ export default function Application() {
                 </span>
               </div>
 
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
+              <h1 className="text-3xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
                 We Build <ShimmerText>High-Impact</ShimmerText>
                 <br />
                 Mobile Applications
@@ -60,15 +60,15 @@ export default function Application() {
 
               <div className="mt-16 flex justify-center gap-10 text-sm">
                 <div className="text-center">
-                  <div className="text-4xl font-bold">50+</div>
+                  <div className="text-3xl lg:text-4xl font-bold">50+</div>
                   <div className="text-white/70">Apps Delivered</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-4xl font-bold">98%</div>
+                  <div className="text-3xl lg:text-4xl font-bold">98%</div>
                   <div className="text-white/70">Client Retention</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-4xl font-bold">4.9/5</div>
+                  <div className="text-3xl lg:text-4xl font-bold">4.9/5</div>
                   <div className="text-white/70">Average Rating</div>
                 </div>
               </div>
@@ -231,6 +231,7 @@ export default function Application() {
             </div>
           </div>
         </section>
+
 
       </div>
     </>

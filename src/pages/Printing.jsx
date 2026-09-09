@@ -18,7 +18,7 @@ export default function Printing() {
       <div className="bg-white min-h-screen">
 
         {/* ================= HERO SECTION ================= */}
-        <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-slate-950">
+        <section className="relative min-h-[70vh]  flex items-center justify-center overflow-hidden bg-slate-950">
           <video
             src={Print}
             autoPlay
@@ -48,7 +48,7 @@ export default function Printing() {
             className="mt-2 mx-auto"
             centerColor="#3B82F6"
             />
-            <p className="text-md sm:text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-md sm:text-xl md:text-2xl px-8 text-white/90 mb-8 max-w-3xl mx-auto">
               High-quality prints that make your brand stand out. From business
               cards to large format — we bring your ideas to life with premium
               materials and flawless detail.
@@ -229,15 +229,15 @@ export default function Printing() {
         {/* Optional CTA Section */}
         <div className="py-20 bg-[#08182b] text-white">
           <div className="max-w-4xl mx-auto text-center px-3 lg:px-5 md:px-5">
-            <h2 className="text-4xl font-bold mb-6">
-              Ready to Print Something Amazing ?
+            <h2 className="text-3xl font-bold mb-6">
+              Ready to Print Something Amazing <ShimmerText>?</ShimmerText>
             </h2>
-            <p className="text-xl text-white/80 mb-10">
+            <p className="text-white/80 mb-10">
               Get a free quote today. Fast turnaround • Premium quality • Competitive prices
             </p>
             <Link
               to="/contact"
-              className="inline-block px-12 py-5 bg-gradient-to-r from-[#FF9800] to-[#E91E63] hover:bg-orange-600 text-white font-semibold text-lg rounded-full transition-all duration-300 hover:scale-105"
+              className="inline-block px-8 lg:px-12 py-3 lg:py-5 bg-gradient-to-r from-[#FF9800] to-[#E91E63] hover:bg-orange-600 text-white font-semibold text-lg rounded-full transition-all duration-300 hover:scale-105"
             >
               Get Free Quote Now
             </Link>

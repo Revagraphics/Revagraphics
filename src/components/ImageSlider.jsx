@@ -1,122 +1,69 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-import { Draggable } from 'gsap/Draggable';
 
 import bg1 from "../assets/big-slider1.jpg";
 import bg2 from "../assets/big-slider2.jpg";
 import bg3 from "../assets/big-slider6.webp";
 import bg4 from "../assets/big-slider8.webp";
 
-gsap.registerPlugin(Draggable);
-
 const images = [
-  {id:1, img:bg1},
-  {id:2, img:bg2},
-  {id:3, img:bg3},
-  {id:4, img:bg4},
-]
+  { id: 1, img: bg1 },
+  { id: 2, img: bg2 },
+  { id: 3, img: bg3 },
+  { id: 4, img: bg4 },
+];
 
-export default function ImageSlider(){
+export default function ImageSlider() {
   const trackRef = useRef(null);
   const tweenRef = useRef(null);
-  const draggableRef = useRef(null);
 
- useEffect(() => {
-  if (!trackRef.current) return;
+  useEffect(() => {
+    if (!trackRef.current) return;
 
-  const slideWidth = 1100;
-  const gap = 30;
-  const totalWidth = (slideWidth + gap) * images.length;
+    const track = trackRef.current;
+    const loopedItems = [...images, ...images];
+    const isMobile = window.matchMedia('(max-width: 640px)').matches;
 
-  // Duplicate slides for infinite illusion
-  const originalHTML = trackRef.current.innerHTML;
-  trackRef.current.innerHTML += originalHTML;
+    track.style.gap = '1rem';
+    track.innerHTML = loopedItems
+      .map(
+        (img) => `
+          <div class="branding_slide w-[56vw] max-w-[320px] min-w-[220px] h-[26vh] min-h-[180px] md:w-[42vw] md:max-w-[420px] md:min-w-[300px] md:h-[42vh] lg:w-[58vh] lg:min-w-[420px] lg:h-[42vh] flex-shrink-0 rounded-3xl overflow-hidden shadow-2xl bg-white p-2 transition-all duration-300 hover:scale-[1.02] hover:shadow-3xl">
+            <img src="${img.img}" alt="Slide ${img.id}" class="w-full h-full object-contain transition-transform duration-700 hover:scale-[1.03]" draggable="false" />
+          </div>
+        `,
+      )
+      .join('');
 
-  let x = 0;
+    const totalWidth = track.scrollWidth / 2;
 
-  // Continuous infinite animation (NO STOP EVER)
-  tweenRef.current = gsap.to({}, {
-    duration: 32,
-    repeat: -1,
-    ease: "none",
-    onUpdate: function () {
-      x -= 2; // speed control (increase for faster)
+    tweenRef.current = gsap.to(track, {
+      x: -totalWidth,
+      duration: isMobile ? 34 : 30,
+      ease: 'none',
+      repeat: -1,
+      onRepeat: () => gsap.set(track, { x: 0 }),
+    });
 
-      // Loop seamlessly
-      if (x <= -totalWidth) x = 0;
-
-      gsap.set(trackRef.current, { x });
-    }
-  });
-
-  // Draggable WITHOUT breaking animation
-  draggableRef.current = Draggable.create(trackRef.current, {
-    type: "x",
-    inertia: true,
-    dragClickables: true,
-    allowContextMenu: true,
-    preventDefault: false,
-
-    onDrag: function () {
-      x = this.x; // sync drag position
-    },
-
-    onThrowUpdate: function () {
-      x = this.x; // keep sync during momentum
-    }
-
-  })[0];
-
-  return () => {
-    tweenRef.current?.kill();
-    draggableRef.current?.kill();
-  };
-}, []);
-
+    return () => {
+      tweenRef.current?.kill();
+    };
+  }, []);
 
   return (
     <section className="relative h-screen w-full overflow-hidden bg-[#f5f5f5]">
-      {/* Full Screen Background Image */}
-    
+      <div className="absolute inset-0 z-10" />
 
-      {/* Dark Overlay */}
-      <div className="absolute inset-0  z-10" />
-
-      {/* Slider Container */}
       <div className="relative z-20 h-full flex items-center">
-  <div className="w-full overflow-hidden py-8">
-    <div
-      ref={trackRef}
-      className="flex will-change-transform select-none gap-8"
-      style={{ cursor: 'grab' }}
-    >
-      {images.map((img) => (
-        <div
-          key={img.id}
-          className="branding_slide 
-                     min-w-[420px] 
-                     w-[58vh] 
-                     h-[42vh] 
-                     flex-shrink-0 
-                     rounded-3xl 
-                     overflow-hidden 
-                     shadow-2xl 
-                     bg-zinc-900
-                     transition-all duration-300 
-                     hover:scale-[1.04] hover:shadow-3xl"
-        >
-          <img
-            src={img.img}
-            alt={`Slide ${img.id}`}
-            className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
-            draggable={false}
+        <div className="w-full overflow-hidden py-8">
+          <div
+            ref={trackRef}
+            className="flex will-change-transform select-none gap-8"
+            style={{ width: 'max-content' }}
           />
         </div>
-      ))}
-    </div>
-  </div>
-</div>
+      </div>
     </section>
   );
-};
+}
 

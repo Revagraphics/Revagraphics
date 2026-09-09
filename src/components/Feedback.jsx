@@ -22,7 +22,6 @@ const logos = [logo1, logo2, logo3, logo4];
 const logos2 = [logo6, logo7, logo8, logo9];
 
 export default function Feedback() {
-  const [formSubmitted, setFormSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -89,31 +88,26 @@ export default function Feedback() {
     const toastId = toast.loading("Sending inquiry...");
 
     try {
-      const response = await fetch(
-        "https://formsubmit.co/ajax/sourabhnegi557@gmail.com",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-          body: JSON.stringify({
-            Name: formData.fullName,
-            Phone: formData.contactNumber,
-            Email: formData.email,
-            Department: formData.interestedIn,
-            Message: formData.message,
-            Source: "Reva Graphics ",
-          }),
+      const response = await fetch("/contact.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
         },
-      );
+        body: JSON.stringify({
+          fullName: formData.fullName,
+          email: formData.email,
+          contactNumber: formData.contactNumber,
+          interestedIn: formData.interestedIn,
+          message: formData.message,
+        }),
+      });
 
       const result = await response.json();
       toast.dismiss(toastId);
 
-      if (response.ok) {
-        toast.success("Inquiry submitted successfully!");
-        setFormSubmitted(true);
+      if (response.ok && result.success) {
+        toast.success(result.message || "Inquiry submitted successfully!");
         setFormData({
           fullName: "",
           contactNumber: "",
@@ -123,9 +117,8 @@ export default function Feedback() {
           agree: false,
         });
 
-        setTimeout(() => setFormSubmitted(false), 5000);
       } else {
-        toast.error("Unable to send inquiry. Please try again.");
+        toast.error(result.message || "Unable to send inquiry. Please try again.");
       }
     } catch (err) {
       toast.error("Something went wrong. Please try again.");

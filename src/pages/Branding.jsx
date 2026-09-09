@@ -296,6 +296,8 @@ export default function Branding() {
             </div>
           </div>
         </section>
+
+        
         <ImageSlider />
         <ProjectProcess />
         <PaymentSection />

@@ -59,7 +59,7 @@ export default function Marketing() {
         description="Grow your business with SEO, social media marketing, and performance-driven digital strategies."
       />
       <div className="min-h-screen bg-[#f2fff5]">
-        <section className="pt-20 pb-32 overflow-hidden">
+        <section className="pt-20 pb-32  overflow-hidden">
           <div className="max-w-[90%] mx-auto px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-16 items-center pt-16">
               {/* Left Content */}

@@ -88,7 +88,7 @@ export default function Cloud() {
         {/* HERO SECTION - Orange Theme + Fully Responsive */}
 
         <GridBg gridSize={80} lineColor="#f5f1ed" bgColor="#f2fff5">
-          <section className=" min-h-[90vh] flex items-center justify-center text-black py-16 md:py-24 relative overflow-hidden">
+          <section className=" h-[70vh] sm:h-[90vh] flex items-center justify-center text-black py-16 md:py-24 relative overflow-hidden">
             <div className="max-w-[90%] mx-auto px-6 text-center relative z-10">
               <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-6 py-2 rounded-3xl text-sm font-medium mb-6">
                 ⚡ POWERED BY <ShimmerText>AWS • AZURE • GCP</ShimmerText>
