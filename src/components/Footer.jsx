@@ -329,13 +329,7 @@ export default function Footer() {
                 className="w-30 h-30 object-contain drop-shadow-2xl relative z-10"
               />
 
-              {/* Close Button */}
-              {/* <button
-                onClick={closeModal}
-                className="absolute top-5 right-5 bg-white/90 hover:bg-white text-gray-800 p-3 rounded-2xl shadow-lg transition-all hover:scale-110 active:scale-95"
-              >
-                <FaTimes size={22} />
-              </button> */}
+            
 
               {/* Decorative shine */}
               <div className="absolute -top-20 -right-20 w-40 h-40 bg-white/20 rounded-full blur-3xl"></div>

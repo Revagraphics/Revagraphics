@@ -1,9 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Document, Page, pdfjs } from "react-pdf";
 import HTMLFlipBook from "react-pageflip";
+import "react-pdf/dist/Page/TextLayer.css";
+import "react-pdf/dist/Page/AnnotationLayer.css";
+import pdfWorker from "pdfjs-dist/build/pdf.worker.min.mjs?url";
 
-// Use HTTPS so the worker is not blocked when the app runs on local HTTP.
-pdfjs.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.mjs`;
+pdfjs.GlobalWorkerOptions.workerSrc = pdfWorker;
 
 const PdfPage = React.forwardRef((props, ref) => {
   return (
@@ -13,10 +15,12 @@ const PdfPage = React.forwardRef((props, ref) => {
   );
 });
 
+
 export default function PdfFlipBook({ pdfUrl }) {
   const [numPages, setNumPages] = useState(null);
   const [pageWidth, setPageWidth] = useState(320);
   const [loadError, setLoadError] = useState(null);
+  const [activePage, setActivePage] = useState(0);
   const viewerRef = useRef(null);
   const bookRef = useRef(null);
 
@@ -47,6 +51,7 @@ export default function PdfFlipBook({ pdfUrl }) {
   function onDocumentLoadSuccess({ numPages }) {
     setLoadError(null);
     setNumPages(numPages);
+    setActivePage(0);
   }
 
   function onDocumentLoadError(error) {
@@ -88,17 +93,23 @@ export default function PdfFlipBook({ pdfUrl }) {
             useMouseEvents={true}
             flippingTime={850}
             drawShadow={true}
+            onFlip={(event) => setActivePage(event.data)}
             className="pdf-flip-book shadow-2xl"
           >
             {Array.from(new Array(numPages), (_, index) => (
               <PdfPage key={`page_${index + 1}`}>
-                <Page
-                  pageNumber={index + 1}
-                  width={pageWidth}
-                  renderTextLayer={false}
-                  renderAnnotationLayer={false}
-                  loading={<div className="pdf-page-loading" />}
-                />
+                {Math.abs(index - activePage) <= 1 ? (
+                  <Page
+                    pageNumber={index + 1}
+                    width={pageWidth}
+                    devicePixelRatio={1}
+                    renderTextLayer={true}
+                    renderAnnotationLayer={true}
+                    loading={<div className="pdf-page-loading" />}
+                  />
+                ) : (
+                  <div className="pdf-page-loading" aria-hidden="true" />
+                )}
                 <p className="pdf-page-number">
                   {index + 1} / {numPages}
                 </p>

@@ -8,7 +8,7 @@ import catalogue3 from "../assets/catalogue4.png";
 import ShimmerText from "../components/ShimmerText";
 import GridBg from "../components/GridBg";
 import PdfFlipBook from "../components/PdfFlipBook";
-import { FaCut } from "react-icons/fa";
+import { FaCut, FaTimes } from "react-icons/fa";
 
 export default function Catalogue() {
   const pageRef = useRef(null);
@@ -327,7 +327,7 @@ export default function Catalogue() {
                 className="p-2.5 rounded-full hover:bg-neutral-100 transition text-neutral-500 hover:text-neutral-900"
                 aria-label="Close"
               >
-                <FaCut size={22} />
+                <FaTimes size={22} />
               </button>
             </div>
 
