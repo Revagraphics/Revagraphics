@@ -328,6 +328,7 @@ export default function Catalogue() {
                 aria-label="Close"
               >
                 <FaTimes size={22} />
+              
               </button>
             </div>
 

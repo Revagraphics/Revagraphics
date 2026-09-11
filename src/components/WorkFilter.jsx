@@ -66,9 +66,12 @@ export default function WorkFilter({
         {/* Projects Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {filteredProjects.length > 0 ? (
-            filteredProjects.map((project) => (
+            filteredProjects.map((project, index) => (
               <div
-                key={project.id}
+                key={
+                  project.id ??
+                  `${project.title ?? "project"}-${project.category ?? "uncategorized"}-${index}`
+                }
                 className="group relative overflow-hidden rounded-3xl shadow-md hover:shadow-2xl transition-all duration-500 bg-white"
               >
                 {/* Image Container */}

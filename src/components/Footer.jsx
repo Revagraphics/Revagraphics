@@ -22,6 +22,7 @@ import { FaXTwitter } from "react-icons/fa6";
 gsap.registerPlugin(ScrollTrigger);
 
 const WORD = "reva graphics";
+const WORD_GLOW_COLORS = ["#ff6726", "#facc15", "#22d3ee", "#a78bfa", "#f472b6"];
 
 // Badge data
 const badges = [
@@ -67,6 +68,7 @@ export default function Footer() {
   const sliderRef = useRef(null);
   const lettersRef = useRef([]);
   const bigTextRef = useRef(null);
+  const colorOrbRef = useRef(null);
   const [selectedBadge, setSelectedBadge] = useState(null);
 
   // Close modal with ESC key
@@ -103,6 +105,58 @@ export default function Footer() {
     return () => ctx.revert();
   }, []);
 
+  useEffect(() => {
+    const section = bigTextRef.current;
+    const colorOrb = colorOrbRef.current;
+    if (!section || !colorOrb) return undefined;
+
+    const handlePointerMove = (event) => {
+      const bounds = section.getBoundingClientRect();
+      const pointerX = event.clientX - bounds.left;
+      const pointerY = event.clientY - bounds.top;
+      const normalizedX = Math.max(0, Math.min(1, pointerX / bounds.width));
+      const orbColor =
+        WORD_GLOW_COLORS[
+          Math.floor(normalizedX * WORD_GLOW_COLORS.length) % WORD_GLOW_COLORS.length
+        ];
+
+      gsap.to(colorOrb, {
+        x: pointerX - 110,
+        y: pointerY - 110,
+        background: `radial-gradient(circle, ${orbColor}dd 0%, ${orbColor}88 34%, ${orbColor}35 58%, transparent 78%)`,
+        duration: 0.75,
+        ease: "elastic.out(1, 0.45)",
+        overwrite: "auto",
+      });
+    };
+
+    const resetColorOrb = () => {
+      gsap.to(colorOrb, {
+        x: -220,
+        y: 30,
+        opacity: 0,
+        duration: 0.7,
+        ease: "power3.out",
+        overwrite: "auto",
+      });
+    };
+
+    const showColorOrb = () => {
+      gsap.to(colorOrb, { opacity: 1.35, duration: 0.25, overwrite: "auto" });
+    };
+
+    section.addEventListener("pointermove", handlePointerMove);
+    section.addEventListener("pointerenter", showColorOrb);
+    section.addEventListener("pointerleave", resetColorOrb);
+
+    return () => {
+      section.removeEventListener("pointermove", handlePointerMove);
+      section.removeEventListener("pointerenter", showColorOrb);
+      section.removeEventListener("pointerleave", resetColorOrb);
+      gsap.killTweensOf(colorOrb);
+    };
+  }, []);
+
   // ── Mobile badge carousel ──────────────────────────────────────
   useEffect(() => {
     const el = sliderRef.current;
@@ -129,14 +183,14 @@ export default function Footer() {
         <div className="max-w-[90%] mx-auto px-6 py-12">
           <div className="flex flex-col md:flex-row lg:flex-row items-center justify-between gap-12">
             {/* Logo + rating */}
-            <div className=" flex flex-col text-center lg:text-left space-y-4">
+            <div className="flex flex-col items-center space-y-4 text-center lg:items-start lg:text-left">
               <img
                 className="h-auto w-20 lg:w-28"
                 src={bottomLogo}
                 alt="Reva Graphics"
               />
               
-              <div className="flex justify-center lg:justify-start gap-1 text-yellow-400 text-2xl">
+              <div className="flex justify-center gap-1 text-2xl text-yellow-400 lg:justify-start">
                 ★ ★ ★ ★ ★
               </div>
               <p className="text-base text-zinc-300 max-w-sm">
@@ -234,9 +288,14 @@ export default function Footer() {
       {/* ── BIG TEXT ───────────────────────────────────────────── */}
       <section
         ref={bigTextRef}
-        className="bg-[#30303c] border-t border-zinc-800  py-2 sm:py-8 md:py-10 group"
+        className="relative isolate overflow-hidden bg-[#30303c] border-t border-zinc-800 py-2 sm:py-8 md:py-10 group"
       >
-        <div className="w-full flex items-end  px-4 sm:px-4">
+        <div
+          ref={colorOrbRef}
+          aria-hidden="true"
+          className="pointer-events-none absolute -left-56 top-8 z-0 h-56 w-56 rounded-full opacity-0 blur-xl saturate-150"
+        />
+        <div className="relative z-10 flex w-full items-end px-4 sm:px-4">
           {WORD.split("").map((ch, i) => {
             if (ch === " ") {
               return (
@@ -260,7 +319,7 @@ export default function Footer() {
               >
                 <span
                   ref={(el) => (lettersRef.current[i] = el)}
-                  className="transition-all duration-300 ease-out group-hover:opacity-40 hover:!shadow-blue hover:!opacity-100 hover:!text-[#FF9800] hover:-translate-y-2 cursor-pointer inline-block"
+                  className="inline-block"
                   style={{
                     display: "inline-block",
                     fontFamily:

@@ -260,7 +260,7 @@ export default function VideoPage() {
                         }}
                       >
                         {/* CARD */}
-                        <div className="relative h-full w-full overflow-hidden rounded-2xl sm:rounded-3xl bg-slate-950 shadow-lg border-4 border-white hover:shadow-2xl transition">
+                        <div className="relative h-full w-full overflow-hidden rounded-2xl sm:rounded-3xl bg-slate-950 shadow-lg border-4 border-orange-300 hover:shadow-2xl transition">
                           <img
                             src={Project.thumbnail}
                             alt={Project.title}
